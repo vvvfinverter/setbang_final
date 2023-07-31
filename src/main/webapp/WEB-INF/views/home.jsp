@@ -6,8 +6,7 @@
 </head>
 <body>
 <h1>
-	Hello world!
-	recording insect or virus
+	Hello Collection insect or virus!
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
