@@ -15,8 +15,9 @@
 			<jsp:include page="./section/header.jsp" />
 		</div>
 		<div id="contents">
-			<jsp:include page="./section/main.jsp"/>
-		</div>	
+<%-- 			<jsp:include page="./section/main.jsp"/> --%>
+			<jsp:include page="./member/login_signup.jsp"/>
+		</div>
 		<div id="footer">
 			<jsp:include page="./section/footer.jsp" />
 		</div>
