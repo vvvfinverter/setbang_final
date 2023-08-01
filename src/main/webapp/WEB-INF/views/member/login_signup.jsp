@@ -27,7 +27,7 @@
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">로그인</label>
     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">회원가입</label>
     <div class="login-form">
-      <div class="sign-in-htm">
+      <form class="sign-in-htm" name="login" method="post" action="">
         <div class="group">
           <label for="id" class="label">아이디</label>
           <input id="id" type="text" class="input">
@@ -48,7 +48,7 @@
           <a href="">아이디를 잊으셨나요?</a><br/>
           <a href="">비밀번호를 잊으셨나요?</a>
         </div>
-      </div>
+      </form>
 <!-- 회원가입 -->
       <div class="sign-up-htm">
         <div class="group">

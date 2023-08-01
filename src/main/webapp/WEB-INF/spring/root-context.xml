@@ -27,7 +27,7 @@
 <!--   <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property> -->
   <property name="typeAliases">
       <list>
-         <value>com.setbang.domain.memberVO</value> <!-- BoardVO -->
+         <value>com.setbang.domain.MemberVO</value>
       </list>
    </property>
  </bean>
