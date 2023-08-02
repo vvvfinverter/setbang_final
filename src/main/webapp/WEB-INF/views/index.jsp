@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <title>SETBang</title>
 </head>
 <body>
@@ -15,8 +16,8 @@
 			<jsp:include page="./section/header.jsp" />
 		</div>
 		<div id="contents">
-<%-- 			<jsp:include page="./section/main.jsp"/> --%>
-			<jsp:include page="./member/login_signup.jsp"/>
+ 			<jsp:include page="./section/main.jsp"/> 
+			<%-- <jsp:include page="./member/login_signup.jsp"/> --%>
 		</div>
 		<div id="footer">
 			<jsp:include page="./section/footer.jsp" />

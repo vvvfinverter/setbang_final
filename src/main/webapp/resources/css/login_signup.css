@@ -8,11 +8,9 @@
 
 /* 로그인, 회원가입 */
 
-
-
 body, html {
   height: 100%;
-  margin: 0;
+  margin-bottom: 0px;
   padding: 0;
 }
 
@@ -62,6 +60,7 @@ a {
   max-width:525px;
   min-height:670px;
   position:relative;
+  padding-bottom : 700px;
 }
 
 .login-html .sign-in-htm,
