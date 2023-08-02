@@ -22,6 +22,14 @@ public class MemberVO {
 		this.pw = pw;
 	}
 
-	
+	//생성자
+	public MemberVO() {
+		
+	}
 
+	//toString
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", pw=" + pw + "]";
+	}
 }

@@ -4,12 +4,10 @@
 
 <mapper namespace="MemberDAO">
 
-	<select id="selectMember" parameterType="MemberVO" resultType="MemberVO">
-	<![CDATA[
+	<select id="selectMember" parameterType="MemberVO" resultType="MemberVO">	
 	select id, pw from member 
 	where id = #{id}
 	and pw = #{pw}
-	]]>
 	</select>
 
 
