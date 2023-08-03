@@ -3,12 +3,15 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
+	<!--카멜 케이스 자동으로 매핑 하도록 설정  -->
+	<settings>
+			<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
 	<!-- Alias 설정 -->
 	<typeAliases>
-		<typeAlias alias="board" type="com.setbang.domain.MemberVO" />		
+		<typeAlias alias="login" type="com.setbang.domain.MemberVO" />		
 	</typeAliases>
-
+	
 
 </configuration>
 

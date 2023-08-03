@@ -4,6 +4,6 @@ import com.setbang.domain.MemberVO;
 
 public interface MemberService {
 
-	MemberVO selectMember(MemberVO vo);
+	MemberVO getLogin(MemberVO vo);
 	
 }

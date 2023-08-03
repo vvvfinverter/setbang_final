@@ -27,9 +27,4 @@ public class MemberVO {
 		
 	}
 
-	//toString
-	@Override
-	public String toString() {
-		return "MemberVO [id=" + id + ", pw=" + pw + "]";
-	}
 }

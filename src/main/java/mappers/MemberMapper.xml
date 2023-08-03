@@ -4,10 +4,9 @@
 
 <mapper namespace="MemberDAO">
 
-	<select id="selectMember" parameterType="MemberVO" resultType="MemberVO">	
-	select id, pw from member 
-	where id = #{id}
-	and pw = #{pw}
+	<select id="getLogin" parameterType="login" resultType="login">	
+	select id, pw from member where id=#{id} and pw=#{pw}
+
 	</select>
 
 

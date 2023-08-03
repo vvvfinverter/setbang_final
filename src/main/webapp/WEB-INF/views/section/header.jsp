@@ -57,7 +57,7 @@
           <a class="nav-link" href="#">문의하기</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">로그인</a>
+          <a class="nav-link" href="../member/login_signup.jsp">로그인</a>
         </li>
 	 </ul>
     </div>

@@ -27,14 +27,14 @@
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">로그인</label>
     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">회원가입</label>
     <div class="login-form">
-      <form class="sign-in-htm" name="login" method="post" action="">
+      <form class="sign-in-htm" name="login" method="post" action="login.do">
         <div class="group">
           <label for="id" class="label">아이디</label>
-          <input id="id" type="text" class="input">
+          <input id="id" name="id" type="text" class="input">
         </div>
         <div class="group">
           <label for="pw" class="label">비밀번호</label>
-          <input id="pw" type="password" class="input" data-type="password">
+          <input id="pw" name="pw" type="password" class="input" data-type="password">
         </div>
         <div class="group">
           <input id="saveId" type="checkbox" class="check" checked>

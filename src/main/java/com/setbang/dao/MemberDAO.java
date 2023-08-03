@@ -1,10 +1,11 @@
 package com.setbang.dao;
 
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 
 import com.setbang.domain.MemberVO;
 
 public interface MemberDAO {
 	
-	public MemberVO selectMember(MemberVO vo);
+	public MemberVO getLogin(MemberVO vo);
+		
 }

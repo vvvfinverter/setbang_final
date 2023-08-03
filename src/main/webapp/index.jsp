@@ -13,14 +13,13 @@
 
 	<div id="wrap">
 		<div id="header">
-			<jsp:include page="./section/header.jsp" />
+			<jsp:include page="WEB-INF/views/section/header.jsp" />
 		</div>
 		<div id="contents">
- 			<jsp:include page="./section/main.jsp"/> 
-			<%-- <jsp:include page="./member/login_signup.jsp"/> --%>
+			<jsp:include page="WEB-INF/views/section/main.jsp"/> 
 		</div>
 		<div id="footer">
-			<jsp:include page="./section/footer.jsp" />
+			<jsp:include page="WEB-INF/views/section/footer.jsp" />
 		</div>
 	</div>
 
