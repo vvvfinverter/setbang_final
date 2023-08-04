@@ -16,6 +16,7 @@ public class MemberDAOImpl implements MemberDAO{
 	private SqlSessionTemplate mybatis;
 
 	@Override
+	// 로그인
 	public MemberVO getLogin(MemberVO vo) {
 		// TODO Auto-generated method stub
 		logger.info("getLogin DAO");

@@ -19,6 +19,11 @@
 </head>
 <body>
 
+<div id="wrap">
+		<div id="header">
+			<jsp:include page="../section/header.jsp" />
+		</div>
+		
 <!-- 로그인/회원가입 -->
 
 <div class="login-wrap">
@@ -30,14 +35,14 @@
       <form class="sign-in-htm" name="login" method="post" action="login.do">
         <div class="group">
           <label for="id" class="label">아이디</label>
-          <input id="id" name="id" type="text" class="input">
+          <input id="id" name = "id" type="text" class="input">
         </div>
         <div class="group">
           <label for="pw" class="label">비밀번호</label>
-          <input id="pw" name="pw" type="password" class="input" data-type="password">
+          <input id="pw" name = "pw" type="password" class="input" data-type="password">
         </div>
         <div class="group">
-          <input id="saveId" type="checkbox" class="check" checked>
+          <input id="saveId" name = "saveId" type="checkbox" class="check" checked>
           <label for="saveId"><span class="icon"></span> &nbsp;아이디 저장</label>
         </div>
         <div class="group">
@@ -107,6 +112,11 @@
   </div>
 </div>
 
+
+		<div id="footer">
+			<jsp:include page="../section/footer.jsp" />
+		</div>
+	</div>
 
 </body>
 </html>

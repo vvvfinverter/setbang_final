@@ -26,5 +26,15 @@ public class MemberVO {
 	public MemberVO() {
 		
 	}
+	
+	/*
+	 * //toString
+	 * 
+	 * @Override public String toString() { return "MemberVO [id=" + id + ", pw=" +
+	 * pw + "]"; }
+	 */
+	
+	
+	// 로그인 위해서 id와 pw만 받았음.
 
 }
