@@ -4,12 +4,17 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<!--카멜 케이스 자동으로 매핑 하도록 설정  -->
-	<settings>
+<!-- 	<settings>
 			<setting name="mapUnderscoreToCamelCase" value="true"/>
-	</settings>
+	</settings> -->
+	
+	    <settings>
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
 	<!-- Alias 설정 -->
 	<typeAliases>
-		<typeAlias alias="login" type="com.setbang.domain.MemberVO" />		
+		<typeAlias alias="login" type="com.setbang.domain.MemberVO" />
+		<typeAlias alias="member" type="com.setbang.domain.InsertMemberVO" />		
 	</typeAliases>
 	
 
