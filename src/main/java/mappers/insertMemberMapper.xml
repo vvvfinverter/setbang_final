@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InsertMemberDAO">
+	<insert id="insertInfo" parameterType="member">
+		insert into member(mem_code, ind_code, name, tel, id, pw
+		,business_no, addr, email, mem_plan, signup_date, profile
+		)values(
+		s_mem_code.nextval, #{ind_code}, #{name}, #{tel}, #{id}, #{pw}
+		,#{business_no}, #{addr}, #{email}, 'basic', sysdate, null
+		)
+	</insert>
+	
+	<!-- 나중에 사용 할 수도 있음 -->
+<!--  	<select id="selectComboInd" parameterType="member">
+		SELECT IND_CODE FROM INDUSTRY 
+			WHERE IND_NAME = #{ind_name};
+	</select>-->
+</mapper>

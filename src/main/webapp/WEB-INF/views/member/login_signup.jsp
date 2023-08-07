@@ -13,7 +13,18 @@
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./resources/js/kakaoaddr.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+	$("#industry").change(function() {
+		alert("미친 테스트 : "+ this.val());
+		$("#industry").val();
+	})
+	// function selectBoxChange 
+});  
+</script>-->
 
 <title>로그인/회원가입</title>
 </head>
@@ -56,49 +67,55 @@
       </form>
 <!-- 회원가입 -->
       <div class="sign-up-htm">
+      	<form action="insertInfo.do" method="post">
         <div class="group">
           <label for="id" class="label">아이디</label>
-          <input id="id" type="text" class="input">
+          <input id="id" name="id" type="text" class="input">
           <!-- 나중에 아이디는 동기식(ajax)으로 이미 존재하는 아이디입니다를 띄워주기 -->
         </div>
         <div class="group">
           <label for="pw" class="label">비밀번호</label>
-          <input id="pw" type="password" class="input" data-type="password">
+          <input id="pw" name="pw" type="password" class="input" data-type="password">
         </div>
         <div class="group">
           <label for="checkPw" class="label">비밀번호 확인</label>
-          <input id="checkPw" type="password" class="input" data-type="password">
+          <input id="checkPw" name="checkPw" type="password" class="input" data-type="password">
         </div>
         <div class="group">
           <label for="name" class="label">성함</label>
-          <input id="name" type="text" class="input"/>
+          <input id="name" name="name" type="text" class="input"/>
         </div>
         <div class="group">
           <label for="tel" class="label">휴대폰 번호</label>
-          <input id="tel" type="tel" class="input"/>
+          <input id="tel" name="tel" type="tel" class="input"/>
         </div>
         <div class="group">
           <label for="email" class="label">이메일 주소</label>
-          <input id="email" type="email" class="input"/>
+          <input id="email" name="email" type="email" class="input"/>
         </div>
                 <div class= "group">
         <label for="industry" class="label">업종</label>
         <div class="inquery_select">
-                <select class="input" id="industry">
+                <select class="input" name = "ind_code" id="industry" onchange="selectBoxChange(this.value);">
                   <option value="">선택하세요</option>
-                  <option value="1">어쩌고</option>
-                  <option value="2">저쩌고</option>
-                  <option value="3">샬라샬라</option>
+                  <option value="100">제조업</option>
+                  <option value="200">통신판매업</option>
+                  <option value="300">IT업</option>
+                  <option value="400">서비스업</option>
+                  <option value="500">요식업</option>
                 </select>
               </div>
         </div>
         <div class="group">
         <label for="business_no" class="label">사업자 번호</label>
-          <input id="business_no" type="text" class="input"/>
+          <input id="business_no" name="business_no" type="text" class="input"/>
         </div>
-        <div class="group">
-          <label for="addr" class="label">주소</label>
-          <input id="addr" type="text" class="input"/>
+            <div class="group">
+			<input type="text" name="addr" id="sample6_postcode" placeholder="우편번호">
+			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+			<input type="text" name="addr" id="sample6_address" placeholder="주소"><br>
+			<input type="text" name="addr" id="sample6_detailAddress" placeholder="상세주소">
+			<input type="text" name="addr" id="sample6_extraAddress" placeholder="참고항목">
         </div>
         <div class="group">
           <input type="submit" class="button" value="회원가입">
@@ -107,6 +124,7 @@
         <div class="foot-lnk">
           <label for="tab-1">이미 회원이신가요?</label>
         </div>
+       </form>
       </div>
     </div>
   </div>
