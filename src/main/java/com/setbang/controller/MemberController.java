@@ -70,5 +70,10 @@ public class MemberController {
 		
 		return "redirect:/";
 	}
-		
+
+	// 업무지원 페이지로 이동
+	@RequestMapping(value = "support.do", method = RequestMethod.GET)
+	public String support(MemberVO vo){
+		return "/member/support";
+		}
 }
