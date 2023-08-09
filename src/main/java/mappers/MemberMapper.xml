@@ -5,7 +5,7 @@
 <mapper namespace="MemberDAO">
 
 	<select id="getLogin" parameterType="login" resultType="login">	
-	select id, pw from member where id=#{id} and pw=#{pw}
+	select id, pw, mem_code from member where id=#{id} and pw=#{pw}
 
 	</select>
 

@@ -55,7 +55,9 @@ public class MemberController {
 	} else {									
 		// 로그인 성공 (알림창으로 환영합니다. OOO 고객님 or 그냥 바로 넘어가기)
 		System.out.println("[" + login.getId() + "] 로그인 접속"); 
+		System.out.println("[" + login.getMem_code() + "] 로그인 접속"); 
 		session.setAttribute("sessionId", login.getId());
+		session.setAttribute("memcode", login.getMem_code());
 	}
 		
 		return "redirect:/";

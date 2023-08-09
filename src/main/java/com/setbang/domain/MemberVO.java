@@ -8,6 +8,16 @@ public class MemberVO {
 
 	private String id;
 	private String pw;
+	private int Mem_code;
+	
+	public int getMem_code() {
+		return Mem_code;
+	}
+	public void setMem_code(int mem_code) {
+		Mem_code = mem_code;
+	}
+
+
 	
 	public String getId() {
 		return id;
