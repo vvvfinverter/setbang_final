@@ -9,6 +9,7 @@ import com.setbang.domain.SupportVO;
 @Service("SupportService")
 public class SupportServiceImpl implements SupportService{
 	
+	
 	@Autowired
 	private SupportDAO supportDAO;
 	
@@ -17,9 +18,18 @@ public class SupportServiceImpl implements SupportService{
 		return supportDAO.insertApply(vo);
 	}
 	
-	public SupportVO selectUser(SupportVO vo) {
-		return supportDAO.selectUser(vo);
+	public SupportVO selectUser(String id) {
+		System.out.println("S: readMember() 실행");
+		SupportVO vo = null;
+		
+		try {
+			vo = supportDAO.selectUser(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		
+		return vo;
 	}
-
 
 }

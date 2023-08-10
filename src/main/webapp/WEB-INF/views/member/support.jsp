@@ -31,6 +31,7 @@ $(function(){
 	});
 });
 //]]>
+
 </script>
 
 
@@ -46,10 +47,10 @@ $(function(){
 	<div class="support-request">
 	
 		<div class="request">
-		<form class="support" name="support" method="post" action="support.do">
+		<form class="support" name="support" method="post" action="support1.do">
 			<div class="form-group1">
 				<label for="name" class="label">신청인</label> 
-				<input type="text" class="form-control" id="name">
+				<input type="text" class="form-control" id="name" value="${SupportVO.name}" name="name"/>
 			</div>
 			
 			<div class="select-support">
@@ -64,17 +65,17 @@ $(function(){
 			
 			<div class="form-group2">
 				<label for="tel" class="label">연락처</label> 
-				<input type="tel" class="form-control" id="tel">
+				<input type="tel" class="form-control" id="tel" value="${SupportVO.tel}" name="tel"/>
 			</div>
 			
 			<div class="form-group3">
 				<label for="Email" class="label">Email</label> 
-				<input type="email" class="form-control" id="Email">
+				<input type="email" class="form-control" id="Email" value="${SupportVO.email}" name="Email"/>
 			</div>
 			
 			<div class="form-group4">
 				<label for="date" class="label">상담희망일자</label>
-					<input type="text" name="date" id="date3" size="12" />
+					<input type="text" name="date" id="date3" size="12" readonly/>
 			</div>
 						
 			<div class="form-group5">

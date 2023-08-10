@@ -6,5 +6,5 @@ public interface SupportService {
 
 	SupportVO insertApply(SupportVO vo);
 	
-	SupportVO selectUser(SupportVO vo);
+	SupportVO selectUser(String id);
 }

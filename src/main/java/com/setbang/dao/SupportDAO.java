@@ -7,9 +7,7 @@ public interface SupportDAO {
 	public SupportVO insertApply(SupportVO vo);
 	
 	// 세션아이디를 찾아서 신청페이지에 자동으로 이름, 연락처, 이메일 찾기
-	public SupportVO selectUser(SupportVO vo);
+	public SupportVO selectUser(String id) throws Exception;
 	
-	// InsertApply할 때 쓸 MemberCode 찾기
-	public SupportVO selectMember(SupportVO vo);
 
 }

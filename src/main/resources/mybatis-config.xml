@@ -8,13 +8,14 @@
 			<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings> -->
 	
-	    <settings>
+	<settings>
         <setting name="jdbcTypeForNull" value="NULL" />
     </settings>
 	<!-- Alias 설정 -->
 	<typeAliases>
 		<typeAlias alias="login" type="com.setbang.domain.MemberVO" />
-		<typeAlias alias="member" type="com.setbang.domain.InsertMemberVO" />		
+		<typeAlias alias="member" type="com.setbang.domain.InsertMemberVO" />
+		<typeAlias alias="support" type="com.setbang.domain.SupportVO" />				
 	</typeAliases>
 	
 
