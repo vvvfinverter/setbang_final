@@ -18,11 +18,18 @@ public class SupportDAOImpl implements SupportDAO{
 	private SqlSessionTemplate mybatis;
 
 	@Override
-	public SupportVO insertApply(SupportVO vo) {
+    public void insertApply(SupportVO vo) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
+		System.out.println("=> Mybatis insertApply() 호출");
+        mybatis.insert("SupportDAO.insertApply", vo);
+    }
+	
+	@Override
+    public int findMemcode(String id) {
+        System.out.println("=> Mybatis findMemcode() 호출");
+        return mybatis.selectOne("SupportDAO.findMemcode", id);
+    }
+    
 	@Override
 	public SupportVO selectUser(String id) throws Exception {
 		// TODO Auto-generated method stub

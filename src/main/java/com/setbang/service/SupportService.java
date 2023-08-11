@@ -3,8 +3,10 @@ package com.setbang.service;
 import com.setbang.domain.SupportVO;
 
 public interface SupportService {
-
-	SupportVO insertApply(SupportVO vo);
+	
+    void insertApply(SupportVO vo);
+	
+	int findMemcode(String id); 
 	
 	SupportVO selectUser(String id);
 }

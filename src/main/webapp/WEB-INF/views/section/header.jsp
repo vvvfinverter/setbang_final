@@ -68,7 +68,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#intro1">서비스 플랜 결제</a></li>
             <li><a class="dropdown-item" href="#intro4">물품 신청</a></li>
-            <li><a class="dropdown-item" href="#intro3">업무지원 신청</a></li>
+            <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
             <li><a class="dropdown-item" href="#intro2">협력업체 예약</a></li>
           </ul>
         </li>

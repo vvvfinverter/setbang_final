@@ -14,12 +14,20 @@ public class SupportServiceImpl implements SupportService{
 	private SupportDAO supportDAO;
 	
 	// 업무지원신청
-	public SupportVO insertApply(SupportVO vo) {
-		return supportDAO.insertApply(vo);
-	}
+    public void insertApply(SupportVO vo) {
+    	supportDAO.insertApply(vo);
+    }
+    
+    
+	// Session에 있는 id로 Mem_code 찾기
+    public int findMemcode(String id) {
+        return supportDAO.findMemcode(id);
+    }
+    
+    
 	
 	public SupportVO selectUser(String id) {
-		System.out.println("S: readMember() 실행");
+		System.out.println("S: selectUser() 실행");
 		SupportVO vo = null;
 		
 		try {

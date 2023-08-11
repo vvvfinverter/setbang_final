@@ -27,6 +27,7 @@ public class SupportController {
 	@RequestMapping(value = "support.do", method = RequestMethod.GET )
 	public String selectUser(HttpSession session, Model model) throws Exception{
 		logger.info("SupportController selectUser method");
+		
 		// 세션 객체 안에 있는 ID정보 저장
 		String id = (String) session.getAttribute("sessionId");
 		System.out.println("id : " + id);
@@ -36,10 +37,36 @@ public class SupportController {
 		System.out.println("selectuser : " + selectuser);
 		
 		// 정보저장 후 페이지 이동
-		model.addAttribute("SupportVO", selectuser);
+		model.addAttribute("supportVO", selectuser);
 		return "/member/support";
 	}
 	
+
+	// 업무지원 신청서 insert
+	@RequestMapping(value="support1.do", method = RequestMethod.POST )
+	public String insertApply(HttpSession session, Model model) {
+		logger.info("SupportController selectUser method");
+		
+		// 세션 객체 안에 있는 ID정보 저장 
+		String id = (String) session.getAttribute("sessionId");
+		System.out.println("id : " + id);
+	
+		// ID로 Mem_code 가져오기
+		int memcode = supportService.findMemcode(id);
+		
+		
+		// SupportVO에 Mem_code 초기화하기
+		if(memcode != 0) {
+			SupportVO vo = new SupportVO();
+			vo.setMem_code(memcode);		
+			
+			// 업무지원 신청서에 인서트 되기
+			supportService.insertApply(vo);
+			System.out.println("성공");
+		}
+		
+		return "redirect:/support.do";
+	}
 
 
 }

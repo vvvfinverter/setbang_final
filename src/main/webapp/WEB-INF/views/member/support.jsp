@@ -50,7 +50,7 @@ $(function(){
 		<form class="support" name="support" method="post" action="support1.do">
 			<div class="form-group1">
 				<label for="name" class="label">신청인</label> 
-				<input type="text" class="form-control" id="name" value="${SupportVO.name}" name="name"/>
+				<input type="text" class="form-control" id="name" value="${supportVO.name}" name="name"/>
 			</div>
 			
 			<div class="select-support">
@@ -65,12 +65,12 @@ $(function(){
 			
 			<div class="form-group2">
 				<label for="tel" class="label">연락처</label> 
-				<input type="tel" class="form-control" id="tel" value="${SupportVO.tel}" name="tel"/>
+				<input type="tel" class="form-control" id="tel" value="${supportVO.tel}" name="tel"/>
 			</div>
 			
 			<div class="form-group3">
 				<label for="Email" class="label">Email</label> 
-				<input type="email" class="form-control" id="Email" value="${SupportVO.email}" name="Email"/>
+				<input type="email" class="form-control" id="Email" value="${supportVO.email}" name="Email"/>
 			</div>
 			
 			<div class="form-group4">
@@ -88,7 +88,7 @@ $(function(){
 				<label class="label" for="exampleCheck1">Check me
 					out</label>
 			</div>
-			<button type="submit" class="button">신청하기</button>
+			<button type="submit" class="button" >신청하기</button>
 		</form>
 		</div>
 	</div>	
