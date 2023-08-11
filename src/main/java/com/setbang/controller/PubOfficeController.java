@@ -44,8 +44,6 @@ public class PubOfficeController {
 		
 		String id = (String) session.getAttribute("sessionId");
 		System.out.println("session id : " + id);
-		pubOfficeService.selectMemCode(vo);
-		System.out.println("vo.getMemCode : " + vo.getMemCode());
 		
 		model.addAttribute("public1","멀티미디어실");
 		model.addAttribute("public2","회의실");
