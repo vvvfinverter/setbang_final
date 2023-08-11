@@ -8,7 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/header.css">
+<link rel="stylesheet" href="./../resources/css/header.css">
+
+
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -49,7 +51,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">개인 오피스</a></li>
-            <li><a class="dropdown-item" href="#">공용 오피스</a></li>
+            <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스</a></li>
           </ul>
         </li>
         
@@ -67,10 +69,10 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#intro1">서비스 플랜 결제</a></li>
-            <li><a class="dropdown-item" href="#intro4">물품 신청</a></li>
-            <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
             <li><a class="dropdown-item" href="#intro2">협력업체 예약</a></li>
-            <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스 예약</a></li>
+            <li><a class="dropdown-item" href="#intro3">업무지원 신청</a></li>
+            <li><a class="dropdown-item" href="#intro4">물품 신청</a></li>
+            <li><a class="dropdown-item" href="pubOffice/selectPubOffice1.do">공용 오피스 예약</a></li>
           </ul>
         </li>
           </c:when>
