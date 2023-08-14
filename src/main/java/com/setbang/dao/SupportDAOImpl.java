@@ -1,6 +1,5 @@
 package com.setbang.dao;
 
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +20,7 @@ public class SupportDAOImpl implements SupportDAO{
     public void insertApply(SupportVO vo) {
 		// TODO Auto-generated method stub
 		System.out.println("=> Mybatis insertApply() 호출");
+		System.out.println("dao"+vo.getSup_code());
         mybatis.insert("SupportDAO.insertApply", vo);
     }
 	
@@ -39,6 +39,11 @@ public class SupportDAOImpl implements SupportDAO{
 		return mybatis.selectOne("SupportDAO.selectUser", id);
 	}
 
-
+	@Override
+	public String findEmail(String id){
+		System.out.println("=> Mybatis findEmail() 호출");
+		
+		return mybatis.selectOne("SupportDAO.findEmail", id);
+	}
 	
 }

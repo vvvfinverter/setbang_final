@@ -15,7 +15,9 @@ public class SupportServiceImpl implements SupportService{
 	
 	// 업무지원신청
     public void insertApply(SupportVO vo) {
+    	System.out.println("s"+vo.getSup_code());
     	supportDAO.insertApply(vo);
+    	
     }
     
     
@@ -38,6 +40,10 @@ public class SupportServiceImpl implements SupportService{
 		}
 		
 		return vo;
+	}
+
+	public String findEmail(String id) {
+	       return supportDAO.findEmail(id);
 	}
 
 }

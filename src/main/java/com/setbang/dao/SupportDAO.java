@@ -11,4 +11,8 @@ public interface SupportDAO {
 	
 	// 세션아이디를 찾아서 Mem_code 찾기
 	public int findMemcode(String id);
+	
+	// 세션아이디로 email 찾기
+	public String findEmail(String id);
+	
 }

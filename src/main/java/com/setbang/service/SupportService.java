@@ -9,4 +9,6 @@ public interface SupportService {
 	int findMemcode(String id); 
 	
 	SupportVO selectUser(String id);
+	
+	String findEmail(String id);
 }

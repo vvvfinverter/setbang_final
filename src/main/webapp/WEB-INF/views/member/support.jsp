@@ -23,7 +23,7 @@
 <script type="text/javascript">
 //<![CDATA[
 $(function(){
-	$("#date3").datepicker({
+	$("#sup_counseling_date").datepicker({
 		showOn: "button",
         buttonImage: "./resources/image/calendar.png",
 	    buttonImageOnly: false,
@@ -55,11 +55,11 @@ $(function(){
 			
 			<div class="select-support">
 			<label for="support-name" class="support-name">상담분야</label> 
-			<input id="counse-1" type="radio" name="tab" class="tax">
+			<input id="sup_code" type="radio" name="sup_code" class="tax" value="10">
 				<label for="counse-1" class="tab1">세무기장</label> 
-			<input id="counse-2" type="radio" name="tab" class="corporate">
+			<input id="sup_code" type="radio" name="sup_code" class="corporate" value="20">
 				<label for="counse-2" class="tab2">법인신청</label>
-			<input id="counse-3" type="radio" name="tab" class="patent">
+			<input id="sup_code" type="radio" name="sup_code" class="patent" value="30">
 				<label for="counse-3" class="tab3">특허신청</label>
 			</div>
 			
@@ -70,24 +70,19 @@ $(function(){
 			
 			<div class="form-group3">
 				<label for="Email" class="label">Email</label> 
-				<input type="email" class="form-control" id="Email" value="${supportVO.email}" name="Email"/>
+				<input type="email" class="form-control" id="email" value="${supportVO.email}" name="email"/>
 			</div>
 			
 			<div class="form-group4">
 				<label for="date" class="label">상담희망일자</label>
-					<input type="text" name="date" id="date3" size="12" readonly/>
+					<input type="text" name="sup_counseling_date" id="sup_counseling_date" size="12" readonly/>
 			</div>
 						
 			<div class="form-group5">
 				<label for="context" class="label">신청내용</label> 
-				<input type="text" class="form-control" id="context">
+				<input type="text" class="form-control" id="context" name = "sup_content">	
 			</div>
-			
-			<div class="form-group form-check">
-				<input type="checkbox" class="form-check-input" id="exampleCheck1">
-				<label class="label" for="exampleCheck1">Check me
-					out</label>
-			</div>
+
 			<button type="submit" class="button" >신청하기</button>
 		</form>
 		</div>
