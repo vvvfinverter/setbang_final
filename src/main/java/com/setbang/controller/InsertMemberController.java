@@ -26,6 +26,4 @@ public class InsertMemberController {
 		return "redirect:/";
 	}	 
 				
-			
-	
 }
