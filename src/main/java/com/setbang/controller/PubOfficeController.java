@@ -4,6 +4,7 @@ import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -57,25 +58,31 @@ public class PubOfficeController {
 	}
 	
 	@GetMapping("/pubOffice2.do")
-	public ModelAndView viewPubOffice2(HttpSession session, PubOfficeVO vo) {
+	public ModelAndView viewPubOffice2(HttpSession session,PubOfficeVO vo,Model model) {
 		logger.info("pubOffice2.do 경로의 viewPubOffice2 controller 탔음 -> 추가 수정이 많이 필요함");
 		
+		List<PubOfficeVO> pubUnits = pubOfficeService.selectPubOfficeCombo(vo);
 		
+		
+		if(pubUnits != null) {
+			model.addAttribute("pubUnits",pubUnits);
+//			System.out.println(pubUnits.get(0).getPubCode());
+		}
 		
 		//대상 view(jsp)파일
 		return new ModelAndView("pubOffice/pubOffice2");
 	}
+	
 	//@RequestParam("combinedDateTime") String combinedDateTime
 	@PostMapping("/insertpubOfficeBooking.do")
-	public ModelAndView insertPubBooking(PubOfficeVO vo,HttpSession session) {
+	public ModelAndView insertPubBooking(PubOfficeVO vo,HttpSession session,Model model) {
 		
-		logger.info("insertPubOfficeBooking.do");
+		logger.info("PubOfficeController의 insertPubOfficeBooking method");
 		
 		//System.out.println(combinedDateTime);
 		
 
 	try {
-		
 		
 		String id = (String) session.getAttribute("sessionId");
 		System.out.println("session id : " + id);
@@ -89,9 +96,18 @@ public class PubOfficeController {
 		if(memcode != 0) {
 			vo.setMemCode(memcode);
 			
-			
+		}
+		List<PubOfficeVO> pubUnits = pubOfficeService.selectPubOfficeCombo(vo);
+		if(pubUnits != null) {
+			System.out.println("널이 아님");
+			model.addAttribute("pubUnits",pubUnits);
+			vo.setPubCode(pubUnits.get(0).getPubCode());
+			vo.setPubUnit(pubUnits.get(0).getPubUnit());
+			//System.out.println(pubUnits.get(0).getPubCode());
 		}
 		
+		 System.out.println("unit값 : " + vo.getPubUnit());
+		 
 //		pubOfficeService.selectMemCode(vo);
 		
 		

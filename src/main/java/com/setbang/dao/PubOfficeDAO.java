@@ -11,6 +11,8 @@ public interface PubOfficeDAO {
 	
 	public PubOfficeVO selectMemCode(PubOfficeVO vo);
 	
+	public List<PubOfficeVO> selectPutOfficeCombo(PubOfficeVO vo);
+	
 	public int insertPubOffice(PubOfficeVO vo);
 	
 	public int updatePubOffice(PubOfficeVO vo);

@@ -16,8 +16,8 @@ public class PubOfficeVO {
 //	private String formattedStartTime;
 //	private String formattedEndTime;
 	
-	private int MemCode;
-	private int IndCode;
+	private int memCode;
+	private int indCode;
 	private String name;
 	private String tel;
 	private String id;
@@ -97,16 +97,16 @@ public class PubOfficeVO {
 		this.bookDate = bookDate;
 	}
 	public int getMemCode() {
-		return MemCode;
+		return memCode;
 	}
 	public void setMemCode(int memCode) {
-		MemCode = memCode;
+		this.memCode = memCode;
 	}
 	public int getIndCode() {
-		return IndCode;
+		return indCode;
 	}
 	public void setIndCode(int indCode) {
-		IndCode = indCode;
+		this.indCode = indCode;
 	}
 	public String getName() {
 		return name;

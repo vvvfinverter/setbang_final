@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<%-- <html xmlns:th="http://www.thymeleaf.org"> --%>
 <head>
 <meta charset="UTF-8">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
 window.onload = function() {
@@ -40,15 +47,20 @@ window.onload = function() {
 <body>
 
 <form name="frm">
-<img src="./resources/image/test.png" width=500px height=500px/> <br/>
-<label for="bookDate">예약일자: </label>
-<input type="date" id="bookDate" name="bookDate" /> <br/>
-<label for="numOfPer">인원: </label> 
-<input type="text" name="numOfPer"> <br />
-사용시간 : <input type="time" id="bookStart" name="bookStart" /> ~ <input type="time" id="bookEnd" name="bookEnd"/> <br/>
-임대호실 : <select name="pubUnit"></select> <br/> 
-  <input id ="btnSubmit" type="button" value="예약하기"/> 
-<!-- <input type="submit"> -->
+	<img src="./resources/image/test.png" width=500px height=500px/> <br/>
+	<label for="bookDate">예약일자: </label>
+	<input type="date" id="bookDate" name="bookDate" /> <br/>
+	<label for="numOfPer">인원: </label> 
+	<input type="text" name="numOfPer"> <br />
+	사용시간 : <input type="time" id="bookStart" name="bookStart" /> ~ <input type="time" id="bookEnd" name="bookEnd"/> <br/>
+	임대호실 : <select>
+			<%--  <option th:each="i : ${pubUnits}" th:value="${i.pubCode}" th:text="${i.pubUnit}"></option>--%>
+ 			<option value="">선택</option>
+ 			<c:forEach var="i" items="${pubUnits}">
+				<option value="${i.pubCode}">${i.pubUnit}</option>
+			</c:forEach> 
+			</select> <br/> 
+  	<input id ="btnSubmit" type="button" value="예약하기"/> 
 </form>
 
 

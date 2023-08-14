@@ -44,12 +44,24 @@ public class PubOfficeServiceImpl implements PubOfficeService{
 	}
 	
 
+	
 	//booking 테이블 insert
 	@Override
 	public void insertPubOffice(PubOfficeVO vo) {
 		// TODO Auto-generated method stub
 		logger.info("PubOfficeServiceImpl.insertPubOffice 탔음");
+		System.out.println("service : " + vo.getPubCode());
 		pubOfficeDAO.insertPubOffice(vo);
+	}
+
+
+
+
+	@Override
+	public List<PubOfficeVO> selectPubOfficeCombo(PubOfficeVO vo) {
+		// TODO Auto-generated method stub
+		logger.info("PubOfficeServiceImpl.selectPubOfficeCombo 탔음");
+		return pubOfficeDAO.selectPutOfficeCombo(vo);
 	}
 	
 	

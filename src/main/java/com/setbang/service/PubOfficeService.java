@@ -17,6 +17,8 @@ public interface PubOfficeService {
 	// memCode 조회
 	public PubOfficeVO selectMemCode(PubOfficeVO vo);
 	
+	public List<PubOfficeVO> selectPubOfficeCombo(PubOfficeVO vo);
+	
 	//booking 테이블 insert
 	void insertPubOffice(PubOfficeVO vo);
 	

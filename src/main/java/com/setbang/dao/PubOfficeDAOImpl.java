@@ -33,11 +33,13 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 		return mybatis.selectOne("PubOfficeDAO.selectMemCode", vo);
 	}
 	
+	
 
 	@Override
 	public int insertPubOffice(PubOfficeVO vo) {
 		logger.info("PubOfficeDAO.insertPubOffice 호촐");
 		System.out.println("--> Mybatis insertPubOffice() 호출");
+		System.out.println("DAO  : " + vo.getPubCode());
 		return mybatis.insert("PubOfficeDAO.insertOfficeBooking",vo);
 	}
 
@@ -54,6 +56,11 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 		return mybatis.selectOne("PubOfficeDAO.selectPubCat",vo);
 	}
 
+	@Override
+	public List<PubOfficeVO> selectPutOfficeCombo(PubOfficeVO vo) {
+		logger.info("PubOfficeDAO.selectPubOfficeCombo 탔음");
+		return mybatis.selectList("PubOfficeDAO.selectPubOfficeCombo");
+	}
 
 
 
