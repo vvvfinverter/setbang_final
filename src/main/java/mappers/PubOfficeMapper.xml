@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PubOfficeDAO">
+
+	<!--   PubOfficeDAO.selectPubOffice  -->
+	<select id="selectOffice" parameterType="pubOffice" resultType="pubOffice">
+		SELECT 
+			PC.PUB_CAT_CODE, PC.PUB_CAT, PO.PUB_CODE, PO.PUB_YN, PO.PUB_UNIT
+			,B.BOOK_CODE, B.BOOK_START, B.BOOK_END, B.BOOK_DATE
+			,M.MEM_CODE,M.IND_CODE, M.NAME, M.TEL,M.ID, M.PW, M.BUSINESS_NO ,M.ADDR
+			,M.EMAIL ,M.MEM_PLAN, M.SIGNUP_DATE  
+		FROM PUB_CAT PC, PUB_OFFICE PO, BOOKING B, MEMBER M
+		WHERE 
+			PC.PUB_CAT_CODE = PO.PUB_CAT_CODE 
+			AND PO.PUB_CODE = B.PUB_CODE 
+			AND B.MEM_CODE  = M.MEM_CODE
+			AND PO.PUB_YN = 'Y'
+	</select>
+	
+	<select id="selectPubCat" parameterType="pubOffice" resultType="pubOffice">
+		SELECT PUB_CAT_CODE, PUB_CAT  
+			FROM PUB_CAT
+		WHERE PUB_CAT_CODE = #{pubCatCode}
+	</select>
+	
+	<select id="selectMemCode" parameterType="pubOffice" resultType="pubOffice">
+		SELECT MEM_CODE  
+			FROM MEMBER id = #{id}
+	</select> 
+	
+	<select id="selectPubOfficeCombo" resultType="pubOffice">
+		SELECT pub_code,pub_cat_code,pub_yn,pub_unit
+			FROM PUB_OFFICE 
+	</select>
+	
+	
+	<!--   PubOfficeDAO.insertOffice  -->
+	<insert id="insertOfficeBooking" parameterType="pubOffice">
+
+		INSERT INTO BOOKING(book_code,mem_code,pub_code, book_date, book_start, book_end, num_of_per) 
+		VALUES (s_book_code.nextval,#{memCode},#{pubCode}, TO_DATE(#{bookDate}, 'YYYY-MM-DD'),TO_DATE(#{bookStart}, 'HH24:MI') ,TO_DATE(#{bookEnd}, 'HH24:MI') , #{numOfPer})
+	</insert>
+
+	
+
+</mapper>
+
