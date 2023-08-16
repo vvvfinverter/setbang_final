@@ -29,7 +29,8 @@
       <list>
          <value>com.setbang.domain.MemberVO</value>
          <value>com.setbang.domain.PubOfficeVO</value>
-         <value>com.setbang.domain.PartnerVO</value>
+         <value>com.setbang.domain.InqueryVO</value>
+<!--          <value>com.setbang.domain.PartnerVO</value>  -->
       </list>
    </property>
  </bean>

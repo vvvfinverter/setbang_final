@@ -80,7 +80,7 @@
       <c:choose>
         <c:when test="${sessionId == null }">
         <li class="nav-item">
-          <a class="nav-link" href="#">문의사항</a>
+          <a class="nav-link" href="inquery.do">문의사항</a>
         </li>
           </c:when>
           <c:when test="${sessionId != null }">

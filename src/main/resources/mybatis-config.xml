@@ -16,7 +16,9 @@
 		<typeAlias alias="login" type="com.setbang.domain.MemberVO" />
 		<typeAlias alias="member" type="com.setbang.domain.InsertMemberVO" />
 		<typeAlias alias="support" type="com.setbang.domain.SupportVO" />
-		<typeAlias alias="pubOffice" type="com.setbang.domain.PubOfficeVO"/>				
+		<typeAlias alias="pubOffice" type="com.setbang.domain.PubOfficeVO"/>
+		<typeAlias alias="inquery" type="com.setbang.domain.InqueryVO"/>	
+<!-- 		<typeAlias alias="partner" type="com.setbang.domain.PartnerVO"/> -->				
 	</typeAliases>
 	
 

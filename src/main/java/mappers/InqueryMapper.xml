@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InqueryDAO">
+
+	<insert id="insertInquery" parameterType="inquery">
+		INSERT INTO INQUERY(INQ_CODE, INQ_TITLE, INQ_CONTENT, INQ_DATE, INQ_NAME, INQ_TEL, INQ_EMAIL, INQ_PEOPLE, INQ_CONAME, INQ_BRANCH, INQ_WEBSITE)
+		VALUES(s_inq_code.nextval, #{inq_title}, #{inq_content}, sysdate, #{inq_name}, #{inq_tel}, #{inq_email}, #{inq_people}, #{inq_coname}, #{inq_branch}, #{inq_website})
+	</insert>
+	
+</mapper>
