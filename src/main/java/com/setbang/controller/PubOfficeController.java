@@ -75,12 +75,24 @@ public class PubOfficeController {
 	
 	//@RequestParam("combinedDateTime") String combinedDateTime
 	@PostMapping("/insertpubOfficeBooking.do")
-	public ModelAndView insertPubBooking(PubOfficeVO vo,HttpSession session,Model model) {
+	public ModelAndView insertPubBooking(PubOfficeVO vo,HttpSession session,Model model, HttpServletRequest request) {
 		
 		logger.info("PubOfficeController의 insertPubOfficeBooking method");
 		
 		//System.out.println(combinedDateTime);
-		
+		String selectedValueStr = request.getParameter("selectedValue");
+		System.out.println("selected value hidden 값 : " + selectedValueStr);
+		if(selectedValueStr != null) {
+			try {
+				Integer selectedValue = Integer.valueOf(selectedValueStr);
+				System.out.println("int 변환된 hidden select 값 : " + selectedValue);
+				vo.setPubCode(selectedValue);
+				System.out.println("selectedValue 값을 getPubCode에 넣은 후 가져옴 : " + vo.getPubCode());
+			} catch (NumberFormatException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
 
 	try {
 		
@@ -97,28 +109,16 @@ public class PubOfficeController {
 			vo.setMemCode(memcode);
 			
 		}
-		List<PubOfficeVO> pubUnits = pubOfficeService.selectPubOfficeCombo(vo);
-		if(pubUnits != null) {
-			System.out.println("널이 아님");
-			model.addAttribute("pubUnits",pubUnits);
-			vo.setPubCode(pubUnits.get(0).getPubCode());
-			vo.setPubUnit(pubUnits.get(0).getPubUnit());
-			//System.out.println(pubUnits.get(0).getPubCode());
-		}
 		
-		 System.out.println("unit값 : " + vo.getPubUnit());
-		 
+		
+		 //MemCode를 직접 가져올 경우 그러나 성민이가 구현해둔 것을 공통으로 사용하고 있어서 사용 안하고 주석 처리
 //		pubOfficeService.selectMemCode(vo);
 		
 		
 
 		String bookDate = vo.getBookDate();
 		String bookStart = vo.getBookStart();
-		String bookEnd = vo.getBookEnd();
 		
-
-		
-		System.out.println(vo.getMemCode());
 		
 		//데이터 형식 포맷
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -128,26 +128,21 @@ public class PubOfficeController {
 		//문자열 타입을 Date형식으로 변환 날짜 및 시간 파싱
 		Date parsedDate = dateFormat.parse(bookDate);
 		Date parsedStartTime = inputTimeformat.parse(bookStart);
-		Date parsedEndTime = inputTimeformat.parse(bookEnd);
 		
 		
 		//Date형식을 다시 문자열 타입으로 변환
 		
 		String formattedStartTime = outputTimeFormat.format(parsedStartTime);
-		String formattedEndTime = outputTimeFormat.format(parsedEndTime);
 		
 		  // 결합한 날짜와 시간을 다시 문자열 타입으로 변환
 //        String strCombinedDateTime = dateFormat.format(parsedDate) + " " + timeformat.format(parsedStartTime) + " " + timeformat.format(parsedEndTime);
 		
 		System.out.println("parsedDate : " + parsedDate); //Date타입
 		System.out.println("strStartTime : " + parsedStartTime);
-		System.out.println("strEndTime : " + parsedEndTime);
 		System.out.println("");
 		
 		System.out.println("formattedStartTime : " + formattedStartTime);
-		System.out.println("formattedEndTime : " + formattedEndTime);
 		vo.setBookStart(formattedStartTime); 
-		vo.setBookEnd(formattedEndTime);
 		// bookDate
 		// 2023-08-11
 		// formattedStartTime		formattedEndTime

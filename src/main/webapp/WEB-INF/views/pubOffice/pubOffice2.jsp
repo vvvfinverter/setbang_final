@@ -19,13 +19,14 @@ window.onload = function() {
 		alert("btnSubmit 들어감");
 		//선택한 값
 		var bookDate = document.querySelector('#bookDate').value;
-		var bookStart = document.querySelector('#bookStart').value;
-		var bookEnd = document.querySelector('#bookEnd').value;
+		var bookStartInput = document.querySelector('input[name="bookStart"]');
+		var bookStartValue = bookStartInput.value;
+		console.log("bookStartValue : " + bookStartValue);
+		/* var bookStart = document.querySelector('#bookStart').value; */
 		//날짜 시간 정보 조합
-		var combinedDateTime = bookDate + ' ' + bookStart + '-' + bookEnd;
+		var combinedDateTime = bookDate + ' ' + bookStartValue;
 		console.log(bookDate);
-		console.log(bookStart);
-		console.log(bookEnd);
+		console.log(bookStartValue);
 		console.log(combinedDateTime);
 		
 		//컨트롤러로 전송할 데이터 객체 생성
@@ -37,6 +38,30 @@ window.onload = function() {
 	});
 	
 	
+}
+
+
+var selectBoxChange = function(){
+	 const comboUnitSelect = document.getElementById("comboUnits");
+	 const hiddenInput = document.getElementById("selectedValue");
+	//let comboUnitSelect = document.getElementById("comboUnits");
+	
+	//  select element에서 선택된 option의 value가 저장된다.
+	let selectValue = comboUnitSelect.options[comboUnitSelect.selectedIndex].value;
+	console.log("selectValue : " + selectValue);
+	
+	// select element에서 선택된 option의 text가 저장된다.
+	let selectText = comboUnitSelect.options[comboUnitSelect.selectedIndex].text;
+	console.log("selectText : " + selectText);
+	
+	hiddenInput.value = comboUnitSelect.value;
+	console.log("hidden : " + hiddenInput.value);
+}
+
+
+//인원 숫자를 일단 하드코딩으로 설정 했지만 추후 함수로 연결할지 고려중 
+var selectBoxNumOfPeople = function(){
+	 
 }
 	
 
@@ -56,15 +81,35 @@ window.onload = function() {
 	<label for="bookDate">예약일자: </label>
 	<input type="date" id="bookDate" name="bookDate" /> <br/>
 	<label for="numOfPer">인원: </label> 
-	<input type="text" name="numOfPer"> <br />
-	사용시간 : <input type="time" id="bookStart" name="bookStart" /> ~ <input type="time" id="bookEnd" name="bookEnd"/> <br/>
-	임대호실 : <select>
+	<select id = "numOfPer" name="numOfPer" required>
+		<option value="">인원선택</option>
+		<%-- <c:forEach var="a" items=""></c:forEach> --%>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+	</select> <br/>
+	<div class="bookingStart">
+	<label for="bookStart">사용시간 : </label><br/>
+	<input type="radio" name="bookStart" value="08:00" />08:00<br/>
+	<input type="radio" name="bookStart" value="10:00" />10:00<br/>
+	<input type="radio" name="bookStart" value="13:00" />13:00<br/>
+	<input type="radio" name="bookStart" value="15:00" />15:00<br/>
+	<input type="radio" name="bookStart" value="17:00" />17:00<br/>
+	<!-- <input type="time" id="bookStart" name="bookStart" /> <br/> -->
+	</div>
+	임대호실 : <select name="comboUnits" id = "comboUnits" onchange="selectBoxChange()" required="required">
 			<%--  <option th:each="i : ${pubUnits}" th:value="${i.pubCode}" th:text="${i.pubUnit}"></option>--%>
- 			<option value="">선택</option>
+ 			<option value="" selected="selected">선택</option>
  			<c:forEach var="i" items="${pubUnits}">
 				<option value="${i.pubCode}">${i.pubUnit}</option>
 			</c:forEach> 
-			</select> <br/> 
+			</select> <br/>
+	<input type="hidden" name = "selectedValue" id="selectedValue" /> 
   	<input id ="btnSubmit" type="button" value="예약하기"/> 
 </form>
 
