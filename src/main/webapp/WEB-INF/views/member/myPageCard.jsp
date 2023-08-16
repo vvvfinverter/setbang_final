@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,19 +9,149 @@
 <link rel="stylesheet" href="./resources/css/myPageCard.css">
 
 <!-- JS / Jquery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./resources/js/kakaoaddr.js"></script>
 <script type="text/javascript" src="./resources/js/myPageCard.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
 <title>간편결제</title>
 
 </head>
 <body>
-	<div class=wrap>
+
+
+		<div id="header">
+			<jsp:include page="../section/header.jsp" />
+		</div>
+		
+
+
+<div class="wrap">
 		<h2>간편결제 관리</h2>
+		<h6>카드 등록 후 간편하게 결제하세요.</h6>
+		
+		
+<!-- 등록된 카드 -->
+<div id="savedCard">
+    <h4>등록된 카드</h4>
+    <c:choose>
+        <c:when test="${not empty cardList}">
+            <table class="card-table">
+                <tbody>
+                    <tr>
+                        <c:forEach var="card" items="${cardList}" varStatus="loop">
+                            <c:set var="cardImage" value="" />
+                            <c:set var="cardAlt" value="" />
+                        <c:choose>
+                            <c:when test="${card.card_name == '신한카드'}">
+                                <c:set var="cardImage" value='./resources/image/shinhancard.png' />
+                                <c:set var="cardAlt" value="신한카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == '삼성카드'}">
+                                <c:set var="cardImage" value='./resources/image/samsungcard.png' />
+                                <c:set var="cardAlt" value="삼성카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == '현대카드'}">
+                                <c:set var="cardImage" value='./resources/image/hyundaicard.png' />
+                                <c:set var="cardAlt" value="현대카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == 'BC카드'}">
+                                <c:set var="cardImage" value='./resources/image/bccard.png' />
+                                <c:set var="cardAlt" value="BC카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == '국민카드'}">
+                                <c:set var="cardImage" value='./resources/image/kbcard.png' />
+                                <c:set var="cardAlt" value="국민카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == '하나카드'}">
+                                <c:set var="cardImage" value='./resources/image/hanacard.png' />
+                                <c:set var="cardAlt" value="하나카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == '농협카드'}">
+                                <c:set var="cardImage" value='./resources/image/nhcard.png' />
+                                <c:set var="cardAlt" value="농협카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == '롯데카드'}">
+                                <c:set var="cardImage" value='./resources/image/lottecard.png' />
+                                <c:set var="cardAlt" value="롯데카드" />
+                            </c:when>
+                            <c:when test="${card.card_name == '카카오뱅크'}">
+                                <c:set var="cardImage" value='./resources/image/kakaocard.png' />
+                                <c:set var="cardAlt" value="카카오뱅크" />
+                            </c:when>
+                        </c:choose>
+                            <c:if test="${cardImage ne ''}">
+                                <td>
+                                    <img style="width: 200px; height: 300px;" src="${cardImage}" alt="${cardAlt}"/>
+                                    <div class="savedcard-name">${card.card_name}</div>
+                                    <div class="savedcard-no">${card.card_no}</div>
+                                    <div class="card-button">
+                                        <form action="deleteCard.do" method="post">
+                                            <input type="hidden" name="card_code" value="${card.card_code}" />
+													<!-- 간편 비밀번호 변경 모달 버튼-->
+													<button type="button" id="btn-edit" class="btn btn-primary"
+														data-bs-toggle="modal" data-bs-target="#exampleModal" data-cardCode="${card.card_code}">
+														수정</button>
+													<button type="submit" class="btn-delete">삭제</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </c:if>
+                            <c:if test="${(loop.index + 1) % 3 == 0 or loop.last}">
+                                </tr><tr>
+                            </c:if>
+                        </c:forEach>
+                    </tr>
+                </tbody>
+            </table>
+        </c:when>
+        <c:otherwise>
+            <h6>등록된 카드가 없습니다.</h6>
+        </c:otherwise>
+    </c:choose>
+</div>
+
+
+<!-- 간편 비밀번호 변경 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">간편 비밀번호 변경</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <form class = "easypwForm" action="updateEasypw.do" method="post">
+      <div class="modal-body">
+            <input type="hidden" name="card_code" id="cardCode">
+            
+                <label for="currentEasypw">기존 비밀번호</label> &nbsp;
+		    <input type="password" id="currentEasypw" name="currentEasypw" maxlength="6" pattern="[0-9]*" required>
+		    <span id="currentEasypwMessage"></span><br/><br/>
+		
+		    <label for="newEasypw">새 비밀번호</label>&nbsp; &nbsp; &nbsp;
+		    <input type="password" id="newEasypw" name="newEasypw" maxlength="6" pattern="[0-9]*" required>
+		    <span id="newEasypwMessage"></span>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-edit" type="submit" class="btn btn-primary">수정</button>
+        <button id="btn-cancle" type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+		
+
+<!-- 카드 등록 -->
+<div id="addCard">
 		<h4>카드 등록</h4>
-
-
+		
 <div class="checkout">
   <div class="credit-card-box">
     <div class="flip">
@@ -48,11 +180,11 @@
         <div class="number"></div>
         <div class = "card-name">
         <label>카드사</label>
-        <div></div>
+        <div class="blank_input"></div>
         </div>
         <div class="card-expiration-date">
           <label>유효기간</label>
-          <div></div>
+          <div class="blank_input"></div>
         </div>
       </div>
       <div class="back">
@@ -78,85 +210,126 @@
           </svg>
 
         </div>
-        <div class="cvc">
+        <div class="cvc1">
           <label>CVC</label>
-          <div></div>
+          <div class="blank_input"></div>
         </div>
       </div>
     </div>
   </div>
   
-  <form class="form" autocomplete="off" novalidate>
+<form class="form" action="addCard.do" method="post">
+    <input type="hidden" name="sessionMemCode" value="${sessionMemCode}">
+    <label for="card-name">카드사</label>
+    <div class="cardName">
+        <div class="select1">
+            <select id="card-name" name="cardName" required>
+                <option value="">선택</option>
+                <option>신한카드</option>
+                <option>삼성카드</option>
+                <option>현대카드</option>
+                <option>BC카드</option>
+                <option>국민카드</option>
+                <option>하나카드</option>
+                <option>농협카드</option>
+                <option>롯데카드</option>
+                <option>카카오뱅크</option>
+            </select>
+        </div>
+    </div>
+
+    <label for="card-number">카드 번호</label>
+    <div class="cardNumber">
+        <input type="text" id="card-number" name="cardNumber1" class="input-cart-number" maxlength="4" pattern="[0-9]*" required/>
+        <input type="text" id="card-number-1" name="cardNumber2" class="input-cart-number" maxlength="4" pattern="[0-9]*" required/>
+        <input type="text" id="card-number-2" name="cardNumber3" class="input-cart-number" maxlength="4" pattern="[0-9]*" required/>
+        <input type="text" id="card-number-3" name="cardNumber4" class="input-cart-number" maxlength="4" pattern="[0-9]*" required/>
+    </div>
+    
+    <label for="card-expiration-month">카드 유효기간</label>
+    <div class="cardExp">
+        <div class="select2">
+            <select id="card-expiration-month" name="expMonth" required>
+                <option value="">선택</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+            <select id="card-expiration-year" name="expYear" required>
+                <option value="">선택</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+            </select>
+        </div>
+    </div>
+    
+    <label for="card-cvc">CVC</label>
+    <div class="cvc">
+        <input type="password" id="card-cvc" name="cvc" maxlength="3" pattern="[0-9]*" required/>
+    </div>
+        <label for="card-password">카드 비밀번호</label>
+    <div class="cardPassword">
+        <input type="password" id="card-password" name="cardPassword" maxlength="4" pattern="[0-9]*" required/>
+    </div>
+    <label for="card-password2">간편결제 비밀번호</label>
+    <div class="cardPassword2">
+        <input type="password" id="card-password2" name="cardPassword2" maxlength="6" pattern="[0-9]*" required/>
+    </div>
+    
+    <button type="submit" class="button">카드 등록</button>
+</form>
   
-      <fieldset class="fieldset-cardname">
-      <label for="card-name">카드사</label>
-      <div class="select">
-        <select id="card-name">
-          <option></option>
-          <option>신한카드</option>
-          <option>BC카드</option>
-          <option>롯데카드</option>
-          <option>삼성카드</option>
-          <option>국민카드</option>
-        </select>
-      </div>
-    </fieldset>
   
-    <fieldset>
-      <label for="card-number">카드 번호</label>
-      <input type="text" id="card-number" class="input-cart-number" maxlength="4" />
-      <input type="password" id="card-number-1" class="input-cart-number" maxlength="4" />
-      <input type="password" id="card-number-2" class="input-cart-number" maxlength="4" />
-      <input type="text" id="card-number-3" class="input-cart-number" maxlength="4" />
-    </fieldset>
-    <fieldset class="fieldset-expiration">
-      <label for="card-expiration-month">카드 유효기간</label>
-      <div class="select">
-        <select id="card-expiration-month">
-          <option></option>
-          <option>01</option>
-          <option>02</option>
-          <option>03</option>
-          <option>04</option>
-          <option>05</option>
-          <option>06</option>
-          <option>07</option>
-          <option>08</option>
-          <option>09</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-        </select>
-      </div>
-      <div class="select">
-        <select id="card-expiration-year">
-          <option></option>
-          <option>23</option>
-          <option>24</option>
-          <option>25</option>
-          <option>26</option>
-          <option>27</option>
-          <option>28</option>
-          <option>29</option>
-          <option>30</option>
-        </select>
-      </div>
-    </fieldset>
-    <fieldset class="fieldset-cvc">
-      <label for="card-cvc">CVC</label>
-      <input type="password" id="card-cvc" maxlength="3" />
-    </fieldset>
-    <fieldset>
-      <label for="card-password">간편 비밀번호</label>
-      <input type="password" id="card-password" maxlength="6"/>
-    </fieldset>
-    <button type="submit" class="btn">submit</button>
-  </form>
 </div>
 
 
+
+		<h6>등록 가능한 카드사</h6>
+		
+		<table>
+    <tr>
+        <td><img src='./resources/image/shinhan.png' /></td>
+        <td><img src='./resources/image/samsung.png' /></td>
+        <td><img src='./resources/image/hyundai.png' /></td>
+    </tr>
+    <tr>
+		<td><img src='./resources/image/bc.png' /></td>
+		<td><img src='./resources/image/kb.png' /></td>
+		<td><img src='./resources/image/hana.png' /></td>
+    </tr>
+    <tr>
+		<td><img src='./resources/image/nh.png' /></td>
+		<td><img src='./resources/image/lotte.png' /></td>
+		<td><img src='./resources/image/kakao.png' /></td>
+    </tr>
+		</table>
 	
-		<h4>등록된 카드</h4>
-	</div>
+		</div>
+		</div>
+		
+		
+		<div id="myPageMenu">
+			<jsp:include page="../member/myPageMenu.jsp" />
+		</div>
+		<div id="footer">
+			<jsp:include page="../section/footer.jsp" />
+		</div>
+	
+		
 </body>
 </html>

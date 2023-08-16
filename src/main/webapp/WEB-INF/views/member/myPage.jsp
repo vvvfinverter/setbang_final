@@ -4,6 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<div id="wrap">
@@ -11,7 +17,7 @@
 			<jsp:include page="../section/header.jsp" />
 		</div>
 		
-		<!-- 기본값으로 myPageMain 화면을 생성함. 추후 어떤 페이지를 메인으로 할지 정하고 변경해도 될듯 -->		
+		<!-- 기본값으로 myPageMain 페이지 -->		
 		<div id="contents">
 			<jsp:include page="../member/myPageMain.jsp" />
 		</div>

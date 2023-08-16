@@ -30,6 +30,11 @@
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 세션 유효 시간 설정 -->
+	<session-config>
+	    <session-timeout>30</session-timeout>
+	</session-config>
+	
 		<!-- 한글인코딩  -->
      <filter>
         <filter-name>charEncoding</filter-name>

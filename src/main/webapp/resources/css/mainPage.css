@@ -7,7 +7,14 @@
 }
 
 
-.test {
-	text-align: center;
-	 padding : 50px;
+
+/* 브랜드소개, 오피스소개 - main 2,3 적용중 */
+.intro h4 {
+	font-family: 'Noto Sans KR', sans-serif;
 }
+
+.office h4 {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+

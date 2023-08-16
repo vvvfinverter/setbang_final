@@ -1,3 +1,9 @@
+// 간편 비밀번호 변경
+
+
+
+// 카드 등록
+// 카드번호
 $(function() {
   function updateCardNumber() {
     let cardNumber = '';
@@ -17,6 +23,7 @@ $(function() {
     $(".number").text(formattedCardNumber);
   }
 
+// 유효기간
   function updateCardExpirationDate() {
     const month = $("#card-expiration-month").val();
     const year = $("#card-expiration-year").val();
@@ -30,14 +37,17 @@ $(function() {
     $(".card-expiration-date div").text(cardExpirationDate);
   }
 
+// 카드사명
   function updateCardName() {
     const cardName = $("#card-name").val();
     $(".card-name div").text(cardName);
   }
 
+// cvc
   function updateCardCvc() {
     const cvc = $("#card-cvc").val();
-    $(".cvc div").text(cvc);
+    const hiddenCvc = cvc.replace(/\d/g, '●');
+    $(".cvc1 div").text(hiddenCvc);
   }
 
   $(".input-cart-number").on("input", updateCardNumber);

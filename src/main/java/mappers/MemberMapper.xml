@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="MemberDAO">
 
-	<select id="getLogin" parameterType="login" resultType="login">	
-	select id, pw, mem_code from member where id=#{id} and pw=#{pw}
-
+	<!-- 로그인 -->
+    <select id="getLogin" parameterType="member" resultType="member">    
+        select * from member where id=#{id} and pw=#{pw}
+    </select>
+    
+    <!-- 회원가입 -->
+   	<insert id="getSignup" parameterType="member">
+		insert into member(mem_code, ind_code, name, tel, id, pw
+		,business_no, addr, email, mem_plan, signup_date, profile
+		)values(s_mem_code.nextval, #{ind_code}, #{name}, #{tel}, #{id}, #{pw}, #{business_no}, #{addr}, #{email}, 'basic', sysdate, null
+		)
+	</insert>
+    
+    <!-- 세션아이디로 회원코드 가져오기 -->
+     <select id="getMemCodeBySessionId" parameterType="string" resultType="int">
+        select mem_code from member where id=#{sessionId}
 	</select>
-
-
+	
+    <!-- 세션아이디로 회원플랜등급 가져오기 -->
+     <select id="getMemPlanBySessionId" parameterType="string" resultType="string">
+        select mem_plan from member where id=#{sessionId}
+	</select>
+	
 </mapper>
-

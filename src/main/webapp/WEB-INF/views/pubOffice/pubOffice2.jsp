@@ -46,6 +46,11 @@ window.onload = function() {
 </head>
 <body>
 
+	<div id="wrap">
+<div id="header">
+			<jsp:include page="../section/header.jsp" />
+		</div>
+
 <form name="frm">
 	<img src="./resources/image/test.png" width=500px height=500px/> <br/>
 	<label for="bookDate">예약일자: </label>
@@ -63,6 +68,10 @@ window.onload = function() {
   	<input id ="btnSubmit" type="button" value="예약하기"/> 
 </form>
 
+		<div id="footer">
+			<jsp:include page="../section/footer.jsp" />
+		</div>
+		</div>
 
 </body>
 </html>

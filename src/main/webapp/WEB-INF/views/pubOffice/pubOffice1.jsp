@@ -6,12 +6,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/header.css">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
 
 <title>공용 오피스 예약</title>
 </head>
 <body>
+
+	<div id="wrap">
+
+<div id="header">
+			<jsp:include page="../section/header.jsp" />
+		</div>
 
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
@@ -58,38 +69,10 @@
   </div>
 </div>
 
-<%-- 
-<table border="1" bordercolor="blue" width ="500" height="300" align = "center" >
-    <tr bgcolor="blue" align ="center">
-	<td colspan = "3" span style="color:white">공용오피스 예약</td>
-    </tr>
-    <tr align = "center" bgcolor="skybule">
-		<td>멀티미디어실</td>
-		<td>회의실</td>
-		<td>컨퍼런스룸</td>
-    </tr>
-    <tr>
-		<td>
-		<a href="pubOffice2.do">
-			<img src="./resources/image/test.png" width=500px height=500px/>
-			멀티미디어실
-		</a>
-		</td>
-		<td>
-		<a href="">
-			<img src="./resources/image/setbang1.jpg" width=500px height=500px/>
-			회의실
-		</a>
-		</td>
-		<td>
-		<a href="">
-			<img src="./resources/image/test.jpg" width=500px height=500px/>
-			컨퍼런스룸
-		</a>
-		</td>
-    </tr>
-</table>
---%>
+		<div id="footer">
+			<jsp:include page="../section/footer.jsp" />
+		</div>
+		</div>
 
 </body>
 </html>

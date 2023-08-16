@@ -38,9 +38,10 @@ a {
 	font-weight: bold;
 }
 .myInfo2 {
-	color: #ffffff;
+	color: #000000;
 	padding: 10px;
-	font-size : 18px;
+	font-size : 16px;
+	font-weight: bold;
 }
 
 .side-bar > ul ul {
@@ -80,7 +81,18 @@ a {
   left: 0; 
   top: 0; 
 
+} 
+
+.side-bar {
+  position: fixed;
+  background-color: #D6AF91;
+  width: var(--side-bar-width);
+  min-height: var(--side-bar-height);
+  margin-top: calc((100vh - var(--side-bar-height)) / 2);
+  left: 0;
+  top: 0;
 }
+
 
 .side-bar__icon-box {
   display: flex;
@@ -150,6 +162,7 @@ a {
   transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) 0s, right calc(var(--side-bar__icon) / 2) 0s, height calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2);
 }
 
+
 .side-bar ul > li > a {
 	font-family: 'Noto Sans KR', sans-serif;
   display: block;
@@ -159,7 +172,8 @@ a {
   padding-bottom: 20px;
   padding-left: 50px;
   transition: .5s;
-}
+} 
+
 
 .side-bar > ul > li {
   position: relative;
@@ -177,7 +191,7 @@ a {
   background-color: #D6AF91;
   top: 0;        
   left: 100%;     
-  width: 100%;    
+  width: 100%;   
 }
 
 .side-bar {
@@ -190,3 +204,7 @@ a {
   transform: translate(-20px, 0);   
 }
 
+.no-underline {
+  text-decoration: none; 
+  color: inherit; 
+}

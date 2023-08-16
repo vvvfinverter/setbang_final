@@ -54,7 +54,7 @@ public class PubOfficeController {
 		//pubOfficeService.selectPubOfficeInfo(vo);
 		
 		//jsp 경로 
-		return "pubOffice/pubOffice";
+		return "pubOffice/pubOffice1";
 	}
 	
 	@GetMapping("/pubOffice2.do")

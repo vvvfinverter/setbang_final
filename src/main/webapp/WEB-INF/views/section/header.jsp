@@ -23,8 +23,7 @@
 
 <nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
-  <!-- 홈페이지로 돌아가기 넣어야함 -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.jsp">
 <img src="./resources/image/setbang.png" width=300px height=160px />
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,10 +36,10 @@
             브랜드 소개
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#intro1">기업 소개</a></li>
-            <li><a class="dropdown-item" href="#intro2">서비스 소개</a></li>
-            <li><a class="dropdown-item" href="#intro3">협력업체 소개</a></li>
-            <li><a class="dropdown-item" href="#intro4">서비스 플랜</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro1">기업 소개</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro2">서비스 소개</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro3">협력업체 소개</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro4">서비스 플랜</a></li>
           </ul>
         </li>
          <li class="nav-item dropdown">
@@ -53,7 +52,7 @@
           </ul>
         </li>
         
-        <!-- 로그인 성공 시 예약·서비스 페이지에 메뉴가 보여짐. 로그인을 하지 않은 상태일 경우 누를때 알림창으로 로그인 후 이용가능 합니다.를 띄워야함 -->
+        <!-- task - 로그인 성공 시 예약·서비스 페이지에 메뉴가 보여짐. 로그인을 하지 않은 상태일 경우 누를때 알림창으로 로그인 후 이용가능 합니다.를 띄워야함 -->
       <c:choose>
         <c:when test="${sessionId == null }">
         <li class="nav-item">
@@ -65,22 +64,38 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             예약·서비스
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#intro1">서비스 플랜 결제</a></li>
-            <li><a class="dropdown-item" href="#intro4">물품 신청</a></li>
+              <c:choose>
+        <c:when test="${sessionMemPlan == 'basic'}">
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">서비스 플랜 결제</a></li>
+            <li><a class="dropdown-item" href="selectPubOffice.do">공유오피스 예약</a></li>
+            <li><a class="dropdown-item" href="#">물품 신청</a></li>
+            </ul>
+        </c:when>
+        <c:when test="${sessionMemPlan == 'standard'}">
+                  <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">서비스 플랜 업그레이드</a></li>
+            <li><a class="dropdown-item" href="selectPubOffice.do">공유오피스 예약</a></li>
+            <li><a class="dropdown-item" href="#">물품 신청</a></li>
             <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
-            <li><a class="dropdown-item" href="#intro2">협력업체 예약</a></li>
-            <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스 예약</a></li>
           </ul>
-        </li>
+        </c:when>
+        <c:when test="${sessionMemPlan == 'premium'}">
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="selectPubOffice.do">공유오피스 예약</a></li>
+            <li><a class="dropdown-item" href="#">물품 신청</a></li>
+            <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
+            <li><a class="dropdown-item" href="#">협력업체 예약</a></li>
+          </ul>
+        </c:when>
+    </c:choose>    
           </c:when>
         </c:choose>
         
-       <!-- 로그인 성공 시 마이페이지로 넘어감. 세션에 있는 id값을 들고 마이페이지로 연결되어야하며, POST 방식으로 넘어가야함 -->
       <c:choose>
         <c:when test="${sessionId == null }">
         <li class="nav-item">
-          <a class="nav-link" href="inquery.do">문의사항</a>
+          <a class="nav-link" href="inquery.do">문의하기</a>
         </li>
           </c:when>
           <c:when test="${sessionId != null }">

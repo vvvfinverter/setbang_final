@@ -16,7 +16,7 @@
 			<jsp:include page="WEB-INF/views/section/header.jsp" />
 		</div>
 		<div id="contents">
-			<jsp:include page="WEB-INF/views/section/main.jsp"/> 
+			<jsp:include page="WEB-INF/views/section/mainPage.jsp"/> 
 		</div>
 		<div id="footer">
 			<jsp:include page="WEB-INF/views/section/footer.jsp" />

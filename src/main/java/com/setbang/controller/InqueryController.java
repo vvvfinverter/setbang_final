@@ -29,7 +29,7 @@ public class InqueryController {
 	@RequestMapping(value="inquery2.do")
 	public String insertInquery(InqueryVO vo) throws IOException {
 		inqueryService.insertInquery(vo);
-		return "redirect:/";
+		return "redirect:/inquery.do";
 	}
 	
 
