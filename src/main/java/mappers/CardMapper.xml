@@ -21,17 +21,18 @@
 		DELETE FROM CARD
 		WHERE card_code = #{card_code}
 	</delete>
-	
-	<!-- 간편 비밀번호 일치여부 확인 -->
-	<select id="checkEasypw" parameterType="card" resultType="card">
-		SELECT card_easypw FROM CARD WHERE card_easypw= #{card_easypw}
+		
+	<!-- 카드번호로 간편 비밀번호 가져오기 -->
+     <select id="getEasypwByCardcode" parameterType="int" resultType="int">
+        select card_easypw from card where card_code=#{card_code}
 	</select>
 	
 	<!-- 간편 비밀번호 변경 -->
 	<update id="updateEasypw" parameterType="card">
-		UPDATE card SET card_easypw = #{card_neweasypw}
-		WHERE card_easypw= #{card_easypw} and card_code = #{card_code}
+	    UPDATE card SET card_easypw = #{card_easypw}
+	    WHERE card_code = #{card_code}
 	</update>
+
 	
 	
 </mapper>

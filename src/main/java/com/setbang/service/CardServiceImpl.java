@@ -32,14 +32,14 @@ public class CardServiceImpl implements CardService {
 
     @Override
     // 간편 비밀번호 일치여부 확인
-    public boolean checkEasypw(CardVO vo) {
-    	return cardDAO.checkEasypw(vo);
+    public int getEasypwByCardcode(int cardCode) {
+    	return cardDAO.getEasypwByCardcode(cardCode);
     }
     
     @Override
     // 간편 비밀번호 변경
-    public void updateEasypw(CardVO vo, int card_neweasypw) {
-    	cardDAO.updateEasypw(vo, card_neweasypw);;
+    public void updateEasypw(CardVO vo) {
+    	cardDAO.updateEasypw(vo);
     }
 
 }

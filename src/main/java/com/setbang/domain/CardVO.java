@@ -11,8 +11,6 @@ public class CardVO {
 	private String exp_date;
 	private int card_pw;
 	private int card_easypw;
-	private int card_neweasypw;
-	
 	
 
 
@@ -140,19 +138,6 @@ public class CardVO {
 		this.card_easypw = card_easypw;
 	}
 
-
-
-	public int getCard_neweasypw() {
-		return card_neweasypw;
-	}
-
-
-
-
-
-	public void setCard_neweasypw(int card_neweasypw) {
-		this.card_neweasypw = card_neweasypw;
-	}
 
 
 

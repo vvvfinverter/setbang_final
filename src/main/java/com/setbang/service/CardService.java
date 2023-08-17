@@ -16,8 +16,8 @@ public interface CardService {
     void deleteCard(CardVO vo);
     
     // 간편 비밀번호 일치여부 확인
-    boolean checkEasypw(CardVO vo);
+    int getEasypwByCardcode(int cardCode);
     
     // 간편 비밀번호 변경
-    void updateEasypw(CardVO vo, int card_neweasypw);    
+    void updateEasypw(CardVO vo);    
 }

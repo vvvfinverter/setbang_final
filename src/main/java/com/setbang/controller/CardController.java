@@ -2,6 +2,7 @@ package com.setbang.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,23 +30,29 @@ public class CardController {
     private MemberService memberService;
 
     // 간편 비밀번호 변경
-    @RequestMapping(value = "updateEasypw.do", method = RequestMethod.POST)
-    @ResponseBody
-    public String updateEasypw(@ModelAttribute("cardVO") CardVO vo,
-                               @RequestParam int currentEasypw,
-                               @RequestParam int newEasypw) {
+        @RequestMapping(value = "updateEasypw.do", method = RequestMethod.POST)
+        public String updateEasypw(@RequestParam("currentEasypw") int currentEasypw,
+                                   @RequestParam("newEasypw") int newEasypw,
+                                   @RequestParam("cardCode") int cardCode) {
 
-        boolean isEasypwMatch = cardService.checkEasypw(vo);
+            int cardEasypw = cardService.getEasypwByCardcode(cardCode);
+            System.out.println(currentEasypw + " " + newEasypw + " " + cardEasypw);
 
-        if (isEasypwMatch) {
-            cardService.updateEasypw(vo, newEasypw);
-            return "간편 비밀번호가 변경되었습니다.";
-        } else {
-            return "기존 간편 비밀번호가 일치하지 않습니다.";
+            if (cardEasypw == currentEasypw) {
+                CardVO vo = new CardVO();
+                vo.setCard_code(cardCode);
+                vo.setCard_easypw(newEasypw);
+                cardService.updateEasypw(vo);
+
+                // task - 수정 성공 메시지 띄우기
+            } else {
+                // task - 실패 메시지 띄우기
+            }
+
+            return "redirect:/myPageCard.do";
         }
-    }
 
-
+    
 
     // 카드 삭제
 	@RequestMapping(value = "deleteCard.do", method = RequestMethod.POST)

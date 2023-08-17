@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="./resources/css/myPageCard.css">
 
 <!-- JS / Jquery -->
-<script type="text/javascript" src="./resources/js/kakaoaddr.js"></script>
 <script type="text/javascript" src="./resources/js/myPageCard.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -21,6 +20,17 @@
 
 <meta charset="UTF-8">
 <title>간편결제</title>
+
+<script type="text/javascript">
+/* 카드코드 가져오기 */
+ $(function() {
+	  $('#exampleModal').on('show.bs.modal', function(event) {
+	    var button = $(event.relatedTarget); 
+	    var cardCode = button.data('cardcode');
+	    $('#cardCode').val(cardCode); 
+	  });
+	}); 
+</script>
 
 </head>
 <body>
@@ -96,7 +106,7 @@
                                             <input type="hidden" name="card_code" value="${card.card_code}" />
 													<!-- 간편 비밀번호 변경 모달 버튼-->
 													<button type="button" id="btn-edit" class="btn btn-primary"
-														data-bs-toggle="modal" data-bs-target="#exampleModal" data-cardCode="${card.card_code}">
+														data-bs-toggle="modal" data-bs-target="#exampleModal" data-cardcode="${card.card_code}">
 														수정</button>
 													<button type="submit" class="btn-delete">삭제</button>
                                         </form>
@@ -128,14 +138,14 @@
       </div>
         <form class = "easypwForm" action="updateEasypw.do" method="post">
       <div class="modal-body">
-            <input type="hidden" name="card_code" id="cardCode">
+            <input type="hidden" name="cardCode" id="cardCode"/>
             
                 <label for="currentEasypw">기존 비밀번호</label> &nbsp;
-		    <input type="password" id="currentEasypw" name="currentEasypw" maxlength="6" pattern="[0-9]*" required>
+		    <input type="password" id="currentEasypw" name="currentEasypw" maxlength="6" pattern="[0-9]*" required/>
 		    <span id="currentEasypwMessage"></span><br/><br/>
 		
 		    <label for="newEasypw">새 비밀번호</label>&nbsp; &nbsp; &nbsp;
-		    <input type="password" id="newEasypw" name="newEasypw" maxlength="6" pattern="[0-9]*" required>
+		    <input type="password" id="newEasypw" name="newEasypw" maxlength="6" pattern="[0-9]*" required/>
 		    <span id="newEasypwMessage"></span>
       </div>
       <div class="modal-footer">

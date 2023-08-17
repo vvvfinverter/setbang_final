@@ -46,16 +46,17 @@ public class CardDAOImpl implements CardDAO{
 
     @Override
     // 간편 비밀번호 일치여부 확인
-    public boolean checkEasypw(CardVO vo) {
+    public int getEasypwByCardcode (int cardCode) {
     	// TODO Auto-generated method stub
-    	logger.info("checkEasypw DAO");
-    	System.out.println("=> Mybatis checkEasypw() 호출");
-    	return mybatis.selectOne("CardDAO.checkEasypw", vo);
-    }
+    	logger.info("getEasypwByCardcode DAO");
+    	System.out.println("=> Mybatis getEasypwByCardcode() 호출");
+    	return mybatis.selectOne("CardDAO.getEasypwByCardcode", cardCode);
+	} 
 
+    
     @Override
     // 간편 비밀번호 변경
-    public void updateEasypw(CardVO vo, int card_neweasypw) {
+    public void updateEasypw(CardVO vo) {
     	// TODO Auto-generated method stub
     	logger.info("updateEasypw DAO");
     	System.out.println("=> Mybatis updateEasypw() 호출");
