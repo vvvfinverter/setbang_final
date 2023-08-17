@@ -38,26 +38,27 @@ public class PubOfficeController {
 	@Autowired
 	private SupportService supportService;
 	
-	@RequestMapping(value = "/selectPubOffice.do")
-	public String viewPubOffice(PubOfficeVO vo,Model model,HttpSession session) {
-		logger.info("selectPubOffice.do 경로의 viewPubOffice controller 탔음 -> 추가 수정이 많이 필요함");
-		
-		
-		String id = (String) session.getAttribute("sessionId");
-		System.out.println("session id : " + id);
-		
-		model.addAttribute("public1","멀티미디어실");
-		model.addAttribute("public2","회의실");
-		model.addAttribute("public3", "컨퍼런스룸");
-		
-		//model.addAttribute("pubCat", pubOfficeService.selectPubCat(vo));
-		//pubOfficeService.selectPubOfficeInfo(vo);
-		
-		//jsp 경로 
-		return "pubOffice/pubOffice1";
-	}
-	
-	@GetMapping("/pubOffice2.do")
+	/**아래 주석 된 코드는 추후 삭제 예정 **/
+//	@RequestMapping(value = "/selectPubOffice.do")
+//	public String viewPubOffice(PubOfficeVO vo,Model model,HttpSession session) {
+//		logger.info("selectPubOffice.do 경로의 viewPubOffice controller 탔음 -> 추가 수정이 많이 필요함");
+//		
+//		
+//		String id = (String) session.getAttribute("sessionId");
+//		System.out.println("session id : " + id);
+//		
+//		model.addAttribute("public1","멀티미디어실");
+//		model.addAttribute("public2","회의실");
+//		model.addAttribute("public3", "컨퍼런스룸");
+//		
+//		//model.addAttribute("pubCat", pubOfficeService.selectPubCat(vo));
+//		//pubOfficeService.selectPubOfficeInfo(vo);
+//		
+//		//jsp 경로 
+//		return "pubOffice/pubOffice1";
+//	}
+	/** 공유 오피스 예약 페이지 접근 **/
+	@GetMapping("/selectPubOffice.do")
 	public ModelAndView viewPubOffice2(HttpSession session,PubOfficeVO vo,Model model) {
 		logger.info("pubOffice2.do 경로의 viewPubOffice2 controller 탔음 -> 추가 수정이 많이 필요함");
 		
@@ -70,10 +71,11 @@ public class PubOfficeController {
 		}
 		
 		//대상 view(jsp)파일
+		/** 파일이름 변경예정  **/
 		return new ModelAndView("pubOffice/pubOffice2");
 	}
 	
-	//@RequestParam("combinedDateTime") String combinedDateTime
+	/** 공유 오피스 예약  insert 처리 **/
 	@PostMapping("/insertpubOfficeBooking.do")
 	public ModelAndView insertPubBooking(PubOfficeVO vo,HttpSession session,Model model, HttpServletRequest request) {
 		
@@ -110,12 +112,9 @@ public class PubOfficeController {
 			
 		}
 		
-		
-		 //MemCode를 직접 가져올 경우 그러나 성민이가 구현해둔 것을 공통으로 사용하고 있어서 사용 안하고 주석 처리
+		/**  MemCode를 직접 가져올 경우 그러나 성민이가 구현해둔 것을 공통으로 사용하고 있어서 이 코드는 사용 안하고 주석 처리 **/
 //		pubOfficeService.selectMemCode(vo);
 		
-		
-
 		String bookDate = vo.getBookDate();
 		String bookStart = vo.getBookStart();
 		
@@ -143,11 +142,14 @@ public class PubOfficeController {
 		
 		System.out.println("formattedStartTime : " + formattedStartTime);
 		vo.setBookStart(formattedStartTime); 
+		/**
 		// bookDate
 		// 2023-08-11
-		// formattedStartTime		formattedEndTime
-		// 2023-08-01 15:27:00.000, 2023-08-01 16:27:00.000 
-		//날짜 데이터가 08월11일인데 위와 같이 나오는 문제가 있음
+		// formattedStartTime		
+		// 2023-08-01 15:27:00.000
+		//예를 들면 날짜 데이터가 08월11일인데 startTime에선 위와 같이 해당 달의 첫번 째 날이 나오는 문제가 있음
+		 * *
+		 */
 		pubOfficeService.insertPubOffice(vo);
 		return new ModelAndView("pubOffice/success");
 		} catch (ParseException e) {
@@ -155,5 +157,6 @@ public class PubOfficeController {
 			return new ModelAndView("pubOffice/error");
 		}
 	
-	}//insertbooking
+	}//insertbooking 메소드 끝나는 위치 
+	
 }
