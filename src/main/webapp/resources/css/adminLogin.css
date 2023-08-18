@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'REM', sans-serif;
+}
+
+/* 로그인, 회원가입 */
+
+body, html {
+  height: 100%;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+label {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.button {
+	font-family: 'Noto Sans KR', sans-serif;	
+}
+
+a {
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+.industry_select {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+select {
+	  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+option {
+	  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+input {
+	  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+.admin-wrap{
+  width:100%;
+  margin:auto;
+  max-width:525px;
+  min-height:670px;
+  position:relative;
+  padding-bottom : 1000px;
+}
+
+.login-admin {
+  width: 100%;
+  max-width: 525px;
+  height: 100%;
+  position: relative;
+  padding: 50px; 
+  transition: height 0.4s linear;
+}
+
+
+.login-admin .sign-up:checked ~ .login-form {
+  height: auto;
+}
+
+
+.login-admin .sign-in-htm,
+.login-admin .sign-up-htm{
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  transform:rotateY(180deg);
+  backface-visibility:hidden;
+  transition:all .4s linear;
+}
+.login-admin .sign-in,
+.login-admin .sign-up,
+.login-admin .group .check{
+  display:none;
+}
+
+.login-admin .tab{
+  font-size:22px;
+  margin-right:15px;
+  padding-bottom:5px;
+  margin:0 15px 10px 0;
+  display:inline-block;
+  border-bottom:2px solid transparent;
+}
+.login-admin .sign-in:checked + .tab,
+.login-admin .sign-up:checked + .tab{
+  color:#000000;
+  font-weight : bold;
+  border-color:#D6AF91;
+}
+.login-form{
+  min-height:345px;
+  position:relative;
+  perspective:1000px;
+  transform-style:preserve-3d;
+}
+
+.login-form .group{
+  margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+  width:100%;
+  color:#000000;
+  display:block;
+}
+
+.login-form .group .input,
+.login-form .group .button{
+  border:none;
+  padding:15px 20px;
+  border-radius:25px;
+  background:#e5e5e5;
+}
+.login-form .group input[data-type="password"]{
+  -webkit-text-security:circle;
+}
+
+.login-form .group .label{
+  color: D6AF91;
+  font-size:15px;
+}
+
+.login-form .group .button{
+  background:#D6AF91;
+}
+.login-form .group label .icon{
+  width:15px;
+  height:15px;
+  border-radius:2px;
+  position:relative;
+  display:inline-block;
+    background: #e5e5e5;
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+  content:'';
+  width:10px;
+  height:2px;
+  position:absolute;
+  transition:all .2s ease-in-out 0s;
+    background: #e5e5e5;
+}
+.login-form .group label .icon:before{
+  left:3px;
+  width:5px;
+  bottom:6px;
+  transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+  top:6px;
+  right:0;
+  transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+  	color:#D6AF91;
+}
+.login-form .group .check:checked + label .icon{
+  background:#D6AF91;
+}
+.login-form .group .check:checked + label .icon:before{
+  transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+  transform:scale(1) rotate(-45deg);
+}
+.login-admin .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+  transform:rotate(0);
+}
+.login-admin .sign-up:checked + .tab + .login-form .sign-up-htm{
+  transform:rotate(0);
+}
+

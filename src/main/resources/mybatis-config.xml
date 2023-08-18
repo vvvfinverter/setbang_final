@@ -10,6 +10,7 @@
 	
 	<settings>
         <setting name="jdbcTypeForNull" value="NULL" />
+ 
     </settings>
 	<!-- Alias 설정 -->
 	<typeAliases>
@@ -17,7 +18,8 @@
 		<typeAlias alias="card" type="com.setbang.domain.CardVO" />	
 		<typeAlias alias="support" type="com.setbang.domain.SupportVO" />
 		<typeAlias alias="pubOffice" type="com.setbang.domain.PubOfficeVO"/>
-		<typeAlias alias="inquery" type="com.setbang.domain.InqueryVO"/>	
+		<typeAlias alias="inquery" type="com.setbang.domain.InqueryVO"/>
+		<typeAlias alias="admin" type="com.setbang.domain.AdminVO"/>			
 	</typeAliases>
 	
 

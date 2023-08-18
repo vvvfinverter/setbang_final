@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminDAO">
+	<select id="totalmember" parameterType="admin" resultType="admin">
+		select count(*) from member
+	</select>
+
+	<select id="findadmin" parameterType="admin" resultType="admin">
+		select admin_id, admin_pw from admin where admin_id=#{admin_id}
+	</select>
+
+</mapper>
