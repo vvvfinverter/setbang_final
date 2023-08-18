@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ItemDAO">
+
+	<!-- ItemDAO.comboItemCat -->
+	<select id="comboItemCat" parameterType="item" resultType="item">
+		SELECT I_CAT_CODE, I_CAT 
+			FROM ITEM_CAT 
+	</select>
+	
+	<!-- ItemDAO.comboItem -->
+	<select id="comboItem" parameterType="item" resultType="item">
+		SELECT I_CODE, I_NAME, I_CAT_CODE 
+			FROM ITEM 
+		WHERE i_cat_code = #{iCatCode}
+	</select>
+                                                                                                                                                                                   
+	<!-- ItemDAO.insertItemApply -->
+	<insert id="insertItemApply" parameterType="item">
+		INSERT INTO ITEM_APPLY
+		(I_APPLY_CODE
+		,MEM_CODE
+		,I_CODE
+		,I_UNIT_AMOUNT
+		,I_APPLY_DATE
+		)
+	VALUES
+		(S_I_APPLY_CODE.NEXTVAL
+		,#{memCode}
+		,#{iCode}
+		,#{iUnitAmount}
+		,TO_DATE(#{iApplyDate}, 'YYYY-MM-DD')
+		)
+	</insert>
+</mapper>

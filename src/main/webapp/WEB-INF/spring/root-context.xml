@@ -32,6 +32,7 @@
          <value>com.setbang.domain.PubOfficeVO</value>
          <value>com.setbang.domain.InqueryVO</value>
          <value>com.setbang.domain.AdminVO</value>
+         <value>com.setbang.domain.ItemVO</value>
       </list>
    </property>
  </bean>

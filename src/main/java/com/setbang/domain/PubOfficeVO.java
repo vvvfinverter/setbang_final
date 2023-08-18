@@ -4,30 +4,29 @@ package com.setbang.domain;
 public class PubOfficeVO {
 
 	
-	private int pubCatCode;
-	private String pubCat;
-	private int pubCode;
-	private String pubYn;
-	private String pubUnit;
-	private int bookCode;
-	private String bookStart;
-	private String bookEnd;
-	private String bookDate;
+	private int pub_cat_code;
+	private String pub_cat;
+	private int pub_code;
+	private String pub_yn;
+	private String pub_unit;
+	private int book_code;
+	private String book_start;
+	private String book_date;
 //	private String formattedStartTime;
 //	private String formattedEndTime;
 	
-	private int memCode;
-	private int indCode;
+	private int mem_code;
+	private int ind_code;
 	private String name;
 	private String tel;
 	private String id;
 	private String pw;
-	private int businessNo;
+	private int business_no;
 	private String addr;
 	private String email;
-	private String memPlan;
-	private String signupDate;
-	private int numOfPer;
+	private String mem_plan;
+	private String signup_date;
+	private int num_of_per;
 	
 	public String getId() {
 		return id;
@@ -42,71 +41,71 @@ public class PubOfficeVO {
 		this.pw = pw;
 	}
 	
+	public String getPub_cat() {
+		return pub_cat;
+	}
+	public void setPub_cat(String pubCat) {
+		this.pub_cat = pubCat;
+	}
 	public int getPubCatCode() {
-		return pubCatCode;
+		return pub_cat_code;
 	}
 	public void setPubCatCode(int pubCatCode) {
-		this.pubCatCode = pubCatCode;
+		this.pub_cat_code = pubCatCode;
 	}
 	public String getPubCat() {
-		return pubCat;
+		return pub_unit;
 	}
 	public void setPubCat(String pubCat) {
-		this.pubCat = pubCat;
+		this.pub_unit = pubCat;
 	}
 	public int getPubCode() {
-		return pubCode;
+		return pub_code;
 	}
 	public void setPubCode(int pubCode) {
-		this.pubCode = pubCode;
+		this.pub_code = pubCode;
 	}
 	public String getPubYn() {
-		return pubYn;
+		return pub_yn;
 	}
 	public void setPubYn(String pubYn) {
-		this.pubYn = pubYn;
+		this.pub_yn = pubYn;
 	}
 	public String getPubUnit() {
-		return pubUnit;
+		return pub_unit;
 	}
 	public void setPubUnit(String pubUnit) {
-		this.pubUnit = pubUnit;
+		this.pub_unit = pubUnit;
 	}
 	public int getBookCode() {
-		return bookCode;
+		return book_code;
 	}
 	public void setBookCode(int bookCode) {
-		this.bookCode = bookCode;
+		this.book_code = bookCode;
 	}
 	public String getBookStart() {
-		return bookStart;
+		return book_start;
 	}
 	public void setBookStart(String bookStart) {
-		this.bookStart = bookStart;
-	}
-	public String getBookEnd() {
-		return bookEnd;
-	}
-	public void setBookEnd(String bookEnd) {
-		this.bookEnd = bookEnd;
+		this.book_start = bookStart;
 	}
 	public String getBookDate() {
-		return bookDate;
+		return book_date;
 	}
 	public void setBookDate(String bookDate) {
-		this.bookDate = bookDate;
+		this.book_date = bookDate;
 	}
 	public int getMemCode() {
-		return memCode;
+		return mem_code;
 	}
 	public void setMemCode(int memCode) {
-		this.memCode = memCode;
+		this.mem_code = memCode;
 	}
 	public int getIndCode() {
-		return indCode;
+		return ind_code;
 	}
 	public void setIndCode(int indCode) {
-		this.indCode = indCode;
+		this.ind_code = indCode;
 	}
 	public String getName() {
 		return name;
@@ -121,10 +120,10 @@ public class PubOfficeVO {
 		this.tel = tel;
 	}
 	public int getBusinessNo() {
-		return businessNo;
+		return business_no;
 	}
 	public void setBusinessNo(int businessNo) {
-		this.businessNo = businessNo;
+		this.business_no = businessNo;
 	}
 	public String getAddr() {
 		return addr;
@@ -139,23 +138,23 @@ public class PubOfficeVO {
 		this.email = email;
 	}
 	public String getMemPlan() {
-		return memPlan;
+		return mem_plan;
 	}
 	public void setMemPlan(String memPlan) {
-		this.memPlan = memPlan;
+		this.mem_plan = memPlan;
 	}
 	public String getSignupDate() {
-		return signupDate;
+		return signup_date;
 	}
 	public void setSignupDate(String signupDate) {
-		this.signupDate = signupDate;
+		this.signup_date = signupDate;
 	}
 	
 	public int getNumOfPer() {
-		return numOfPer;
+		return num_of_per;
 	}
 	public void setNumOfPer(int numOfPer) {
-		this.numOfPer = numOfPer;
+		this.num_of_per = numOfPer;
 	}
 	
 	

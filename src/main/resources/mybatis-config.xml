@@ -21,6 +21,7 @@
 		<typeAlias alias="inquery" type="com.setbang.domain.InqueryVO"/>
 		<typeAlias alias="admin" type="com.setbang.domain.AdminVO"/>			
 		<typeAlias alias="pubOffice" type="com.setbang.domain.PubOfficeVO"/>
+		<typeAlias alias="item" type="com.setbang.domain.ItemVO"/>
 	</typeAliases>
 	
 
