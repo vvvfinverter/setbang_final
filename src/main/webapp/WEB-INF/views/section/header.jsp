@@ -69,21 +69,21 @@
             <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="planPayment.do">서비스 플랜 결제</a></li>
             <li><a class="dropdown-item" href="selectPubOffice.do">공유오피스 예약</a></li>
-            <li><a class="dropdown-item" href="#">물품 신청</a></li>
+            <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
             </ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard'}">
                   <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="planPayment.do">서비스 플랜 업그레이드</a></li>
             <li><a class="dropdown-item" href="selectPubOffice.do">공유오피스 예약</a></li>
-            <li><a class="dropdown-item" href="#">물품 신청</a></li>
+            <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
             <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
           </ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'premium'}">
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="selectPubOffice.do">공유오피스 예약</a></li>
-            <li><a class="dropdown-item" href="#">물품 신청</a></li>
+            <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
             <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
             <li><a class="dropdown-item" href="#">협력업체 예약</a></li>
           </ul>
