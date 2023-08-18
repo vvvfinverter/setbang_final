@@ -24,6 +24,10 @@
 	<div>
 	<p><img src="./resources/image/cospace.jpg" width=200px height=200px/>대표자 : 홍성민..어쩌고..저쩌고..</p>
 	</div>
+	
+	<li>
+		<a class="link" href="adminLogin.do">관리자</a>
+	</li>
 	</footer>
 
 	<!-- top button -->

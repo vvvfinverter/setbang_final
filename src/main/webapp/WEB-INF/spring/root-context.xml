@@ -31,6 +31,7 @@
          <value>com.setbang.domain.CardVO</value>
          <value>com.setbang.domain.PubOfficeVO</value>
          <value>com.setbang.domain.InqueryVO</value>
+         <value>com.setbang.domain.AdminVO</value>
       </list>
    </property>
  </bean>
