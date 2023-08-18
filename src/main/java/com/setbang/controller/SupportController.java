@@ -38,7 +38,7 @@ public class SupportController {
 		
 		// 정보저장 후 페이지 이동
 		model.addAttribute("supportVO", selectuser);
-		return "/member/support";
+		return "/support/support";
 	}
 	
 

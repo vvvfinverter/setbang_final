@@ -16,10 +16,11 @@
 	<typeAliases>
 		<typeAlias alias="member" type="com.setbang.domain.MemberVO" />		
 		<typeAlias alias="card" type="com.setbang.domain.CardVO" />	
+		<typeAlias alias="plan" type="com.setbang.domain.PlanVO" />
 		<typeAlias alias="support" type="com.setbang.domain.SupportVO" />
-		<typeAlias alias="pubOffice" type="com.setbang.domain.PubOfficeVO"/>
 		<typeAlias alias="inquery" type="com.setbang.domain.InqueryVO"/>
 		<typeAlias alias="admin" type="com.setbang.domain.AdminVO"/>			
+		<typeAlias alias="pubOffice" type="com.setbang.domain.PubOfficeVO"/>
 	</typeAliases>
 	
 

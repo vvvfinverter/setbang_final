@@ -12,7 +12,7 @@ import com.setbang.domain.CardVO;
 
 @Repository("CardDAO")
 public class CardDAOImpl implements CardDAO{
-	private static final Logger logger = LoggerFactory.getLogger(MemberDAOImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(CardDAOImpl.class);
 
 	@Autowired
 	private SqlSessionTemplate mybatis;

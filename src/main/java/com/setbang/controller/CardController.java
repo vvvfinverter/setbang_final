@@ -114,7 +114,7 @@ public class CardController {
                 List<CardVO> cardList = cardService.getCardList(card);
                 model.addAttribute("cardList", cardList);
                 
-                return "/member/myPageCard";
+                return "/card/myPageCard";
             }
         }
         return "redirect:/loginPage.do";

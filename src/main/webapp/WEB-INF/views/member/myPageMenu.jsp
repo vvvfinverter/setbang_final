@@ -85,13 +85,13 @@
                 <c:choose>
         <c:when test="${sessionMemPlan == 'basic'}">
         <ul>
-	        <li><a class="no-underline" href="#">서비스 플랜 결제</a></li>
+	        <li><a class="no-underline" href="planPayment.do">서비스 플랜 결제</a></li>
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard'}">
         <ul>
-	        <li><a class="no-underline" href="#">서비스 플랜 업그레이드</a></li>
+	        <li><a class="no-underline" href="planPayment.do">서비스 플랜 업그레이드</a></li>
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>

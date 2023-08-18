@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+	;
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'REM', sans-serif;
+}
+
+/* wrap */
+.wrap {
+	text-align: center;
+	margin: 150px;
+}
+
+h2 {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h4 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 50px;
+}
+
+h6 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 50px;
+}
+
+/* 서비스 플랜 선택 */
+.planPayment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.planwrap {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.image {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 20px;
+}
+
+.plans {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	text-align: center;
+}
+
+.subscription-panel-offers {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.subscription-panel-offer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #e5e5e5;
+	padding: 20px;
+	cursor: pointer;
+	transition: border-color 0.3s;
+	width: 500px;
+	height: 150px;
+	margin: 10px;
+	box-sizing: border-box;
+}
+
+.subscription-panel-offer.selected {
+	border-color: #D6AF91;
+}
+
+.radio-input {
+	display: none;
+}
+
+.plans {
+	font-size: 14px;
+}
+
+strong {
+	font-size: 25px;
+	padding: 5px;
+}
+
+p {
+	font-size: 18px;
+}
+
+b {
+	color: #dc143c;
+}
+
+#button {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 20px;
+	background: #D6AF91;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width: 250px;
+	font-size: 16px;
+	color: #000000;
+}
+
+
+/* 서비스 플랜 결제 모달 */
+
+#btn-payment {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #D6AF91;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 100px;
+	color : #000000;
+}
+
+input {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+select {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 250px;
+	color : #000000;
+}
+
+option {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 250px;
+	color : #000000;
+}
+
+#btn-cancle {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 100px;
+	color : #000000;
+}
+
+#exampleModalLabel {
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+.modal-body {
+	margin : 20px;
+}
+
+.modal-body label {
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+.modal-body input {
+	font-family: 'Noto Sans KR', sans-serif !important;
+	background : #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 250px;
+}
