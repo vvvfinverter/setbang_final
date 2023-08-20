@@ -1,5 +1,7 @@
 package com.setbang.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,18 @@ public class PlanServiceImpl implements PlanService {
 	// 서비스 플랜 결제
     public void planPayment(PlanVO vo) {
     	planDAO.planPayment(vo);
+    }
+    
+    @Override
+    // 서비스 플랜 업그레이드
+    public void planUpgrade(PlanVO vo) {
+    	planDAO.planUpgrade(vo);
+    }
+
+    @Override
+    // 결제된 서비스 플랜 내역 조회
+    public List<PlanVO> getPlanPaymentList(int memCode) {
+    	return planDAO.getPlanPaymentList(memCode);
     }
 
 }

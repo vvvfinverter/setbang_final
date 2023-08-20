@@ -85,12 +85,13 @@ var selectedBoxChange = function() {
         </c:when>
     </c:choose>  
 
-<!-- 서비스 플랜  선택 -->
+<!-- 서비스 플랜 선택 -->
 	<h4>서비스 플랜 선택 </h4>
+	
 <c:choose>
-        <c:when test="${sessionMemPlan == 'basic'}">
 
-<form class = "planPaymentForm" action="getPlanDetail.do" method="post">
+<c:when test="${sessionMemPlan == 'basic'}">
+<form class = "planPaymentForm" action="getPlanName.do" method="post">
 <div class = "planPayment" id="planPayment">
 	<div class="planwrap">
     <div class="image" ><img style="width:500px; height:750px;" src='./resources/image/test.jpg' alt='test' /></div>
@@ -145,10 +146,46 @@ var selectedBoxChange = function() {
     </div>
   </div>
   </form>
+  
+      <!-- task - 모달창 끄면 리셋시키기, ajax로 비밀번호 확인 -->
+    <!-- 서비스 플랜 결제하기 모달 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">서비스 플랜 결제</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <form class = "planPaymentForm" action="planPayment.do" method="post">
+      <div class="modal-body">
+            <input type="hidden" name="plan_code" id="plan_code" value=""/>
+            <label for="">서비스 플랜</label> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type ="text" name="plan_name" id="plan_name" value="" disabled/><br/><br/>
+            <label for="savedCard">결제 카드 선택</label> &nbsp;
+			<select name="card_code" id = "card_code" onchange="selectedBoxChange()" required="required">
+ 			<option value="" selected="selected">선택</option>
+ 			<!-- task - 카드가 없을때 카드 등록 후 이용해주세요. 띄우기 -->
+ 			<c:forEach var="card" items="${cardList}">
+	                <option value="${card.card_code}">${card.card_name} ${card.card_no}</option>
+			</c:forEach> 
+			</select><br/><br/>
+		    <label for="cardEasypw">간편 비밀번호</label>&nbsp; &nbsp;
+		    <input type="password" id="card_easypw" name="card_easypw" maxlength="6" pattern="[0-9]*" required/>
+		    <span id="cardEasypwMessage"></span>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-payment" type="submit" class="btn btn-primary">결제하기</button>
+        <button id="btn-cancle" type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 </c:when>  
   
+  
 <c:when test="${sessionMemPlan == 'standard_monthly'}">
-<form class = "planPaymentForm" action="getPlanDetail.do" method="post">
+<form class = "planPaymentForm" action="getPlanName.do" method="post">
 <div class = "planPayment" id="planPayment">
 	<div class="planwrap">
     <div class="image" ><img style="width:500px; height:750px;" src='./resources/image/test.jpg' alt='test' /></div>
@@ -203,9 +240,7 @@ var selectedBoxChange = function() {
     </div>
   </div>
   </form>
-        </c:when>
-    </c:choose>    
-    
+  
     <!-- task - 모달창 끄면 리셋시키기, ajax로 비밀번호 확인 -->
     <!-- 서비스 플랜 결제하기 모달 -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -215,7 +250,7 @@ var selectedBoxChange = function() {
         <h1 class="modal-title fs-5" id="exampleModalLabel">서비스 플랜 결제</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-        <form class = "planPaymentForm" action="planPayment.do" method="post">
+        <form class = "planPaymentForm" action="planUpgrade.do" method="post">
       <div class="modal-body">
             <input type="hidden" name="plan_code" id="plan_code" value=""/>
             <label for="">서비스 플랜</label> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -240,6 +275,11 @@ var selectedBoxChange = function() {
     </div>
   </div>
 </div>
+
+
+        </c:when>
+    </c:choose>    
+    
     
     
   </div>
