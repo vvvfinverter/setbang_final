@@ -38,6 +38,13 @@
 	    FROM LatestPlan LP
 	    WHERE ROWNUM = 1
 	</insert>
+	
+	<!-- 서비스 플랜 결제 시 등급 변경 -->
+	<update id="memPlanUpgrade" parameterType="plan">
+	    UPDATE member SET mem_plan = (SELECT PLAN_NAME FROM PLAN WHERE PLAN_CODE=#{plan_code})
+	    WHERE MEM_CODE = (SELECT MEM_CODE FROM CARD WHERE CARD_CODE=#{card_code})
+	</update>
+
 
 	<!-- 결제된 서비스 플랜 내역 가져오기 -->
 	<select id="getPlanPaymentList" parameterType="int" resultType="PlanVO">

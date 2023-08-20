@@ -27,6 +27,12 @@ public class PlanServiceImpl implements PlanService {
     }
 
     @Override
+    // 결제 시 회원 서비스 플랜 등급 변경
+    public void memPlanUpgrade(PlanVO vo) {
+    	planDAO.memPlanUpgrade(vo);
+    }
+
+    @Override
     // 결제된 서비스 플랜 내역 조회
     public List<PlanVO> getPlanPaymentList(int memCode) {
     	return planDAO.getPlanPaymentList(memCode);

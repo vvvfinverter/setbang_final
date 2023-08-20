@@ -46,9 +46,11 @@ public class PlanController {
 	            PlanVO plan = new PlanVO();
 	            plan.setPlan_code(planCode);
 	            plan.setCard_code(cardCode);
-	            planService.planUpgrade(plan); 
+	            planService.planUpgrade(plan);
+	            planService.memPlanUpgrade(plan);
 	            
 	            return "redirect:/planApply.do";
+	            // task - 결제가 성공했을때 결제가 완료됐습니다 알림창 띄워야함
 	        }
 	      // task - 결제가 안됐을때, 비밀번호가 틀렸을때 알림창 띄워야함
 	    return "redirect:/planApply.do";
@@ -66,9 +68,11 @@ public class PlanController {
 	            PlanVO plan = new PlanVO();
 	            plan.setPlan_code(planCode);
 	            plan.setCard_code(cardCode);
-	            planService.planPayment(plan); 
+	            planService.planPayment(plan);
+	            planService.memPlanUpgrade(plan);
 	            
 	            return "redirect:/planApply.do";
+	         // task - 결제가 성공했을때 결제가 완료됐습니다 알림창 띄워야함
 	        }
 	      // task - 결제가 안됐을때, 비밀번호가 틀렸을때 알림창 띄워야함
 	    return "redirect:/planApply.do";
@@ -92,7 +96,6 @@ public class PlanController {
 //                // 결제된 서비스 플랜 내역 가져오기
 //                List<PlanVO> planPaymentList = planService.getPlanPaymentList(memCode);
 //                model.addAttribute("planPaymentList", planPaymentList);
-//                System.out.println(planPaymentList);
                 
                 return "/plan/planApply";
             }

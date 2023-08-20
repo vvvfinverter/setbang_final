@@ -19,7 +19,7 @@ public class PlanDAOImpl implements PlanDAO{
 	private SqlSessionTemplate mybatis;
 
     @Override
-	/// 서비스 플랜 결제
+	// 서비스 플랜 결제
     public void planPayment(PlanVO vo) {
 		// TODO Auto-generated method stub
 		logger.info("planPayment DAO");
@@ -28,16 +28,25 @@ public class PlanDAOImpl implements PlanDAO{
     }
     
     @Override
-    /// 서비스 플랜 업그레이드
+    // 서비스 플랜 업그레이드
     public void planUpgrade(PlanVO vo) {
     	// TODO Auto-generated method stub
     	logger.info("planUpgrade DAO");
     	System.out.println("=> Mybatis planUpgrade() 호출");
     	mybatis.insert("PlanDAO.planUpgrade", vo);
     }
+    
+    @Override
+    // 결제 시 회원 서비스 플랜 등급 변경
+    public void memPlanUpgrade(PlanVO vo) {
+		// TODO Auto-generated method stub
+		logger.info("memPlanUpgrade DAO");
+		System.out.println("=> Mybatis memPlanUpgrade() 호출");
+        mybatis.update("PlanDAO.memPlanUpgrade", vo);
+    }
 
     @Override
-    /// 결제된 서비스 플랜 내역 조회
+    // 결제된 서비스 플랜 내역 조회
     public List<PlanVO> getPlanPaymentList(int memCode) {
     	// TODO Auto-generated method stub
     	logger.info("getPlanPaymentList DAO");
