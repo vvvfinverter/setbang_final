@@ -4,4 +4,41 @@
 * {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-family: 'REM', sans-serif;
+	
+}
+
+.wrap {
+	text-align : center !important;
+	margin : 150px !important;
+}
+
+h2 {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+th {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h5{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.chart-area {
+  display: flex; 
+}
+.chart-area > div {
+  width: 50%;
+}
+.chart-info {
+  padding:0 0 0 45px;
+}
+
+@media screen and (max-width: 1024.98px) {
+  .chart-area {
+    display: block;
+  }
+  .chart-area > div {
+    width: auto;
+  }
 }

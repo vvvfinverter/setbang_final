@@ -30,10 +30,10 @@
     </div>
   <ul>
     <li>
-      <a class="no-underline" href="#">회원현황</a>
+      <a class="no-underline" href="membertotal.do">회원현황</a>
     </li>
     <li>
-      <a class="no-underline" href="#">임대차 계약등록</a>
+      <a class="no-underline" href="contract.do">임대차 계약등록</a>
     </li>
     <li>
       <a class="no-underline" href="#">문의답변</a>

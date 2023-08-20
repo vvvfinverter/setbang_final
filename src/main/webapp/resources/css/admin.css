@@ -6,6 +6,10 @@
 	font-family: 'REM', sans-serif;
 }
 
+.wrap {
+	text-align : center !important;
+	margin : 150px !important;
+}
 
 #myPageMenu {
 	position : fixed;

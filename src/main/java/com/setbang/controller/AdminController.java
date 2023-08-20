@@ -45,7 +45,20 @@ public class AdminController {
 		
 		return "/admin/admin";
 	}
+
 	
+	// 회원관리 페이지로 이동
+	@RequestMapping(value="membertotal.do")
+	public String membertotal(AdminVO vo) {
+		
+		return "/admin/adminMain";
+	}	
 	
+	// 임대차 계약서 등록 페이지로 이동
+	@RequestMapping(value="contract.do")
+	public String contract(AdminVO vo) {
+		
+		return "/admin/contract";
+	}	
 	
 }
