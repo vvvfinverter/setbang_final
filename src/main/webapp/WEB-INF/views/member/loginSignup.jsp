@@ -92,8 +92,11 @@
         <div class="industry_select">
                 <select class="input" name = "ind_code" id="industry" onchange="selectBoxChange(this.value);" required>
                   <option value="">선택</option>
-                  <option value="100">IT업</option>
-                  <option value="200">섬유</option>
+                  <option value="1">제조업</option>
+                  <option value="2">통신판매업</option>
+                  <option value="3">IT업</option>
+                  <option value="4">서비스업</option>
+                  <option value="5">요식업</option>
                 </select>
               </div>
         </div>

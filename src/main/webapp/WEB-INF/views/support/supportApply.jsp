@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/support.css">
+<link rel="stylesheet" href="./resources/css/supportApply.css">
 
 <!-- Bootstrap CSS -->
 <link

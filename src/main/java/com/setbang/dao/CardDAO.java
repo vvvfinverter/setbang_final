@@ -3,6 +3,7 @@ package com.setbang.dao;
 import java.util.List;
 
 import com.setbang.domain.CardVO;
+import com.setbang.domain.PlanVO;
 
 public interface CardDAO {
 	
@@ -20,4 +21,5 @@ public interface CardDAO {
     
     // 간편 비밀번호 변경
     void updateEasypw(CardVO vo);
+    
 }

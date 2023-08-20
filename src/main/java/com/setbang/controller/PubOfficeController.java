@@ -60,7 +60,7 @@ public class PubOfficeController {
 	/** 공유 오피스 예약 페이지 접근 **/
 	@GetMapping("/selectPubOffice.do")
 	public ModelAndView viewPubOffice2(HttpSession session,PubOfficeVO vo,Model model) {
-		logger.info("pubOffice2.do 경로의 viewPubOffice2 controller 탔음 -> 추가 수정이 많이 필요함");
+		logger.info("pubOffice.do 경로의 viewPubOffice controller 탔음 -> 추가 수정이 많이 필요함");
 		
 		List<PubOfficeVO> pubUnits = pubOfficeService.selectPubOfficeCombo(vo);
 		
@@ -72,7 +72,7 @@ public class PubOfficeController {
 		
 		//대상 view(jsp)파일
 		/** 파일이름 변경예정  **/
-		return new ModelAndView("pubOffice/pubOffice2");
+		return new ModelAndView("pubOffice/pubOffice");
 	}
 	
 	/** 공유 오피스 예약  insert 처리 **/

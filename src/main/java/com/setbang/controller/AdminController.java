@@ -20,7 +20,7 @@ public class AdminController {
 	@RequestMapping(value="adminLogin.do")
 	public String loginAdmin(AdminVO vo) {
 		
-		return "/inquery/adminLogin";
+		return "/admin/adminLogin";
 	}
 
 	// 관리자 로그인
@@ -40,10 +40,10 @@ public class AdminController {
 			
 		}else {
 			System.out.println("로그인 실패");
-			return "/inquery/adminLogin";
+			return "/admin/adminLogin";
 		}
 		
-		return "/inquery/admin";
+		return "/admin/admin";
 	}
 	
 	

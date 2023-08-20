@@ -35,10 +35,10 @@
         <c:when test="${sessionMemPlan == 'basic'}">
             <img style="width: 20px; height: 20px;" src='./resources/image/basic.png' alt="Basic Plan"/>
         </c:when>
-        <c:when test="${sessionMemPlan == 'standard'}">
+        <c:when test="${sessionMemPlan == 'standard_monthly' || sessionMemPlan == 'standard_annual'}">
             <img style="width: 20px; height: 20px;" src='./resources/image/standard.png' alt="Standard Plan"/>
         </c:when>
-        <c:when test="${sessionMemPlan == 'premium'}">
+        <c:when test="${sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
             <img style="width: 20px; height: 20px;" src='./resources/image/premium.png' alt="Premium Plan"/>
         </c:when>
     </c:choose>     
@@ -61,16 +61,16 @@
 	        <li><a class="no-underline" href="#">물품 신청 내역</a></li>
      	</ul>
         </c:when>
-        <c:when test="${sessionMemPlan == 'standard'}">
+        <c:when test="${sessionMemPlan == 'standard_monthly' || sessionMemPlan == 'standard_annual'}">
 		<ul>
-	        <li><a class="no-underline" href="#">공용오피스 예약 내역</a></li>
+	        <li><a class="no-underline" href="#">공용 오피스 예약 내역</a></li>
 	        <li><a class="no-underline" href="#">물품 신청 내역</a></li>
 	        <li><a class="no-underline" href="#">업무지원 신청 내역</a></li>
       	</ul>
         </c:when>
-        <c:when test="${sessionMemPlan == 'premium'}">
+        <c:when test="${sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
         <ul>
-	        <li><a class="no-underline" href="#">공용오피스 예약 내역</a></li>
+	        <li><a class="no-underline" href="#">공용 오피스 예약 내역</a></li>
 	        <li><a class="no-underline" href="#">물품 신청 내역</a></li>
 	        <li><a class="no-underline" href="#">업무지원 신청 내역</a></li>
 	        <li><a class="no-underline" href="#">협력업체 신청 내역</a></li>
@@ -85,17 +85,17 @@
                 <c:choose>
         <c:when test="${sessionMemPlan == 'basic'}">
         <ul>
-	        <li><a class="no-underline" href="planPayment.do">서비스 플랜 결제</a></li>
+	        <li><a class="no-underline" href="planApply.do">서비스 플랜 결제</a></li>
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
-        <c:when test="${sessionMemPlan == 'standard'}">
+        <c:when test="${sessionMemPlan == 'standard_monthly' || sessionMemPlan == 'standard_annual'}">
         <ul>
-	        <li><a class="no-underline" href="planPayment.do">서비스 플랜 업그레이드</a></li>
+	        <li><a class="no-underline" href="planApply.do">서비스 플랜 업그레이드</a></li>
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
-        <c:when test="${sessionMemPlan == 'premium'}">
+        <c:when test="${sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
         <ul>
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>

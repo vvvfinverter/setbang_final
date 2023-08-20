@@ -62,6 +62,5 @@ public class CardDAOImpl implements CardDAO{
     	System.out.println("=> Mybatis updateEasypw() 호출");
     	mybatis.update("CardDAO.updateEasypw", vo);
     }
-
    
 }
