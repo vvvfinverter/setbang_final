@@ -14,7 +14,36 @@
 	
 	<!-- 서비스 플랜 업그레이드 -->
 	<insert id="planUpgrade" parameterType="plan">
+	<!-- FROM절에 SELECT 사용 -->
+	<!-- INSERT INTO PLAN_APPLY (PLAN_APPLY_CODE, PAYMENT_DATE, PLAN_START, PLAN_END, PLAN_CODE, CARD_CODE)
+	    SELECT s_plan_apply_code.NEXTVAL, SYSDATE, 
+	           PLAN_END + 1, PLAN_END + 31, #{plan_code}, #{card_code}
+	    FROM (
+	        SELECT PLAN_END
+	        FROM PLAN_APPLY
+	        WHERE CARD_CODE = #{card_code} AND PLAN_END > SYSDATE
+	        ORDER BY PLAN_END DESC
+	    ) WHERE ROWNUM = 1 -->
+	    
+	<!-- WITH절 사용 -->
+		INSERT INTO PLAN_APPLY (PLAN_APPLY_CODE, PAYMENT_DATE, PLAN_START, PLAN_END, PLAN_CODE, CARD_CODE)
+	    WITH LatestPlan AS (
+	        SELECT PLAN_END
+	        FROM PLAN_APPLY
+	        WHERE CARD_CODE = #{card_code} AND PLAN_END > SYSDATE
+	        ORDER BY PLAN_END DESC
+	    )
+	    SELECT s_plan_apply_code.NEXTVAL, SYSDATE, 
+	           LP.PLAN_END + 1, LP.PLAN_END + 31, #{plan_code}, #{card_code}
+	    FROM LatestPlan LP
+	    WHERE ROWNUM = 1
 	</insert>
+
+	<!-- 결제된 서비스 플랜 내역 가져오기 -->
+	<select id="getPlanPaymentList" parameterType="int" resultType="PlanVO">
+	    SELECT * FROM PLAN_APPLY 
+	    WHERE CARD_CODE IN (SELECT CARD_CODE FROM CARD WHERE MEM_CODE = #{mem_code})
+	</select>
 	
 </mapper>
 

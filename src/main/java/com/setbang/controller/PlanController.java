@@ -34,7 +34,25 @@ public class PlanController {
 	@Autowired
 	private PlanService planService;
 	
-	
+	// 서비스 플랜 업그레이드
+	@RequestMapping(value = "planUpgrade.do", method = RequestMethod.POST)
+	public String planUpgrade(HttpSession session,
+	                          @RequestParam("plan_code") int planCode,
+	                          @RequestParam("card_code") int cardCode,
+	                          @RequestParam("card_easypw") int cardEasypw) {
+	        int currentEasypw = cardService.getEasypwByCardcode(cardCode);
+	        
+	        if (currentEasypw != 0 && currentEasypw == cardEasypw) {
+	            PlanVO plan = new PlanVO();
+	            plan.setPlan_code(planCode);
+	            plan.setCard_code(cardCode);
+	            planService.planUpgrade(plan); 
+	            
+	            return "redirect:/planApply.do";
+	        }
+	      // task - 결제가 안됐을때, 비밀번호가 틀렸을때 알림창 띄워야함
+	    return "redirect:/planApply.do";
+	}
 	
 	// 서비스 플랜 결제
 	@RequestMapping(value = "planPayment.do", method = RequestMethod.POST)
@@ -70,6 +88,11 @@ public class PlanController {
                 card.setMem_code(memCode);
                 List<CardVO> cardList = cardService.getCardList(card);
                 model.addAttribute("cardList", cardList);
+                
+//                // 결제된 서비스 플랜 내역 가져오기
+//                List<PlanVO> planPaymentList = planService.getPlanPaymentList(memCode);
+//                model.addAttribute("planPaymentList", planPaymentList);
+//                System.out.println(planPaymentList);
                 
                 return "/plan/planApply";
             }
