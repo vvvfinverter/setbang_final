@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.setbang.domain.CardVO;
-import com.setbang.domain.MemberVO;
 import com.setbang.domain.PlanVO;
 import com.setbang.service.CardService;
 import com.setbang.service.MemberService;
@@ -47,13 +46,12 @@ public class PlanController {
 	            plan.setPlan_code(planCode);
 	            plan.setCard_code(cardCode);
 	            planService.planUpgrade(plan);
-	            planService.memPlanUpgrade(plan);
 	            
-	            return "redirect:/planApply.do";
-	            // task - 결제가 성공했을때 결제가 완료됐습니다 알림창 띄워야함
+		        // 결제 성공시
+		        return "redirect:/planApply.do?message=success";
 	        }
-	      // task - 결제가 안됐을때, 비밀번호가 틀렸을때 알림창 띄워야함
-	    return "redirect:/planApply.do";
+	        // 결제 실패시
+	        return "redirect:/planApply.do?message=failed";
 	}
 	
 	// 서비스 플랜 결제
@@ -62,22 +60,29 @@ public class PlanController {
 	                          @RequestParam("plan_code") int planCode,
 	                          @RequestParam("card_code") int cardCode,
 	                          @RequestParam("card_easypw") int cardEasypw) {
-	        int currentEasypw = cardService.getEasypwByCardcode(cardCode);
-	        
-	        if (currentEasypw != 0 && currentEasypw == cardEasypw) {
-	            PlanVO plan = new PlanVO();
-	            plan.setPlan_code(planCode);
-	            plan.setCard_code(cardCode);
-	            planService.planPayment(plan);
-	            planService.memPlanUpgrade(plan);
-	            
-	            return "redirect:/planApply.do";
-	         // task - 결제가 성공했을때 결제가 완료됐습니다 알림창 띄워야함
-	        }
-	      // task - 결제가 안됐을때, 비밀번호가 틀렸을때 알림창 띄워야함
-	    return "redirect:/planApply.do";
-	}
+	    int currentEasypw = cardService.getEasypwByCardcode(cardCode);
 
+	    if (currentEasypw != 0 && currentEasypw == cardEasypw) {
+	        PlanVO plan = new PlanVO();
+	        plan.setPlan_code(planCode);
+	        plan.setCard_code(cardCode);
+	        planService.planPayment(plan);
+	        
+	        // 서비스 플랜 결제 시 등급 변경
+	        planService.memPlanUpgrade(plan);
+	        
+	        // 월간 서비스 플랜 결제 시 다음달 자동결제 (하지만 결제여부는 'N')
+	        if (planCode == 1 || planCode == 3) {
+	            planService.autoPlanPayment(plan);
+	        }
+
+	        // 결제 성공시
+	        return "redirect:/planApply.do?message=success";
+	    } else {
+	        // 결제 실패시
+	        return "redirect:/planApply.do?message=failed";
+	    }
+	}
 	
     // 서비스 플랜 결제 페이지로 이동
     @RequestMapping(value = "planApply.do", method = RequestMethod.GET)

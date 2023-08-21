@@ -10,9 +10,11 @@ public class PlanVO {
 	private String payment_date;
 	private String plan_start;
 	private String plan_end;
+	private String plan_apply_yn;
 	private int plan_cancel_code;
 	private String plan_cancel_date;
 	private String plan_cancel_reason;
+	private String plan_cancel_yn;
 	
 	public String getPlan_name() {
 		return plan_name;
@@ -80,6 +82,19 @@ public class PlanVO {
 	public void setPlan_cancel_reason(String plan_cancel_reason) {
 		this.plan_cancel_reason = plan_cancel_reason;
 	}
+	public String getPlan_apply_yn() {
+		return plan_apply_yn;
+	}
+	public void setPlan_apply_yn(String plan_apply_yn) {
+		this.plan_apply_yn = plan_apply_yn;
+	}
+	public String getPlan_cancel_yn() {
+		return plan_cancel_yn;
+	}
+	public void setPlan_cancel_yn(String plan_cancel_yn) {
+		this.plan_cancel_yn = plan_cancel_yn;
+	}
+	
 	// 생성자
 	public PlanVO() {
 

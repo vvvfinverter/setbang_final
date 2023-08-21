@@ -19,6 +19,18 @@ public class PlanServiceImpl implements PlanService {
     public void planPayment(PlanVO vo) {
     	planDAO.planPayment(vo);
     }
+
+    @Override
+    // 월간 서비스 플랜 결제 시 다음달 자동결제
+    public void autoPlanPayment(PlanVO vo) {
+    	planDAO.autoPlanPayment(vo);
+    }
+
+    @Override
+    // 스케줄러 이용 자동결제 업데이트
+    public void updateAutoPlanPayment(PlanVO vo) {
+    	planDAO.updateAutoPlanPayment(vo);
+    }
     
     @Override
     // 서비스 플랜 업그레이드
@@ -30,6 +42,12 @@ public class PlanServiceImpl implements PlanService {
     // 결제 시 회원 서비스 플랜 등급 변경
     public void memPlanUpgrade(PlanVO vo) {
     	planDAO.memPlanUpgrade(vo);
+    }
+
+    @Override
+    // 서비스 플랜 다운그레이드
+    public void memPlanDowngrade(PlanVO vo) {
+    	planDAO.memPlanDowngrade(vo);
     }
 
     @Override

@@ -89,13 +89,13 @@
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
-        <c:when test="${sessionMemPlan == 'standard_monthly' || sessionMemPlan == 'standard_annual'}">
+        <c:when test="${sessionMemPlan == 'standard_monthly'}">
         <ul>
 	        <li><a class="no-underline" href="planApply.do">서비스 플랜 업그레이드</a></li>
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
-        <c:when test="${sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
+        <c:when test="${sessionMemPlan == 'standard_annual' || sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
         <ul>
 	        <li><a class="no-underline" href="#">서비스 플랜 결제내역</a></li>
      	</ul>

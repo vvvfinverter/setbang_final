@@ -90,13 +90,13 @@
                 <div class= "group">
         <label for="industry" class="label">업종</label>
         <div class="industry_select">
-                <select class="input" name = "ind_code" id="industry" onchange="selectBoxChange(this.value);" required>
+                <select class="input" name = "ind_code" id="industry" required>
                   <option value="">선택</option>
-                  <option value="1">제조업</option>
-                  <option value="2">통신판매업</option>
-                  <option value="3">IT업</option>
-                  <option value="4">서비스업</option>
-                  <option value="5">요식업</option>
+                  <option value="100">제조업</option>
+                  <option value="200">통신판매업</option>
+                  <option value="300">IT업</option>
+                  <option value="400">서비스업</option>
+                  <option value="500">요식업</option>
                 </select>
               </div>
         </div>

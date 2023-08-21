@@ -54,6 +54,15 @@ var selectedBoxChange = function() {
 	  let selectedValue = cardCodeSelect.value;
 	  let selectedText = cardCodeSelect.options[cardCodeSelect.selectedIndex].text;
 	}
+	
+/* 모달 - 결제 완료 or 결제 실패 alert */
+var message = "<%= request.getParameter("message") %>";
+if (message === "success") {
+	alert("결제가 완료되었습니다.");
+} else if (message === "failed") {
+	alert("결제가 실패하였습니다.");
+}
+
 </script>
  
     <c:choose>
