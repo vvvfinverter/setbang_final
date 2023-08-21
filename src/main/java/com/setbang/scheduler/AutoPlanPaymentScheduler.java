@@ -17,14 +17,18 @@ public class AutoPlanPaymentScheduler {
 	private PlanService planService;
 	
     // 매일 자정에 실행되도록 스케줄링
-    @Scheduled(cron = "0 0 0 * * ?") // 매일 0시 0분 0초에 실행
-	//@Scheduled(fixedRate = 1000)	// 테스트용
+    @Scheduled(cron = "0 0 0 * * ?") 	// 매일 0시 0분 0초에 실행
+	//@Scheduled(cron = "0 * * * * ?") 	// 테스트용 1분
+	//@Scheduled(fixedRate = 1000)		// 테스트용 1초
 	public void updateAutoPlanPayment() {
     	PlanVO plan = new PlanVO();
     	// 자동결제 - PLAN_END DATE+1 일때 결제일자 변경 (결제여부 'Y'로 변경)
         planService.updateAutoPlanPayment(plan);
         // 서비스 플랜 기간 만료시 등급 다운그레이드
         planService.memPlanDowngrade(plan);
+        // 자동결제 - PLAN_END DATE+1 일때 월간 서비스 플랜 결제 시 다음달 자동결제 (하지만 결제여부는 'N')
+        planService.autoPlanPaymentAfterPlanEnd(plan);
+        
     }
 	
     // 테스트용
@@ -33,7 +37,7 @@ public class AutoPlanPaymentScheduler {
 //	    PlanVO plan = new PlanVO();
 //	    planService.updateAutoPlanPayment(plan);
 //	}
-//    @Scheduled(fixedRate = 1000)
+//    @Scheduled(fixedRate = 1000)	// 매 1초에 실행
 //    public void firstTask() {
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 //        Date now = new Date();

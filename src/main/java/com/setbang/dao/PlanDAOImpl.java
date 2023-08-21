@@ -46,6 +46,15 @@ public class PlanDAOImpl implements PlanDAO{
     }
     
     @Override
+    // 스케줄러 이용 월간 서비스 플랜 결제 시 다음달 자동결제
+    public void autoPlanPaymentAfterPlanEnd(PlanVO vo) {
+    	// TODO Auto-generated method stub
+    	logger.info("autoPlanPaymentAfterPlanEnd DAO");
+    	System.out.println("=> Mybatis autoPlanPaymentAfterPlanEnd() 호출");
+    	mybatis.insert("PlanDAO.autoPlanPaymentAfterPlanEnd", vo);
+    }
+    
+    @Override
     // 서비스 플랜 업그레이드
     public void planUpgrade(PlanVO vo) {
     	// TODO Auto-generated method stub

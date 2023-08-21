@@ -66,9 +66,6 @@ public class AdminController {
 		// 임대차 계약서 insert
 		
 		
-		
-		
-	}
 	
 
 	

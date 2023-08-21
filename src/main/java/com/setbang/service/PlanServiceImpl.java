@@ -33,6 +33,12 @@ public class PlanServiceImpl implements PlanService {
     }
     
     @Override
+    // 스케줄러 이용 월간 서비스 플랜 결제 시 다음달 자동결제
+    public void autoPlanPaymentAfterPlanEnd(PlanVO vo) {
+    	planDAO.autoPlanPaymentAfterPlanEnd(vo);
+    }
+    
+    @Override
     // 서비스 플랜 업그레이드
     public void planUpgrade(PlanVO vo) {
     	planDAO.planUpgrade(vo);
