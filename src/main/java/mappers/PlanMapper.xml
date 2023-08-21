@@ -39,7 +39,7 @@
 	<!-- 자동결제 - 월간 서비스 플랜 결제 시 다음달 자동결제 (하지만 결제여부는 'N') -->
 	<insert id="autoPlanPayment" parameterType="plan">
 	     INSERT INTO PLAN_APPLY (PLAN_APPLY_CODE, PAYMENT_DATE, PLAN_START, PLAN_END, PLAN_CODE, CARD_CODE, plan_apply_yn)
-	     VALUES (s_plan_apply_code.NEXTVAL, '', SYSDATE + 31, SYSDATE - 61, #{plan_code}, #{card_code}, 'N')
+	     VALUES (s_plan_apply_code.NEXTVAL, '', SYSDATE + 31, SYSDATE + 61, #{plan_code}, #{card_code}, 'N')
 	</insert>
 	
 	<!-- (Scheduled) 자동결제 - PLAN_END DATE+1 일때 결제일자 변경 (결제여부 'Y'로 변경)  -->
