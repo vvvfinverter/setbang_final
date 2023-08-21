@@ -13,7 +13,70 @@ public class AdminVO {
 	private int inq_code;
 	private int mem_code;
 	
+	private int con_code;
+	private int priv_code;
+	private String con_start_date;
+	private String con_end_date;
+	private String con_date;
+	private String lessor_name;
+	private String lessee_name;
 	
+	public int getCon_code() {
+		return con_code;
+	}
+
+	public void setCon_code(int con_code) {
+		this.con_code = con_code;
+	}
+
+	public int getPriv_code() {
+		return priv_code;
+	}
+
+	public void setPriv_code(int priv_code) {
+		this.priv_code = priv_code;
+	}
+
+	public String getCon_start_date() {
+		return con_start_date;
+	}
+
+	public void setCon_start_date(String con_start_date) {
+		this.con_start_date = con_start_date;
+	}
+
+	public String getCon_end_date() {
+		return con_end_date;
+	}
+
+	public void setCon_end_date(String con_end_date) {
+		this.con_end_date = con_end_date;
+	}
+
+	public String getCon_date() {
+		return con_date;
+	}
+
+	public void setCon_date(String con_date) {
+		this.con_date = con_date;
+	}
+
+	public String getLessor_name() {
+		return lessor_name;
+	}
+
+	public void setLessor_name(String lessor_name) {
+		this.lessor_name = lessor_name;
+	}
+
+	public String getLessee_name() {
+		return lessee_name;
+	}
+
+	public void setLessee_name(String lessee_name) {
+		this.lessee_name = lessee_name;
+	}
+
 	public int getTotalmember() {
 		return totalmember;
 	}

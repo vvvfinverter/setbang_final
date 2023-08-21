@@ -19,9 +19,15 @@ public class AdminDAOImpl implements AdminDAO{
 	}
 
 	@Override
-	public AdminVO totalMember(AdminVO vo) {
+	public int totalMember() {
 		// TODO Auto-generated method stub
 		System.out.println("=> Mybatis totalMember() 호출");	
-		return mybatis.selectOne("AdminDAO.totalmember", vo);	
+	    return mybatis.selectOne("AdminDAO.totalmember");
+	}
+	
+	@Override
+	public int findmemcode(String name) {
+		System.out.println("=> Mybatis findmemcode() 호출");
+		return mybatis.selectOne("AdminDAO.findmemcode");
 	}
 }

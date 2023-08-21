@@ -8,5 +8,8 @@ public interface AdminDAO {
 	AdminVO findAdmin(AdminVO vo);
 
 	// 회원 총인원 추출
-	AdminVO totalMember(AdminVO vo);
+	int totalMember();
+	
+	// text 박스에 기입된 이름으로 member 테이블에서 임차인 이름 찾아서 가져오기
+	int findmemcode(String name);
 }

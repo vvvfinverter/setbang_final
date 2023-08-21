@@ -3,12 +3,21 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="AdminDAO">
-	<select id="totalmember" parameterType="admin" resultType="admin">
-		select count(*) from member
+	<select id="totalmember" resultType="int">
+		select count(*) as mem_code from member
 	</select>
 
 	<select id="findadmin" parameterType="admin" resultType="admin">
 		select admin_id, admin_pw from admin where admin_id=#{admin_id}
 	</select>
+	
+	<insert id="contractinsert" parameterType="admin">
+		INSERT INTO SETT2.CONSTRACT
+		(CON_CODE, MEM_CODE, PRIV_CODE, CON_START_DATE, CON_END_DATE, CON_DATE, LESSOR_NAME, LESSEE_NAME)
+		VALUES(s_con_code, #{mem_code}, #{priv_code}, #{CON_START_DATE}, #{CON_END_DATE}, #{CON_DATE}, #{LESSOR_NAME}, #{LESSEE_NAME});
+	</insert>
 
+	<select id="findmemcode" parameterType="String" resultType="int">
+		select mem_code from member where name=#{LESSEE_NAME}
+	</select>
 </mapper>

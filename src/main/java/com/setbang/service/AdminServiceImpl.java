@@ -19,9 +19,14 @@ public class AdminServiceImpl implements AdminService{
 	}
 	
 	
-	public AdminVO totalMember(AdminVO vo) {
-		System.out.println("st" + vo);
-		adminDAO.totalMember(vo);
-		return vo;
+	public int totalMember() {
+		System.out.println("st");
+		adminDAO.totalMember();
+		return adminDAO.totalMember();
+	}
+	
+	public int findmemcode(String name) {
+		System.out.println("s" + name);
+		return adminDAO.findmemcode(name);		
 	}
 }

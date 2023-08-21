@@ -71,6 +71,10 @@
 </head>
 <body>
 
+		<div id="header">
+			<jsp:include page="../section/header.jsp" />
+		</div>
+		
 		
 <div class="wrap">
 		<h2> 회원현황 관리</h2>
@@ -85,11 +89,9 @@
 	</div>	
 	
     <!--지점별 회원현황 막대차트-->
-    <div class="chart-area">
   		<div class="chart">
-			 <div id="columnchart_values" style="width: 900px; height: 500px;"></div>
+			 <div id="columnchart_values" ></div>
 		</div>
-	</div>
 
 	<!-- 서비스 등급현황 도넛차트 -->	
 	<div class="chart-area">
@@ -100,7 +102,14 @@
 
 
 </div>	
-	
 
+	<div id="adminMenu"> 
+			<jsp:include page="../admin/adminMenu.jsp"/>	
+	</div>
+
+	
+		<div id="footer">
+			<jsp:include page="../section/footer.jsp" />
+		</div>
 </body>
 </html>
