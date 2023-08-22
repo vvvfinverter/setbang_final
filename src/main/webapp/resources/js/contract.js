@@ -1,19 +1,14 @@
-    function selectBoxChange(selectedValue) {
-        var privOfficeSelect = document.getElementById("priv_office");
-        var options = privOfficeSelect.options;
-
-        // 기본적으로 모든 option 보이도록 설정
-        for (var i = 0; i < options.length; i++) {
-            options[i].style.display = "block";
-        }
-
-        // 선택된 brunch 값에 따라 보이지 않는 option을 숨김
-        for (var i = 0; i < options.length; i++) {
-            var option = options[i];
-            var dataBrunch = option.getAttribute("data-brunch");
-            if (dataBrunch && dataBrunch !== selectedValue) {
-                option.style.display = "none";
-            }
-        }
+function selectBoxChange(selectedValue) {
+    var privCodeSelect = document.getElementById('priv_code');
+    
+    // 모든 옵션을 숨김
+    for (var i = 0; i < privCodeSelect.options.length; i++) {
+        privCodeSelect.options[i].style.display = 'none';
     }
-
+    
+    // 선택한 지점에 해당하는 옵션들을 보이도록 설정
+    var selectedOptions = privCodeSelect.querySelectorAll('[data-brunch="' + selectedValue + '"]');
+    for (var j = 0; j < selectedOptions.length; j++) {
+        selectedOptions[j].style.display = 'block';
+    }
+}

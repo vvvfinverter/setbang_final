@@ -4,68 +4,11 @@
 <html>
 <head>
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/adminMain.css">
-
-<!-- JS -->
-<script type="text/javascript" src="./resources/js/adminMainChart.js"></script>
-
+	<link rel="stylesheet" href="./resources/css/adminMain.css">
 
 <!-- Google Chart JavaScript -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-<!-- 지점별 회원현황 -->
-	<script type="text/javascript">
-    google.charts.load("current", {packages:['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ["지점", "회원수", { role: "style" } ],
-        ["강남점", 8, "#b87333"],
-        ["구로점", 10, "silver"],
-        ["종로점", 15, "gold"],
-      ]);
-
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1,
-                       { calc: "stringify",
-                         sourceColumn: 1,
-                         type: "string",
-                         role: "annotation" },
-                       2]);
-
-      var options = {
-        title: "지점별 회원현황",
-        width: 600,
-        height: 400,
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" },
-      };
-      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-      chart.draw(view, options);
-  }
-	</script>
-
-<!-- 서비스 등급현황 -->	
-	<script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['서비스등급', '회원수'],
-          ['Basic',     11],
-          ['Standard',  9],
-          ['Primium',  2],
-        ]);
-
-        var options = {
-          title: '서비스 등급별 현황',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
 <meta charset="UTF-8">
 <title>관리자페이지 메인</title>
 </head>
@@ -111,5 +54,9 @@
 		<div id="footer">
 			<jsp:include page="../section/footer.jsp" />
 		</div>
+		
+<!-- JS -->
+<script type="text/javascript" src="./resources/js/memberAdmin.js"></script>
+
 </body>
 </html>

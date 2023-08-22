@@ -4,7 +4,7 @@
 <mapper namespace="SupportDAO">
 	<insert id="insertApply" parameterType="support">
 		insert into support_apply(sup_apply_code, sup_code, mem_code, sup_apply_date, sup_counseling_date, sup_content, sup_email)
-		values(s_sup_apply_code.nextval, #{sup_code}, #{mem_code}, sysdate, #{sup_counseling_date}, #{sup_content}, #{email})
+		values(s_sup_apply_code.nextval, #{sup_code}, #{mem_code}, sysdate, #{sup_counseling_date}, #{sup_content}, #{sup_email})
 	</insert>
 	
 	<select id="selectUser" parameterType="support" resultType="support">

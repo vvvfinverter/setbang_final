@@ -11,13 +11,28 @@
 		select admin_id, admin_pw from admin where admin_id=#{admin_id}
 	</select>
 	
-	<insert id="contractinsert" parameterType="admin">
-		INSERT INTO SETT2.CONSTRACT
-		(CON_CODE, MEM_CODE, PRIV_CODE, CON_START_DATE, CON_END_DATE, CON_DATE, LESSOR_NAME, LESSEE_NAME)
-		VALUES(s_con_code, #{mem_code}, #{priv_code}, #{CON_START_DATE}, #{CON_END_DATE}, #{CON_DATE}, #{LESSOR_NAME}, #{LESSEE_NAME});
+	<insert id="insertcontract" parameterType="admin">
+		INSERT INTO CONSTRACT (CON_CODE, MEM_CODE, PRIV_CODE, CON_START_DATE, CON_END_DATE, CON_DATE, LESSOR_NAME, LESSEE_NAME, LESSEE_TEL)
+		VALUES(s_con_code.nextval, #{mem_code}, #{priv_code}, #{con_start_date}, #{con_end_date}, #{con_date}, #{lessor_name}, #{lessee_name}, #{lessee_tel})
 	</insert>
 
 	<select id="findmemcode" parameterType="String" resultType="int">
-		select mem_code from member where name=#{LESSEE_NAME}
+		select mem_code from member where name=#{lessee_name} and tel=#{lessee_tel}
+	</select>
+	
+	<select id="findprivcode" parameterType="int" resultType="int">
+		select priv_code from priv_office where priv_code=#{priv_code}
+	</select>
+	
+	<select id="countguro" resultType="int">
+		select count(*) as priv_code from constract <![CDATA[where priv_code>20 and priv_code<=30]]>
+	</select>
+	
+	<select id="countpangyo" resultType="int">
+		select count(*) as priv_code from constract <![CDATA[where priv_code>10 and priv_code<=20]]>
+	</select>
+	
+	<select id="countgangnam" resultType="int">
+		select count(*) as priv_code from constract <![CDATA[where priv_code<=10]]>
 	</select>
 </mapper>

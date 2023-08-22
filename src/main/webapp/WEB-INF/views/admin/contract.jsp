@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 
+
 <!-- CSS연결 -->
 <link rel="stylesheet" href="./resources/css/contract.css">
+
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -21,9 +23,8 @@
 <script src="./resources/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 <script src="./resources/jquery-ui-1.12.1/datepicker-ko.js"></script>
 
-<!-- JS연결 -->
-<script type="text/javascript" src="./resources/js/contract.js"></script>
 
+    
 <script type="text/javascript">
 $(function(){
 	$("#con_start_date").datepicker({
@@ -52,7 +53,9 @@ $(function(){
 		buttonText: "Select date"
 	});
 });
+
 </script>
+
 
 <title>임대차 계약서 등록</title>
 </head>
@@ -65,19 +68,25 @@ $(function(){
 <div class="wrap">
 	<h2>임대차 계약서</h2>
 
-	<form action="contract.do">
+	<form action="contract1.do">
 	<table>
 	<tr>
-		<th>임차인(법인명)</th>
-		<td colspan='3'><input type="text" id="lessor_name" name="lessor_name"></td>
+		<th>임대인(법인명)</th>
+		<td colspan='2'><input type="text" id="lessor_name" name="lessor_name" value="Setbang"></td>
 		<td></td>
 		<td></td>
 	</tr>
 	
 	<tr>
-		<th>임대인(성 명)</th>
-		<td colspan='3'><input type="text" id="lessee_name" name="lessee_name"></td>
+		<th>임차인(성 명)</th>
+		<td colspan='2'><input type="text" id="lessee_name" name="lessee_name"></td>
 		<td></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th>임차인 전화번호</th>
+		<td colspan='2'><input type="text" id="lessee_tel" name="lessee_tel" placeholder="000-0000-0000"></td>
 		<td></td>
 	</tr>
 
@@ -156,6 +165,8 @@ $(function(){
 			<jsp:include page="../section/footer.jsp" />
 		</div>
 	
+<!-- JS연결 -->
+<script type="text/javascript" src="./resources/js/contract.js"></script>
 
 </body>
 </html>

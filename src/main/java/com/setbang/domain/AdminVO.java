@@ -20,7 +20,44 @@ public class AdminVO {
 	private String con_date;
 	private String lessor_name;
 	private String lessee_name;
+	private String lessee_tel;
 	
+	private int guromember;
+	private int pangyomember;
+	private int gangnammember;
+	
+	public int getGuromember() {
+		return guromember;
+	}
+
+	public void setGuromember(int guromember) {
+		this.guromember = guromember;
+	}
+
+	public int getPangyomember() {
+		return pangyomember;
+	}
+
+	public void setPangyomember(int pangyomember) {
+		this.pangyomember = pangyomember;
+	}
+
+	public int getGangnammember() {
+		return gangnammember;
+	}
+
+	public void setGangnammember(int gangnammember) {
+		this.gangnammember = gangnammember;
+	}
+
+	public String getLessee_tel() {
+		return lessee_tel;
+	}
+
+	public void setLessee_tel(String lessee_tel) {
+		this.lessee_tel = lessee_tel;
+	}
+
 	public int getCon_code() {
 		return con_code;
 	}

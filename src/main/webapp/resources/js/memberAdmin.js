@@ -1,21 +1,22 @@
-
-
 // 지점별 회원수 차트
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawCharts);
-       
+    
+    
     function drawCharts() {
       drawColumnChart();
       drawDonutChart();
     }
     
-function drawColumnChart() {
-  var data = google.visualization.arrayToDataTable([
-    ["지점", "회원수", { role: "style" } ],
-    ["구로점", 8, "#b87333"],
-    ["판교점", 10, "silver"],
-    ["강남점", 13, "gold"],
-  ]);
+   
+    function drawColumnChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["지점", "회원수", { role: "style" } ],
+        ["강남점", 8, "#b87333"],
+        ["구로점", 10, "silver"],
+        ["종로점", 15, "gold"],
+      ]);
+
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
                        { calc: "stringify",
