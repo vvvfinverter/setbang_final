@@ -62,6 +62,24 @@ public class PlanDAOImpl implements PlanDAO{
     	System.out.println("=> Mybatis planUpgrade() 호출");
     	mybatis.insert("PlanDAO.planUpgrade", vo);
     }
+
+    @Override
+    // 스케줄러 이용 서비스 플랜 기간 시작시 등급 업그레이드
+    public void autoMemPlanUpgrade(PlanVO vo) {
+    	// TODO Auto-generated method stub
+    	logger.info("autoMemPlanUpgrade DAO");
+    	System.out.println("=> Mybatis autoMemPlanUpgrade() 호출");
+    	mybatis.insert("PlanDAO.autoMemPlanUpgrade", vo);
+    }
+
+    @Override
+    // 서비스 플랜 업그레이드 시 직전 자동결제 삭제
+    public void deletePrevPlanAfterPlanUpgrade(PlanVO vo) {
+    	// TODO Auto-generated method stub
+    	logger.info("deletePrevPlanAfterPlanUpgrade DAO");
+    	System.out.println("=> Mybatis deletePrevPlanAfterPlanUpgrade() 호출");
+    	mybatis.insert("PlanDAO.deletePrevPlanAfterPlanUpgrade", vo);
+    }
     
     @Override
     // 결제 시 회원 서비스 플랜 등급 변경

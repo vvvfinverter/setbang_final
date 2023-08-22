@@ -87,16 +87,16 @@ if (message === "success") {
         <c:when test="${sessionMemPlan == 'basic'}">
             <h2>서비스 플랜 결제</h2>
             <h6>서비스 플랜 결제 후 다양한 서비스를 이용해보세요.</h6>
+            <h4>서비스 플랜 선택 </h4>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard_monthly'}">
             <h2>서비스 플랜 업그레이드</h2>
             <h6>서비스 플랜 업그레이드 후 한층 더 다양한 서비스를 이용해보세요. </h6>
+            <h4>서비스 플랜 선택 </h4>
         </c:when>
     </c:choose>  
 
 <!-- 서비스 플랜 선택 -->
-	<h4>서비스 플랜 선택 </h4>
-	
 <c:choose>
 
 <c:when test="${sessionMemPlan == 'basic'}">

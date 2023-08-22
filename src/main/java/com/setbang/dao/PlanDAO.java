@@ -20,6 +20,12 @@ public interface PlanDAO {
     
     // 서비스 플랜 업그레이드
     void planUpgrade(PlanVO vo);
+    
+    // 스케줄러 이용 서비스 플랜 기간 시작시 등급 업그레이드
+    void autoMemPlanUpgrade(PlanVO vo);
+    
+    // 서비스 플랜 업그레이드 시 직전 자동결제 삭제
+    void deletePrevPlanAfterPlanUpgrade(PlanVO vo);
 
     // 결제 시 회원 서비스 플랜 등급 변경
     void memPlanUpgrade(PlanVO vo);

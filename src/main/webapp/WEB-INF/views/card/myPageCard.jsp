@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="./resources/css/myPageCard.css">
 
 <!-- JS / Jquery -->
-<script type="text/javascript" src="./resources/js/myPageCard.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./resources/js/myPageCard.js"></script>
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -22,7 +22,7 @@
 <title>간편결제</title>
 
 <script type="text/javascript">
-/* 카드코드 가져오기 */
+/* 모달 - 카드코드 가져오기 */
  $(function() {
 	  $('#exampleModal').on('show.bs.modal', function(event) {
 	    var button = $(event.relatedTarget); 
@@ -128,7 +128,9 @@
 </div>
 
 
-<!-- 간편 비밀번호 변경 -->
+<!-- task - 모달창 끄면 리셋시키기, ajax로 비밀번호 확인 -->
+
+<!-- 모달 - 간편 비밀번호 변경 -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -276,7 +278,6 @@
             </select>
             <select id="card-expiration-year" name="expYear" required>
                 <option value="">선택</option>
-                <option>23</option>
                 <option>24</option>
                 <option>25</option>
                 <option>26</option>

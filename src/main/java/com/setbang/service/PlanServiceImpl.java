@@ -45,6 +45,18 @@ public class PlanServiceImpl implements PlanService {
     }
 
     @Override
+    // 스케줄러 이용 서비스 플랜 기간 시작시 등급 업그레이드
+    public void autoMemPlanUpgrade(PlanVO vo) {
+    	planDAO.autoMemPlanUpgrade(vo);
+    }
+    
+	@Override
+	// 서비스 플랜 업그레이드 시 직전 자동결제 삭제
+	public void deletePrevPlanAfterPlanUpgrade(PlanVO vo) {
+		planDAO.deletePrevPlanAfterPlanUpgrade(vo);
+	}
+	
+    @Override
     // 결제 시 회원 서비스 플랜 등급 변경
     public void memPlanUpgrade(PlanVO vo) {
     	planDAO.memPlanUpgrade(vo);

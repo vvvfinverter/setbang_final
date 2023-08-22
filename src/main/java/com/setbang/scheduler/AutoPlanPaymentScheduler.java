@@ -16,19 +16,20 @@ public class AutoPlanPaymentScheduler {
 	@Autowired
 	private PlanService planService;
 	
-    // 매일 자정에 실행되도록 스케줄링
-    @Scheduled(cron = "0 0 0 * * ?") 	// 매일 0시 0분 0초에 실행
-	//@Scheduled(cron = "0 * * * * ?") 	// 테스트용 1분
-	//@Scheduled(fixedRate = 1000)		// 테스트용 1초
-	public void updateAutoPlanPayment() {
+    // 자동결제 & 등급조정 - 매일 자정에 실행되도록 스케줄링
+    //@Scheduled(cron = "0 0 0 * * ?") 	// 매일 0시 0분 0초에 실행
+	//@Scheduled(cron = "0 * * * * ?") 	// 매 분의 0초에 실행 (테스트용)
+	//@Scheduled(fixedRate = 10000)		// 매 10초에 실행 (테스트용)
+	public void AutoPlanPayment() {
     	PlanVO plan = new PlanVO();
-    	// 자동결제 - PLAN_END DATE+1 일때 결제일자 변경 (결제여부 'Y'로 변경)
+    	// 자동결제 - PLAN_END < SYSDATE 일때 결제일자 변경 (결제여부 'Y'로 변경)
         planService.updateAutoPlanPayment(plan);
-        // 서비스 플랜 기간 만료시 등급 다운그레이드
+        // 서비스 플랜 기간 만료시 등급 다운그레이드 (연간 결제용)
         planService.memPlanDowngrade(plan);
-        // 자동결제 - PLAN_END DATE+1 일때 월간 서비스 플랜 결제 시 다음달 자동결제 (하지만 결제여부는 'N')
+        // 자동결제 - PLAN_END < SYSDATE 일때 월간 서비스 플랜 결제 시 다음달 자동결제 (하지만 결제여부는 'N')
         planService.autoPlanPaymentAfterPlanEnd(plan);
-        
+        // 서비스 플랜 기간 시작시 등급 업그레이드 (월간 업그레이드용)
+        planService.autoMemPlanUpgrade(plan);
     }
 	
     // 테스트용
