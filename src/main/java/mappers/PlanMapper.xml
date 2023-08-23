@@ -141,11 +141,25 @@
 		    AND plan_apply_yn = 'N');
 	</delete>
 	
-	<!-- 미사용 -->
 	<!-- 결제된 서비스 플랜 내역 가져오기 -->
 	<select id="getPlanPaymentList" parameterType="plan" resultType="plan">
-	    SELECT * FROM PLAN_APPLY 
-	    WHERE CARD_CODE IN (SELECT CARD_CODE FROM CARD WHERE MEM_CODE = #{mem_code})
+		SELECT ROWNUM AS PLAN_PAYMENT_NO, P.PLAN_NAME,
+		       TO_CHAR(PA.PAYMENT_DATE, 'YYYY-MM-DD') AS PAYMENT_DATE,
+		       TO_CHAR(PA.PLAN_START, 'YYYY-MM-DD') AS PLAN_START,
+		       TO_CHAR(PA.PLAN_END, 'YYYY-MM-DD') AS PLAN_END,
+		       (SELECT TO_CHAR(MIN(PA_NEXT.PLAN_START), 'YYYY-MM-DD') AS NEXT_PLAN_START
+		        FROM PLAN_APPLY PA_NEXT
+		        WHERE PA_NEXT.PLAN_APPLY_YN = 'N'
+		        AND PA_NEXT.CARD_CODE = PA.CARD_CODE
+		        AND PA_NEXT.PLAN_START > PA.PLAN_END) AS NEXT_PLAN_START,
+		       P.PLAN_PRICE, C.CARD_NAME, C.CARD_NO
+		FROM PLAN P, PLAN_APPLY PA, CARD C, MEMBER M
+		WHERE P.PLAN_CODE = PA.PLAN_CODE
+		<!-- AND PA.PLAN_APPLY_YN = 'Y' -->
+		AND PA.CARD_CODE = C.CARD_CODE
+		AND C.MEM_CODE = M.MEM_CODE
+		AND M.MEM_CODE = #{mem_code}
+		ORDER BY PLAN_PAYMENT_NO DESC
 	</select>
 	
 </mapper>

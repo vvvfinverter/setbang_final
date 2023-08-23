@@ -31,20 +31,22 @@
 		
 		<div class="wrap">
 
-
+	<h2>서비스 플랜 관리</h2>
+	<h6>서비스 플랜 결제 및 결제 내역들을 확인하실 수 있습니다.</h6>
+	
+	
+	
 	<!-- 서비스 플랜 결제로 이동 -->
 	<div id="planApply">
     <c:choose>
         <c:when test="${sessionMemPlan == 'basic'}">
-            <h2>서비스 플랜 결제</h2>
-            <h6>서비스 플랜 결제 후 다양한 서비스를 이용해보세요.</h6>
+            <h4>서비스 플랜 결제</h4>
             <div class="test">
             <button>서비스 플랜 결제</button>
             </div>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard_monthly'}">
-            <h2>서비스 플랜 업그레이드</h2>
-            <h6>서비스 플랜 업그레이드 후 한층 더 다양한 서비스를 이용해보세요. </h6>
+            <h4>서비스 플랜 업그레이드</h4>
             <div class="test">
             <button>서비스 플랜 업그레이드</button>
             </div>
@@ -56,15 +58,14 @@
 		
 	<!-- 서비스 플랜 결제 내역 -->
 	<div id="planPaymentList">	
-			<h2>서비스 플랜 결제 내역</h2>
-		<h6>결제된 서비스 플랜 결제 내역들을 확인하실 수 있습니다.</h6>
+			<h4>서비스 플랜 결제 내역</h4>
 		
 		<div class="planPaymentTable">	
  <table>
             <thead>
                 <tr>
                     <th>NO</th>
-                    <th>이용중인 서비스 플랜명</th>
+                    <th>서비스 플랜명</th>
                     <th>결제일</th>
                     <th>시작일</th>
                     <th>종료일</th>
@@ -73,18 +74,31 @@
                     <th>결제방법</th>
                 </tr>
             </thead>
+            <c:choose>
+        	<c:when test="${not empty planPaymentList}">
+            <tbody>
+            <c:forEach var="plan" items="${planPaymentList}">
+                <tr>
+                    <td>${plan.plan_payment_no }</td>
+                    <td>${plan.plan_name}</td>
+                    <td>${plan.payment_date}</td>
+                    <td>${plan.plan_start}</td>
+                    <td>${plan.plan_end}</td>
+                    <td>${plan.next_plan_start}</td>
+                    <td>${plan.plan_price}</td>
+                    <td>${plan.card_name} ${plan.card_no }</td>
+                </tr>
+             </c:forEach>
+            </tbody>
+            </c:when>
+            <c:otherwise>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>서비스</td>
-                    <td>2023-08-01</td>
-                    <td>2023-08-02</td>
-                    <td>2023-08-03</td>
-                    <td>2023-08-04</td>
-                    <td>150,000원</td>
-                    <td>신한카드 1111-1111-1111-1111</td>
+                    <td colspan="8"><h6 class="emptyPlanPayment">결제된 서비스 플랜 내역이 없습니다.</h6></td>
                 </tr>
             </tbody>
+            </c:otherwise>
+            </c:choose>
         </table>		
 		
 		

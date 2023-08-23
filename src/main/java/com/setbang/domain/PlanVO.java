@@ -15,6 +15,11 @@ public class PlanVO {
 	private String plan_cancel_date;
 	private String plan_cancel_reason;
 	private String plan_cancel_yn;
+	private String card_name;
+	private String card_no;
+	private int plan_payment_no;
+	private String next_plan_start;
+	
 	
 	public String getPlan_name() {
 		return plan_name;
@@ -93,6 +98,30 @@ public class PlanVO {
 	}
 	public void setPlan_cancel_yn(String plan_cancel_yn) {
 		this.plan_cancel_yn = plan_cancel_yn;
+	}
+	public String getCard_name() {
+		return card_name;
+	}
+	public void setCard_name(String card_name) {
+		this.card_name = card_name;
+	}
+	public String getCard_no() {
+		return card_no;
+	}
+	public void setCard_no(String card_no) {
+		this.card_no = card_no;
+	}
+	public int getPlan_payment_no() {
+		return plan_payment_no;
+	}
+	public void setPlan_payment_no(int plan_payment_no) {
+		this.plan_payment_no = plan_payment_no;
+	}
+	public String getNext_plan_start() {
+		return next_plan_start;
+	}
+	public void setNext_plan_start(String next_plan_start) {
+		this.next_plan_start = next_plan_start;
 	}
 	
 	// 생성자

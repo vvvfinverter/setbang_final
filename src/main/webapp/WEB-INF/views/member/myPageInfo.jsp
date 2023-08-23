@@ -40,7 +40,7 @@
 		</div>
         </div>
         <div class="group">
-          <label for="id" class="label">서비스 플랜 등급</label>
+          <label for="id" class="label">서비스 플랜명</label>
           <input id="memPlan" type="text" class="input" value="${sessionMemPlan }" disabled/>
         </div>
         <div class="group">
