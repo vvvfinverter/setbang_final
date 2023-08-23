@@ -162,13 +162,13 @@ if (message === "success") {
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">서비스 플랜 결제</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">결제하기</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <form class = "planPaymentForm" action="planPayment.do" method="post">
       <div class="modal-body">
             <input type="hidden" name="plan_code" id="plan_code" value=""/>
-            <label for="">서비스 플랜</label> &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="">서비스 플랜명</label> &nbsp;&nbsp;&nbsp;&nbsp;
             <input type ="text" name="plan_name" id="plan_name" value="" disabled/><br/><br/>
             <label for="savedCard">결제 카드 선택</label> &nbsp;
 			<select name="card_code" id = "card_code" onchange="selectedBoxChange()" required="required">

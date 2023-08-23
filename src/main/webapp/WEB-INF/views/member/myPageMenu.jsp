@@ -86,18 +86,18 @@
         <c:when test="${sessionMemPlan == 'basic'}">
         <ul>
 	        <li><a class="no-underline" href="myPagePlanPayment.do#planApply">서비스 플랜 결제</a></li>
-	        <li><a class="no-underline" href="myPagePlanPayment.do#planPayment">서비스 플랜 결제내역</a></li>
+	        <li><a class="no-underline" href="myPagePlanPayment.do#planPaymentList">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard_monthly'}">
         <ul>
 	        <li><a class="no-underline" href="myPagePlanPayment.do#planApply">서비스 플랜 업그레이드</a></li>
-	        <li><a class="no-underline" href="myPagePlanPayment.do#planPayment">서비스 플랜 결제내역</a></li>
+	        <li><a class="no-underline" href="myPagePlanPayment.do#planPaymentList">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard_annual' || sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
         <ul>
-	        <li><a class="no-underline" href="myPagePlanPayment.do#planPayment">서비스 플랜 결제내역</a></li>
+	        <li><a class="no-underline" href="myPagePlanPayment.do#planPaymentList">서비스 플랜 결제내역</a></li>
      	</ul>
         </c:when>
     </c:choose>  

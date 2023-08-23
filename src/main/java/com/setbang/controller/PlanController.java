@@ -33,6 +33,29 @@ public class PlanController {
 	@Autowired
 	private PlanService planService;
 	
+	
+	// 마이페이지 서비스 플랜 자동결제 취소
+	@RequestMapping(value = "cancelAutoPlanPayment.do", method = RequestMethod.POST)
+	public String cancelAutoPlanPayment(HttpSession session, Model model)  {
+		 String sessionId = (String) session.getAttribute("sessionId");
+		 if (sessionId != null) {
+		 int memCode = memberService.getMemCodeBySessionId(sessionId);
+		 if (memCode != 0) {
+             // 등록된 카드 불러오기
+             CardVO card = new CardVO();
+             card.setMem_code(memCode);
+             List<CardVO> cardList = cardService.getCardList(card);
+             int cardCode = cardList.get(0).getCard_code();
+
+             // 자동결제 취소 insert, delete
+             planService.insertCancelAutoPlanPayment(cardCode);
+             planService.deleteCancelAutoPlanPayment(cardCode);
+			 }
+			return "redirect:/myPagePlanPayment.do";
+		}
+		return "redirect:/loginPage.do";
+	}
+	
 	// 마이페이지 서비스 플랜 결제 내역
     @RequestMapping(value = "myPagePlanPayment.do", method = RequestMethod.GET)
     public String myPagePlanPayment(HttpSession session, Model model) {
@@ -142,10 +165,6 @@ public class PlanController {
                 card.setMem_code(memCode);
                 List<CardVO> cardList = cardService.getCardList(card);
                 model.addAttribute("cardList", cardList);
-                
-//                // 결제된 서비스 플랜 내역 가져오기
-//                List<PlanVO> planPaymentList = planService.getPlanPaymentList(memCode);
-//                model.addAttribute("planPaymentList", planPaymentList);
                 
                 return "/plan/planApply";
             }

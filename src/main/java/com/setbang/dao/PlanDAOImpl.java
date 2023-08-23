@@ -100,6 +100,24 @@ public class PlanDAOImpl implements PlanDAO{
     }
 
     @Override
+    // 자동결제 취소 - 취소 테이블이 인서트
+    public void insertCancelAutoPlanPayment(int cardCode) {
+    	// TODO Auto-generated method stub
+    	logger.info("insertCancelAutoPlanPayment DAO");
+    	System.out.println("=> Mybatis insertCancelAutoPlanPayment() 호출");
+    	mybatis.update("PlanDAO.insertCancelAutoPlanPayment", cardCode);
+    }
+
+    @Override
+    // 자동결제 취소 - 월간 서비스 플랜 다음달 결제내역 삭제
+    public void deleteCancelAutoPlanPayment(int cardCode) {
+    	// TODO Auto-generated method stub
+    	logger.info("deleteCancelAutoPlanPayment DAO");
+    	System.out.println("=> Mybatis deleteCancelAutoPlanPayment() 호출");
+    	mybatis.update("PlanDAO.deleteCancelAutoPlanPayment", cardCode);
+    }
+
+    @Override
     // 결제된 서비스 플랜 내역 조회
     public List<PlanVO> getPlanPaymentList(int memCode) {
     	// TODO Auto-generated method stub

@@ -41,14 +41,14 @@
     <c:choose>
         <c:when test="${sessionMemPlan == 'basic'}">
             <h4>서비스 플랜 결제</h4>
-            <div class="test">
-            <button>서비스 플랜 결제</button>
+            <div class="buttonGroup">
+            <a href="planApply.do"><button type="button" class="goPaymentButton">서비스 플랜 결제 💳</button></a>
             </div>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard_monthly'}">
             <h4>서비스 플랜 업그레이드</h4>
-            <div class="test">
-            <button>서비스 플랜 업그레이드</button>
+            <div class="buttonGroup">
+            <a href="planApply.do"><button type="button" class="goPaymentButton">서비스 플랜 업그레이드 💳</button></a>
             </div>
         </c:when>		
      </c:choose>
@@ -101,10 +101,18 @@
             </c:choose>
         </table>		
 		
-		
 	</div>
 		</div>
-
+		
+		
+	<!-- 자동결제 취소 -->
+		<div class="cancelPlanPayment">
+	  <form class="form" action="cancelAutoPlanPayment.do" method="post">
+		<button type="submit" class="button">자동결제 취소하기</button>
+		</form>
+		</div>
+		
+		
 		
 		
 		</div>

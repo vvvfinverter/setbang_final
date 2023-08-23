@@ -69,9 +69,22 @@ public class PlanServiceImpl implements PlanService {
     }
 
     @Override
+    // 자동결제 취소 - 월간 서비스 플랜 다음달 결제내역 삭제
+    public void insertCancelAutoPlanPayment(int cardCode) {
+    	planDAO.insertCancelAutoPlanPayment(cardCode);
+    }
+    
+    @Override
+	// 자동결제 취소 - 월간 서비스 플랜 다음달 결제내역 삭제
+    public void deleteCancelAutoPlanPayment(int cardCode) {
+    	planDAO.deleteCancelAutoPlanPayment(cardCode);
+    }
+
+    @Override
     // 결제된 서비스 플랜 내역 조회
     public List<PlanVO> getPlanPaymentList(int memCode) {
     	return planDAO.getPlanPaymentList(memCode);
     }
+
 
 }

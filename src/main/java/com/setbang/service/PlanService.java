@@ -33,8 +33,13 @@ public interface PlanService {
     // 서비스 플랜 다운그레이드
     void memPlanDowngrade(PlanVO vo);
     
-    // 결제된 서비스 플랜 내역 조회
+    // 자동결제 취소 - 취소 테이블이 인서트
+    void insertCancelAutoPlanPayment(int cardCode);
+    
+    // 자동결제 취소 - 월간 서비스 플랜 다음달 결제내역 삭제
+    void deleteCancelAutoPlanPayment(int cardCode);
+    
+    // 결제된 서비스 플랜 내역 조회 
     List<PlanVO> getPlanPaymentList(int memCode);
     
-	
 }
