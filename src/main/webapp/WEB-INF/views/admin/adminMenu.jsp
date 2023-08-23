@@ -33,10 +33,13 @@
       <a class="no-underline" href="membertotal.do">회원현황</a>
     </li>
     <li>
-      <a class="no-underline" href="contract.do">임대차 계약등록</a>
+      <a class="no-underline" href="contract.do">임대차계약서 등록</a>
     </li>
     <li>
-      <a class="no-underline" href="questionAnswer.do">문의답변</a>
+      <a class="no-underline" href="contractList.do">임대차계약서 목록 </a>
+    </li>
+    <li>
+      <a class="no-underline" href="questionAnswer.do">문의&답변</a>
     </li>
   </ul>
   </aside>

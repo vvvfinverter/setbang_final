@@ -1,12 +1,48 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-	font-family: 'Noto Sans KR', sans-serif;
-	font-family: 'REM', sans-serif;
-	
+/* wrap */
+
+.wrap {
+	text-align : center;
+	margin : 150px;
 }
 
-. table {
-	background-color: #D6AF91;
+h2 {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h4 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 50px;
+}
+
+h6 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 50px;
+}
+
+/* 서비스 플랜 결제 내역 */
+
+.questionTable {
+	padding : 50px;
+}
+
+table {
+	font-family: 'Noto Sans KR', sans-serif !important;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+}
+
+th, td {
+	font-family: 'Noto Sans KR', sans-serif !important;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+	font-family: 'Noto Sans KR', sans-serif !important;
+    background-color: #e5e5e5;
+    font-weight: bold;
 }

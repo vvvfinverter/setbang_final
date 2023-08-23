@@ -1,9 +1,10 @@
 package com.setbang.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.xml.ws.Response;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.setbang.domain.AdminVO;
 import com.setbang.service.AdminService;
@@ -45,6 +45,49 @@ public class AdminController {
 			int totalMember = adminservice.totalMember();
 			model.addAttribute("totalmember", totalMember);
 			System.out.println("[" + totalMember + "]");
+			
+			//지점별 회원수 추출
+			// 1. 구로지점
+			int guromember = adminservice.guromember();
+			System.out.println("guromember : " + guromember);
+			model.addAttribute("guromember", guromember);
+		
+			// 2. 판교지점
+			int pangyomember = adminservice.pangyomember();
+			System.out.println("pangyomember : " + pangyomember);
+			model.addAttribute("pangyomember", pangyomember);
+			
+			// 3. 강남지점
+			int gangnammember = adminservice.gangnammember();
+			System.out.println("gangnammember : " + gangnammember);
+			model.addAttribute("gangnammember", gangnammember);
+		
+		
+		// 서비스 플랜별 현황 추출
+			// 1. Basic
+			int basic = adminservice.basic();
+			System.out.println("basic : " + basic);
+			model.addAttribute("basic", basic);
+			
+			// 2. standard_monthly
+			int standard_monthly = adminservice.standard_monthly();
+			System.out.println("standard_monthly : " + standard_monthly);
+			model.addAttribute("standard_monthly", standard_monthly);
+			
+			// 3. standard_annual
+			int standard_annual = adminservice.standard_annual();
+			System.out.println("standard_annual : " + standard_annual);
+			model.addAttribute("standard_annual", standard_annual);
+			
+			// 4. premium_monthly
+			int premium_monthly = adminservice.premium_monthly();
+			System.out.println("premium_monthly : " + premium_monthly);
+			model.addAttribute("premium_monthly", premium_monthly);
+			
+			// 5. premium_annual
+			int premium_annual = adminservice.premium_annual();
+			System.out.println("premium_annual : " + premium_annual);
+			model.addAttribute("premium_annual", premium_annual);
 			
 		}else {
 			System.out.println("로그인 실패");
@@ -111,7 +154,7 @@ public class AdminController {
 	
 	// 회원 페이지로 이동
 	@RequestMapping(value="membertotal.do")
-	public String memberAdmin(AdminVO vo, Model model, HttpSession session) {		
+	public String memberAdmin(AdminVO vo, Model model) {		
 		
 		// 총 회원수 추출
 		int totalMember = adminservice.totalMember();
@@ -133,19 +176,115 @@ public class AdminController {
 			int gangnammember = adminservice.gangnammember();
 			System.out.println("gangnammember : " + gangnammember);
 			model.addAttribute("gangnammember", gangnammember);
+		
+		
+		// 서비스 플랜별 현황 추출
+			// 1. Basic
+			int basic = adminservice.basic();
+			System.out.println("basic : " + basic);
+			model.addAttribute("basic", basic);
+			
+			// 2. standard_monthly
+			int standard_monthly = adminservice.standard_monthly();
+			System.out.println("standard_monthly : " + standard_monthly);
+			model.addAttribute("standard_monthly", standard_monthly);
+			
+			// 3. standard_annual
+			int standard_annual = adminservice.standard_annual();
+			System.out.println("standard_annual : " + standard_annual);
+			model.addAttribute("standard_annual", standard_annual);
+			
+			// 4. premium_monthly
+			int premium_monthly = adminservice.premium_monthly();
+			System.out.println("premium_monthly : " + premium_monthly);
+			model.addAttribute("premium_monthly", premium_monthly);
+			
+			// 5. premium_annual
+			int premium_annual = adminservice.premium_annual();
+			System.out.println("premium_annual : " + premium_annual);
+			model.addAttribute("premium_annual", premium_annual);
 			
 		return "/admin/memberAdmin";
 	}
 	
-	// 임대차 계약서 등록 페이지로 이동
+	
+	// 임대차계약서 등록 페이지로 이동
 	@RequestMapping(value="contract.do")
 	public String contract(AdminVO vo) {		
 		return "/admin/contract";
 	}	
 	
+	// 임대차계약서 목록보기 페이지로 이동
+	@RequestMapping(value="contractList.do")
+	public String contractlist(AdminVO vo) {		
+		return "/admin/constractList";
+	}
+	
+	// 임대차계약서 목록에서 관리자 메인으로 돌아가기
+	@RequestMapping(value="constractlist1.do")
+	public String contractlistcomback(AdminVO vo, Model model) {	
+		// 총 회원수 추출
+		int totalMember = adminservice.totalMember();
+		model.addAttribute("totalmember", totalMember);
+		System.out.println("[" + totalMember + "]");
+		
+		//지점별 회원수 추출
+			// 1. 구로지점
+			int guromember = adminservice.guromember();
+			System.out.println("guromember : " + guromember);
+			model.addAttribute("guromember", guromember);
+		
+			// 2. 판교지점
+			int pangyomember = adminservice.pangyomember();
+			System.out.println("pangyomember : " + pangyomember);
+			model.addAttribute("pangyomember", pangyomember);
+			
+			// 3. 강남지점
+			int gangnammember = adminservice.gangnammember();
+			System.out.println("gangnammember : " + gangnammember);
+			model.addAttribute("gangnammember", gangnammember);
+		
+		
+		// 서비스 플랜별 현황 추출
+			// 1. Basic
+			int basic = adminservice.basic();
+			System.out.println("basic : " + basic);
+			model.addAttribute("basic", basic);
+			
+			// 2. standard_monthly
+			int standard_monthly = adminservice.standard_monthly();
+			System.out.println("standard_monthly : " + standard_monthly);
+			model.addAttribute("standard_monthly", standard_monthly);
+			
+			// 3. standard_annual
+			int standard_annual = adminservice.standard_annual();
+			System.out.println("standard_annual : " + standard_annual);
+			model.addAttribute("standard_annual", standard_annual);
+			
+			// 4. premium_monthly
+			int premium_monthly = adminservice.premium_monthly();
+			System.out.println("premium_monthly : " + premium_monthly);
+			model.addAttribute("premium_monthly", premium_monthly);
+			
+			// 5. premium_annual
+			int premium_annual = adminservice.premium_annual();
+			System.out.println("premium_annual : " + premium_annual);
+			model.addAttribute("premium_annual", premium_annual);		
+		
+		return "/admin/admin";
+	}
+	
+	
 	// 비회원 문의게시판  페이지로 이동
 	@RequestMapping(value="questionAnswer.do")
-	public String Answer(AdminVO vo) {	
+	public String Answer(AdminVO vo, Model model) {	
+		
+		
+		List<AdminVO> inqueryList = adminservice.inqueryList(vo);
+		System.out.println("rownum : " + inqueryList);
+		model.addAttribute("inqueryList", inqueryList);
+		
+		
 		return "/admin/questionAnswer";
 	}	
 	

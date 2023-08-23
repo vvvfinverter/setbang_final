@@ -35,4 +35,30 @@
 	<select id="countgangnam" resultType="int">
 		select count(*) as priv_code from constract <![CDATA[where priv_code<=10]]>
 	</select>
+	
+	<select id="servicegrade_Basic" resultType="int">
+		select count(*) as mem_plan from member where mem_plan='basic'
+	</select>
+	
+	<select id="servicegrade_Standard_monthly" resultType="int">
+		select count(*) as mem_plan from member where mem_plan='standard_monthly'
+	</select>
+	
+	<select id="servicegrade_Standard_annual" resultType="int">
+		select count(*) as mem_plan from member where mem_plan='standard_annual'
+	</select>
+	
+	<select id="servicegrade_premium_monthly" resultType="int">
+		select count(*) as mem_plan from member where mem_plan='premium_monthly'
+	</select>	
+	
+	<select id="servicegrade_premium_annual" resultType="int">
+		select count(*) as mem_plan from member where mem_plan='premium_annual'
+	</select>
+	
+	<select id="inqueryList" resultType="admin">
+	<![CDATA[select rownum as inq_indexnum, inq_code, inq_title, inq_content, to_char(inq_date, 'YYYY-MM-DD') as inq_date, inq_name, inq_tel, inq_email, inq_people, inq_coname,
+		inq_branch, inq_website from (select * from inquery order by inq_code) ]]>
+	</select>
+	
 </mapper>

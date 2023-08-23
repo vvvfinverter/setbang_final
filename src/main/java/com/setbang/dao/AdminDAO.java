@@ -1,5 +1,7 @@
 package com.setbang.dao;
 
+import java.util.List;
+
 import com.setbang.domain.AdminVO;
 
 public interface AdminDAO {
@@ -19,6 +21,8 @@ public interface AdminDAO {
 	// 임대차계약서 인서트
 	void insertcontract(AdminVO vo);
 	
+	
+	
 	// 지점별 회원수 추출
 		// 1. 구로지점
 		int guromember();
@@ -28,5 +32,26 @@ public interface AdminDAO {
 		
 		// 3. 강남지점
 		int gangnammember();
+		
+		
+		
+	// 서비스 플랜 회원수 찾기
+		// 1. basic
+		int basic();
+		
+		// 2. standard_monthly
+		int standard_monthly();
+		
+		// 3. standard_annual
+		int standard_annual();
+		
+		// 4. premium_monthly
+		int premium_monthly();
+		
+		// 5. premium_annual
+		int premium_annual();
+		
+	// 비회원 문의게시판 List
+		List<AdminVO> inqueryList(AdminVO vo);
 
 }	

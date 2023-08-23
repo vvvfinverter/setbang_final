@@ -1,5 +1,7 @@
 package com.setbang.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,7 +54,6 @@ public class AdminServiceImpl implements AdminService{
 			adminDAO.guromember();
 			return adminDAO.guromember();
 		}
-		
 		// 2. 판교지점
 		public int pangyomember() {
 			System.out.println("p");
@@ -65,5 +66,49 @@ public class AdminServiceImpl implements AdminService{
 			System.out.println("nam");
 			adminDAO.gangnammember();
 			return adminDAO.gangnammember();
+		}
+		
+		// 서비스 플랜 회원수 찾기
+		// 1. basic
+		public int basic() {
+			System.out.println("basic");
+			adminDAO.basic();
+			return adminDAO.basic();
+		}
+		
+		// 2. standard_monthly
+		public int standard_monthly() {
+			System.out.println("standard_monthly");
+			adminDAO.standard_monthly();
+			return adminDAO.standard_monthly();
+		}
+		
+		// 3. standard_annual
+		public int standard_annual() {
+			System.out.println("standard_annual");	
+			adminDAO.standard_annual();
+			return adminDAO.standard_annual();
+		}
+		
+		// 4. premium_monthly
+		public int premium_monthly() {
+			System.out.println("premium_monthly");
+			adminDAO.premium_monthly();
+			return adminDAO.premium_monthly();
+		}
+		
+		// 5. premium_annual
+		public int premium_annual() {
+			System.out.println("premium_annual");
+			adminDAO.premium_annual();
+			return adminDAO.premium_annual();
+		}
+		
+		
+		// 문의게시판 내역보기
+		public List<AdminVO> inqueryList(AdminVO vo) {
+			System.out.println("inqueryList" + vo);
+			adminDAO.inqueryList(vo);
+			return adminDAO.inqueryList(vo);
 		}
 }

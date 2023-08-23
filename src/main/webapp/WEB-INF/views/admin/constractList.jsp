@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>문의게시판</title>
+<title>임대차계약서 목록</title>
 
 <!-- Style CSS -->
 <link rel="stylesheet" href="./resources/css/questionAnswer.css">
@@ -31,14 +31,15 @@
 		
 		<div class="wrap">
 
-	<h2>문의 답변 게시판</h2>
+	<h2>임대차계약서 목록</h2>
 			
 		
 	<!-- 서비스 플랜 결제 내역 -->
 	<div id="questionList">	
-		
+	<form class="constractlist" name="constractlist" action="constractlist1.do">	
 		<div class="questionTable">	
- <table>
+
+	 <table>
             <thead>
                 <tr>
                     <th>NO</th>
@@ -72,8 +73,8 @@
             </c:when>
             </c:choose>
         </table>		
-				
-		
+		<button type="summit" class="button" >메인페이지</button>		
+	</form>
 	</div>
 		</div>
 

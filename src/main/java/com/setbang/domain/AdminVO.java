@@ -1,18 +1,16 @@
 package com.setbang.domain;
 
+import java.util.Date;
+
 public class AdminVO {
 
+	// 관리자 로그인 관련 vo
 	private int admin_code;
 	private String admin_name;
 	private String admin_id;
 	private String admin_pw;
-	private int totalmember;
-	
-	private int reply_code;
-	private String re_yn;
-	private int inq_code;
-	private int mem_code;
-	
+
+	// 임대차계약서 관련 vo
 	private int con_code;
 	private int priv_code;
 	private String con_start_date;
@@ -22,10 +20,176 @@ public class AdminVO {
 	private String lessee_name;
 	private String lessee_tel;
 	
+	
+	// 총 회원수 관련 vo
+	private int totalmember;
+	
+	
+	// 지점별 회원수 관련 vo
 	private int guromember;
 	private int pangyomember;
 	private int gangnammember;
 	
+	
+	// 서비스 플랜별 회원수 관련 vo
+	private int basic;
+	private int standard_monthly;
+	private int standard_annual;
+	private int premium_monthly;
+	private int premium_annual;
+	
+	
+	// 문의게시판 관련 vo
+	private int inq_code;
+	private String inq_title;
+	private String inq_content;
+	private String inq_date;
+	private String inq_name;
+	private String inq_tel;
+	private String inq_email;
+	private String inq_people;
+	private String inq_coname;
+	private String inq_branch;
+	private String inq_website;
+	private int inq_indexnum;
+	
+	
+	// 답변 관련 vo
+	private int reply_code;
+	private String re_yn;
+	private int mem_code;
+	
+	
+	public int getInq_indexnum() {
+		return inq_indexnum;
+	}
+
+	public void setInq_indexnum(int inq_indexnum) {
+		this.inq_indexnum = inq_indexnum;
+	}
+	
+
+	public String getInq_title() {
+		return inq_title;
+	}
+
+	public void setInq_title(String inq_title) {
+		this.inq_title = inq_title;
+	}
+
+	public String getInq_content() {
+		return inq_content;
+	}
+
+	public void setInq_content(String inq_content) {
+		this.inq_content = inq_content;
+	}
+
+	public String getInq_name() {
+		return inq_name;
+	}
+
+	public void setInq_name(String inq_name) {
+		this.inq_name = inq_name;
+	}
+
+	public String getInq_tel() {
+		return inq_tel;
+	}
+
+	public void setInq_tel(String inq_tel) {
+		this.inq_tel = inq_tel;
+	}
+
+	public String getInq_email() {
+		return inq_email;
+	}
+
+	public void setInq_email(String inq_email) {
+		this.inq_email = inq_email;
+	}
+	
+	
+	public String getInq_date() {
+		return inq_date;
+	}
+
+	public void setInq_date(String inq_date) {
+		this.inq_date = inq_date;
+	}
+
+	public String getInq_people() {
+		return inq_people;
+	}
+
+	public void setInq_people(String inq_people) {
+		this.inq_people = inq_people;
+	}
+
+	public String getInq_coname() {
+		return inq_coname;
+	}
+
+	public void setInq_coname(String inq_coname) {
+		this.inq_coname = inq_coname;
+	}
+
+	public String getInq_branch() {
+		return inq_branch;
+	}
+
+	public void setInq_branch(String inq_branch) {
+		this.inq_branch = inq_branch;
+	}
+
+	public String getInq_website() {
+		return inq_website;
+	}
+
+	public void setInq_website(String inq_website) {
+		this.inq_website = inq_website;
+	}
+
+	public int getBasic() {
+		return basic;
+	}
+
+	public void setBasic(int basic) {
+		this.basic = basic;
+	}
+
+	public int getStandard_monthly() {
+		return standard_monthly;
+	}
+
+	public void setStandard_monthly(int standard_monthly) {
+		this.standard_monthly = standard_monthly;
+	}
+
+	public int getStandard_annual() {
+		return standard_annual;
+	}
+
+	public void setStandard_annual(int standard_annual) {
+		this.standard_annual = standard_annual;
+	}
+
+	public int getPremium_monthly() {
+		return premium_monthly;
+	}
+
+	public void setPremium_monthly(int premium_monthly) {
+		this.premium_monthly = premium_monthly;
+	}
+
+	public int getPremium_annual() {
+		return premium_annual;
+	}
+
+	public void setPremium_annual(int premium_annual) {
+		this.premium_annual = premium_annual;
+	}
+
 	public int getGuromember() {
 		return guromember;
 	}

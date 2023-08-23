@@ -1,6 +1,7 @@
 package com.setbang.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -88,7 +89,50 @@ public class AdminDAOImpl implements AdminDAO{
 	    return mybatis.selectOne("AdminDAO.countgangnam");
 	}
 	
-
+	
+	// 서비스 플랜 회원수 찾기
+	// 1. basic
+	@Override
+	public int basic() {
+		System.out.println("=> Mybatis basic() 호출");	
+	    return mybatis.selectOne("AdminDAO.servicegrade_Basic");	
+	}
+	
+	// 2. standard_monthly
+	@Override
+	public int standard_monthly() {
+		System.out.println("=> Mybatis standard_monthly() 호출");	
+	    return mybatis.selectOne("AdminDAO.servicegrade_Standard_monthly");		
+	}
+	
+	// 3. standard_annual
+	@Override
+	public int standard_annual() {
+		System.out.println("=> Mybatis standard_annual() 호출");	
+	    return mybatis.selectOne("AdminDAO.servicegrade_Standard_annual");		
+	}
+	
+	// 4. premium_monthly
+	@Override
+	public int premium_monthly() {
+		System.out.println("=> Mybatis premium_monthly() 호출");	
+	    return mybatis.selectOne("AdminDAO.servicegrade_premium_monthly");		
+	}
+	
+	// 5. premium_annual
+	@Override
+	public int premium_annual() {
+		System.out.println("=> Mybatis premium_annual() 호출");	
+	    return mybatis.selectOne("AdminDAO.servicegrade_premium_annual");		
+	}
+	
+	
+	// 문의게시판 내역보기
+	@Override
+	public List<AdminVO> inqueryList(AdminVO vo) {
+		System.out.println("=> Mybatis inqueryList() 호출");	
+	    return mybatis.selectList("AdminDAO.inqueryList");		
+	}
 	
 	
 }
