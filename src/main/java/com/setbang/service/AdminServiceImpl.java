@@ -111,4 +111,11 @@ public class AdminServiceImpl implements AdminService{
 			adminDAO.inqueryList(vo);
 			return adminDAO.inqueryList(vo);
 		}
+		
+		// 임대차계약서 목록게시판 내역보기
+		public List<AdminVO> contractList(AdminVO vo) {
+			System.out.println("contractList" + vo);
+			adminDAO.contractList(vo);
+			return adminDAO.contractList(vo);
+		}
 }

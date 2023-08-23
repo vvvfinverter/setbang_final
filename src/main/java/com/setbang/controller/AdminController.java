@@ -216,7 +216,12 @@ public class AdminController {
 	
 	// 임대차계약서 목록보기 페이지로 이동
 	@RequestMapping(value="contractList.do")
-	public String contractlist(AdminVO vo) {		
+	public String contractlist(AdminVO vo, Model model) {
+		
+		List<AdminVO> contractList = adminservice.contractList(vo);
+		System.out.println("rownum : " + contractList);
+		model.addAttribute("contractList", contractList);
+		
 		return "/admin/constractList";
 	}
 	

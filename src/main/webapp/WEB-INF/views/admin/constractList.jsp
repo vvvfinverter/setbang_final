@@ -9,7 +9,7 @@
 <title>임대차계약서 목록</title>
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/questionAnswer.css">
+<link rel="stylesheet" href="./resources/css/constractList.css">
 
 <!-- JS / Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -35,38 +35,34 @@
 			
 		
 	<!-- 서비스 플랜 결제 내역 -->
-	<div id="questionList">	
+	<div id="constractlist">	
 	<form class="constractlist" name="constractlist" action="constractlist1.do">	
-		<div class="questionTable">	
+		<div class="constractTable">	
 
 	 <table>
             <thead>
                 <tr>
                     <th>NO</th>
-                    <th>제  목</th>
-                    <th>문의내용</th>
-                    <th>관심지점</th>
-                    <th>작성자</th>
-                    <th>회사명</th>
-                    <th>연락처</th>
-                    <th>이메일</th>
-                    <th>문의날짜</th>
+                    <th>임차인</th>
+                    <th>임차인 연락처</th>
+                    <th>임대인</th>
+                    <th>임대시작일</th>
+                    <th>임대종료일</th>
+                    <th>계약일</th>
                 </tr>
             </thead>
             <c:choose>
-        	<c:when test="${not empty inqueryList}">
+        	<c:when test="${not empty contractList}">
             <tbody>
-            <c:forEach var="inquiry" items="${inqueryList}">
+            <c:forEach var="constract" items="${contractList}">
                 <tr>
-                    <td>${inquiry.inq_indexnum}</td>
-                    <td>${inquiry.inq_title}</td>
-                    <td>${inquiry.inq_content}</td>
-                    <td>${inquiry.inq_branch}</td>
-                    <td>${inquiry.inq_name}</td>
-                    <td>${inquiry.inq_coname}</td>
-                    <td>${inquiry.inq_tel}</td>
-                    <td>${inquiry.inq_email}</td>
-                    <td>${inquiry.inq_date}</td>
+                    <td>${constract.con_indexnum}</td>
+                    <td>${constract.lessee_name}</td>
+                    <td>${constract.lessee_tel}</td>
+                    <td>${constract.lessor_name}</td>
+                    <td>${constract.con_start_date}</td>
+                    <td>${constract.con_end_date}</td>
+                    <td>${constract.con_date}</td>
                 </tr>
              </c:forEach>
             </tbody>

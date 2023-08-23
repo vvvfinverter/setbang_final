@@ -61,4 +61,9 @@
 		inq_branch, inq_website from (select * from inquery order by inq_code) ]]>
 	</select>
 	
+	<select id="constractList" resultType="admin">
+	<![CDATA[ select rownum as con_indexnum, con_code, lessor_name, lessee_name, lessee_tel, to_char(con_start_date, 'YYYY-MM-DD') as con_start_date, to_char(con_end_date, 'YYYY-MM-DD') as con_end_date, to_char(con_date, 'YYYY-MM-DD') as con_date
+			from (select * from constract order by con_code) ]]>		
+	</select>
+	
 </mapper>

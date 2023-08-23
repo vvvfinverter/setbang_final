@@ -134,5 +134,11 @@ public class AdminDAOImpl implements AdminDAO{
 	    return mybatis.selectList("AdminDAO.inqueryList");		
 	}
 	
+	// 임대차계약서 게시판 계약내역 보기
+	@Override
+	public List<AdminVO> contractList(AdminVO vo) {
+		System.out.println("=> Mybatis contractList() 호출");	
+	    return mybatis.selectList("AdminDAO.constractList");		
+	}
 	
 }

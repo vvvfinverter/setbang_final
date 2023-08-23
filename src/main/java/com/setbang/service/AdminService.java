@@ -65,4 +65,7 @@ public interface AdminService {
 	// 비회원 문의게시판
 		List<AdminVO> inqueryList(AdminVO vo);
 		
+	// 임대차계약서 목록게시판
+		List<AdminVO> contractList(AdminVO vo);
+		
 }

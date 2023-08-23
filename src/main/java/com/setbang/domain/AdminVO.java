@@ -19,6 +19,7 @@ public class AdminVO {
 	private String lessor_name;
 	private String lessee_name;
 	private String lessee_tel;
+	private int con_indexnum;
 	
 	
 	// 총 회원수 관련 vo
@@ -60,6 +61,16 @@ public class AdminVO {
 	private int mem_code;
 	
 	
+	
+	
+	public int getCon_indexnum() {
+		return con_indexnum;
+	}
+
+	public void setCon_indexnum(int con_indexnum) {
+		this.con_indexnum = con_indexnum;
+	}
+
 	public int getInq_indexnum() {
 		return inq_indexnum;
 	}
