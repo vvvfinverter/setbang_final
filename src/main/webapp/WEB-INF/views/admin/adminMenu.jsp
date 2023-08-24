@@ -32,6 +32,9 @@
     <li>
       <a class="no-underline" href="membertotal.do">회원현황</a>
     </li>
+        <li>
+      <a class="no-underline" href="memberapprovallist.do">회원승인</a>
+    </li>
     <li>
       <a class="no-underline" href="contract.do">임대차계약서 등록</a>
     </li>

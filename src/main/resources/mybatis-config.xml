@@ -23,6 +23,7 @@
 		<typeAlias alias="pubOffice" type="com.setbang.domain.PubOfficeVO"/>
 		<typeAlias alias="item" type="com.setbang.domain.ItemVO"/>
 		<typeAlias alias="partner" type="com.setbang.domain.PartnerVO"/>
+		<typeAlias alias="mypagesub" type="com.setbang.domain.MypageSubVO"/>		
 	</typeAliases>
 	
 

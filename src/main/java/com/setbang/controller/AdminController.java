@@ -18,7 +18,7 @@ import com.setbang.service.AdminService;
 
 @Controller
 public class AdminController {
-	private static final Logger logger = LoggerFactory.getLogger(SupportController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
 	@Autowired
 	private AdminService adminservice;
@@ -294,5 +294,18 @@ public class AdminController {
 	}	
 	
 	
+	// 회원승인 게시판으로 이동
+	@RequestMapping(value="memberapprovallist.do")
+	public String memberapproval(AdminVO vo, Model model) {
+		
+		List<AdminVO> memberapprovalList = adminservice.memberapprovalList(vo);
+		System.out.println("memberapprovalList : " + memberapprovalList);
+		model.addAttribute("memberapprovalList", memberapprovalList);
+		
+		return "/admin/memberapproval";
+	}
+	
+	
+	// 회원승인 시 N -> Y로 approval 변경(value="memberapproval.do")
 	
 }

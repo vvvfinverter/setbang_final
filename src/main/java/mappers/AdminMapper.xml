@@ -66,4 +66,12 @@
 			from (select * from constract order by con_code) ]]>		
 	</select>
 	
+	<select id="memberapprovalList" resultType="admin">
+	<![CDATA[ select rownum as member_indexnum, mem_code, name, tel, email, business_no, addr, id, pw, mem_plan,
+			to_char(signup_date, 'YYYY-MM-DD') as signup_date, approval, ind_name from (select m.mem_code, m.name, m.tel, m.email, m.business_no, m.addr, m.id, m.pw, m.mem_plan, m.signup_date, m.approval, i.ind_name from member m, industry i where m.ind_code = i.ind_code
+			order by mem_code)
+			where approval = 'N'
+	]]>		
+	</select>
+	
 </mapper>

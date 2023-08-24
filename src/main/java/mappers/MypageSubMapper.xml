@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MypageSubDAO">
+
+	<!-- memcode 찾아오기 -->
+	<select id="findmemcode" parameterType="string" resultType="int">
+		select mem_code from member where id=#{id}
+	</select>
+
+	<!--memcode로  -->
+	<select id="supportlist" parameterType="int" resultType="mypagesub">
+	<![CDATA[ select rownum as support_indexnum, sup_apply_code, sup_code, mem_code, to_char(sup_counseling_date, 'YYYY-MM-DD') as sup_counseling_date, sup_content, sup_email, to_char(sup_apply_date, 'YYYY-MM-DD') as sup_apply_date, sup_name
+		from (select sp.sup_apply_code, sp.sup_code, sp.mem_code, sp.sup_counseling_date, sp.sup_content, sp.sup_email, sp.sup_apply_date, s.sup_name 
+		from support_apply sp, support s where sp.sup_code = s.sup_code order by sp.sup_apply_code) where mem_code=#{mem_code} 	]]>
+	</select>
+
+</mapper>

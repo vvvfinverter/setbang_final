@@ -118,4 +118,11 @@ public class AdminServiceImpl implements AdminService{
 			adminDAO.contractList(vo);
 			return adminDAO.contractList(vo);
 		}
+		
+		// 회원가입 승인 목록게시판
+		public List<AdminVO> memberapprovalList(AdminVO vo){
+			System.out.println("contractList" + vo);
+			adminDAO.memberapprovalList(vo);
+			return adminDAO.memberapprovalList(vo);			
+		}
 }

@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* wrap */
+
+.wrap {
+	text-align : center;
+	margin : 150px;
+}
+
+h2 {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h4 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 50px;
+}
+
+h6 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 50px;
+}
+
+/* 서비스 플랜 결제 내역 */
+
+#memberapprovallist {
+	padding : 50px;
+}
+
+.memberapprovallist {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding : 100px;
+}
+
+.goPaymentButton {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 20px;
+	background: #D6AF91;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 250px;
+}
+
+.memberapprovalTable {
+	padding : 50px;
+}
+
+table {
+	font-family: 'Noto Sans KR', sans-serif !important;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+}
+
+th, td {
+	font-family: 'Noto Sans KR', sans-serif !important;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+	font-family: 'Noto Sans KR', sans-serif !important;
+    background-color: #e5e5e5;
+    font-weight: bold;
+}
+
+.button {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 20px;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 250px;
+}

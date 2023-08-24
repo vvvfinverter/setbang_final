@@ -61,6 +61,22 @@ public class AdminVO {
 	private int mem_code;
 	
 	
+	// 회원가입 승인 관련 vo
+	private int member_indexnum;
+	private String name;
+	private String tel;
+	private String email;
+	private String business_no;
+	private String ind_name;
+	private String addr;
+	private String id;
+	private String pw;
+	private String mem_plan;
+	private String signup_date;
+	private String approval;
+	
+	
+	
 	
 	
 	public int getCon_indexnum() {
@@ -368,4 +384,102 @@ public class AdminVO {
 	public void setTotalMember(int totalmember) {
 		this.totalmember = totalmember;
 	}
+	
+	public int getMember_indexnum() {
+		return member_indexnum;
+	}
+
+	public void setMember_indexnum(int member_indexnum) {
+		this.member_indexnum = member_indexnum;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getBusiness_no() {
+		return business_no;
+	}
+
+	public void setBusiness_no(String business_no) {
+		this.business_no = business_no;
+	}
+
+	public String getInd_name() {
+		return ind_name;
+	}
+
+	public void setInd_name(String ind_name) {
+		this.ind_name = ind_name;
+	}
+
+	public String getAddr() {
+		return addr;
+	}
+
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+
+	public String getMem_plan() {
+		return mem_plan;
+	}
+
+	public void setMem_plan(String mem_plan) {
+		this.mem_plan = mem_plan;
+	}
+
+	public String getSignup_date() {
+		return signup_date;
+	}
+
+	public void setSignup_date(String signup_date) {
+		this.signup_date = signup_date;
+	}
+
+	public String getApproval() {
+		return approval;
+	}
+
+	public void setApproval(String approval) {
+		this.approval = approval;
+	}
+	
+	
 }

@@ -140,5 +140,12 @@ public class AdminDAOImpl implements AdminDAO{
 		System.out.println("=> Mybatis contractList() 호출");	
 	    return mybatis.selectList("AdminDAO.constractList");		
 	}
+
 	
+	// 회원가입 승인 목록게시판
+	@Override
+	public List<AdminVO> memberapprovalList(AdminVO vo) {
+		System.out.println("=> Mybatis memberapprovalList() 호출");	
+	    return mybatis.selectList("AdminDAO.memberapprovalList");		
+	}
 }

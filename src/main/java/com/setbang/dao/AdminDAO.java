@@ -57,4 +57,7 @@ public interface AdminDAO {
 	// 임대차계약서 목록게시판 List
 		List<AdminVO> contractList(AdminVO vo);
 		
+	// 회원가입 승인 목록게시판
+		List<AdminVO> memberapprovalList(AdminVO vo);
+		
 }	

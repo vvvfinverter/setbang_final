@@ -65,14 +65,14 @@
 		<ul>
 	        <li><a class="no-underline" href="#">공용 오피스 예약 내역</a></li>
 	        <li><a class="no-underline" href="#">물품 신청 내역</a></li>
-	        <li><a class="no-underline" href="#">업무지원 신청 내역</a></li>
+	        <li><a class="no-underline" href="supportlist.do">업무지원 신청 내역</a></li>
       	</ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
         <ul>
 	        <li><a class="no-underline" href="#">공용 오피스 예약 내역</a></li>
 	        <li><a class="no-underline" href="#">물품 신청 내역</a></li>
-	        <li><a class="no-underline" href="#">업무지원 신청 내역</a></li>
+	        <li><a class="no-underline" href="supportlist.do">업무지원 신청 내역</a></li>
 	        <li><a class="no-underline" href="#">협력업체 신청 내역</a></li>
       	</ul>
         </c:when>
