@@ -27,6 +27,20 @@ public class MypageSubDAOImpl implements MypageSubDAO{
 		System.out.println("=> Mybatis supportlist() 호출");	
 		return mybatis.selectList("MypageSubDAO.supportlist", mem_code);
 	}
+
+	@Override
+	public List<MypageSubVO> partnerlist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("=> Mybatis partnerlist() 호출");	
+		return mybatis.selectList("MypageSubDAO.partnerlist", mem_code);		
+	}
+
+	@Override
+	public List<MypageSubVO> pubbookinglist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("=> Mybatis pubbookinglist() 호출");	
+		return mybatis.selectList("MypageSubDAO.pubbookinglist", mem_code);
+	}
 	
 	
 

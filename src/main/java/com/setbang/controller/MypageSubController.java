@@ -39,4 +39,37 @@ public class MypageSubController {
 		return "/mypage_sub/myPageSupportlist";
 	}
 	
+	
+	// 협력업체지원서비스 신청현황
+	@RequestMapping(value="partnerlist.do")
+	public String partnerlist(MypageSubVO vo, Model model, HttpSession session) {
+		
+		// Session에서 Mem_code 가져오기
+		String sessionId = (String) session.getAttribute("sessionId");
+		int mem_code = mypagesubservice.findmemcode(sessionId);
+		
+		// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
+		List<MypageSubVO> partnerlist = mypagesubservice.partnerlist(mem_code);
+			System.out.println("partnerlist : " + partnerlist);
+			model.addAttribute("partnerlist", partnerlist);
+			
+		return "/mypage_sub/myPagePartnerlist";
+	}
+	
+	// 공용공간 예약신청현황
+	@RequestMapping(value="pubbookinglist.do")
+	public String pubbookinglist(MypageSubVO vo, Model model, HttpSession session) {
+		
+		// Session에서 Mem_code 가져오기
+		String sessionId = (String) session.getAttribute("sessionId");
+		int mem_code = mypagesubservice.findmemcode(sessionId);
+		
+		// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
+		List<MypageSubVO> pubbookinglist = mypagesubservice.pubbookinglist(mem_code);
+			System.out.println("pubbookinglist : " + pubbookinglist);
+			model.addAttribute("pubbookinglist", pubbookinglist);
+			
+		return "/mypage_sub/myPagePubBookinglist";
+	}
+	
 }

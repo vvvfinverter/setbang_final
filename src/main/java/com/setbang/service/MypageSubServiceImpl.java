@@ -29,5 +29,19 @@ public class MypageSubServiceImpl implements MypageSubService{
 		return mypagesubDAO.supportlist(mem_code);
 	}
 
-	
+	@Override
+	public List<MypageSubVO> partnerlist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("partnerlist " + mem_code);
+		mypagesubDAO.partnerlist(mem_code);
+		return mypagesubDAO.partnerlist(mem_code);
+	}
+
+	@Override
+	public List<MypageSubVO> pubbookinglist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("pubbookinglist " + mem_code);
+		mypagesubDAO.pubbookinglist(mem_code);
+		return mypagesubDAO.pubbookinglist(mem_code);
+	}
 }
