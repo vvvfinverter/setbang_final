@@ -33,6 +33,7 @@
          <value>com.setbang.domain.InqueryVO</value>
          <value>com.setbang.domain.AdminVO</value>
          <value>com.setbang.domain.ItemVO</value>
+         <value>com.setbang.domain.PartnerVO</value>
       </list>
    </property>
  </bean>

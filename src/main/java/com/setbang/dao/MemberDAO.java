@@ -15,4 +15,13 @@ public interface MemberDAO {
 
     // 세션아이디로 회원플랜등급 가져오기
     String getMemPlanBySessionId(String sessionId);
+
+    // 아이디 중복 확인
+    int idCheck(String id);
+    
+    // 아이디 찾기
+    MemberVO findId(MemberVO vo);
+    
+    // 패스워드 찾기
+    MemberVO findPw(MemberVO vo);
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PartnerDAO">
+
+	<!-- 세션아이디로 신청페이지에 자동으로 이름, 전화번호 들어감  -->
+	<select id="selectInfo" parameterType="partner" resultType="partner">
+		select name, tel from member where id=#{id}
+	</select>
+
+	<!-- 세션아이디로 신청페이지에 자동으로 업체 들어감 -->
+ 	<select id="selectCompany" parameterType="partner" resultType="partner">
+		select ptr_name from partner where ptr_code = (select ptr_code from partner where ptr_name= #{ptr_name})
+	</select>
+	
+	<!-- 세션아이디로  mem_code찾기 -->
+	<select id="followMemCode" parameterType="String" resultType="int">
+		select mem_code from member where id = #{id}
+	</select>
+	
+	<!-- 세션아이디로  name 찾기 -->
+ 	<select id="followName" parameterType="String" resultType="String">
+		select name from member where id=#{id}
+	</select>
+	
+	<!-- 세션아이디로 tel 찾기 -->
+ 	<select id="followTel" parameterType="String" resultType="String">
+		select tel from member where id=#{id}
+	</select>
+	
+	<!-- 협력업체 서비스 신청 -->
+	<insert id="insertCompany" parameterType="partner">
+		insert into partner_apply(ptr_apply_code, ptr_code, mem_code
+		,ptr_apply_date, ptr_start, ptr_end, ptr_apply_name, ptr_tel
+		)values(
+		s_ptr_apply_code.nextval, (select ptr_code from partner where ptr_name= #{ptr_name}), #{mem_code}, sysdate
+		,#{ptr_start}, #{ptr_end}, #{ptr_apply_name}, #{ptr_tel}
+		)
+	</insert>
+</mapper>

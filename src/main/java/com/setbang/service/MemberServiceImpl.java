@@ -26,10 +26,25 @@ public class MemberServiceImpl implements MemberService {
     public int getMemCodeBySessionId(String sessionId) {
         return memberDAO.getMemCodeBySessionId(sessionId);
     }
-    
+
     // 세션아이디로 회원플랜등급 가져오기
     public String getMemPlanBySessionId(String sessionId) {
     	return memberDAO.getMemPlanBySessionId(sessionId);
+    }
+
+    // 아이디 중복 확인
+    public int idCheck(String id) {
+    	return memberDAO.idCheck(id);
+    }
+    
+    // 아이디 찾기
+    public MemberVO findId(MemberVO vo) {
+    	return memberDAO.findId(vo);
+    }
+
+    // 패스워드 찾기
+    public MemberVO findPw(MemberVO vo) {
+    	return memberDAO.findPw(vo);
     }
     
 }

@@ -30,7 +30,8 @@ $(function(){
 		showOn: "button",
         buttonImage: "./resources/image/calendar.png",
 	    buttonImageOnly: false,
-		buttonText: "Select date"
+		buttonText: "Select date",
+		minDate: +1
 	});
 });
 //]]>

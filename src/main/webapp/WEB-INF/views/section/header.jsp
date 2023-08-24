@@ -92,7 +92,7 @@
             <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스 예약</a></li>
             <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
             <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
-            <li><a class="dropdown-item" href="#">협력업체 예약</a></li>
+            <li><a class="dropdown-item" href="partnerApply.do">협력업체 예약</a></li>
           </ul>
         </c:when>
     </c:choose>    

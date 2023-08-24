@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.setbang.domain.CardVO;
 import com.setbang.domain.MemberVO;
@@ -88,6 +90,54 @@ public class MemberController {
 		memberService.getSignup(vo);
 		return "redirect:/loginPage.do";
 	}	 
+	
+		// 아이디 중복 체크
+		@RequestMapping(value = "idCheck.do", method = RequestMethod.POST)
+		@ResponseBody
+		public String idCheck(@RequestParam("id") String id) {
+		    int cnt = memberService.idCheck(id);
+		    	return (cnt > 0) ? "false" : "true";
+		}
+
+		
+		// 아이디 찾기
+		@RequestMapping(value = "findId.do", method = RequestMethod.GET)
+		public String findId() {
+			return "/member/findId";
+		}
+		
+		@RequestMapping(value = "findIdAction.do", method = RequestMethod.POST)
+		public String findIdAction(MemberVO vo, Model model) {
+			MemberVO member = memberService.findId(vo);
+			
+			if(member == null) {
+				model.addAttribute("check", 1);
+			}else {
+				model.addAttribute("check", 0);
+				model.addAttribute("id", member.getId());
+			}
+			return "/member/findId";
+		}
+		
+		// 비밀번호 찾기
+		@RequestMapping(value="findPw.do", method = RequestMethod.GET)
+		public String findPw() {
+			return "/member/findPw";
+		}
+		
+		@RequestMapping(value="findPwAction.do", method = RequestMethod.POST)
+		public String findPwAction(MemberVO vo, Model model) {
+			MemberVO member = memberService.findPw(vo);
+			
+			if(member == null) { 
+				model.addAttribute("check", 1);
+			} else { 
+				model.addAttribute("check", 0);
+				model.addAttribute("updateid", member.getId());
+			}
+			
+			return "/member/findPw";
+		}
 	
 	// 로그인 실행
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)

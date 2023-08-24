@@ -43,5 +43,32 @@ public class MemberDAOImpl implements MemberDAO {
     	System.out.println("=> Mybatis getMemPlanBySessionId() 호출");
     	return mybatis.selectOne("MemberDAO.getMemPlanBySessionId", sessionId);
     }
+    
+	// 아이디 중복 확인
+	@Override
+	public int idCheck(String id) {
+		// TODO Auto-generated method stub
+		logger.info("idCheck DAO");
+		System.out.println("=> Mybatis idCheck() 호출");
+		return mybatis.selectOne("MemberDAO.idCheck", id);
+	}
+
+	// 아이디 찾기
+	@Override
+	public MemberVO findId(MemberVO vo) {
+		// TODO Auto-generated method stub
+		logger.info("findId DAO");
+		System.out.println("=> Mybatis findId() 호출");
+        return mybatis.selectOne("MemberDAO.findId", vo);
+	}
+
+	// 비밀번호 찾기
+	@Override
+	public MemberVO findPw(MemberVO vo) {
+		// TODO Auto-generated method stub
+		logger.info("findId DAO");
+		System.out.println("=> Mybatis findId() 호출");
+        return mybatis.selectOne("MemberDAO.findId", vo);
+	}
 
 }

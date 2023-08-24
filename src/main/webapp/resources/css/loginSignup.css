@@ -212,3 +212,8 @@ input {
 .kakaoAddrDetail .addrButton {
     width: calc(50% - 5px);
 }
+
+.eheck_font {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15px;
+}
