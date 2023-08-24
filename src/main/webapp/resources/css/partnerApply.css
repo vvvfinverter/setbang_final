@@ -6,64 +6,95 @@
 	font-family: 'REM', sans-serif;
 }
 
-/* 협력업체 */
+/* wrap */
 
-
-img.ui-datepicker-trigger {
-	margin-left:5px; vertical-align:middle; cursor:pointer;
-}
-
-body, html {
-  height: 100%;
-  margin-bottom: 0px;
-  padding: 0;
-}
-
-
-.form-group {
+h2 {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-.partner-request {
-  width:100%;
-  margin:auto;
-  max-width:525px;
-  min-height:670px;
-  position:relative;
-  padding-bottom : 700px;
+h6 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 50px;
 }
 
-
-.tax {
-	margin-right: 4px;
-	margin-left: 15px;
+#wrap {
+	margin: 150px;
+	text-align : center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
-.corporate {
-	margin-right: 4px;
-	margin-left: 15px;
-}
-
-.patent {
-	margin-right: 4px;
-	margin-left: 15px;
-}
-
-.request {
-	width: 100%;
-	height: 100%;
-	
-}
-
-.w200 {
-  width: 200px;
-}
-
-#app {
-  width: 100%;
-  height: 80vh;
+/* 협력업체 예약 */
+.partner {
   display: flex;
-  align-content: center;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+}
+
+img.ui-datepicker-trigger {
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+
+label {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15px;
+}
+
+.group {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin : 20px;
+}
+.name,
+.tel {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 400px;	
+}
+
+.datePicker {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 370px;
+}
+
+.form-control{
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 20px;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 400px;
+}
+
+select {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 20px;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 400px;
+}
+
+.button {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 50px;
+	background: #D6AF91;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 400px;
 }
