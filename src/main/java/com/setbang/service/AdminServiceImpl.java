@@ -125,4 +125,22 @@ public class AdminServiceImpl implements AdminService{
 			adminDAO.memberapprovalList(vo);
 			return adminDAO.memberapprovalList(vo);			
 		}
+
+		
+		// Mem_code 찾기		
+		@Override
+		public int findcheckmemcode(AdminVO vo) {
+			// TODO Auto-generated method stub
+			System.out.println("findcheckmemcode " + vo);
+			return adminDAO.findcheckmemcode(vo);
+		}
+
+		
+		// check한 회원의 Approval을 Member테이블에서 Y로 변경
+		@Override
+		public void updateapproval(AdminVO vo) {
+			// TODO Auto-generated method stub
+			System.out.println("updateapproval " + vo);
+			adminDAO.updateapproval(vo);
+		}
 }

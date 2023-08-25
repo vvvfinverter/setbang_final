@@ -20,6 +20,51 @@
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+function rowSend() {
+    var checkboxes = document.querySelectorAll('.row-checkbox');
+    
+    checkboxes.forEach(function(checkbox) {
+    	
+        checkbox.addEventListener('change', function() {
+        	
+            if (checkbox.checked) {
+            	
+                var row = this.closest('tr');
+                
+                var data = {
+                    member_indexnum: row.cells[0].textContent,
+                    name: row.cells[1].textContent,
+                    tel: row.cells[2].textContent,
+                    email: row.cells[3].textContent,
+                    business_no: row.cells[4].textContent,
+                    ind_name: row.cells[5].textContent,
+                    addr: row.cells[6].textContent,
+                    id: row.cells[7].textContent,
+                    pw: row.cells[8].textContent,
+                    mem_plan: row.cells[9].textContent,
+                    signup_date: row.cells[10].textContent,
+                    approval: row.cells[11].textContent
+                };
+                
+                var url = 'memberapproval.do' +
+                '?id=' + encodeURIComponent(data.id) +
+                '&pw=' + encodeURIComponent(data.pw);
+                
+                // AJAX 요청 보내기
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url); // 컨트롤러 URL로 변경해야 함
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send();
+            }
+        });
+    });
+}
+
+</script>
+
 </head>
 <body>
 
@@ -73,14 +118,14 @@
                     <td>${member.mem_plan}</td>
                     <td>${member.signup_date}</td>
                     <td>${member.approval}</td>
-                    <td><input type="checkbox"></td>                                                                                                    
+                    <td><input type="checkbox" class="row-checkbox" id="check" name="check" value="Y"></td>                                                                                                    
                 </tr>
              </c:forEach>
             </tbody>
             </c:when>
             </c:choose>
         </table>		
-		<button type="summit" class="button" >가입승인</button>		
+		<button type="summit" class="button" id="sendmember">가입승인</button>		
 	</div>
 	</form>
 		</div>

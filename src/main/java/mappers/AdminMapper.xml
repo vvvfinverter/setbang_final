@@ -74,4 +74,12 @@
 	]]>		
 	</select>
 	
+	<select id="findcheckmemcode" parameterType="admin" resultType="int">
+		select mem_code from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<update id="updateapproval" parameterType="admin">
+		update member set approval=#{check} where mem_code=#{mem_code}
+	 </update>
+	
 </mapper>

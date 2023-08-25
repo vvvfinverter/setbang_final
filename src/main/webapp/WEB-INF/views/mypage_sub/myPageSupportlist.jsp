@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원가입 승인현황 목록</title>
+<title>업무지원서비스 신청현황</title>
 
 <!-- Style CSS -->
 <link rel="stylesheet" href="./resources/css/supportlist.css">
@@ -31,7 +31,7 @@
 		
 		<div class="wrap">
 
-	<h2>회원가입 승인현황</h2>
+	<h2>업무지원서비스 승인현황</h2>
 			
 		
 	<!-- 서비스 플랜 결제 내역 -->

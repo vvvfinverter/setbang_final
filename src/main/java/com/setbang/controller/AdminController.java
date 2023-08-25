@@ -1,6 +1,7 @@
 package com.setbang.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +12,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.setbang.domain.AdminVO;
 import com.setbang.service.AdminService;
@@ -307,5 +310,32 @@ public class AdminController {
 	
 	
 	// 회원승인 시 N -> Y로 approval 변경(value="memberapproval.do")
+	@RequestMapping(value="memberapproval.do")	
+	public String memberapproval(AdminVO vo, Model model, HttpServletRequest request) {
+		
+		String check = request.getParameter("check");		
+		vo.setCheck(check);
+		System.out.println("check : " + check);
+		
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+        System.out.println("id : " + id);
+        System.out.println("pw : " + pw);       
+        vo.setId(id);
+        vo.setPw(pw);
+        
+
+		adminservice.findcheckmemcode(vo);
+		System.out.println("mem_code : " + vo.getMem_code());
+		
+		adminservice.updateapproval(vo);
+		
+		List<AdminVO> memberapprovalList = adminservice.memberapprovalList(vo);
+		System.out.println("memberapprovalList : " + memberapprovalList);
+		model.addAttribute("memberapprovalList", memberapprovalList);
+				
+		return "/admin/memberapproval";
+	}
 	
+
 }
