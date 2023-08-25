@@ -82,9 +82,10 @@ a {
   -webkit-text-security:circle;
 }
 
-.form .group .label {
+.form .group .label,
+.eheck_font {
+	font-family: 'Noto Sans KR', sans-serif;
 	text-align: left;
-	color: D6AF91;
 	font-size: 15px;
 }
 

@@ -31,10 +31,12 @@ $(document).ready(function() {
                     if (data === 'false') {
                         idCheckDiv.text('이미 사용중인 아이디입니다.').css('color', 'crimson');
                         $("#usercheck").attr("disabled", true);
-                    } else if (data === 'true') {
-                        idCheckDiv.text('사용가능한 아이디 입니다.').css('color', 'olive');
+                    } 
+                    else if (data === 'true') {
+                        idCheckDiv.text('').css('color', 'olive');
                         $("#usercheck").attr("disabled", false);
-                        } else {
+                        }
+                        else {
                             idCheckDiv.text("4 ~ 12자의 영문 소문자, 숫자만 사용 가능합니다.").css('color', 'crimson');
                             $("#usercheck").attr("disabled", true);
                         }
@@ -149,7 +151,7 @@ $(document).ready(function() {
 		        console.log(nameJ.test($(this).val()));
 		        $("#tel_check").text('');
 		      } else {
-		        $('#tel_check').text('휴대폰번호를 확인해주세요 ');
+		        $('#tel_check').text('휴대폰번호를 확인해주세요.');
 		        $('#tel_check').css('color', 'crimson');
 		      }
 		   });

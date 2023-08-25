@@ -11,8 +11,9 @@
     <!-- 회원가입 -->
    	<insert id="getSignup" parameterType="member">
 		insert into member(mem_code, ind_code, name, tel, id, pw
-		,business_no, addr, email, mem_plan, signup_date, profile
-		)values(s_mem_code.nextval, #{ind_code}, #{name}, #{tel}, #{id}, #{pw}, #{business_no}, #{addr}, #{email}, 'basic', sysdate, null
+		,business_no, addr, email, mem_plan, signup_date, profile, approval
+		)values(s_mem_code.nextval, #{ind_code}, #{name}, #{tel}, #{id}, #{pw},
+		#{business_no}, #{addr}, #{email}, 'basic', sysdate, null, 'N'
 		)
 	</insert>
     
@@ -43,5 +44,12 @@
 		select * from member
 		where id = #{id} and name = #{name} and email = #{email}
 	</select>
+	
+	<!-- 회원 프로필 수정 -->
+	<update id="updateProfile" parameterType="member">
+		update member set profile = #{profile}
+		where mem_code = #{mem_code}
+	</update>
+	
 	
 </mapper>
