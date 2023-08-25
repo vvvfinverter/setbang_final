@@ -17,11 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.setbang.domain.CardVO;
 import com.setbang.domain.MemberVO;
 import com.setbang.service.MemberService;
 
-import javafx.scene.control.Alert;
 
 
 @Controller

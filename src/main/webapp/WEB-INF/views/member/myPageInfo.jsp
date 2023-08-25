@@ -43,7 +43,9 @@
 			<img style="width:200px; height:200px;" src='./resources/image/profile.png' alt='profile'/>
 			</c:when>
 			<c:otherwise>
+			<div class="round-image">
 			<img style="width:200px; height:200px;" src='./resources/upload/${sessionProfile}' alt='profile'/>
+			</div>
 			</c:otherwise>
 		</c:choose>
 			<input type="file" name="file" class="file">

@@ -43,7 +43,7 @@ public class MemberVO {
 			profile = uuid.toString() + "_" + profile_name;
 			
 			// 해당 경로로 변경 (task - 나중에 경로 다시 변경해야함)
-			File f = new File("C:\\Users\\04-06\\git\\setbang\\src\\main\\webapp\\resources\\upload\\" + profile);
+			File f = new File("C:\\workspaces\\Setbang\\setbang\\src\\main\\webapp\\resources\\upload\\" + profile);
 			
 			try {
 				file.transferTo(f);

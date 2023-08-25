@@ -25,11 +25,21 @@
     </section>
   </section>
   <div class ="myInfo">
-    <div class ="profile">
-	<a href ="myPagePwCheck.do"><img style="width:100px; height:100px;" src='./resources/image/profile.png' alt='top' /></a>
-    </div>
-    <div class = "myInfo1">
+	<a href ="myPagePwCheck.do">
+			<c:choose>
+        	<c:when test="${sessionProfile == null }">
+			<img style="width:150px; height:150px;" src='./resources/image/profile.png' alt='profile' />
+			</c:when>
+			<c:otherwise>
+			<div class="round-image2">
+			<img style="width:150px; height:150px;" src='./resources/upload/${sessionProfile}' alt='profile'/>
+			</div>
+			</c:otherwise>
+		</c:choose>
+	</a>
     
+    
+    <div class = "myInfo1">
 <label>
     <c:choose>
         <c:when test="${sessionMemPlan == 'basic'}">
@@ -44,12 +54,17 @@
     </c:choose>     
     ${sessionName} 회원님
 </label>
-    
     </div>
+    
+    
+    
     <div class = "myInfo2">
     <a class="no-underline" href ="myPagePwCheck.do">내 정보 변경</a>
     </div>
+    
     </div>
+    
+    
   <ul>
     <li>
       <a class="no-underline" href="#">예약·서비스 내역</a>
