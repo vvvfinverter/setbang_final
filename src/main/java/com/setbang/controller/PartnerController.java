@@ -25,7 +25,7 @@ public class PartnerController {
 	private PartnerService partnerService;
 		
 	// 협력업체 페이지로 이동
-	@RequestMapping(value = "partnerApply.do", method = RequestMethod.GET)
+	@RequestMapping(value = "partnerBooking.do", method = RequestMethod.GET)
 	public String selectinfo2(PartnerVO vo, HttpSession session, Model model)throws Exception{
 		logger.info("PartnerController selectinfo2 method");
 		

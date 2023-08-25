@@ -68,31 +68,31 @@
         <c:when test="${sessionMemPlan == 'basic'}">
             <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="planApply.do">서비스 플랜 결제</a></li>
-            <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스 예약</a></li>
+            <li><a class="dropdown-item" href="pubOfficeBooking.do">공용 오피스 예약</a></li>
             <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
             </ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard_monthly'}">
                   <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="planApply.do">서비스 플랜 업그레이드</a></li>
-            <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스 예약</a></li>
+            <li><a class="dropdown-item" href="pubOfficeBooking.do">공용 오피스 예약</a></li>
             <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
-            <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
+            <li><a class="dropdown-item" href="supportApply.do">업무지원 신청</a></li>
           </ul>
         </c:when>
         <c:when test="${sessionMemPlan == 'standard_annual'}">
                   <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스 예약</a></li>
+            <li><a class="dropdown-item" href="pubOfficeBooking.do">공용 오피스 예약</a></li>
             <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
-            <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
+            <li><a class="dropdown-item" href="supportApply.do">업무지원 신청</a></li>
           </ul>
         </c:when>
        <c:when test="${sessionMemPlan == 'premium_monthly' || sessionMemPlan == 'premium_annual'}">
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="selectPubOffice.do">공용 오피스 예약</a></li>
+            <li><a class="dropdown-item" href="pubOfficeBooking.do">공용 오피스 예약</a></li>
             <li><a class="dropdown-item" href="itemApply.do">물품 신청</a></li>
-            <li><a class="dropdown-item" href="support.do">업무지원 신청</a></li>
-            <li><a class="dropdown-item" href="partnerApply.do">협력업체 예약</a></li>
+            <li><a class="dropdown-item" href="supportApply.do">업무지원 신청</a></li>
+            <li><a class="dropdown-item" href="partnerBooking.do">협력업체 예약</a></li>
           </ul>
         </c:when>
     </c:choose>    

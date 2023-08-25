@@ -24,7 +24,7 @@ public class SupportController {
 	private SupportService supportService;
 	
 	// 회원정보 가져오기
-	@RequestMapping(value = "support.do", method = RequestMethod.GET )
+	@RequestMapping(value = "supportApply.do", method = RequestMethod.GET )
 	public String selectUser(HttpSession session, Model model) throws Exception{
 		logger.info("SupportController selectUser method");
 		

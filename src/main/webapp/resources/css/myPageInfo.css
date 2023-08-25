@@ -159,3 +159,11 @@ a {
 .kakaoAddrDetail .addrButton {
     width: calc(50% - 5px);
 }
+
+.file {
+	padding : 10px;
+}
+
+.blank {
+	padding : 20px;
+}

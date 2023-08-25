@@ -58,7 +58,7 @@ public class PubOfficeController {
 //		return "pubOffice/pubOffice1";
 //	}
 	/** 공유 오피스 예약 페이지 접근 **/
-	@GetMapping("/selectPubOffice.do")
+	@GetMapping("/pubOfficeBooking.do")
 	public ModelAndView viewPubOffice2(HttpSession session,PubOfficeVO vo,Model model) {
 		logger.info("pubOffice.do 경로의 viewPubOffice controller 탔음 -> 추가 수정이 많이 필요함");
 		

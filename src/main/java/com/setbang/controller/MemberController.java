@@ -1,5 +1,7 @@
 package com.setbang.controller;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,10 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.setbang.domain.CardVO;
 import com.setbang.domain.MemberVO;
 import com.setbang.service.MemberService;
+
+import javafx.scene.control.Alert;
 
 
 @Controller
@@ -25,6 +30,70 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	// 회원 정보 변경
+	@RequestMapping(value = "updateMemberInfo.do", method = RequestMethod.POST)
+	public String updateMemberInfo(HttpSession session, Model model,
+									@RequestParam("pw") String pw,
+									@RequestParam("tel") String tel,
+									@RequestParam("email") String email,
+									@RequestParam("ind_code") int ind_code,
+									@RequestParam("business_no") String business_no,
+									@RequestParam("addr") String addr,
+									@RequestParam("checkPw") String checkPw){
+		
+	    // 세션에서 회원정보 가져오기
+	    String sessionId = (String) session.getAttribute("sessionId");
+	    
+	    // 회원아이디로 회원코드 가져오기
+	    int memCode = memberService.getMemCodeBySessionId(sessionId);
+	    if (memCode != 0) { 
+			MemberVO vo = new MemberVO();
+			vo.setMem_code(memCode);
+			vo.setPw(pw);
+			vo.setTel(tel);
+			vo.setEmail(email);
+			vo.setInd_code(ind_code);
+			vo.setBusiness_no(business_no);
+			vo.setAddr(addr);
+
+			// 회원 정보 변경 서비스 불러오기
+			memberService.updateMemberInfo(vo);
+			
+	        // task - 변경성공하면 성공했습니다, 아닐 경우엔 실패했습니다 띄우기
+		}
+		return "redirect:/myPageInfo.do";
+	}
+	
+	// 프로필 사진 변경
+	@RequestMapping(value = "updateProfile.do", method = RequestMethod.POST)
+	public String updateProfile(HttpSession session, Model model,
+								@RequestParam("file") MultipartFile file){
+		
+		// 세션에서 회원정보 가져오기
+	    String sessionId = (String) session.getAttribute("sessionId");
+	    
+	    // 회원아이디로 회원코드 가져오기
+	    int memCode = memberService.getMemCodeBySessionId(sessionId);
+	    if (memCode != 0) { 
+			MemberVO vo = new MemberVO();
+			vo.setMem_code(memCode);
+	        vo.setProfile_name(file.getOriginalFilename()); // 파일명
+	        vo.setProfile(UUID.randomUUID().toString() + "_" + file.getOriginalFilename()); // 파일명
+	        vo.setProfile_size(file.getSize());             // 파일 사이즈
+
+	        // 프로필 변경하는 서비스 불러오기
+			memberService.updateProfile(vo);
+	        // task - 변경성공하면 성공했습니다, 아닐 경우엔 실패했습니다 띄우기
+			
+	        // 세션아이디로 프로필 가져오기
+	        String profile = memberService.getProfileBySessionId(sessionId);
+	        model.addAttribute("profile", profile);
+	        session.setAttribute("sessionProfile", profile);
+			
+		}
+		return "redirect:/myPageInfo.do";
+	}
 	
 	
 	// 회원정보 수정 페이지로 이동
@@ -157,9 +226,15 @@ public class MemberController {
         String memPlan = memberService.getMemPlanBySessionId(sessionId);
         model.addAttribute("memPlan", memPlan);
         session.setAttribute("sessionMemPlan", memPlan);
+        
+        // 세션아이디로 프로필 가져오기
+        String profile = memberService.getProfileBySessionId(sessionId);
+        model.addAttribute("profile", profile);
+        session.setAttribute("sessionProfile", profile);
 		
 //		// session 시간 설정 (30분) - 1분으로 실험했고, 잘 동작함 + web에 설정함
 //		session.setMaxInactiveInterval(30*60);
+        
 	} else {									
 		// task - 로그인 실패 (알림창 or 비동기로 로그인에 실패하였습니다. 아이디나 비밀번호를 확인해주세요. 띄우기)
 		System.out.println("로그인 실패");

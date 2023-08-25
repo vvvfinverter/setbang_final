@@ -11,9 +11,9 @@
     <!-- 회원가입 -->
    	<insert id="getSignup" parameterType="member">
 		insert into member(mem_code, ind_code, name, tel, id, pw
-		,business_no, addr, email, mem_plan, signup_date, profile, approval
+		,business_no, addr, email, mem_plan, signup_date, approval
 		)values(s_mem_code.nextval, #{ind_code}, #{name}, #{tel}, #{id}, #{pw},
-		#{business_no}, #{addr}, #{email}, 'basic', sysdate, null, 'N'
+		#{business_no}, #{addr}, #{email}, 'basic', sysdate, 'N'
 		)
 	</insert>
     
@@ -25,6 +25,11 @@
     <!-- 세션아이디로 회원플랜등급 가져오기 -->
      <select id="getMemPlanBySessionId" parameterType="string" resultType="string">
         select mem_plan from member where id=#{sessionId}
+	</select>
+	
+	<!-- 세션아이디로 프로필 가져오기 -->
+	<select id="getProfileBySessionId" parameterType="string" resultType="string">
+        select profile from member where id=#{sessionId}
 	</select>
 	
 	<!-- 아이디 중복확인 -->
@@ -45,11 +50,22 @@
 		where id = #{id} and name = #{name} and email = #{email}
 	</select>
 	
-	<!-- 회원 프로필 수정 -->
+	<!-- 프로필 사진 변경 -->
 	<update id="updateProfile" parameterType="member">
-		update member set profile = #{profile}
+		update member set 
+		<if test='profile_name != null'>
+		profile_name = #{profile_name},
+		profile = #{profile},
+		profile_size = #{profile_size}
+		</if>
 		where mem_code = #{mem_code}
 	</update>
 	
+	<!-- 회원 정보 수정 -->
+	<update id="updateMemberInfo" parameterType="member">
+		update member set pw = #{pw}, tel = #{tel}, ind_code = #{ind_code},
+		business_no = #{business_no}, addr = #{addr}, email = #{email}
+		where mem_code = #{mem_code}
+	</update>	
 	
 </mapper>

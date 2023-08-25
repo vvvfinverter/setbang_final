@@ -19,6 +19,20 @@ footer p {
 	margin : 0;
 }
 
+/* chatbot */
+
+#chatbot {
+position: fixed;
+right: 20px;
+bottom: 100px;
+z-index: 999;
+}
+
+#chatbot:hover{
+transition: 0.3s;
+transform: scale(1.1);
+}
+
 /* top button */
 
 #btn_top {

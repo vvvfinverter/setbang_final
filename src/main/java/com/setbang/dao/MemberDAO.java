@@ -16,6 +16,9 @@ public interface MemberDAO {
     // 세션아이디로 회원플랜등급 가져오기
     String getMemPlanBySessionId(String sessionId);
 
+    // 세션아이디로 프로필 가져오기
+    String getProfileBySessionId(String sessionId);
+
     // 아이디 중복 확인
     int idCheck(String id);
     
@@ -23,5 +26,11 @@ public interface MemberDAO {
     MemberVO findId(MemberVO vo);
     
     // 패스워드 찾기
-    MemberVO findPw(MemberVO vo);
+    MemberVO findPw(MemberVO vo);    
+    
+    // 프로필 사진 변경
+    void updateProfile(MemberVO vo);
+
+    // 회원 정보 변경
+    void updateMemberInfo(MemberVO vo);
 }

@@ -32,6 +32,11 @@ public class MemberServiceImpl implements MemberService {
     	return memberDAO.getMemPlanBySessionId(sessionId);
     }
 
+    // 세션아이디로 프로필 가져오기
+    public String getProfileBySessionId(String sessionId) {
+    	return memberDAO.getProfileBySessionId(sessionId);
+    }
+
     // 아이디 중복 확인
     public int idCheck(String id) {
     	return memberDAO.idCheck(id);
@@ -45,6 +50,16 @@ public class MemberServiceImpl implements MemberService {
     // 패스워드 찾기
     public MemberVO findPw(MemberVO vo) {
     	return memberDAO.findPw(vo);
+    }
+    
+    // 프로필 사진 변경
+    public void updateProfile(MemberVO vo) {
+    	memberDAO.updateProfile(vo);
+    }
+    
+    // 회원 정보 변경
+    public void updateMemberInfo(MemberVO vo) {
+    	memberDAO.updateMemberInfo(vo);
     }
     
 }

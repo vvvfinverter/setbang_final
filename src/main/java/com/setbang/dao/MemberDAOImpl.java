@@ -43,6 +43,13 @@ public class MemberDAOImpl implements MemberDAO {
     	System.out.println("=> Mybatis getMemPlanBySessionId() 호출");
     	return mybatis.selectOne("MemberDAO.getMemPlanBySessionId", sessionId);
     }
+
+    // 세션아이디로 프로필 가져오기
+    public String getProfileBySessionId(String sessionId) {
+    	logger.info("getProfileBySessionId DAO");
+    	System.out.println("=> Mybatis getProfileBySessionId() 호출");
+    	return mybatis.selectOne("MemberDAO.getProfileBySessionId", sessionId);
+    }
     
 	// 아이디 중복 확인
 	@Override
@@ -70,5 +77,21 @@ public class MemberDAOImpl implements MemberDAO {
 		System.out.println("=> Mybatis findId() 호출");
         return mybatis.selectOne("MemberDAO.findId", vo);
 	}
+	
+    // 프로필 사진 변경
+    public void updateProfile(MemberVO vo) {
+		// TODO Auto-generated method stub
+		logger.info("updateProfile DAO");
+		System.out.println("=> Mybatis updateProfile() 호출");
+        mybatis.update("MemberDAO.updateProfile", vo);
+    }
+
+    // 회원 정보 변경
+    public void updateMemberInfo(MemberVO vo) {
+    	// TODO Auto-generated method stub
+    	logger.info("updateMemberInfo DAO");
+    	System.out.println("=> Mybatis updateMemberInfo() 호출");
+    	mybatis.update("MemberDAO.updateMemberInfo", vo);
+    }
 
 }

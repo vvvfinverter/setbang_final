@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,6 @@
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-
 <meta charset="UTF-8">
 <title>내 정보 변경</title>
 
@@ -35,18 +35,28 @@
 	<h2>내 정보 변경</h2>
       <div class="memberInfo">
       
-      
-        <form class="form" action="changeProfile.do" method="post">
+		<form class="form" action="updateProfile.do" method="post" enctype="multipart/form-data">
         <div class="group">
           <label for="profile" class="label">프로필 사진</label>
-		<a href =#><img style="width:200px; height:200px;" src='./resources/image/profile.png' alt='top' /></a>
-			<input type="file" name="profile" class="file">
+		<c:choose>
+        	<c:when test="${sessionProfile == null }">
+			<img style="width:200px; height:200px;" src='./resources/image/profile.png' alt='profile'/>
+			</c:when>
+			<c:otherwise>
+			<img style="width:200px; height:200px;" src='./resources/upload/${sessionProfile}' alt='profile'/>
+			</c:otherwise>
+		</c:choose>
+			<input type="file" name="file" class="file">
           <input type="submit" class="button" value="프로필 변경">
 		</div>
 		</form>
-        
-        
-      <form class="form" action="changeMyInfo.do" method="post">
+		
+		
+		<div class="blank">
+		</div>      
+		
+		  
+      <form class="form" action="updateMemberInfo.do" method="post">
         <div class="group">
           <label for="id" class="label">서비스 플랜명</label>
           <input id="memPlan" type="text" class="input" value="${sessionMemPlan }" disabled/>
@@ -120,6 +130,7 @@
 		<div id="footer">
 			<jsp:include page="../section/footer.jsp" />
 		</div>
-<script type="text/javascript" src="./resources/js/loginSignup.js"></script>      
+
+<script type="text/javascript" src="./resources/js/myPageInfo.js"></script>      
 </body>
 </html>

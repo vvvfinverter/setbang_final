@@ -32,8 +32,11 @@
 
 	<!-- top button -->
 
+	<div id="chatbot">
+		<a href =#><img src='./resources/image/chatbot.png' alt='chatbot' /></a>
+	</div>
 	<div id="btn_top">
-		<a href =#><img src='./resources/image/btn_top.png' alt='top' /></a>
+		<a href =#><img src='./resources/image/btn_top2.png' alt='top' /></a>
 	</div>
 
 </body>
