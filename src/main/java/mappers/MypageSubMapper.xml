@@ -33,6 +33,12 @@
 			  		from booking b, pub_office po, pub_cat pc where b.pub_code=po.pub_code and po.pub_cat_code=pc.pub_cat_code order by b.book_code)
 			  where mem_code=#{mem_code}]]>
 	</select>
-	
+
+	<select id="itemlist" parameterType="int" resultType="mypagesub">
+	<![CDATA[ select rownum as item_indexnum, i_cat, mem_code, i_name, i_unit_amount, to_char(i_apply_date, 'YYYY-MM-DD') as i_apply_date
+			  from (select a.i_unit_amount, a.mem_code, a.i_apply_date, c.i_cat, m.i_name from item_apply a, item_cat c, item m
+			  where a.i_code = m.i_code and m.i_cat_code = c.i_cat_code order by a.i_apply_code)
+			  where mem_code=#{mem_code}]]>
+	</select>	
 	
 </mapper>

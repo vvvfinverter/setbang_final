@@ -17,4 +17,7 @@ public interface MypageSubDAO {
 	
 	// 공용공간 예약신청현황
 	List<MypageSubVO> pubbookinglist(int mem_code);
+	
+	// 물품신청 현황
+	List<MypageSubVO> itemlist(int mem_code);
 }

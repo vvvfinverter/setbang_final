@@ -73,4 +73,19 @@ public class MypageSubController {
 		return "/mypage_sub/myPagePubBookinglist";
 	}
 	
+	// 물품신청 신청현황
+	@RequestMapping(value="itemlist.do")
+	public String itemlist(MypageSubVO vo, Model model, HttpSession session) {
+		
+		// Session에서 Mem_code 가져오기
+		String sessionId = (String) session.getAttribute("sessionId");
+		int mem_code = mypagesubservice.findmemcode(sessionId);
+		
+		// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
+		List<MypageSubVO> itemlist = mypagesubservice.itemlist(mem_code);
+			System.out.println("itemlist : " + itemlist);
+			model.addAttribute("itemlist", itemlist);
+			
+		return "/mypage_sub/myPageItemlist";
+	}
 }

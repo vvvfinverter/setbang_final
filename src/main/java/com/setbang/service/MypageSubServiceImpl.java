@@ -44,4 +44,12 @@ public class MypageSubServiceImpl implements MypageSubService{
 		mypagesubDAO.pubbookinglist(mem_code);
 		return mypagesubDAO.pubbookinglist(mem_code);
 	}
+
+	@Override
+	public List<MypageSubVO> itemlist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("itemlist " + mem_code);
+		mypagesubDAO.itemlist(mem_code);
+		return mypagesubDAO.itemlist(mem_code);
+	}
 }
