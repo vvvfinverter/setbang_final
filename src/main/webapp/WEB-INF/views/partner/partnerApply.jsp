@@ -50,30 +50,40 @@
 	<div class="partnerBooking">
 		<form class="partner" name="partner" method="post" action="insertCompany.do">
 			<div class="group">
-				<label for="name" class="label">신청인</label><br/>
+			<div class="left">
+				<label for="name" class="label">신청인</label>
+			</div>
 				<input type="text" class="name" id="name" value="${PartnerVO.name}" name="name" required/>
 			</div>
 			
 			<div class="group">
-				<label for="tel" class="label">전화번호</label><br/>
+			<div class="left">
+				<label for="tel" class="label">전화번호</label>
+			</div>
 				<input type="tel" class="tel" id="tel" value="${PartnerVO.tel}" name="tel" required/>
 			</div>
 			
 			<div class="group">
-				<label for="date" class="label">시작일 선택</label><br>
+			<div class="left">
+				<label for="date" class="label">시작일 선택</label>
+			</div>
 				<input class="datePicker" type="text" name="ptr_start" id="ptr_start" size="12" readonly/>
           		<br/>
-          		<label for="date" class="label">종료일 선택</label><br>
+          	<div class="left">	
+          		<label for="date" class="label">종료일 선택</label>
+			</div>
           		<input class="datePicker" type="text" name="ptr_end" id="ptr_end" size="12" readonly/>
         </div>
 
 			<div class="group">
-    		<div id="partner" class="partner">
+    	<div class="left">
         <label for="ptr_name" class="label">분류</label>
+        </div>
       			<select class = "partners" name="ptr_cat_code" id="ptr_cat_code" required></select>
+        <div class="left">
         <label for="ptr_cat_code" class="label">협력업체명</label>
+        </div>
       			<select class = "partners" name="ptr_name" id="ptr_name" required></select>
-    		</div>
         </div>
 
 			<button type="submit" class="button">예약하기</button>

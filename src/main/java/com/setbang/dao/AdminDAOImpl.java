@@ -148,21 +148,4 @@ public class AdminDAOImpl implements AdminDAO{
 		System.out.println("=> Mybatis memberapprovalList() 호출");	
 	    return mybatis.selectList("AdminDAO.memberapprovalList");		
 	}
-
-
-	@Override
-	public int findcheckmemcode(AdminVO vo) {
-		// TODO Auto-generated method stub
-		System.out.println("=> Mybatis findcheckmemcode() 호출");	
-	    return mybatis.selectOne("AdminDAO.findcheckmemcode", vo);	
-	}
-
-
-	@Override
-	public void updateapproval(AdminVO vo) {
-		// TODO Auto-generated method stub
-		System.out.println("=> Mybatis updateapproval() 호출");	
-	    mybatis.update("AdminDAO.updateapproval", vo);	
-		
-	}
 }

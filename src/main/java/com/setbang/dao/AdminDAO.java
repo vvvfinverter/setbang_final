@@ -60,10 +60,4 @@ public interface AdminDAO {
 	// 회원가입 승인 목록게시판
 		List<AdminVO> memberapprovalList(AdminVO vo);
 		
-	// Mem_code 찾기
-		public int findcheckmemcode(AdminVO vo);	
-		
-	// check한 회원의 Approval을 Member테이블에서 Y로 변경
-		public void updateapproval(AdminVO vo);
-		
 }	

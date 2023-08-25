@@ -28,11 +28,11 @@
 	<a href ="myPagePwCheck.do">
 			<c:choose>
         	<c:when test="${sessionProfile == null }">
-			<img style="width:150px; height:150px;" src='./resources/image/profile.png' alt='profile' />
+			<img style="width:130px; height:130px;" src='./resources/image/profile.png' alt='profile' />
 			</c:when>
 			<c:otherwise>
 			<div class="round-image2">
-			<img style="width:150px; height:150px;" src='./resources/upload/${sessionProfile}' alt='profile'/>
+			<img style="width:130px; height:130px;" src='./resources/upload/${sessionProfile}' alt='profile'/>
 			</div>
 			</c:otherwise>
 		</c:choose>

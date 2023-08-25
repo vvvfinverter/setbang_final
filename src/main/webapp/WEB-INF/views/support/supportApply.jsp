@@ -44,13 +44,17 @@
 		<form class="support" name="support" method="post" action="support1.do">
 			
 			<div class="group">
-				<label for="name" class="label">신청인</label><br/> 
+			<div class="left">
+				<label for="name" class="label">신청인</label>
+			</div>
 				<input type="text" class="input" id="name" value="${supportVO.name}" name="name" required/>
 			</div>
 			
 			<div class="group">
 			<div class="select-support">
-			<label for="support-name" class="support-name">상담분야</label> <br/>
+			<div class="left">
+			<label for="support-name" class="support-name">상담분야</label>
+			</div>
 			<input id="sup_code" type="radio" name="sup_code" class="tax" value="10" required/>
 				<label for="counse-1" class="tab1">세무기장</label> 
 			<input id="sup_code" type="radio" name="sup_code" class="corporate" value="20" required/>
@@ -61,23 +65,32 @@
 			</div>
 			
 			<div class="group">
-				<label for="tel" class="label">휴대폰 번호</label><br/> 
+			<div class="left">
+				<label for="tel" class="label">휴대폰 번호</label>
+			</div>	
 				<input type="tel" class="input" id="tel" value="${supportVO.tel}" name="tel" required/>
 			</div>
 			
 			<div class="group">
-				<label for="Email" class="label">이메일 주소</label><br/> 
+			<div class="left">
+				<label for="Email" class="label">이메일 주소</label>
+			</div>	
 				<input type="email" class="input" id="email" value="${supportVO.email}" name="email" required/>
 			</div>
 			
 			<div class="group">
-				<label for="date" class="label">상담 희망일자</label><br/>
+			<div class="left">
+				<label for="date" class="label">상담 희망일자</label>
+			</div>
 					<input type="text" class="datePicker" name="sup_counseling_date" id="sup_counseling_date" size="12" readonly/>
 			</div>
 						
 			<div class="group">
-				<label for="context" class="label">신청내용</label><br/> 
-				<input type="text" class="input" id="context" name = "sup_content" required/>	
+			<div class="left">
+				<label for="context" class="label">신청내용</label>
+			</div>
+				<!-- <input type="text" class="input" id="context" name = "sup_content" required/>	 -->
+				<textarea class="input" id="context" name="sup_content" required></textarea>
 			</div>
 
 			<button type="submit" class="button">신청하기</button>

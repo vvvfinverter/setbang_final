@@ -48,7 +48,7 @@ label {
 
 .group {
 	font-family: 'Noto Sans KR', sans-serif;
-	margin : 20px;
+	margin : 15px;
 }
 .name,
 .tel {
@@ -57,7 +57,7 @@ label {
 	border: none;
 	padding: 15px 20px;
 	border-radius: 25px;
-	width : 400px;	
+	width : 420px;	
 }
 
 .datePicker {
@@ -66,7 +66,7 @@ label {
 	border: none;
 	padding: 15px 20px;
 	border-radius: 25px;
-	width : 370px;
+	width : 390px;
 }
 
 .form-control{
@@ -76,7 +76,7 @@ label {
 	border: none;
 	padding: 15px 20px;
 	border-radius: 25px;
-	width : 400px;
+	width : 420px;
 }
 
 select {
@@ -86,15 +86,21 @@ select {
 	border: none;
 	padding: 15px 20px;
 	border-radius: 25px;
-	width : 400px;
+	width : 420px;
 }
 
 .button {
 	font-family: 'Noto Sans KR', sans-serif;
-	margin: 50px;
+	margin: 20px;
 	background: #D6AF91;
 	border: none;
 	padding: 15px 20px;
 	border-radius: 25px;
-	width : 400px;
+	width : 420px;
+}
+
+.left {
+	text-align : left;
+	align-items: left;
+	justify-content: left;
 }
