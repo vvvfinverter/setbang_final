@@ -10,13 +10,113 @@
 
 footer {
     background-color: #595959;
+    margin-top: auto;
+    width: 100%
 }
 
 footer p {
-	font-family: 'Noto Sans KR', sans-serif;
-    font-size : 18px;
-    color : #ffffff;
-	margin : 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+}
+
+footer .info-container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* 이미지와 글씨를 옆으로 배치 */
+    gap: 10px; /* 간격 설정 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+* {
+  box-sizing: border-box
+}
+html, body {
+  height: 100%
+}
+ul {
+  list-style: none
+}
+a {
+  text-decoration: none
+}
+.flex-rw {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+main {
+  flex: 1 1 auto; //For IE11
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: rgb(155,155,155);
+  line-height: 1
+}
+
+.footer-list-top {
+  width: 22%
+}
+.footer-list-top > li {
+  text-align: left;
+  padding-bottom: 10px
+}
+.footer-list-header {
+  padding: 40px 0 10px 0;
+  color: #ffffff;
+}
+.footer-list-anchor {
+  color: white; 
+}
+.footer-social-section {
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 5px;
+}
+.footer-social-section::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  border-top: 1px solid #ffffff;
+  width: calc(100% - 20px)
+}
+.footer-social-overlap {
+  position: relative;
+  z-index: 2;
+  background: #595959;
+  padding: 0 10px
+}
+.footer-social-connect {
+  display: flex;
+  align-items: center;
+  color: #ffffff
+}
+.footer-social-small {
+  padding: 0px 20px
+}
+
+.footer-bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  border-top: 1px solid #ffffff;
+  margin-top: 5px;
+  margin-right: auto;
+}
+.footer-bottom-wrapper {
+  text-align: center;
+  color: #ffffff;
 }
 
 /* chatbot */

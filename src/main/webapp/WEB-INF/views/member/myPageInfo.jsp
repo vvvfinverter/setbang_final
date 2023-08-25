@@ -82,7 +82,7 @@
           <input id="name" name="name" type="text" class="input" value = "${sessionName }" disabled/>
         </div>
         <div class="group">
-          <label for="tel" class="label">휴대폰 번호</label>
+          <label for="tel" class="label">연락처</label>
           <input id="mem_tel" name="tel" type="tel" class="input" placeholder="ex) 010-0000-0000" required/>
           <div class="eheck_font" id="tel_check"></div>
         </div>

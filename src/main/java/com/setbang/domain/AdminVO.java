@@ -74,18 +74,11 @@ public class AdminVO {
 	private String mem_plan;
 	private String signup_date;
 	private String approval;
-	private String check;
 	
 	
 	
-	public String getCheck() {
-		return check;
-	}
-
-	public void setCheck(String check) {
-		this.check = check;
-	}
-
+	
+	
 	public int getCon_indexnum() {
 		return con_indexnum;
 	}

@@ -126,7 +126,9 @@
         </li>
           </c:when>
         </c:choose>      
-
+        <li class="nav-item">
+          <a class="nav-link" href="adminLogin.do"><img style="width:30px; height:30px;" src='./resources/image/admin1.png' alt='admin'/></a>
+        </li>
     </ul>
     </div>
   </div>

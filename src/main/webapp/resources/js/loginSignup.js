@@ -8,7 +8,7 @@ var pwJ = /^[A-Za-z0-9]{4,12}$/;
 var nameJ = /^[가-힣]{2,6}|[a-zA-Z]{4,12}\s[a-zA-Z]{4,12}$/;
 // 이메일 검사 정규식
 var mailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-// 휴대폰 번호 정규식
+// 연락처 정규식
 var phoneJ = /^01([0|1|6|7|8|9]?)-([0-9]{3,4})-([0-9]{4})$/;
 
 $(document).ready(function() {
@@ -83,13 +83,13 @@ $(document).ready(function() {
 		            return false;
 		         }
 		         
-		         // 휴대폰번호 정규식
+		         // 연락처 정규식
 		         if (phoneJ.test($('#mem_tel').val())) {
 		            console.log(phoneJ.test($('#mem_tel').val()));
 		            inval_Arr[5] = true;
 		         } else {
 		            inval_Arr[5] = false;
-		            alert('휴대폰 번호를 다시 확인해주세요.');
+		            alert('연락처를 다시 확인해주세요.');
 		            return false;
 		         }
 		       });
@@ -145,13 +145,13 @@ $(document).ready(function() {
 		      }
 		   });
 		   
-		   // 휴대전화
+		   // 연락처
 		   $('#mem_tel').blur(function(){
 		      if(phoneJ.test($(this).val())){
 		        console.log(nameJ.test($(this).val()));
 		        $("#tel_check").text('');
 		      } else {
-		        $('#tel_check').text('휴대폰번호를 확인해주세요.');
+		        $('#tel_check').text('연락처를 확인해주세요.');
 		        $('#tel_check').css('color', 'crimson');
 		      }
 		   });
