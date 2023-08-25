@@ -43,9 +43,9 @@
                     <th>NO</th>
                     <th>카테고리명</th>
                     <th>임대호실</th>
+                    <th>사용인원</th>
                     <th>예약날짜</th>
                     <th>사용시작시간</th>
-                    <th>사용종료시간</th>
                 </tr>
             </thead>
             <c:choose>
@@ -56,9 +56,9 @@
                     <td>${booking.book_indexnum}</td>                    
                     <td>${booking.pub_cat}</td>
                     <td>${booking.pub_unit}</td>
+                    <td>${booking.num_of_per}</td>
                     <td>${booking.book_date}</td>
-                    <td>${booking.book_start}</td>
-                    <td>${booking.book_end}</td>                                                                                             
+                    <td>${booking.book_start}</td>                                                                                           
                 </tr>
              </c:forEach>
             </tbody>

@@ -18,7 +18,7 @@
 
 	<!--memcode로  협력업체지원서비스 내역찾기-->
 	<select id="partnerlist" parameterType="int" resultType="mypagesub">
-	<![CDATA[ select rownum as partner_indexnum, ptr_apply_code, ptr_code, mem_code, ptr_apply_date, ptr_start, ptr_end, ptr_apply_name, ptr_tel
+	<![CDATA[ select rownum as partner_indexnum, ptr_apply_code, ptr_code, mem_code, to_char(ptr_apply_date, 'YYYY-MM-DD') as ptr_apply_date, to_char(ptr_start, 'YYYY-MM-DD') as ptr_start, to_char(ptr_end, 'YYYY-MM-DD') as ptr_end, ptr_apply_name, ptr_tel
 			  ptr_name, ptr_cat_code, ptr_cat
 			  from (select p.ptr_apply_code, p.ptr_code, p.mem_code, p.ptr_apply_date, p.ptr_start, p.ptr_end, p.ptr_apply_name, p.ptr_tel,
 			  		pt.ptr_name, cat.ptr_cat_code, cat.ptr_cat from partner_apply p, partner pt, partner_cat cat
@@ -28,8 +28,8 @@
 	
 		<!--memcode로  협력업체지원서비스 내역찾기-->
 	<select id="pubbookinglist" parameterType="int" resultType="mypagesub">
-	<![CDATA[ select rownum as book_indexnum, book_code, mem_code, pub_code, book_start, book_end, book_date, pub_unit, pub_cat_code, pub_cat
-			  from (select b.book_code, b.mem_code, b.book_start, b.book_end, b.book_date, po.pub_code, po.pub_unit, pc.pub_cat_code, pc.pub_cat
+	<![CDATA[ select rownum as book_indexnum, book_code, mem_code, pub_code, book_start, num_of_per, to_char(book_date, 'YYYY-MM-DD') as book_date, pub_unit, pub_cat_code, pub_cat
+			  from (select b.book_code, b.mem_code, b.book_start, b.num_of_per, b.book_date, po.pub_code, po.pub_unit, pc.pub_cat_code, pc.pub_cat
 			  		from booking b, pub_office po, pub_cat pc where b.pub_code=po.pub_code and po.pub_cat_code=pc.pub_cat_code order by b.book_code)
 			  where mem_code=#{mem_code}]]>
 	</select>

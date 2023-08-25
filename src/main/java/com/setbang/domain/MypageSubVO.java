@@ -24,7 +24,7 @@ public class MypageSubVO {
 	private int ptr_cat_code;
 	private String ptr_cat;
 	private String ptr_name;
-	private String prt_apply_date;
+	private String ptr_apply_date;
 	private String ptr_start;
 	private String ptr_end;
 	private String ptr_apply_name;
@@ -36,8 +36,8 @@ public class MypageSubVO {
 	private int book_code;
 	private int pub_code;
 	private int pub_cat_code;
+	private int num_of_per;
 	private String book_start;
-	private String book_end;
 	private String book_date;
 	private String pub_unit;
 	private String pub_cat;
@@ -138,11 +138,11 @@ public class MypageSubVO {
 	public void setPtr_name(String ptr_name) {
 		this.ptr_name = ptr_name;
 	}
-	public String getPrt_apply_date() {
-		return prt_apply_date;
+	public String getPtr_apply_date() {
+		return ptr_apply_date;
 	}
-	public void setPrt_apply_date(String prt_apply_date) {
-		this.prt_apply_date = prt_apply_date;
+	public void setPtr_apply_date(String ptr_apply_date) {
+		this.ptr_apply_date = ptr_apply_date;
 	}
 	public String getPtr_start() {
 		return ptr_start;
@@ -193,12 +193,18 @@ public class MypageSubVO {
 	}
 	public void setBook_start(String book_start) {
 		this.book_start = book_start;
+	}	
+	public int getBook_indexnum() {
+		return book_indexnum;
 	}
-	public String getBook_end() {
-		return book_end;
+	public void setBook_indexnum(int book_indexnum) {
+		this.book_indexnum = book_indexnum;
 	}
-	public void setBook_end(String book_end) {
-		this.book_end = book_end;
+	public int getNum_of_per() {
+		return num_of_per;
+	}
+	public void setNum_of_per(int num_of_per) {
+		this.num_of_per = num_of_per;
 	}
 	public String getBook_date() {
 		return book_date;

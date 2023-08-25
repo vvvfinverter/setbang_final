@@ -52,7 +52,7 @@
     </div>
   <ul>
     <li>
-      <a class="no-underline" href="pubbookinglist.do">예약·서비스 내역</a>
+      <a class="no-underline" href="#">예약·서비스 내역</a>
       
           <c:choose>
         <c:when test="${sessionMemPlan == 'basic'}">

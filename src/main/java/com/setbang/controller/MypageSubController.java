@@ -51,6 +51,7 @@ public class MypageSubController {
 		// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
 		List<MypageSubVO> partnerlist = mypagesubservice.partnerlist(mem_code);
 			System.out.println("partnerlist : " + partnerlist);
+			System.out.println("ptr_apply_date : " + vo.getPtr_apply_date());
 			model.addAttribute("partnerlist", partnerlist);
 			
 		return "/mypage_sub/myPagePartnerlist";
