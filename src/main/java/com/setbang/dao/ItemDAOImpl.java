@@ -24,9 +24,16 @@ public class ItemDAOImpl implements ItemDAO{
 	}
 
 	@Override
-	public List<ItemVO> comboItem(ItemVO vo) {
+	public List<ItemVO> comboItem(int iCatCode) {
 		logger.info("ItemDAOImpl.comboItem 호출");
-		return mybatis.selectList("ItemDAO.comboItem", vo);
+		System.out.println("iCatCode : " + iCatCode);
+		return mybatis.selectList("ItemDAO.comboItem", iCatCode);
+	}
+
+	@Override
+	public void insertItemApply(ItemVO vo) {
+		logger.info("ItemDAOImpl.insertItemApply 호출");
+		mybatis.insert("ItemDAO.insertItemApply",vo);
 	}
 	
 	

@@ -25,17 +25,207 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="./resources/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 <script src="./resources/jquery-ui-1.12.1/datepicker-ko.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-//<![CDATA[
-$(function(){
-	$("#sup_counseling_date").datepicker({
-		showOn: "button",
-        buttonImage: "./resources/image/calendar.png",
-	    buttonImageOnly: false,
-		buttonText: "Select date"
+const selectBoxChange1 = function() {
+	//카테고리 코드 선택
+    const comboItemCatSelect = document.getElementById("itemCat");
+	//히든값 변수 선언
+    const hiddenInput1 = document.getElementById("selectedValue1");
+	
+    //카테고리 코드 선택 값 변수 선언 
+    let selectValue = comboItemCatSelect.value;
+    //콘솔로 값 나오는 것 테스트 
+    console.log("selectvalue : " + selectValue);
+    
+    //카테고리 선택 값을 히든 값에 넣음
+    hiddenInput1.value = selectValue;
+    //히든값 콘솔로 값 나오는 것 테스트
+    console.log("hidden : " + hiddenInput1.value);
+    
+    //아래와 같은 방법으로도 사용 가능함
+    /*     let selectValue1 = comboItemCatSelect.options[comboItemCatSelect.selectedIndex].value;
+    console.log("selectedValue : " + selectValue1);
+
+    hiddenInput1.value = selectValue1;
+    console.log("hiddenInput1 : " + hiddenInput1.value); */
+    
+    
+    //텍스트에 나오는 값 보는 용도 이 부분은 javascript 학습용
+    let selectedText = comboItemCatSelect.options[comboItemCatSelect.selectedIndex].text;
+    console.log("selected text : " + selectedText);
+
+    
+    //selecteListChange 함수에 히든 값을 파라미터로 넘기고 실행
+    selecteListChange(hiddenInput1.value);
+    
+}
+
+// hidden 값을 parameter에 받고 aJax의 data에 selectedValue1라고 추가하면 url로 설정한 대상 컨트롤러를 타서 서비스 및 DAO 마이바티스 맵퍼까지 가서 조건절 파라미터 값에 삽입됨
+const selecteListChange = function(hiddenInput1){
+	console.log("hiddenInput1 : " + hiddenInput1);
+	//I_CODE, I_NAME, I_CAT_CODE 
+	$.ajax({
+		url : "aJaxItem.do",
+		type : 'post',
+		data : {
+			selectedValue1: hiddenInput1 // hiddenInput1 값을 data에 추가
+		},
+		success : function(data) {
+				console.log(data); //콘솔에서 값 확인 용도
+				const itemListDiv = $("#itemList"); // 화면에 데이터를 추가할 영역 선택
+				
+				itemListDiv.empty(); //기준 데이터 삭제
+				
+				for(const item of data){
+					const iCode = item.iCode;
+					const iName = item.iName;
+					console.log("iCode : " + iCode);
+					console.log("iName : " + iName);
+					//백틱 사용하는 영역, 백틱(`)은 자바스크립트 안에서 html코드를 더 자유롭게 사용 가능함, 여기선 템플릿 리터럴 사용할 때 앞에 \를 해야 사용 가능함
+					// 그 이유는 jsp 파일이기 때문이다
+					itemListDiv.append(`<div class="menus" id="itemDiv\${iCode}" value="\${iName}">\${iName}<img style="width: 200px; height: 300px;" src="./resources/image/itemImg\${iCode}.jpg" />
+					<select id="selectedItem\${iCode}">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+					<td data-code="\${iCode}">
+					<button id="btnAddItem\${iCode}" type="button" data-code="\${iCode}" data-name="\${iName}" onclick="clickBtn(this)">추가</button>
+					</td>
+					</div>
+					<br/>`);
+					//백틱코드(`) 사용 영역 종료
+					
+				}
+				
+				
+	     },
+		error : function() {
+			alert("error");
+		}
 	});
+	
+	
+}
+
+
+//hidden속성으로 iCode row에 여러개 받으면서 보여주는 것 시도하려다가 안돼서 실패
+/* function createHiddenInput(iCode) {
+    const hiddenInput = document.createElement("input");
+    hiddenInput.type = "hidden";
+    hiddenInput.name = "hidden_iCode"; // Set the name attribute for the form data
+    hiddenInput.value = iCode; // Set the value to the iCode
+    return hiddenInput;
+} */
+
+const clickBtn = function(buttonElement){
+	
+    const iCode = buttonElement.getAttribute("data-code");
+    const iName = buttonElement.getAttribute("data-name");
+
+    // Create hidden input element for iCode
+   // const hiddenInput = createHiddenInput(iCode);
+
+    
+
+    // Get selected quantity value
+    const selectItem = document.getElementById(`selectedItem\${iCode}`);
+    const selectValue = selectItem.value;
+
+    // Create new row and cells
+    const newRow = document.createElement("tr");
+    const nameCell = document.createElement("td");
+    const countCell = document.createElement("td");
+    const deleteCell = document.createElement("td");
+    const numCell = document.createElement("td");
+
+    // Set cell content
+    nameCell.textContent = iName; // Item name
+    countCell.textContent = selectValue; // Quantity
+    numCell.textContent = iCode;
+
+    // Create delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "deleteBtn";
+    deleteButton.textContent = "삭제";
+    deleteButton.addEventListener("click", function() {
+        // Remove the row
+        const row = this.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    });
+
+    // Append delete button to delete cell
+    deleteCell.appendChild(deleteButton);
+
+    // Append cells to the new row
+    //새로운 행에 각각 컬럼을 순서대로 추가
+    newRow.appendChild(numCell);
+    newRow.appendChild(nameCell);
+    newRow.appendChild(countCell);
+    newRow.appendChild(deleteCell);
+    
+
+    // Append hidden input to the form
+    const frm = document.getElementById("frm");
+    frm.appendChild(newRow);
+
+    // Append the new row to the table
+    const selectlistCnt = document.getElementById("listTable");
+    selectlistCnt.appendChild(newRow);
+
+    const totalListRow = document.getElementById("totallist");
+    totalListRow.parentNode.appendChild(totalListRow);
+
+
+}
+
+
+$(document).ready(function() {
+    // 주문하기 버튼 클릭 이벤트 리스너 추가
+    $("#insertBtn").on("click", function(event) {
+        event.preventDefault();
+
+        const orderList = [];
+        const frm = $("#frm"); // 폼 엘리먼트를 참조하는 변수
+        
+        const rows = $("#listTable tr:not(#listtr)");
+        
+        rows.each(function(index, row) {
+        	
+        	const iCode = $(row).find("td:nth-child(1)").text();
+            const itemName = $(row).find("td:nth-child(2)").text();
+            const itemCount = $(row).find("td:nth-child(3)").text();
+            
+   		 	 // Push to orderList
+           orderList.push({iCode: iCode,iName: itemName, iUnitAmount: itemCount });
+           
+        });
+
+
+		console.log("orderList: ", orderList);
+		
+        // Create hidden input element for orderList
+        const orderListInput = $("<input>")
+        .attr("type", "hidden")
+        .attr("name", "orderList")
+        .val(JSON.stringify(orderList));
+    	
+    	frm.append(orderListInput);
+    	frm.submit();
+    	alert("물품 신청이 성공적으로 완료하였습니다.");
+    });
 });
-//]]>
+
+
+
 
 </script>
 
@@ -44,10 +234,11 @@ $(function(){
 </head>
 <body>
 
+<div id="wrap">
 		<div id="header">
 			<jsp:include page="../section/header.jsp" />
 		</div>
-<form name="frm" action="itemApplyInsert.do" method="post">
+<form name="frm" id="frm" action="itemApplyInsert.do" method="post">
 <div id="leftdiv">
 <table class="menutbl">
 	<tr id="menutitle">
@@ -55,196 +246,62 @@ $(function(){
 	</tr>
 	<tr class="menus">
 		<td id='menu1' class='menu'>
-			<img src="./images/unknown1.jpg" /> <br/>
+			<!-- <img src="./images/unknown1.jpg" /> <br/> -->
 			<span id="label1" value ='itemCat'>물품카테고리</span>
 			<br/>
-			<select name="itemCat" id="itemCat" class='menuCount'>
+			<select name="itemCat" id="itemCat" onchange="selectBoxChange1()" class='menuCount'>
 				<option value="" selected="selected">선택</option>
 				<c:forEach var="i" items="${itemCat}">
 					<option value="${i.iCatCode }">${i.iCat}</option>
 				</c:forEach>
 			</select>
+			<input type="hidden" name="selectedValue1" id="selectedValue1"/>
+			
 		</td>
-		<td id='menu2' class='menu'>
-			<img src="./images/unknown2.jpg" /> <br/>
-			<span id="label2" value = 'item'>물품</span> 
-			<select name="item" id="item" class='menuCount'>
-				<option value="" selected="selected">선택</option>
-				<c:forEach var="i" items="${item}">
-					<option value="${i.iCode }">${i.iName}</option>
-				</c:forEach>
-			</select>
-		</td>
-		<td id='menu3' class='menu'>
-			<img src="./images/unkown3.jpg" /> <br/>
-			<span id="label3" value = '카페라떼'>카페라떼</span>
-			<span id="price3" value = '3000'>3000</span>원<br/>
-			<select name="menu3Count" id="menu3Count" class='menuCount'>
-				<option value='0'>0</option>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				<option value='3'>3</option>
-				<option value='4'>4</option>
-				<option value='5'>5</option>
-			</select>
-		</td>
+
 		
 	</tr>
-	<tr class="menus">
-		<td id='menu4' class='menu'>
-			<img src="./images/unknown4.jpg" /> <br/>
-			<span id="label4" value = '카푸치노'>카푸치노</span>
-			<span id="price4" value = '2000'>2000</span>원
-			<br/>
-			<select name="menu4Count" id="menu4Count" class='menuCount'>
-				<option value='0'>0</option>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				<option value='3'>3</option>
-				<option value='4'>4</option>
-				<option value='5'>5</option>
-			</select>
+	<tr>
+			<td id='menu2' class='menu'>
+			<!-- <img src="./images/unknown2.jpg" /> <br/> -->
+			<!-- <span id="label2">물품</span><br/> -->
+			<div id="itemList">
+
+			</div> 
 		</td>
-		<td id='menu5' class='menu'>
-			<img src="./images/unknown5jpg" /> <br/>
-			<span id="label5" value='돌체라떼'>돌체라떼</span>
-			<span id="price5" value='1000'>1000</span>원<br/>
-			<select name="menu5Count" id="menu5Count" class='menuCount'>
-				<option value='0'>0</option>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				<option value='3'>3</option>
-				<option value='4'>4</option>
-				<option value='5'>5</option>
-			</select>
-		</td>
-		<td id='menu6' class='menu'>
-			<img src="./images/unknown6.jpg" /> <br/>
-			<span id="label6" value='카페모카'>카페모카</span>
-			<span id="price6" value='1500'>1500</span>원 <br/>
-			<select name="menu6Count" id="menu6Count" class='menuCount'>
-				<option value='0'>0</option>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				<option value='3'>3</option>
-				<option value='4'>4</option>
-				<option value='5'>5</option>
-			</select>
-		</td>
-	</tr>
-	<tr class="menus">
-		<td id='menu7' class='menu'>
-			<img src="./images/unknown7.jpg" /> <br/>
-			<span id="label7" value='자바칩 프라프치노'>자바칩 프라프치노</span>
-			 <span id="price7" value='2000'>2000</span>원 <br/>
-			<select name="menu7Count" id="menu7Count" class='menuCount'>
-				<option value='0'>0</option>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				<option value='3'>3</option>
-				<option value='4'>4</option>
-				<option value='5'>5</option>
-			</select>
-		</td>
-		<td id='menu8' class='menu'>
-			<img src="./images/unknown8.jpg" /> <br/>
-			<span id="label8" value='차이 티'>차이 티</span>
-			<span id="price8" value='1000'>1000</span>원 <br/>
-			<select name="menu8Count" id="menu8Count" class='menuCount'>
-				<option value='0'>0</option>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				<option value='3'>3</option>
-				<option value='4'>4</option>
-				<option value='5'>5</option>
-			</select>
-		</td>
-		<td id='menu9' class='menu'>
-			<img src="./images/unknown9.jpg" /> <br/>
-			<span id="label9" value='그린 티'>그린 티 </span>
-			<span id="price9" value='1500'>1500</span>원 <br/>
-			<select name="menu9Count" id="menu9Count" class='menuCount'>
-				<option value='0'>0</option>
-				<option value='1'>1</option>
-				<option value='2'>2</option>
-				<option value='3'>3</option>
-				<option value='4'>4</option>
-				<option value='5'>5</option>
-			</select>
+		<td id='menu3' class='menu'>
+			<!-- <img src="./images/unkown3.jpg" /> <br/> -->
 		</td>
 	</tr>
 </table>
 </div>
-		
+
+
 <div id="rightdiv">
 <table id="listTable">
 	<tr id="listtitle">
-		<th colspan=3 id="titleText">주문내역</th>
+		<th colspan=4 id="titleText">주문내역</th>
 	</tr>
-	<tr id="totallist">
-		<td colspan='3'>
-			총합 : <input type='text'  id='total'/> 원 
-			<input type='button'	value='주문하기'  id='btn'/>
-		</td>
-	</tr>
+
 	<tr id="listtr">
-		<td width="150">목록</td>
-		<td width="100">갯수</td>
+		<td>물품코드</td>
+		<td id = "listtd" width="150">물품</td>
+		<td id = "counttd" width="100">갯수</td>
 		<td width="50">삭제</td>
 	</tr>
-	
+</table>
+<table>
+	<tr id="totallist">
+		<td colspan='4'>
+			<!-- 물품 : <input type='text'  id='total'/>  -->
+			 <input type='submit' value='주문하기'  id='insertBtn'/> 
+		</td>
+	</tr>
 </table>
 </div>
+		
 </form>
-<div id = "result">
-
-</div>		
-<%-- 	<div class="support-request">
-	
-		<div class="request">
-		<form class="support" name="support" method="post" action="support1.do">
-			<div class="form-group1">
-				<label for="name" class="label">신청인</label> 
-				<input type="text" class="form-control" id="name" value="${supportVO.name}" name="name"/>
-			</div>
-			
-			<div class="select-support">
-			<label for="support-name" class="support-name">상담분야</label> 
-			<input id="sup_code" type="radio" name="sup_code" class="tax" value="10">
-				<label for="counse-1" class="tab1">세무기장</label> 
-			<input id="sup_code" type="radio" name="sup_code" class="corporate" value="20">
-				<label for="counse-2" class="tab2">법인신청</label>
-			<input id="sup_code" type="radio" name="sup_code" class="patent" value="30">
-				<label for="counse-3" class="tab3">특허신청</label>
-			</div>
-			
-			<div class="form-group2">
-				<label for="tel" class="label">연락처</label> 
-				<input type="tel" class="form-control" id="tel" value="${supportVO.tel}" name="tel"/>
-			</div>
-			
-			<div class="form-group3">
-				<label for="Email" class="label">Email</label> 
-				<input type="email" class="form-control" id="email" value="${supportVO.email}" name="email"/>
-			</div>
-			
-			<div class="form-group4">
-				<label for="date" class="label">상담희망일자</label>
-					<input type="text" name="sup_counseling_date" id="sup_counseling_date" size="12" readonly/>
-			</div>
-						
-			<div class="form-group5">
-				<label for="context" class="label">신청내용</label> 
-				<input type="text" class="form-control" id="context" name = "sup_content">	
-			</div>
-
-			<button type="submit" class="button" >신청하기</button>
-		</form>
-		</div>
-	</div>	 --%>
-	<%-- 	<div id="footer">
-			<jsp:include page="../section/footer.jsp" />
-		</div> --%>
+</div>	
 		
 </body>
 </html>

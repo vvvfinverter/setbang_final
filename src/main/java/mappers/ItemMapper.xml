@@ -10,7 +10,7 @@
 	</select>
 	
 	<!-- ItemDAO.comboItem -->
-	<select id="comboItem" parameterType="item" resultType="item">
+	<select id="comboItem" parameterType="int" resultType="item">
 		SELECT I_CODE, I_NAME, I_CAT_CODE 
 			FROM ITEM 
 		WHERE i_cat_code = #{iCatCode}
@@ -30,7 +30,7 @@
 		,#{memCode}
 		,#{iCode}
 		,#{iUnitAmount}
-		,TO_DATE(#{iApplyDate}, 'YYYY-MM-DD')
+		,TRUNC(sysdate)
 		)
 	</insert>
 </mapper>

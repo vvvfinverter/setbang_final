@@ -9,5 +9,7 @@ public interface ItemDAO {
 
 	public List<ItemVO> comboItemCat(ItemVO vo);
 	
-	public List<ItemVO> comboItem(ItemVO vo);
+	public List<ItemVO> comboItem(int iCatCode);
+	
+	public void insertItemApply(ItemVO vo);
 }

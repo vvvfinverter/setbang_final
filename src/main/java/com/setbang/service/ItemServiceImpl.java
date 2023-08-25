@@ -27,10 +27,17 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public List<ItemVO> comboSelect2(ItemVO vo) {
+	public List<ItemVO> comboSelect2(int iCatCode) {
 		logger.info("ItemServiceImpl.comboSelect2 서비스");
-		List<ItemVO> list2 = itemDAO.comboItem(vo);
+		System.out.println("iCatCode : " + iCatCode);
+		List<ItemVO> list2 = itemDAO.comboItem(iCatCode);
 		return list2;
+	}
+
+	@Override
+	public void insertItemApply(ItemVO vo) {
+		logger.info("ItemServiceImpl.insertItemApply");
+		itemDAO.insertItemApply(vo);
 	}
 	
 	

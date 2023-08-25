@@ -8,5 +8,7 @@ public interface ItemService {
 
 	public List<ItemVO> comboSelect1(ItemVO vo);
 	
-	public List<ItemVO> comboSelect2(ItemVO vo);
+	public List<ItemVO> comboSelect2(int iCatCode);
+	
+	public void insertItemApply(ItemVO vo);
 }
