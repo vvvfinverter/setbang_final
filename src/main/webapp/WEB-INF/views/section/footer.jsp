@@ -21,7 +21,7 @@
 <!-- footer -->
 
 <footer class="flex-rw">
-    <img width="250" height="250" src="./resources/image/cospace.jpg" alt="CoSpace Logo">
+    <img width="250" height="250" src="./resources/image/cospacelogo.png" alt="CoSpace Logo">
   
   <ul class="footer-list-top">
     <li>
@@ -71,7 +71,7 @@
 	
 <!-- top button -->
 	<div id="btn_top">
-		<a href =#><img src='./resources/image/btn_top2.png' alt='top' /></a>
+		<a href =#><img src='./resources/image/button_top.png' alt='top' /></a>
 	</div>
 
 </body>

@@ -31,7 +31,7 @@
 		</div>
 
 	<!-- 회원정보 수정 -->
-	<div class=wrap>
+	<div class= "wrap">
 	<h2>내 정보 변경</h2>
       <div class="memberInfo">
       

@@ -14,7 +14,7 @@ h2 {
 }
 
 
-/* 아이디 찾기 */
+/* 비밀번호 찾기 */
 
 .group {
 	font-family: 'Noto Sans KR', sans-serif;
@@ -26,7 +26,7 @@ label {
 	font-size: 15px;
 }
 
-.findId {
+.findPw {
 	padding: 20px 230px;
 }
 

@@ -41,7 +41,7 @@
 	<!-- 아이디 찾기 -->
 	<select id="findId" resultType="member">
 		select * from member
-		where name = #{name} and email = #{email}
+		where name = #{name} and tel = #{tel}
 	</select>
 	
 	<!-- 비밀번호 찾기 -->

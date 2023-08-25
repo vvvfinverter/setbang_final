@@ -108,3 +108,44 @@ select {
 	align-items: left;
 	justify-content: left;
 }
+
+
+
+/* 업무지원 선택 */
+.tax-radio,
+.corporate-radio,
+.patent-radio {
+    display: none;
+}
+
+.support-panel-offer {
+    border: 2px solid #e5e5e5;
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    width: 420px;
+    height: 150px;
+    margin: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.support-panel-offer.selected {
+    border-color: #D6AF91;
+}
+
+.radio-input:checked + .support-panel-offer {
+    border-color: #D6AF91;
+}
+
+strong {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.support-panel-offers img {
+	padding : 10px;
+}

@@ -12,9 +12,14 @@ h2 {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-h6 {
+h5 {
 	font-family: 'Noto Sans KR', sans-serif;
 	padding: 50px;
+}
+
+h6 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding-bottom : 50px;
 }
 
 #wrap {

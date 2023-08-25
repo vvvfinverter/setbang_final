@@ -200,7 +200,7 @@ public class MemberController {
 				model.addAttribute("check", 1);
 			} else { 
 				model.addAttribute("check", 0);
-				model.addAttribute("updateid", member.getId());
+				model.addAttribute("id", member.getId());
 			}
 			
 			return "/member/findPw";

@@ -128,9 +128,6 @@
     <li>
       <a class="no-underline" href="#">임대차 내역</a>
     </li>
-    <li>
-      <a class="no-underline" href="#">자주 묻는 질문</a>
-    </li>
   </ul>
   </aside>
   </div>
