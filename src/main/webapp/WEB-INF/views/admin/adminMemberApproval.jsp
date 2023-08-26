@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원가입 승인현황 목록</title>
+<title>회원가입 승인</title>
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/memberapproval.css">
+<link rel="stylesheet" href="./resources/css/adminMemberApproval.css">
 
 <!-- JS / Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,20 +23,19 @@
 </head>
 <body>
 
-		<div id="header">
-			<jsp:include page="../section/header.jsp" />
-		</div>
-
+	<div id="adminHeader">
+			<jsp:include page="../admin/adminHeader.jsp"/>
+	</div>
 
 		
 		<div class="wrap">
 
-	<h2>회원가입 승인현황</h2>
+	<h2>회원가입 승인 현황</h2>
 			
 		
 	<!-- 서비스 플랜 결제 내역 -->
 	<div id="memberapprovallist">	
-	<form class="memberapprovallist" name="memberapprovallist" action="memberapproval.do">	
+	<form class="memberapprovallist" name="memberapprovallist" action="adminMemberApproval.do">	
 		<div class="memberapprovalTable">	
 	 <table>
             <thead>
@@ -80,22 +79,17 @@
             </c:when>
             </c:choose>
         </table>		
-		<button type="summit" class="button" >가입승인</button>		
+		<button type="submit" class="button" >가입승인</button>		
 	</div>
 	</form>
 		</div>
 	
 		</div>
 		
-	<div id="adminMenu"> 
-			<jsp:include page="../admin/adminMenu.jsp"/>	
+
+	<div id="adminFooter">
+			<jsp:include page="../admin/adminFooter.jsp" />
 	</div>
 
-		<div id="footer">
-			<jsp:include page="../section/footer.jsp" />
-		</div>
-
-<!-- JS / Jquery -->		
-<script type="text/javascript" src="./resources/js/myPagePlanPayment.js"></script>		
 </body>
 </html>

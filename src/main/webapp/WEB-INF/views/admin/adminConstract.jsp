@@ -7,7 +7,7 @@
 
 
 <!-- CSS연결 -->
-<link rel="stylesheet" href="./resources/css/contract.css">
+<link rel="stylesheet" href="./resources/css/adminConstract.css">
 
 
 <!-- Bootstrap CSS -->
@@ -24,51 +24,18 @@
 <script src="./resources/jquery-ui-1.12.1/datepicker-ko.js"></script>
 
 
-    
-<script type="text/javascript">
-$(function(){
-	$("#con_start_date").datepicker({
-		showOn: "button",
-        buttonImage: "./resources/image/calendar.png",
-	    buttonImageOnly: false,
-		buttonText: "Select date"
-	});
-});
-
-
-$(function(){
-	$("#con_end_date").datepicker({
-		showOn: "button",
-        buttonImage: "./resources/image/calendar.png",
-	    buttonImageOnly: false,
-		buttonText: "Select date"
-	});
-});
-
-$(function(){
-	$("#con_date").datepicker({
-		showOn: "button",
-        buttonImage: "./resources/image/calendar.png",
-	    buttonImageOnly: false,
-		buttonText: "Select date"
-	});
-});
-
-</script>
-
-
 <title>임대차 계약서 등록</title>
 </head>
 <body>
 
-		<div id="header">
-			<jsp:include page="../section/header.jsp" />
-		</div>
+	<div id="adminHeader">
+			<jsp:include page="../admin/adminHeader.jsp"/>
+	</div>
 		
 <div class="wrap">
-	<h2>임대차 계약서</h2>
+	<h2>임대차 계약서 등록</h2>
 
-	<form action="contract1.do">
+	<form action="constract1.do">
 	<table>
 	<tr>
 		<th>임대인(법인명)</th>
@@ -157,16 +124,42 @@ $(function(){
 	</form>	
 </div>
 
-	<div id="adminMenu"> 
-			<jsp:include page="../admin/adminMenu.jsp"/>	
-	</div>
 
-		<div id="footer">
-			<jsp:include page="../section/footer.jsp" />
-		</div>
+	<div id="adminFooter">
+			<jsp:include page="../admin/adminFooter.jsp" />
+	</div>
 	
 <!-- JS연결 -->
-<script type="text/javascript" src="./resources/js/contract.js"></script>
+<script type="text/javascript" src="./resources/js/adminConstract.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#con_start_date").datepicker({
+		showOn: "button",
+        buttonImage: "./resources/image/calendar.png",
+	    buttonImageOnly: false,
+		buttonText: "Select date"
+	});
+});
 
+
+$(function(){
+	$("#con_end_date").datepicker({
+		showOn: "button",
+        buttonImage: "./resources/image/calendar.png",
+	    buttonImageOnly: false,
+		buttonText: "Select date"
+	});
+});
+
+$(function(){
+	$("#con_date").datepicker({
+		showOn: "button",
+        buttonImage: "./resources/image/calendar.png",
+	    buttonImageOnly: false,
+		buttonText: "Select date"
+	});
+});
+
+</script>
 </body>
 </html>

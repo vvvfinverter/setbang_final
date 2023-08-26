@@ -46,6 +46,7 @@
           <label for="pw" class="label">비밀번호</label>
           <input id="pw" name = "pw" type="password" class="input" data-type="password">
         </div>
+        <div class="blank"></div>
         <div class="group">
           <input type="submit" class="button" id="btn-login" value="로그인">
         </div>
@@ -119,6 +120,7 @@
           <input id="requiredCheck" name = "requiredCheck" type="checkbox" class="check" required/>
           <label for="requiredCheck"><span class="icon"></span> &nbsp;개인정보 이용에 동의합니다 (필수)</label>
         </div>
+        <div class="blank"></div>
         <div class="group">
           <input type="submit" class="button" id="btn-signup" value="회원가입">
         </div>

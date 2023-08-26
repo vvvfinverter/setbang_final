@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>임대차계약서 목록</title>
+<title>임대차 계약서 목록</title>
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/constractList.css">
+<link rel="stylesheet" href="./resources/css/adminConstractList.css">
 
 <!-- JS / Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,20 +23,19 @@
 </head>
 <body>
 
-		<div id="header">
-			<jsp:include page="../section/header.jsp" />
+		<div id="adminHeader">
+			<jsp:include page="../admin/adminHeader.jsp"/>
 		</div>
 
 
 		
 		<div class="wrap">
 
-	<h2>임대차계약서 목록</h2>
+	<h2>임대차 계약서 목록</h2>
 			
 		
-	<!-- 서비스 플랜 결제 내역 -->
+	<!-- 임대차 계약서 목록 -->
 	<div id="constractlist">	
-	<form class="constractlist" name="constractlist" action="constractlist1.do">	
 		<div class="constractTable">	
 
 	 <table>
@@ -68,25 +67,16 @@
             </tbody>
             </c:when>
             </c:choose>
-        </table>		
-		<button type="summit" class="button" >메인페이지</button>		
-	</form>
-	</div>
-		</div>
-
-		
-		
-		</div>
-		
-	<div id="adminMenu"> 
-			<jsp:include page="../admin/adminMenu.jsp"/>	
+        </table>	
+        </div>
 	</div>
 
-		<div id="footer">
-			<jsp:include page="../section/footer.jsp" />
-		</div>
+</div>
+		
 
-<!-- JS / Jquery -->		
-<script type="text/javascript" src="./resources/js/myPagePlanPayment.js"></script>		
+	<div id="adminFooter">
+			<jsp:include page="../admin/adminFooter.jsp" />
+	</div>
+
 </body>
 </html>

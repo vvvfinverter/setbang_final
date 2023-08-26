@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SETBang</title>
+
+<title>CO-SPACE</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,27 +29,25 @@
 <body>
 
 <div id="wrap">
-<!-- header  -->
 
 
-<!-- admin -->	
-	<div id="main">
+<!-- admin Header  -->
+	<div id="adminHeader">
+			<jsp:include page="../admin/adminHeader.jsp"/>
+	</div>
+
+<!-- admin Main -->	
+	<div id="adminMain">
 			<jsp:include page="../admin/adminMain.jsp"/>
 	</div>
 
-	<div id="adminMenu"> 
-			<jsp:include page="../admin/adminMenu.jsp"/>	
+<!-- admin Footer -->
+		<div id="adminFooter">
+			<jsp:include page="../admin/adminFooter.jsp" />
 	</div>
-
-<!-- footer -->
+	
+	
 	</div>	
-		<div id="footer">
-			<jsp:include page="../section/footer.jsp" />
-	</div>
- </div>
  
- <!-- JS -->
-<script type="text/javascript" src="./resources/js/adminMainChart.js"></script>
-
 </body>
 </html>

@@ -6,7 +6,7 @@
 	font-family: 'REM', sans-serif;
 }
 
-/* 로그인, 회원가입 */
+/* 관리자 로그인 */
 
 body, html {
   height: 100%;
@@ -95,7 +95,7 @@ input {
 .login-admin .sign-up:checked + .tab{
   color:#000000;
   font-weight : bold;
-  border-color:#D6AF91;
+  border-color:#40b8c9;
 }
 .login-form{
   min-height:345px;
@@ -127,12 +127,11 @@ input {
 }
 
 .login-form .group .label{
-  color: D6AF91;
   font-size:15px;
 }
 
 .login-form .group .button{
-  background:#D6AF91;
+  background:#40b8c9;
 }
 .login-form .group label .icon{
   width:15px;
@@ -163,10 +162,10 @@ input {
   transform:scale(0) rotate(0);
 }
 .login-form .group .check:checked + label{
-  	color:#D6AF91;
+  	color:#40b8c9;
 }
 .login-form .group .check:checked + label .icon{
-  background:#D6AF91;
+  background:#40b8c9;
 }
 .login-form .group .check:checked + label .icon:before{
   transform:scale(1) rotate(45deg);
@@ -181,3 +180,6 @@ input {
   transform:rotate(0);
 }
 
+.blank {
+	padding : 10px;
+}

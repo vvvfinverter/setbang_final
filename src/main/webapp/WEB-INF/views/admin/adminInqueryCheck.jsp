@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>문의게시판</title>
+<title>입주문의 현황</title>
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/questionAnswer.css">
+<link rel="stylesheet" href="./resources/css/adminInqueryCheck.css">
 
 <!-- JS / Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,15 +23,15 @@
 </head>
 <body>
 
-		<div id="header">
-			<jsp:include page="../section/header.jsp" />
-		</div>
+	<div id="adminHeader">
+			<jsp:include page="../admin/adminHeader.jsp"/>
+	</div>
 
 
 		
 		<div class="wrap">
 
-	<h2>문의 답변 게시판</h2>
+	<h2>입주문의 내역</h2>
 			
 		
 	<!-- 서비스 플랜 결제 내역 -->
@@ -81,15 +81,9 @@
 		
 		</div>
 		
-	<div id="adminMenu"> 
-			<jsp:include page="../admin/adminMenu.jsp"/>	
+	<div id="adminFooter">
+			<jsp:include page="../admin/adminFooter.jsp" />
 	</div>
 
-		<div id="footer">
-			<jsp:include page="../section/footer.jsp" />
-		</div>
-
-<!-- JS / Jquery -->		
-<script type="text/javascript" src="./resources/js/myPagePlanPayment.js"></script>		
 </body>
 </html>
