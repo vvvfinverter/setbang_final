@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.setbang.domain.AdminVO;
 import com.setbang.service.AdminService;
@@ -25,7 +26,11 @@ public class AdminController {
 	
 	// 관리자 로그인페이지로 이동
 	@RequestMapping(value="adminLogin.do")
-	public String loginAdmin(AdminVO vo) {
+	public String loginAdmin(AdminVO vo, HttpSession session, HttpServletRequest request) {
+		
+		// 관리자로그인이 되면 회원은 로그아웃처리
+		HttpSession session1 = request.getSession();
+		session1.invalidate();
 		
 		return "/admin/adminLogin";
 	}
@@ -34,65 +39,22 @@ public class AdminController {
 	@RequestMapping(value="admin.do")
 	public String adminMain(AdminVO vo) {		
 		return "/admin/admin";
-	}	
+	}
 
-	// 관리자 로그인 & 회원 현황
-	@RequestMapping(value="adminMemberCount.do")
-	public String findAdmin(AdminVO vo, Model model, HttpSession session, HttpServletRequest request) {
+	// 관리자 로그인
+	@RequestMapping(value="adminMain.do")
+	public String findAdmin(AdminVO vo, Model model, HttpSession session) {
 		
 		AdminVO admin = adminservice.findAdmin(vo);
 		
-		// 관리자 로그인 
 		if(admin != null) {
 			session.setAttribute("sessionAdminId", admin.getAdmin_id());
-			int totalMember = adminservice.totalMember();
-			model.addAttribute("totalmember", totalMember);
-		// 관리자 로그인 완료
-			
-			//지점별 회원수 추출
-			// 1. 구로지점
-			int guromember = adminservice.guromember();
-			model.addAttribute("guromember", guromember);
 		
-			// 2. 판교지점
-			int pangyomember = adminservice.pangyomember();
-			model.addAttribute("pangyomember", pangyomember);
-			
-			// 3. 강남지점
-			int gangnammember = adminservice.gangnammember();
-			model.addAttribute("gangnammember", gangnammember);
-
-			
-			// 서비스 플랜별 현황 추출
-			// 1. Basic
-			int basic = adminservice.basic();
-			model.addAttribute("basic", basic);
-			
-			// 2. standard_monthly
-			int standard_monthly = adminservice.standard_monthly();
-			model.addAttribute("standard_monthly", standard_monthly);
-			
-			// 3. standard_annual
-			int standard_annual = adminservice.standard_annual();
-			model.addAttribute("standard_annual", standard_annual);
-			
-			// 4. premium_monthly
-			int premium_monthly = adminservice.premium_monthly();
-			model.addAttribute("premium_monthly", premium_monthly);
-			
-			// 5. premium_annual
-			int premium_annual = adminservice.premium_annual();
-			model.addAttribute("premium_annual", premium_annual);
-
-		// 관리자로그인이 되면 회원은 로그아웃처리
-		   HttpSession session1 = request.getSession();
-		   session1.invalidate();
-			
 		}else {
 			return "/admin/adminLogin";
 		}
 		
-		return "/admin/adminMemberCount";
+		return "/admin/admin";
 	}
 	
 	// 임대차 계약서 등록
@@ -112,7 +74,7 @@ public class AdminController {
 		
 		// 개인오피스 코드 찾기
 		int priv_code = adminservice.findprivecode(privcode);
-		
+
 		// 임대차 계약서 insert
 			// 1. 임대차계약서 양식에 기입한 값들 가져오기(기존에 찾은 임차인(name)과 mem_code, priv_code는 위에서 찾았으니 제외)
 			String lessor_name = request.getParameter("lessor_name");
@@ -134,8 +96,56 @@ public class AdminController {
 			//3. vo에 넣은 값으로 임대차계약서 insert
 			adminservice.insertcontract(vo);
 		
-		return "redirect:/adminContract.do";
+		return "redirect:/contract.do";
 	}	
+	
+	
+	// 회원 페이지로 이동
+	@RequestMapping(value="adminMemberCount.do")
+	public String memberAdmin(AdminVO vo, Model model) {		
+		
+		// 총 회원수 추출
+		int totalMember = adminservice.totalMember();
+		model.addAttribute("totalmember", totalMember);
+		
+		//지점별 회원수 추출
+			// 1. 구로지점
+			int guromember = adminservice.guromember();
+			model.addAttribute("guromember", guromember);
+		
+			// 2. 판교지점
+			int pangyomember = adminservice.pangyomember();
+			model.addAttribute("pangyomember", pangyomember);
+			
+			// 3. 강남지점
+			int gangnammember = adminservice.gangnammember();
+			model.addAttribute("gangnammember", gangnammember);
+		
+		
+		// 서비스 플랜별 현황 추출
+			// 1. Basic
+			int basic = adminservice.basic();
+			model.addAttribute("basic", basic);
+			
+			// 2. standard_monthly
+			int standard_monthly = adminservice.standard_monthly();
+			model.addAttribute("standard_monthly", standard_monthly);
+			
+			// 3. standard_annual
+			int standard_annual = adminservice.standard_annual();
+			model.addAttribute("standard_annual", standard_annual);
+			
+			// 4. premium_monthly
+			int premium_monthly = adminservice.premium_monthly();
+			model.addAttribute("premium_monthly", premium_monthly);
+			
+			// 5. premium_annual
+			int premium_annual = adminservice.premium_annual();
+			model.addAttribute("premium_annual", premium_annual);
+			
+		return "/admin/adminMemberCount";
+	}
+	
 	
 	// 임대차계약서 등록 페이지로 이동
 	@RequestMapping(value="adminConstract.do")
@@ -153,18 +163,19 @@ public class AdminController {
 		return "/admin/adminConstractList";
 	}
 	
+	
 	// 입주 문의 현황 페이지로 이동
 	@RequestMapping(value="adminInqueryCheck.do")
 	public String Answer(AdminVO vo, Model model) {	
-		
+				
 		List<AdminVO> inqueryList = adminservice.inqueryList(vo);
 		model.addAttribute("inqueryList", inqueryList);
-		
+				
 		return "/admin/adminInqueryCheck";
 	}	
 	
 	
-	// 회원 승인 페이지로 이동
+	// 회원승인 게시판으로 이동
 	@RequestMapping(value="adminMemberApproval.do")
 	public String memberapproval(AdminVO vo, Model model) {
 		
@@ -174,6 +185,10 @@ public class AdminController {
 		return "/admin/adminMemberApproval";
 	}
 	
+	
 	// 회원승인 시 N -> Y로 approval 변경(value="memberapproval.do")
 	
+	
 }
+
+			
