@@ -14,7 +14,7 @@ footer {
     width: 100%
 }
 
-footer p {
+.established {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 10px;
     display: flex;
@@ -118,6 +118,32 @@ main {
   text-align: center;
   color: #ffffff;
 }
+
+
+.footer-bottom-section {
+	padding : 20px;
+}
+
+.logos {
+	padding : 10px;
+}
+
+.footerLogo {
+	padding : 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* chatbot */
 

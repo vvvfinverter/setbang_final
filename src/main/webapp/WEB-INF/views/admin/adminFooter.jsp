@@ -53,10 +53,10 @@
   <div class="footer-bottom-wrapper">   
       <div class="footer-social-overlap footer-social-icons-wrapper">
       <p>2023 Established in Seoul, KR - All Rights Reserved</p>  
-      <a><img id="logo" class="logo" src="./resources/image/blog.png" width=25px; height=25px;/></a>
+      <a><img id="logo" class="logo" src="./resources/image/instagram.png" width=25px; height=25px;/></a>
       <a><img id="logo" class="logo" src="./resources/image/kakaotalk.png" width=25px; height=25px;/></a>
       <a><img id="logo" class="logo" src="./resources/image/youtube.png" width=25px; height=25px;/></a>
-      <a><img id="logo" class="logo" src="./resources/image/instagram.png" width=25px; height=25px;/></a>
+      <a><img id="logo" class="logo" src="./resources/image/blog.png" width=25px; height=25px;/></a>
       </div>
   </div>
 </section>

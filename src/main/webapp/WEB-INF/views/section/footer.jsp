@@ -21,17 +21,22 @@
 <!-- footer -->
 
 <footer class="flex-rw">
-    <img width="250" height="250" src="./resources/image/cospacelogo.png" alt="CoSpace Logo">
+    <div class="footerLogo">
+    <img width="200" height="200" src="./resources/image/cospacelogo.png" alt="CoSpace Logo">
+    </div>
   
-  <ul class="footer-list-top">
-    <li>
-      <h6 class="footer-list-header">회사정보</h6></li>
-    <li class="generic-anchor footer-list-anchor" itemprop="significantLink">상호:SETBang</li>
-    <li class="generic-anchor footer-list-anchor" itemprop="significantLink">대표자:홍성민</li>
-    <li class="generic-anchor footer-list-anchor" itemprop="significantLink">대표전화:010-1588-1588</li>
-    <li itemprop="significantLink" class="generic-anchor footer-list-anchor">주소:서울 구로구 디지털로34길 27</li>
-    <li class="generic-anchor footer-list-anchor" itemprop="significantLink">사업자등록번호:325-81-697176</li>
-  </ul>
+  <div class="cospaceinfo1">
+		  <p>주식회사 CO-SPACE | 대표 남상윤</p>
+		  <p>서울 구로구 디지털로34길 27</p>
+		  <p>사업자 등록 번호 :325-81-69715</p>
+		  <p>setbang@setbang.com | +82 02-6578-9000</p>
+		  <div class="CommonFooter__clause">
+			<strong>개인정보 처리 방침</strong>
+			<strong>이용약관</strong>
+			<strong>영상정보처리기기 운영 관리 방침</strong>
+		  </div>
+		</div>
+  
   <ul class="footer-list-top">
     <li>
       <h6 class="footer-list-header">회사</h6></li>
@@ -40,28 +45,21 @@
     <li class="generic-anchor footer-list-anchor">통신판매업:제2001-서울구로-13579</li>
     <li class="generic-anchor footer-list-anchor">운영시간:07:00~21:00(점심시간 12시 ~ 2시)</li>
   </ul>
-  <ul class="footer-list-top">
-    <li>
-      <h6 class="footer-list-header">???</h6></li>
-    <li class="generic-anchor footer-list-anchor">추천</li>
-    <li class="generic-anchor footer-list-anchor">받습니다</li>
-    <li class="generic-anchor footer-list-anchor">아이디어</li>
-    <li class="generic-anchor footer-list-anchor">고갈상태입니다.</li>
-  </ul>
 
 <section class="footer-bottom-section">
   <div class="footer-bottom-wrapper">   
       <div class="footer-social-overlap footer-social-icons-wrapper">
-      <p>2023 Established in Seoul, KR - All Rights Reserved</p>  
-      <a><img id="logo" class="logo" src="./resources/image/blog.png" width=25px; height=25px;/></a>
+      <p class="established">2023 Established in Seoul, KR - All Rights Reserved</p>  
+      <div class="logos">
+      <a><img id="logo" class="logo" src="./resources/image/instagram.png" width=25px; height=25px;/></a>
       <a><img id="logo" class="logo" src="./resources/image/kakaotalk.png" width=25px; height=25px;/></a>
       <a><img id="logo" class="logo" src="./resources/image/youtube.png" width=25px; height=25px;/></a>
-      <a><img id="logo" class="logo" src="./resources/image/instagram.png" width=25px; height=25px;/></a>
+      <a><img id="logo" class="logo" src="./resources/image/blog.png" width=25px; height=25px;/></a>
+      </div>
       </div>
   </div>
 </section>
 </footer>
-
 
 
 <!-- chatbot -->
