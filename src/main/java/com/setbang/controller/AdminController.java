@@ -36,16 +36,18 @@ public class AdminController {
 		return "/admin/admin";
 	}	
 
-	// 회원 현황
+	// 관리자 로그인 & 회원 현황
 	@RequestMapping(value="adminMemberCount.do")
-	public String findAdmin(AdminVO vo, Model model, HttpSession session) {
+	public String findAdmin(AdminVO vo, Model model, HttpSession session, HttpServletRequest request) {
 		
 		AdminVO admin = adminservice.findAdmin(vo);
 		
+		// 관리자 로그인 
 		if(admin != null) {
 			session.setAttribute("sessionAdminId", admin.getAdmin_id());
 			int totalMember = adminservice.totalMember();
 			model.addAttribute("totalmember", totalMember);
+		// 관리자 로그인 완료
 			
 			//지점별 회원수 추출
 			// 1. 구로지점
@@ -81,6 +83,10 @@ public class AdminController {
 			// 5. premium_annual
 			int premium_annual = adminservice.premium_annual();
 			model.addAttribute("premium_annual", premium_annual);
+
+		// 관리자로그인이 되면 회원은 로그아웃처리
+		   HttpSession session1 = request.getSession();
+		   session1.invalidate();
 			
 		}else {
 			return "/admin/adminLogin";
