@@ -6,4 +6,80 @@
 	font-family: 'REM', sans-serif;
 }
 
+/* wrap */
 
+h2 {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding-bottom : 100px;
+}
+
+#wrap {
+	margin: 150px;
+	text-align : center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 문의하기 */
+
+.group label {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+}
+
+.group {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin : 20px;
+}
+
+input {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 420px;	
+}
+
+
+.button {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 20px;
+	background: #40b8c9;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 420px;
+}
+
+select {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 20px;
+	background: #e5e5e5;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 420px;
+}
+
+option {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.left {
+	text-align : left;
+	align-items: left;
+	justify-content: left;
+	/* margin-left: 20px; */
+}
+
+.input2 {
+	width : 390px;
+}
+
+.select {
+	padding-bottom : 5px;
+}

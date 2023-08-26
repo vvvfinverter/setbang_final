@@ -32,43 +32,47 @@
 			<jsp:include page="../admin/adminHeader.jsp"/>
 	</div>
 		
-<div class="wrap">
+<div id="wrap">
 	<h2>임대차 계약서 등록</h2>
 
+<div id="constract">
 	<form action="constract1.do">
-	<table>
-	<tr>
-		<th>임대인(법인명)</th>
-		<td colspan='2'><input type="text" id="lessor_name" name="lessor_name" value="Setbang"></td>
-		<td></td>
-		<td></td>
-	</tr>
 	
-	<tr>
-		<th>임차인(성 명)</th>
-		<td colspan='2'><input type="text" id="lessee_name" name="lessee_name"></td>
-		<td></td>
-		<td></td>
-	</tr>
-	
-	<tr>
-		<th>임차인 전화번호</th>
-		<td colspan='2'><input type="text" id="lessee_tel" name="lessee_tel" placeholder="000-0000-0000"></td>
-		<td></td>
-	</tr>
+		<div class="group">
+		<div class="left">
+			<label for="lessor_name" class="constract">임대인(법인명)</label>
+		</div>
+			<input  class="input" type="text" id="lessor_name" name="lessor_name" value="(주)CO-SPACE" required="required" readonly="readonly"/>
+		</div>
+		
+		<div class="group">
+		<div class="left">
+			<label for="lessee_name" class="label">임대인(성함)</label>
+		</div>
+			<input  class="input" type="text" id="lessee_name" name="lessee_name" placeholder="ex) 홍길동" required/>
+		</div>
+		
+		<div class="group">
+		<div class="left">
+			<label for="lessee_tel" class="label">임차인 전화번호</label>
+		</div>
+			<input class="input" type="text" id="lessee_tel" name="lessee_tel" placeholder="ex) 010-0000-0000" required/>
+		</div>
 
-	<tr>
-		<th>임대공간</th>
-		<td>
-		   <select class="input" name="brunch" id="brunch" var="brunch" onchange="selectBoxChange(this.value);" required>
-			      <option value="">선택</option>
-                  <option value="1">강남점</option>
-                  <option value="2">판교점</option>
-                  <option value="3">구로점</option> 
-           </select>                                                            
-		</td>
-		<td>
-		   <select class="input" name = "priv_code" id="priv_code" onchange="selectBoxChange(this.value);" required>
+		<div class="group">
+		<div class="left">
+			<label for="brunch" class="label">지점</label>
+		</div>
+		<div class="select">
+		<select class="input" name="brunch" id="brunch" var="brunch" onchange="selectBoxChange(this.value);" required>
+			<option value="">선택</option>
+            <option value="1">강남점</option>
+            <option value="2">판교점</option>
+            <option value="3">구로점</option> 
+        </select>    
+        </div>
+        <div class="select">
+		  <select class="input" name = "priv_code" id="priv_code" onchange="selectBoxChange(this.value);" required>
 			      <option value="">선택</option>
                   <option value="1" data-brunch="1">101호</option>
                   <option value="2" data-brunch="1">102호</option>
@@ -103,25 +107,33 @@
                   <option value="29" data-brunch="3">109호</option>
                   <option value="30" data-brunch="3">110호</option>
   
-            </select>                                                                                                         
-		</td>
-		
-	</tr>	
-	<tr>
-		<th>계약기간</th>
-		<td><input type="text" name="con_start_date" id="con_start_date" size="12" readonly/>  ~</td>
-		<td><input type="text" name="con_end_date" id="con_end_date" size="12" readonly/></td>
-	</tr>
-	
-	<tr>
-		<th>계약일</th>
-		<td><input type="text" name="con_date" id="con_date" size="12" readonly/></td>
-	</tr>
-	
-	</table>
+            </select>      
+           </div>
+         </div>
+            	   
+            	   
+         <div class="group">
+		<div class="left">
+			<label for="con_date1" class="label">계약 기간</label>
+		</div>
+		<div class="select">
+			<input class="input2" type="text" name="con_start_date" id="con_start_date" size="12" readonly="readonly" required="required"/>
+		</div>
+		<div class="select">
+			<input class="input2" type="text" name="con_end_date" id="con_end_date" size="12" readonly="readonly" required="required"/>
+		</div>
+		</div>
+            	   
+         <div class="group">
+		<div class="left">
+			<label for="con_date2" class="label">계약일</label>
+		</div>
+			<input class="input2" type="text" name="con_date" id="con_date" size="12" readonly/>
+		</div>
 
 		<button type="submit" class="button" >등록하기</button>			
 	</form>	
+</div>
 </div>
 
 

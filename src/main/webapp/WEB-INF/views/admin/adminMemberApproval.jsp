@@ -79,7 +79,7 @@
             </c:when>
             </c:choose>
         </table>		
-		<button type="submit" class="button" >가입승인</button>		
+		<button type="submit" class="button" >가입 승인</button>		
 	</div>
 	</form>
 		</div>

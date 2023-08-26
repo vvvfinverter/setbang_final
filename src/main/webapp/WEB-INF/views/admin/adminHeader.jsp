@@ -42,7 +42,7 @@
           <a class="nav-link" href="adminMemberApproval.do">회원가입 승인</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="adminInqueryCheck.do">입주문의 현황</a>
+          <a class="nav-link" href="adminInqueryCheck.do">입주문의 내역</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

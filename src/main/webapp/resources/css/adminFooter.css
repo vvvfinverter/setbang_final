@@ -126,7 +126,7 @@ main {
 #chatbot {
 position: fixed;
 right: 20px;
-bottom: 100px;
+bottom: 105px;
 z-index: 999;
 }
 
