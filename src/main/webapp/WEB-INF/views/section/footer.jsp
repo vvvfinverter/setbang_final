@@ -20,46 +20,42 @@
 
 <!-- footer -->
 
-<footer class="flex-rw">
-    <div class="footerLogo">
-    <img width="200" height="200" src="./resources/image/cospacelogo.png" alt="CoSpace Logo">
+<footer>
+    <div class="cospaceWrap">
+    <div class="cospaceLogo">
+        <img width="200" height="200" src="./resources/image/cospacelogo.png" alt="CoSpace Logo">
     </div>
-  
-  <div class="cospaceinfo1">
-		  <p>주식회사 CO-SPACE | 대표 남상윤</p>
-		  <p>서울 구로구 디지털로34길 27</p>
-		  <p>사업자 등록 번호 :325-81-69715</p>
-		  <p>setbang@setbang.com | +82 02-6578-9000</p>
-		  <div class="CommonFooter__clause">
-			<strong>개인정보 처리 방침</strong>
-			<strong>이용약관</strong>
-			<strong>영상정보처리기기 운영 관리 방침</strong>
-		  </div>
-		</div>
-  
-  <ul class="footer-list-top">
-    <li>
-      <h6 class="footer-list-header">회사</h6></li>
-    <li class="generic-anchor footer-list-anchor">팩스:02-6951-1713</li>
-    <li class="generic-anchor footer-list-anchor">email:soho012@soho.net</li>
-    <li class="generic-anchor footer-list-anchor">통신판매업:제2001-서울구로-13579</li>
-    <li class="generic-anchor footer-list-anchor">운영시간:07:00~21:00(점심시간 12시 ~ 2시)</li>
-  </ul>
+    <div class="cospaceInfo">
+    <img width="500" height="150" src="./resources/image/footerCatchphrase2.png" alt="CoSpace Catchphrase">
+    </div>
+    <div class="cospaceInfo">
+        <p>(주)CO-SPACE | 대표 홍성민<br/>
+            서울 구로구 디지털로34길 27 대륭포스트 2차 11층<br/>
+            setbang@setbang.com | +82 02-6578-9000</p>
+    </div>
+    <div class="cospaceInfo">
+        <p>사업자 등록 번호 : 325-81-69715<br/>
+            통신판매업 : 제2001-서울구로-13579<br/>
+            운영시간 : 09:00 ~ 18:00 (점심시간 11시 ~ 1시)</p>
+    </div>
+    </div>
 
-<section class="footer-bottom-section">
-  <div class="footer-bottom-wrapper">   
-      <div class="footer-social-overlap footer-social-icons-wrapper">
-      <p class="established">2023 Established in Seoul, KR - All Rights Reserved</p>  
-      <div class="logos">
-      <a><img id="logo" class="logo" src="./resources/image/instagram.png" width=25px; height=25px;/></a>
-      <a><img id="logo" class="logo" src="./resources/image/kakaotalk.png" width=25px; height=25px;/></a>
-      <a><img id="logo" class="logo" src="./resources/image/youtube.png" width=25px; height=25px;/></a>
-      <a><img id="logo" class="logo" src="./resources/image/blog.png" width=25px; height=25px;/></a>
-      </div>
-      </div>
-  </div>
-</section>
+    <div class="footer-bottom-wrapper">   
+            <div class="cospaceEtc">
+                <a><strong>이용약관</strong></a>&nbsp;|&nbsp;
+                <a><strong>개인정보 처리 방침</strong></a>&nbsp;|&nbsp;
+                <a><strong>영상정보처리기기 운영 관리 방침</strong></a>
+            </div>
+            <p class="established">2023 Established in Seoul, KR - All Rights Reserved</p>  
+            <div class="logos">
+                <a><img id="logo" class="logo" src="./resources/image/instagram2.png" width=25px; height=25px;/></a>
+                <a><img id="logo" class="logo" src="./resources/image/kakaotalk2.png" width=25px; height=25px;/></a>
+                <a><img id="logo" class="logo" src="./resources/image/youtube2.png" width=25px; height=25px;/></a>
+                <a><img id="logo" class="logo" src="./resources/image/blog2.png" width=25px; height=25px;/></a>
+            </div>
+    </div>
 </footer>
+
 
 
 <!-- chatbot -->

@@ -47,7 +47,7 @@
 		
 		<div class="group">
 		<div class="left">
-			<label for="lessee_name" class="label">임대인(성함)</label>
+			<label for="lessee_name" class="label">임차인(성함)</label>
 		</div>
 			<input  class="input" type="text" id="lessee_name" name="lessee_name" placeholder="ex) 홍길동" required/>
 		</div>

@@ -49,9 +49,9 @@
       </div>
     </div>      
 </div>      
-		<div id="footer">
-			<jsp:include page="../section/footer.jsp" />
-		</div>
+	<div id="adminFooter">
+			<jsp:include page="../admin/adminFooter.jsp" />
+	</div>
 </div>
 
 </body>
