@@ -6,8 +6,8 @@
       drawColumnChart();
       drawDonutChart();
     }
-     
-    function drawColumnChart() {
+    
+   function drawColumnChart() {
 		var guromember = parseInt($("#guromember").val());
 		var pangyomember = parseInt($("#pangyomember").val());
 		var gangnammember = parseInt($("#gangnammember").val());
@@ -29,9 +29,9 @@
 
       var options = {
         title: "지점별 회원현황",
-        width: 900,
-        height: 700,
-        bar: {groupWidth: "95%"},
+        width: 600,
+        height: 450,
+        bar: {groupWidth: "90%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
@@ -42,7 +42,6 @@
   // 서비스 등급현황
 
       function drawDonutChart() {
-      
       	var basic = parseInt($("#basic").val());
 		var standard_monthly = parseInt($("#standard_monthly").val());
 		var standard_annual = parseInt($("#standard_annual").val());
@@ -52,17 +51,17 @@
         var data = google.visualization.arrayToDataTable([
           ['서비스플랜', '회원수'],
           ['Basic',     basic],
-          ['Standard_monthly',  standard_monthly,],
+          ['Standard_monthly',  standard_monthly],
           ['Standard_annual',  standard_annual],
           ['Premium_monthly',  premium_monthly],
           ['Premium_annual',  premium_annual],
         ]);
 
         var options = {
-          title: '서비스 플랜별 현황',
+          title: '서비스 등급별 현황',
           pieHole: 0.4,
-          width: 1000,
-          height: 800,
+          width: 600,
+          height: 450,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));

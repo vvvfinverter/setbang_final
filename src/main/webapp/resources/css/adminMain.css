@@ -6,3 +6,72 @@
 	font-family: 'REM', sans-serif;
 	
 }
+
+.wrap {
+	text-align : center !important;
+	margin : 150px !important;
+}
+
+h2 {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+th {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h5{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.wrap {
+  text-align: center !important;
+  margin: 150px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 수직 가운데 정렬을 위한 설정 추가 */
+  height: 100vh;
+  text-align: center; /* 가운데 정렬을 위한 설정 추가 */
+  margin-top: 100px; /* 마진값 조정 */
+}
+#privcount {
+  margin-bottom: 100px; /* 원하는 간격 값으로 조절 */
+}
+
+#privcount.chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.chart-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+#chart_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+rect{
+	margin-bottom: 150px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	padding-bottom: 100px;
+}
+
+#myPageMenu {
+	position : fixed;
+}

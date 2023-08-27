@@ -6,6 +6,55 @@
 	font-family: 'REM', sans-serif;
 }
 
+.swiper-slide-active.main-header-swiper-slide {
+      position: relative;
+      z-index: 1;
+    }
+    .main-header-swiper-pagination-container {
+      z-index: 1;
+    }
+
+      .main-header-swiper-pagination-container {
+        padding-left: 35px;
+        padding-right: 35px;
+      }
+
+      .main-header-swiper-slide-item-link {
+        padding-left: 34px;
+      }
+
+      .area-use-description-1 {
+        color: #97a0ab;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 19px;
+        letter-spacing: -0.03em;
+        text-align: center;
+      }
+      .main-branch-swiper-slide-item-caption {
+        display: flex;
+        align-items: center;
+      }
+      /***브랜드 로그 간격***/
+      .membership-row-container:nth-of-type(odd) .membership-row img {
+        margin-right: 30px;
+      }
+      .membership-row img {
+        margin-right: 30px;
+      }
+      .membership-row {
+        animation-timing-function: ease-out;
+      }
+      
+		.blue-bg-section {
+		  background: lightgray !important;
+		}
+		
+	.main-section-4.correct_newff{
+		padding: 0 0 50px 0 !important;
+	}
+
+
 /* wrap */
 
 h2 {
@@ -104,3 +153,4 @@ select {
 	align-items: left;
 	justify-content: left;
 }
+

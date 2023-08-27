@@ -29,9 +29,9 @@
 
       var options = {
         title: "지점별 회원현황",
-        width: 900,
-        height: 700,
-        bar: {groupWidth: "95%"},
+        width: 600,
+        height: 450,
+        bar: {groupWidth: "90%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
@@ -60,8 +60,8 @@
         var options = {
           title: '서비스 등급별 현황',
           pieHole: 0.4,
-          width: 1000,
-          height: 800,
+          width: 600,
+          height: 450,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
