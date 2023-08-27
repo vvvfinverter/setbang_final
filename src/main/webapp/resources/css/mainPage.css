@@ -16,6 +16,12 @@ p {
 
 h2 {
 	font-family: 'Noto Sans KR', sans-serif !important;
+	color : #D6AF91 !important;
+}
+
+h3 {
+	font-family: 'Noto Sans KR', sans-serif !important;
+	text-align: center !important;
 }
 
 dt {
@@ -28,6 +34,10 @@ dd {
 
 a{
 	font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+.main-story__button{
+	background: #D6AF91 !important;
 }
 
 .main-intro__text{

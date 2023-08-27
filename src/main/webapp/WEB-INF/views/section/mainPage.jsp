@@ -90,12 +90,12 @@
         </div>
       </section>
 
-      <section class="main-service gsap-animation-enter" style="background-color: #D6AF91;">
+      <section class="main-service gsap-animation-enter" style="background-color: #e5e5e5;">
         <div class="main-service__inner">
           <header class="">
             <h2 class="main-service__title">
-              <span>SETbang 만의</span>
-              <span>통합 서비스</span>
+              <span style="color: #000000;">SETbang 만의</span>
+              <span style="color: #000000;">통합 서비스</span>
             </h2>
             <p class="main-service__sub-text">비즈니스를 시작하려는 이들에게<br>최적의 인프라를 제공합니다.</p>
           </header>
@@ -290,7 +290,7 @@
       </section>
       <section class="main-office">
         <header>
-          <h2>트랜디한 도심 중심의 오피스</h2>
+          <h3>트랜디한 도심 중심의 오피스</h3>
         </header>
         <article class="main-office__item">
           <img src="//image.musinsa.com/studioImg/renew/main/main-office-img-0.jpg?202208081500" class="main-office__image" alt="">
@@ -355,10 +355,10 @@
         </article>
       </section>
 
-      <section class="main-infra">
+      <section class="main-infra" style="background-color: #707070;">
         <div class="main-infra__inner">
           <header>
-            <h2>비즈니스가 성장하는데<br>필요한 인프라가 있는 곳</h2>
+            <h2 style="color: #ffffff;">비즈니스가 성장하는데<br/>필요한 인프라가 있는 곳</h2>
             <p>SETbang은 '동반 성장'이란 철학을 바탕으로<br/>브랜드의 성장을 돕기 위해 집중합니다.</p>
           </header>
           <div class="main-infra__swiper-wrap">
