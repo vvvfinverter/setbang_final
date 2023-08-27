@@ -6,15 +6,42 @@
 	font-family: 'REM', sans-serif;
 }
 
-
-
-/* 브랜드소개, 오피스소개 - main 2,3 적용중 */
-.intro h4 {
-	font-family: 'Noto Sans KR', sans-serif;
+span {
+	font-family: 'Noto Sans KR', sans-serif !important;
 }
 
-.office h4 {
-	font-family: 'Noto Sans KR', sans-serif;
+p {
+	font-family: 'Noto Sans KR', sans-serif !important;
 }
 
+h2 {
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
 
+dt {
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+dd {
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+a{
+	font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+.main-intro__text{
+    --swiper-theme-color: #007aff;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 620px;
+    padding-left: 109px;
+    box-sizing: border-box;
+    }
+ 

@@ -6,9 +6,6 @@
 
 <!-- Style CSS -->
 <link rel="stylesheet" href="./resources/css/adminMain.css">
-
-<!-- Google Chart JavaScript -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
 <!-- jQuery 라이브러리 로드 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
@@ -22,6 +19,10 @@
 <div class="wrap">
 		<h2>메인 페이지</h2>
 </div>
+
+
+
+
 
 </body>
 </html>

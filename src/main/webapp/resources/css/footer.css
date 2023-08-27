@@ -40,14 +40,14 @@ footer {
   color: #ffffff;
 }
 
-p {
+/* p {
   color: #ffffff;
-}
+} */
 
-strong {
+/* strong {
   color: #ffffff;
   font-size: 14px;
-}
+} */
 
 .cospaceInfo,
 .cospaceLogo {
@@ -70,10 +70,6 @@ strong {
     vertical-align: middle;
     justify-content: center;
     align-items: center;
-}
-
-.logos{
-	padding : 5px;
 }
 
 

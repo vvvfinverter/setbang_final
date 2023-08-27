@@ -11,7 +11,6 @@
 </head>
 <body>
 
-	<div id="wrap">
 		<div id="header">
 			<jsp:include page="WEB-INF/views/section/header.jsp" />
 		</div>
@@ -21,7 +20,6 @@
 		<div id="footer">
 			<jsp:include page="WEB-INF/views/section/footer.jsp" />
 		</div>
-	</div>
 
 </body>
 </html>

@@ -46,7 +46,7 @@
 		
 		<div class="group">
 		<div class="left">
-			<label for="tel">이메일 주소</label>
+			<label for="email">이메일 주소</label>
 		</div>
 			<input type="text" id="email" name="email" class="input" placeholder="ex) setbang@setbang.com" required/>
 		</div>

@@ -15,7 +15,7 @@
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<title>SETBang</title>
+<title>SETbang</title>
 </head>
 <body>
 
@@ -33,7 +33,7 @@
       <ul class="navbar-nav">
        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            브랜드 소개
+            SETbang
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="index.jsp#intro1">기업 소개</a></li>
