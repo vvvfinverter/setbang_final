@@ -148,4 +148,16 @@ public class AdminDAOImpl implements AdminDAO{
 		System.out.println("=> Mybatis memberapprovalList() 호출");	
 	    return mybatis.selectList("AdminDAO.memberapprovalList");		
 	}
+
+	// 회원승인 시 approval 상태가 'Y' -> 'N'으로 변경
+	@Override
+	   public void modifyApproval(AdminVO vo) {
+	      // TODO Auto-generated method stub
+	      System.out.println("=> Mybatis modifyApproval() 호출");
+	      
+	     mybatis.update("AdminDAO.modifyapproval", vo);
+
+	}
+	
+
 }

@@ -71,4 +71,7 @@ public interface AdminService {
 	// 회원가입 승인 목록게시판
 		List<AdminVO> memberapprovalList(AdminVO vo);
 		
+	// 회원승인 시 approval 상태가 'Y' -> 'N'으로 변경
+		public void modifyApproval(AdminVO vo);
+		
 }

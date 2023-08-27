@@ -94,4 +94,9 @@ public class MemberDAOImpl implements MemberDAO {
     	mybatis.update("MemberDAO.updateMemberInfo", vo);
     }
 
+    // 회원ID로 회원승인여부 가져오기
+    public MemberVO findApporval(MemberVO vo) {
+    	System.out.println("=> Mybatis findApporval() 호출"); 
+    	return mybatis.selectOne("MemberDAO.findApproval", vo);   	
+    }
 }

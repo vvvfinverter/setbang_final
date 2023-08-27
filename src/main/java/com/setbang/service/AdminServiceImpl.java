@@ -121,8 +121,15 @@ public class AdminServiceImpl implements AdminService{
 		
 		// 회원가입 승인 목록게시판
 		public List<AdminVO> memberapprovalList(AdminVO vo){
-			System.out.println("contractList" + vo);
+			System.out.println("memberapprovalList" + vo);
 			adminDAO.memberapprovalList(vo);
 			return adminDAO.memberapprovalList(vo);			
 		}
+		
+		// 회원승인 시 approval 상태가 'Y' -> 'N'으로 변경
+		public void modifyApproval(AdminVO vo) {
+			System.out.println("modifyApproval" + vo);
+			adminDAO.modifyApproval(vo);
+		}
+		
 }

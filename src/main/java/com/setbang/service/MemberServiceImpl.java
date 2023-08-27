@@ -62,4 +62,8 @@ public class MemberServiceImpl implements MemberService {
     	memberDAO.updateMemberInfo(vo);
     }
     
+    // 회원ID로 회원승인여부 가져오기
+    public MemberVO findApporval(MemberVO vo) {
+    	return memberDAO.findApporval(vo);
+    }
 }

@@ -76,9 +76,39 @@ public class AdminVO {
 	private String approval;
 	
 	
+	// 회원승인 관련 vo
+	private String mem_name;
+	private String mem_id;
+	private String mem_approval;
 	
 	
 	
+	
+	
+	public String getMem_name() {
+		return mem_name;
+	}
+
+	public void setMem_name(String mem_name) {
+		this.mem_name = mem_name;
+	}
+
+	public String getMem_id() {
+		return mem_id;
+	}
+
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
+	}
+
+	public String getMem_approval() {
+		return mem_approval;
+	}
+
+	public void setMem_approval(String mem_approval) {
+		this.mem_approval = mem_approval;
+	}
+
 	public int getCon_indexnum() {
 		return con_indexnum;
 	}

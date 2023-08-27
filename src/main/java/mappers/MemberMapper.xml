@@ -68,4 +68,8 @@
 		where mem_code = #{mem_code}
 	</update>	
 	
+	<!-- 회원ID로 회원승인여부 가져오기 -->
+	<select id="findApproval" parameterType="member" resultType="member">
+		select * from member where id=#{id}	
+	</select>
 </mapper>

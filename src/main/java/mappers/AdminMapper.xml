@@ -74,4 +74,8 @@
 	]]>		
 	</select>
 	
+	<update id="modifyapproval" parameterType="admin">
+	<![CDATA[ update member set approval='Y' where name=#{mem_name} and id=#{mem_id}]]>	
+	</update>
+	
 </mapper>

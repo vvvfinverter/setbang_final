@@ -45,7 +45,9 @@ public class MemberController {
 	    
 	    // 회원아이디로 회원코드 가져오기
 	    int memCode = memberService.getMemCodeBySessionId(sessionId);
-	    if (memCode != 0) { 
+	    	    		
+	    		
+	    if (memCode != 0 ) { 
 			MemberVO vo = new MemberVO();
 			vo.setMem_code(memCode);
 			vo.setPw(pw);
@@ -212,7 +214,11 @@ public class MemberController {
 		
 		MemberVO member = memberService.getLogin(vo);
 		
-	if(member != null) { 
+	    // 회원아이디로 회원승인여부 가져오기 
+		String memApproval = member.getApproval();
+	    System.out.println("memApproval : " + memApproval);
+		
+	if(member != null && memApproval.equals("Y")) { 
 		// task - 로그인 성공 (알림창으로 환영합니다. OOO 고객님 or 그냥 바로 넘어가기)
 		System.out.println("[" + member.getId() + "] 로그인 접속"); 
 		session.setAttribute("sessionId", member.getId());

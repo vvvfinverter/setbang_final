@@ -34,4 +34,7 @@ public interface MemberService {
     // 회원 정보 변경
     void updateMemberInfo(MemberVO vo);
     
+    // 회원ID로 회원승인여부 가져오기
+    MemberVO findApporval(MemberVO vo);
+    
 }

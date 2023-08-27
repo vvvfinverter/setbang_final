@@ -20,6 +20,52 @@
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+$("#approvalBtn").click(function(){
+	
+var rowData = new Array();
+var tdArr = new Array();
+var checkbox = $("input[name=membercheck]:checked");
+var params = [];
+
+checkbox.each(function() {
+    var tr = $(this).closest('tr');
+    var td = tr.children();
+    
+    var name = td.eq(1).text();
+    var id = td.eq(7).text();
+    var approval = td.eq(11).text();
+
+    params.push({
+        mem_id: id,
+        mem_name: name,
+        mem_approval: approval
+    });
+});
+
+$.ajax({
+	anyne:true,
+	type:'POST',
+	data: JSON.stringify(params),
+	contentType: "application/json; charset=utf-8",
+	url: "approvalModify.do",
+	dataType: "text",
+	success : function(data) {	
+		alert("해당회원을 승인하였습니다.");
+		location.href="./resources/views/admin/adminMemberApproval.jsp";
+	},
+	error: function(jqXHR, textStatus, errorThrown) {
+		alert("ERROR : " + textStatus + " : " + errorThrown);
+	}
+});
+
+});
+});
+
+</script>
+
 </head>
 <body>
 
@@ -72,15 +118,16 @@
                     <td>${member.mem_plan}</td>
                     <td>${member.signup_date}</td>
                     <td>${member.approval}</td>
-                    <td><input type="checkbox"></td>                                                                                                    
+                    <td><input type="checkbox" name="membercheck"></td>                                                                                                    
                 </tr>
              </c:forEach>
             </tbody>
             </c:when>
             </c:choose>
         </table>		
-		<button type="submit" class="button" >가입 승인</button>		
+          <button type="button" class="btn" id="approvalBtn" name="approvalBtn" >가입 승인</button>	
 	</div>
+
 	</form>
 		</div>
 	
