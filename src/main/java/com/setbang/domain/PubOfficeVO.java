@@ -1,6 +1,10 @@
 package com.setbang.domain;
 
 
+/**
+ * @author kohle
+ *
+ */
 public class PubOfficeVO {
 
 	
@@ -27,6 +31,7 @@ public class PubOfficeVO {
 	private String mem_plan;
 	private String signup_date;
 	private int num_of_per;
+	private String pub_time;
 	
 	public String getId() {
 		return id;
@@ -158,7 +163,13 @@ public class PubOfficeVO {
 	}
 	
 	
-//	public String getFormattedStartTime() {
+	public String getPubTime() {
+		return pub_time;
+	}
+	public void setPubTime(String pubTime) {
+		this.pub_time = pubTime;
+	}
+	//	public String getFormattedStartTime() {
 //		return formattedStartTime;
 //	}
 //	public void setFormattedStartTime(String formattedStartTime) {

@@ -4,6 +4,83 @@
 
 <mapper namespace="PubOfficeDAO">
 
+	<!-- PubOfficeDAO.selectPubOfficeCombo -->
+	<select id="selectPubOfficeCombo" resultType="pubOffice">
+		SELECT PUB_CODE
+				,PUB_CAT_CODE
+				,PUB_YN
+				,PUB_UNIT
+		FROM 
+			PUB_OFFICE 
+	</select>
+	
+	<!-- PubOfficeDAO.compareTimes  -->
+	<select id="compareTimes" resultType="pubOffice" parameterType="int">
+		SELECT PUB_TIME, BOOK_START  
+ 			FROM PUB_OFFICE po,BOOKING b
+		WHERE po.PUB_CODE = b.PUB_CODE
+ 			AND b.BOOK_START = po.PUB_TIME
+ 			AND b.PUB_CODE = #{pubCode}
+	</select>
+	
+	<!--   PubOfficeDAO.insertOffice  -->
+	<insert id="insertOfficeBooking" parameterType="pubOffice">
+		INSERT INTO BOOKING 
+			(BOOK_CODE
+			,MEM_CODE
+			,PUB_CODE
+			,BOOK_DATE
+			,BOOK_START
+			,NUM_OF_PER) 
+		VALUES 
+			(S_BOOK_CODE.NEXTVAL
+			,#{memCode}
+			,#{pubCode}
+			,TO_DATE(#{bookDate}, 'YYYY-MM-DD')
+			,#{bookStart}
+			,#{numOfPer})
+	</insert>
+	
+	<!--PubOfficeDAO.updatePubOfficeY -->
+	<update id="updatePubOfficeY" parameterType="pubOffice">
+		UPDATE PUB_OFFICE 
+			SET PUB_YN = 'Y', PUB_TIME = #{pubTime} 
+		WHERE PUB_CODE = #{pubCode}
+	</update>
+	
+	<!--PubOfficeDAO.updatePubOfficeN -->
+	<update id="updatePubOfficeN">
+		UPDATE PUB_OFFICE 
+			SET PUB_YN = 'N', PUB_TIME = null
+	</update>
+	
+	<!-- PubOfficeDAO.deleteOfficeBooking -->
+	<delete id="deleteOfficeBooking">
+		DELETE FROM BOOKING
+	</delete>
+	
+	
+	
+	
+	<!--  사용 안 하지만 애매한 sql -->
+	
+	<!--PubOfficeDAO.selectPubCat -->
+	<select id="selectPubCat" parameterType="pubOffice" resultType="pubOffice">
+		SELECT PUB_CAT_CODE, PUB_CAT  
+			FROM PUB_CAT
+		WHERE PUB_CAT_CODE = #{pubCatCode}
+	</select>
+	
+	<!--PubOfficeDAO.selectMemCode -->
+	<select id="selectMemCode" parameterType="pubOffice" resultType="pubOffice">
+		SELECT MEM_CODE  
+			FROM MEMBER id = #{id}
+	</select> 
+	
+	
+	
+	<!-- 사용 안해서 지워야 할 것 같은 sql -->
+	
 	<!--   PubOfficeDAO.selectPubOffice  -->
 	<select id="selectOffice" parameterType="pubOffice" resultType="pubOffice">
 		SELECT 
@@ -18,45 +95,6 @@
 			AND B.MEM_CODE  = M.MEM_CODE
 			AND PO.PUB_YN = 'Y'
 	</select>
-	
-	<select id="selectPubCat" parameterType="pubOffice" resultType="pubOffice">
-		SELECT PUB_CAT_CODE, PUB_CAT  
-			FROM PUB_CAT
-		WHERE PUB_CAT_CODE = #{pubCatCode}
-	</select>
-	
-	<select id="selectMemCode" parameterType="pubOffice" resultType="pubOffice">
-		SELECT MEM_CODE  
-			FROM MEMBER id = #{id}
-	</select> 
-	
-	<select id="selectPubOfficeCombo" resultType="pubOffice">
-		SELECT pub_code
-				,pub_cat_code
-				,pub_yn
-				,pub_unit
-		FROM 
-			PUB_OFFICE 
-	</select>
-		
-	
-	<!--   PubOfficeDAO.insertOffice  -->
-	<insert id="insertOfficeBooking" parameterType="pubOffice">
-		INSERT INTO BOOKING
-			(BOOK_CODE
-			,MEM_CODE
-			,PUB_CODE
-			,BOOK_DATE
-			,BOOK_START
-			,NUM_OF_PER) 
-		VALUES 
-			(S_BOOK_CODE.NEXTVAL
-			,#{memCode}
-			,#{pubCode}
-			,TO_DATE(#{bookDate}, 'YYYY-MM-DD')
-			,TO_DATE(#{bookStart}, 'HH24:MI')
-			,#{numOfPer})
-	</insert>
 
 </mapper>
 
