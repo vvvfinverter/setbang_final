@@ -23,10 +23,10 @@
 <footer>
     <div class="cospaceWrap">
     <div class="cospaceLogo">
-        <img width="200" height="200" src="./resources/image/cospacelogo.png" alt="CoSpace Logo">
+        <img width="180" height="180" src="./resources/image/cospacelogo.png" alt="CoSpace Logo">
     </div>
     <div class="cospaceInfo">
-    <img width="500" height="150" src="./resources/image/footerCatchphrase2.png" alt="CoSpace Catchphrase">
+    <img width="450" height="130" src="./resources/image/footerCatchphrase2.png" alt="CoSpace Catchphrase">
     </div>
     <div class="cospaceInfo">
         <p>(주)CO-SPACE | 대표 홍성민<br/>

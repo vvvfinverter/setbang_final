@@ -28,7 +28,7 @@
     
     <!-- task - 관리자 세션이 로그인이 되어있지 않으면 href=""로 -->
     
-<img src="./resources/image/cospacelogo.png" width=160px height=160px />
+<img src="./resources/image/cospacelogo.png" width=130px height=130px />
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -68,7 +68,7 @@
         </c:choose> 
 <!-- task - 관리자 아이디 세션이 null일때는 헤더 메뉴 숨기기 / 여기까지 숨겨야함-->
         <li class="nav-item">
-          <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbang.png' alt='setbang'/></a>
+          <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogo2.png' alt='setbang'/></a>
         </li>
     </ul>
     </div>

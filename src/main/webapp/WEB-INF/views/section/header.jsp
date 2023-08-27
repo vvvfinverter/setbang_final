@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.jsp">
-<img src="./resources/image/setbang.png" width=300px height=160px />
+<img src="./resources/image/setbanglogo.png" width=320px height=130px />
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
