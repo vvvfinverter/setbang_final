@@ -34,6 +34,7 @@
          <value>com.setbang.domain.AdminVO</value>
          <value>com.setbang.domain.ItemVO</value>
          <value>com.setbang.domain.PartnerVO</value>
+         <value>com.setbang.domain.ConstractVO</value>
       </list>
    </property>
  </bean>

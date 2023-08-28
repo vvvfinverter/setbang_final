@@ -15,6 +15,10 @@
 		INSERT INTO CONSTRACT (CON_CODE, MEM_CODE, PRIV_CODE, CON_START_DATE, CON_END_DATE, CON_DATE, LESSOR_NAME, LESSEE_NAME, LESSEE_TEL)
 		VALUES(s_con_code.nextval, #{mem_code}, #{priv_code}, #{con_start_date}, #{con_end_date}, #{con_date}, #{lessor_name}, #{lessee_name}, #{lessee_tel})
 	</insert>
+	
+	<update id="updatePrivYn" parameterType="admin">
+		update priv_office set priv_yn = 'Y' where priv_code = #{priv_code}
+	</update>
 
 	<select id="findmemcode" parameterType="String" resultType="int">
 		select mem_code from member where name=#{lessee_name} and tel=#{lessee_tel}

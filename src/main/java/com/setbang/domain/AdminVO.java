@@ -20,6 +20,7 @@ public class AdminVO {
 	private String lessee_name;
 	private String lessee_tel;
 	private int con_indexnum;
+	private String priv_yn;
 	
 	
 	// 총 회원수 관련 vo
@@ -85,6 +86,14 @@ public class AdminVO {
 	
 	
 	
+	public String getPriv_yn() {
+		return priv_yn;
+	}
+
+	public void setPriv_yn(String priv_yn) {
+		this.priv_yn = priv_yn;
+	}
+
 	public String getMem_name() {
 		return mem_name;
 	}

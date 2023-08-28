@@ -117,10 +117,17 @@ public class AdminController {
 			vo.setLessee_name(lessee_name);
 			vo.setLessee_tel(lessee_tel);
 		
-			//3. vo에 넣은 값으로 임대차계약서 insert
+			// 3. vo에 넣은 값으로 임대차계약서 insert
 			adminservice.insertcontract(vo);
-		
-		return "redirect:/contract.do";
+			
+			// 4. 인서트가 되면 priv_office의 priv_yn값이 'N' -> 'Y'로 변경
+			adminservice.updatePrivYn(vo);
+			
+			// 5. '등록하기'를 누르면 임대차계약목록을 보게 하는데 아래의 리스트가 없으면 페이지만 나오고 값이 안나와서 넣음 
+			List<AdminVO> contractList = adminservice.contractList(vo);
+			model.addAttribute("contractList", contractList);
+			
+		return "/admin/adminConstractList";
 	}	
 	
 	

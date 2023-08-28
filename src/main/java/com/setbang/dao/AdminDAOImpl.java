@@ -63,7 +63,17 @@ public class AdminDAOImpl implements AdminDAO{
 		System.out.println("=> Mybatis insertcontract() 호출");
 		mybatis.insert("AdminDAO.insertcontract", vo);
 	}
+	
+	
+	// 임대차계약서 인서트시 개인오피스 테이블에 Priv_yn값이 'N' -> 'Y'로 변경
+	@Override
+	public void updatePrivYn(AdminVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println("=> Mybatis updatePrivYn() 호출");
+		mybatis.update("AdminDAO.updatePrivYn", vo);		
+	}
 
+	
 	// 지점별 회원수 추출
 	//1. 구로지점
 	@Override
@@ -158,6 +168,5 @@ public class AdminDAOImpl implements AdminDAO{
 	     mybatis.update("AdminDAO.modifyapproval", vo);
 
 	}
-	
 
 }

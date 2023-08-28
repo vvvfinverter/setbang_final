@@ -47,6 +47,14 @@ public class AdminServiceImpl implements AdminService{
 		adminDAO.insertcontract(vo);
 	}
 	
+	@Override
+	public void updatePrivYn(AdminVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println("up" + vo);
+		adminDAO.updatePrivYn(vo);
+		
+	}
+	
 	// 지점별 회원수 찾기
 		//1. 구로지점
 		public int guromember() {
@@ -131,5 +139,7 @@ public class AdminServiceImpl implements AdminService{
 			System.out.println("modifyApproval" + vo);
 			adminDAO.modifyApproval(vo);
 		}
+
+
 		
 }

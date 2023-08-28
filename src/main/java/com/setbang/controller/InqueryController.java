@@ -48,6 +48,7 @@ public class InqueryController {
         vo.setSubject("제목이 들어갑니다");
         
 //        inqueryService.SendEmail
+     
         
     }	
 

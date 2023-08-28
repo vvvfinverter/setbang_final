@@ -32,6 +32,10 @@ public interface AdminService {
 	public void insertcontract(AdminVO vo);
 	
 	
+	// 임대차계약서 인서트시 개인오피스 테이블에 Priv_yn값이 'N' -> 'Y'로 변경
+	public void updatePrivYn(AdminVO vo);
+	
+	
 	
 	// 지점별 회원수 찾기
 		// 1. 구로지점

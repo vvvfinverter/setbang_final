@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ConstractDAO">
+
+	<!-- 임대차계약 종료일에 맞춰서 개인오피스 이용상태 변경 -->
+	<update id="autoPriv" parameterType="constract">
+	 	<![CDATA[
+		UPDATE priv_office p SET p.priv_yn = 'N'
+		WHERE p.priv_code = (select priv_code from constract where con_end_date < trunc(sysdate))]]>
+	</update>
+	
+</mapper>
