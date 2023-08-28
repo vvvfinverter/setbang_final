@@ -16,12 +16,6 @@ p {
 
 h2 {
 	font-family: 'Noto Sans KR', sans-serif !important;
-	color : #D6AF91 !important;
-}
-
-h3 {
-	font-family: 'Noto Sans KR', sans-serif !important;
-	text-align: center !important;
 }
 
 dt {
@@ -37,7 +31,8 @@ a{
 }
 
 .main-story__button{
-	background: #D6AF91 !important;
+	background: #40b8c9 !important;
+	font-family: 'Noto Sans KR', sans-serif !important;
 }
 
 .main-intro__text{
@@ -55,3 +50,16 @@ a{
     box-sizing: border-box;
     }
  
+ .main-story__sub-text {
+ 	padding : 10px !important;
+ }
+
+#inqueryPage {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+#branchPage  {
+	text-decoration: none !important;
+	color: inherit !important; 
+}

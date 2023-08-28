@@ -34,20 +34,20 @@
 <section class="main-intro">
         <div class="main-intro__item gsap-animation-enter">
           <div class="main-intro__image">
-            <img src="//image.musinsa.com/studioImg/renew/main/main-intro-img-0.jpg?202208081500" alt="">
+            <img src="./resources/image/SETbangMain1.gif" alt="SETbangMain1">
           </div>
           <div class="main-intro__text">
             <strong class="main-intro__text__title">
               <span>
-                새로운 사업의 시작
+                새로운 사업의 시작!
               </span>
               <span>
-                SETbang에서 시작하세요
+                SETbang에서 시작하세요.
               </span>
             </strong>
             <p class="main-intro__text__sub-text">
-            사업을 시작하는 분들에게<br/>
-            최적의 환경을 조성합니다.</p>
+            사업 초기비용이 부담되시나요?<br/>
+      SETbang이 도와드리겠습니다.</p>
           </div>
         </div>
         <div class="main-intro__item gsap-animation-enter">
@@ -57,13 +57,13 @@
           <div class="main-intro__text">
             <strong class="main-intro__text__title">
               <span>
-                탁월한 위치, 공간, 서비스
+      	 다양한 분야에 적합한
               </span>
               <span>
-                그리고 커뮤니티까지
+                탁월한 위치, 공간, 서비스
               </span>
             </strong>
-            <p class="main-intro__text__sub-text">SETbang은 입주멤버가 오직 비즈니스에만<br>집중할 수 있도록 모든 서비스를 제공합니다.</p>
+            <p class="main-intro__text__sub-text">SETbang은 다양한 분야의 입주 멤버가<br/>오직 사업에 집중 할 수 있도록<br/>최적의 인프라를 제공합니다.</p>
           </div>
         </div>
         <div class="main-intro__item gsap-animation-enter">
@@ -73,18 +73,18 @@
           <div class="main-intro__text">
             <strong class="main-intro__text__title">
               <span>
-                비즈니스에 필요한 모든 서비스를
+                비즈니스에 필요한 모든 것!
               </span>
               <span>
-                한번에 받을 수 있는 공유 오피스는
+                통합서비스를 제공하는
               </span>
               <span>
-                SETbang 뿐
+        SETbang
               </span>
             </strong>
             <p class="main-intro__text__sub-text">
-            다양한 공용 오피스 시설 이용부터<br/>
-            필요한 물품 제공, 각종 서류대행, 협력업체 예약까지
+		각종 공용 오피스 시설부터<br/>
+		필요한 물품 제공, 서류대행, 협력업체 예약 제공
             </p>
           </div>
         </div>
@@ -95,9 +95,9 @@
           <header class="">
             <h2 class="main-service__title">
               <span style="color: #000000;">SETbang 만의</span>
-              <span style="color: #000000;">통합 서비스</span>
+              <span style="color: #000000;">서비스 플랜</span>
             </h2>
-            <p class="main-service__sub-text">비즈니스를 시작하려는 이들에게<br>최적의 인프라를 제공합니다.</p>
+            <p class="main-service__sub-text">사업을 시작하려는 분들에게<br/>저렴한 가격으로 통합 서비스를 제공합니다.</p>
           </header>
           <ul class="main-service__structure">
             <li>
@@ -290,13 +290,13 @@
       </section>
       <section class="main-office">
         <header>
-          <h3>트랜디한 도심 중심의 오피스</h3>
+          <h2 style="color: #000000 !important;">사업에 최적화된 도심 중심의 오피스</h2>
         </header>
         <article class="main-office__item">
           <img src="//image.musinsa.com/studioImg/renew/main/main-office-img-0.jpg?202208081500" class="main-office__image" alt="">
           <dl class="main-office__information">
             <dt class="main-office__information__title">SETbang 구로점</dt>
-            <dd class="main-office__information__address">서울특별시 구로구 고척동 100-7, 11층</dd>
+            <dd class="main-office__information__address">서울특별시 구로구 넥타이마라톤로 7, 11층</dd>
             <dd class="main-office__information__list">
               <ul>
                 <li>사무/공용 공간</li>
@@ -306,7 +306,7 @@
               </ul>
             </dd>
             <dd class="main-office__information__link">
-              <a href="home.branch1.html" data-menu="branch1">
+              <a class="branchPage" href="#" data-menu="branch1">
                 자세히 보기
               </a>
             </dd>
@@ -326,7 +326,7 @@
               </ul>
             </dd>
             <dd class="main-office__information__link">
-              <a href="home.branch2.html" data-menu="branch2">
+              <a class="branchPage" href="#" data-menu="branch2">
                 자세히 보기
               </a>
             </dd>
@@ -337,7 +337,7 @@
             class="main-office__image" alt="">
           <dl class="main-office__information">
             <dt class="main-office__information__title">SETbang 판교점</dt>
-            <dd class="main-office__information__address">경기도 성남시 분당구 판교동 운중로 33, 10층</dd>
+            <dd class="main-office__information__address">경기도 성남시 분당구 판교동 33, 10층</dd>
             <dd class="main-office__information__list">
               <ul>
                 <li>사무/공용 공간</li>
@@ -347,7 +347,7 @@
               </ul>
             </dd>
             <dd class="main-office__information__link">
-              <a href="home.branch4.html" data-menu="branch4">
+              <a class="branchPage" href="#" data-menu="branch3">
                 자세히 보기
               </a>
             </dd>
@@ -358,21 +358,21 @@
       <section class="main-infra" style="background-color: #707070;">
         <div class="main-infra__inner">
           <header>
-            <h2 style="color: #ffffff;">비즈니스가 성장하는데<br/>필요한 인프라가 있는 곳</h2>
-            <p>SETbang은 '동반 성장'이란 철학을 바탕으로<br/>브랜드의 성장을 돕기 위해 집중합니다.</p>
+            <h2 style="color: #ffffff;">사업이 성장하는데<br/>필요한 인프라가 있는 곳</h2>
+            <p style="color: #ffffff !important;">(주)CO-SPACE는 '동반 성장'이란 철학을 바탕으로<br/>사업 편의성을 제공하는 SETbang을 설립했습니다.</p>
           </header>
           <div class="main-infra__swiper-wrap">
             <div class="swiper main-infra__swiper">
               <div class="swiper-wrapper">
-                 <a href="home.event.html" data-menu="event" class="swiper-slide">
+                 <a href="#" data-menu="event" class="swiper-slide">
                   <img src="//image.musinsa.com/studioImg/renew/main/main-infra-img-0_v2.jpg?202208081500" alt="">
                   <em>이벤트</em>
                 </a>
-                <a href="home.support.html" data-menu="support" class="swiper-slide">
+                <a href="#" data-menu="support" class="swiper-slide">
                   <img src="//image.musinsa.com/studioImg/renew/main/main-infra-img-1_v2.jpg?202208081500" alt="">
                   <em>성장지원</em>
                 </a>
-                <a href="home.community.html" data-menu="community" class="swiper-slide">
+                <a href="#" data-menu="community" class="swiper-slide">
                   <img src="//image.musinsa.com/studioImg/renew/main/main-infra-img-2_v2.jpg?202208081500" alt="">
                   <em>커뮤니티</em>
                 </a>
@@ -398,17 +398,18 @@
       </section>
 
       <section class="main-story gsap-animation-enter">
-        <h2 class="main-story__title">start here make story</h2>
-        <p class="main-story__sub-text">이곳에서 여러분의 성공 스토리를 만들어보세요.</p>
-        <a href="home.help.html" data-menu="help" class="main-story__button">입주 문의</a>
+        <h2 class="main-story__title" style="color: #ffffff !important;">MAKE YOUR DREAM</h2>
+        <h2 class="main-story__title" style="color: #40b8c9 !important;">WE WILL SURPPORT</h2>
+        <p class="main-story__sub-text">SETbang은 새롭게 시작하는 모든 사업주를 응원합니다.</p>
+        <a id="inqueryPage" href="inquery.do" data-menu="help" class="main-story__button">입주 문의</a>
       </section>
 
 
 	<!-- floating Button -->
 <div class="FloatingButton" type="button">
   <div class="FloatingButton__text">
-    <a href="inquery.do" data-menu="help">
-		문의하기
+    <a id="inqueryPage" href="inquery.do" data-menu="help">
+		입주 문의
     </a>
   </div>
   <button class="FloatingButton__icon" type="button">
