@@ -78,7 +78,7 @@
             <li><a class="dropdown-item" href="adminConstractList.do">임대차 계약서 목록</a></li>
           </ul>
         <li class="nav-item">
-          <a class="nav-link" href="#">로그아웃</a>
+          <a class="nav-link" href="adminLogout.do">로그아웃</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogo2.png' alt='setbang'/></a>

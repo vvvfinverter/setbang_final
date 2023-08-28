@@ -69,6 +69,18 @@ public class AdminController {
 		
 	}
 	
+	// 관리자 로그아웃 처리
+	@RequestMapping(value="adminLogout.do")
+	public String logoutAdmin(AdminVO vo, HttpSession session, HttpServletRequest request) {
+		
+		// 관리자로그인이 되면 회원은 로그아웃처리
+		HttpSession session1 = request.getSession();
+		session1.invalidate();
+		
+		System.out.println("session1 : " + request.getSession());
+		return "/admin/adminLogin";
+	}
+	
 	// 임대차 계약서 등록
 	@RequestMapping(value="constract1.do")
 	public String insertContract(HttpSession session, Model model, HttpServletRequest request, HttpServletResponse reponse) {
