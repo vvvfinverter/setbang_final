@@ -31,7 +31,24 @@
 	<context:component-scan base-package="com.setbang" />
 	
 		<!-- 파일업로드 하려면 MultipartResolver를 등록해야 함 ( 아이디명 : multipartResolver )-->
-		<beans:bean id="multipartResolver"  
-			class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-
+    <beans:bean id="multipartResolver"  
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+        
+    <!-- Gmail -->
+    <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <beans:property name="host" value="smtp.gmail.com" />
+        <beans:property name="port" value="587" />
+        <beans:property name="username" value="quftlswp1@gmail.com" />
+        <beans:property name="password" value="ghdtjdals1!" />
+        
+        <beans:property name="javaMailProperties">
+            <beans:props>
+                <beans:prop key="mail.smtp.auth">true</beans:prop>
+                <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+    
+    <beans:bean id="email" class="com.setbang.domain.InqueryVO"></beans:bean>
+    <beans:bean id="emailSender" class="com.setbang.domain.InqueryVO"></beans:bean>
 </beans:beans>

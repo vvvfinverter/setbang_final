@@ -14,7 +14,32 @@ public class InqueryVO {
 	private String inq_branch;
 	private String inq_website;
 	
+	// 문의에 대한 답변 Email 관련
+	private String subject;
+	private String content;
+	private String receiver;
 	
+	
+	
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getReceiver() {
+		return receiver;
+	}
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
+				
+	}
 	public String getInq_people() {
 		return inq_people;
 	}
