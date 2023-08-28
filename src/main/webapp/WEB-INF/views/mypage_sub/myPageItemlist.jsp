@@ -45,6 +45,7 @@
                     <th>신청품목</th>
                     <th>수 량</th>
                     <th>신청일자</th>
+                    <th>선택</th>
                 </tr>
             </thead>
             <c:choose>
@@ -56,15 +57,16 @@
                     <td>${item.i_cat}</td>
                     <td>${item.i_name}</td>
                     <td>${item.i_unit_amount}</td>
-                    <td>${item.i_apply_date}</td>                                                                                          
+                    <td>${item.i_apply_date}</td>
+                    <td><input type="checkbox" name="membercheck"></td>                                                                                             
                 </tr>
              </c:forEach>
-             <button type="summit" class="button" id="">삭 제</button>
             </tbody>
             </c:when>
             </c:choose>
         </table>		
 	</div>
+             <button type="submit" class="button" id="">삭 제</button>
 		</div>
 	
 		</div>
@@ -76,6 +78,52 @@
 		<div id="footer">
 			<jsp:include page="../section/footer.jsp" />
 		</div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+$("#approvalBtn").click(function(){
+	
+var rowData = new Array();
+var tdArr = new Array();
+var checkbox = $("input[name=membercheck]:checked");
+var params = [];
+
+checkbox.each(function() {
+    var tr = $(this).closest('tr');
+    var td = tr.children();
+    
+    var name = td.eq(1).text();
+    var id = td.eq(7).text();
+    var approval = td.eq(11).text();
+
+    params.push({
+        mem_id: id,
+        mem_name: name,
+        mem_approval: approval
+    });
+});
+
+$.ajax({
+	anyne:true,
+	type:'POST',
+	data: JSON.stringify(params),
+	contentType: "application/json; charset=utf-8",
+	url: "approvalModify.do",
+	dataType: "text",
+	success : function(data) {	
+		alert("신청 취소가 완료되었습니다.");
+		location.href="itemlist.do";
+	},
+	error: function(jqXHR, textStatus, errorThrown) {
+		alert("ERROR : " + textStatus + " : " + errorThrown);
+	}
+});
+
+});
+});
+
+</script>
 
 <!-- JS / Jquery -->		
 <script type="text/javascript" src="./resources/js/myPagePlanPayment.js"></script>		
