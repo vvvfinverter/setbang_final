@@ -21,6 +21,73 @@
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
+</head>
+<body>
+
+	<div id="adminHeader">
+			<jsp:include page="../admin/adminHeader.jsp"/>
+	</div>
+
+		
+		<div class="wrap">
+
+	<h2>회원가입 승인 현황</h2>
+			
+		
+	<!-- 회원가입 승인 현황 -->
+	<div id="memberapprovallist">	
+		<div class="memberapprovalTable">	
+	 <table>
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>회원명</th>
+                    <th>연락처</th>
+                    <th>이메일</th>
+                    <th>사업자번호</th>
+                    <th>회원업종</th>                    
+                    <th>주 소</th>                                        
+                    <th>아이디</th>
+                    <th>회원가입일</th>                    
+                    <th>승인여부</th>
+                    <th>선 택</th>
+                </tr>
+            </thead>
+            <c:choose>
+        	<c:when test="${not empty memberapprovalList}">
+            <tbody>
+            <c:forEach var="member" items="${memberapprovalList}">
+                <tr>
+                    <td><input type="hidden" value="1">${member.member_indexnum}</td>
+                    <td>${member.name}</td>
+                    <td>${member.tel}</td>
+                    <td>${member.email}</td>
+                    <td>${member.business_no}</td>
+                    <td>${member.ind_name}</td>
+                    <td>${member.addr}</td>
+                    <td>${member.id}</td>
+                    <td>${member.signup_date}</td>
+                    <td>${member.approval}</td>
+                    <td><input type="checkbox" name="membercheck"></td>                                                                                                    
+                </tr>
+             </c:forEach>
+            </tbody>
+            </c:when>
+            </c:choose>
+        </table>		
+          <button type="button" class="button" id="approvalBtn" name="approvalBtn" >가입 승인</button>	
+	</div>
+
+		</div>
+	
+		</div>
+		
+
+	<div id="adminFooter">
+			<jsp:include page="../admin/adminFooter.jsp" />
+	</div>
+
+
 <script type="text/javascript">
 $(document).ready(function() {
 $("#approvalBtn").click(function(){
@@ -53,8 +120,8 @@ $.ajax({
 	url: "approvalModify.do",
 	dataType: "text",
 	success : function(data) {	
-		alert("해당회원을 승인하였습니다.");
-		location.href="./resources/views/admin/adminMemberApproval.jsp";
+		alert("해당 회원을 승인하였습니다.");
+		location.href="adminMemberApproval.do";
 	},
 	error: function(jqXHR, textStatus, errorThrown) {
 		alert("ERROR : " + textStatus + " : " + errorThrown);
@@ -65,78 +132,5 @@ $.ajax({
 });
 
 </script>
-
-</head>
-<body>
-
-	<div id="adminHeader">
-			<jsp:include page="../admin/adminHeader.jsp"/>
-	</div>
-
-		
-		<div class="wrap">
-
-	<h2>회원가입 승인 현황</h2>
-			
-		
-	<!-- 서비스 플랜 결제 내역 -->
-	<div id="memberapprovallist">	
-	<form class="memberapprovallist" name="memberapprovallist" action="adminMemberApproval.do">	
-		<div class="memberapprovalTable">	
-	 <table>
-            <thead>
-                <tr>
-                    <th>NO</th>
-                    <th>회원명</th>
-                    <th>연락처</th>
-                    <th>이메일</th>
-                    <th>사업자번호</th>
-                    <th>회원업종</th>                    
-                    <th>주 소</th>                                        
-                    <th>아이디</th>
-                    <th>비밀번호</th>
-                    <th>서비스플랜명</th>
-                    <th>회원가입일</th>                    
-                    <th>승인여부</th>
-                    <th>선 택</th>
-                </tr>
-            </thead>
-            <c:choose>
-        	<c:when test="${not empty memberapprovalList}">
-            <tbody>
-            <c:forEach var="member" items="${memberapprovalList}">
-                <tr>
-                    <td><input type="hidden" value="1">${member.member_indexnum}</td>
-                    <td>${member.name}</td>
-                    <td>${member.tel}</td>
-                    <td>${member.email}</td>
-                    <td>${member.business_no}</td>
-                    <td>${member.ind_name}</td>
-                    <td>${member.addr}</td>
-                    <td>${member.id}</td>
-                    <td>${member.pw}</td>
-                    <td>${member.mem_plan}</td>
-                    <td>${member.signup_date}</td>
-                    <td>${member.approval}</td>
-                    <td><input type="checkbox" name="membercheck"></td>                                                                                                    
-                </tr>
-             </c:forEach>
-            </tbody>
-            </c:when>
-            </c:choose>
-        </table>		
-          <button type="button" class="btn" id="approvalBtn" name="approvalBtn" >가입 승인</button>	
-	</div>
-
-	</form>
-		</div>
-	
-		</div>
-		
-
-	<div id="adminFooter">
-			<jsp:include page="../admin/adminFooter.jsp" />
-	</div>
-
 </body>
 </html>

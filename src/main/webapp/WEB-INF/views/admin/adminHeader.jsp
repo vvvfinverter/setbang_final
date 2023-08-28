@@ -22,12 +22,11 @@
 <!-- header / navbar -->
 
 
+ <c:choose>
+        <c:when test="${sessionAdminId == null }">
 <nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
-    <a class="navbar-brand" href="admin.do">
-    
-    <!-- task - 관리자 세션이 로그인이 되어있지 않으면 href=""로 -->
-    
+    <a class="navbar-brand" href="">
 <img src="./resources/image/cospacelogo.png" width=130px height=130px />
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +34,32 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="adminLogin.do">로그인</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogo2.png' alt='setbang'/></a>
+        </li>
+    </ul>
+    </div>
+  </div>
+</nav>
+        </c:when>
+        
+        <c:when test="${sessionAdminId != null }">
+        <nav class="navbar navbar-expand-lg bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="adminMain.do">
+<img src="./resources/image/cospacelogo.png" width=130px height=130px />
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="adminMain.do">메인 화면</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="adminMemberCount.do">회원 현황</a>
         </li>
@@ -52,21 +77,9 @@
             <li><a class="dropdown-item" href="adminConstract.do">임대차 계약서 등록</a></li>
             <li><a class="dropdown-item" href="adminConstractList.do">임대차 계약서 목록</a></li>
           </ul>
-        
-        <!-- 로그인/로그아웃 -->
-        <c:choose>
-        <c:when test="${sessionId == null }">
-        <li class="nav-item">
-          <a class="nav-link" href="#">로그인</a>
-        </li>
-         </c:when>
-          <c:when test="${sessionId != null }">
         <li class="nav-item">
           <a class="nav-link" href="#">로그아웃</a>
         </li>
-          </c:when>
-        </c:choose> 
-<!-- task - 관리자 아이디 세션이 null일때는 헤더 메뉴 숨기기 / 여기까지 숨겨야함-->
         <li class="nav-item">
           <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogo2.png' alt='setbang'/></a>
         </li>
@@ -74,6 +87,9 @@
     </div>
   </div>
 </nav>
+        </c:when>
+        
+</c:choose>
 
 
 </body>

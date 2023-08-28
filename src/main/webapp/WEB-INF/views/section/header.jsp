@@ -44,11 +44,12 @@
         </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            오피스 소개
+            	지점 안내
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">개인 오피스</a></li>
-            <li><a class="dropdown-item" href="#">공용 오피스</a></li>
+            <li><a class="dropdown-item" href="#">구로점</a></li>
+            <li><a class="dropdown-item" href="#">강남점</a></li>
+            <li><a class="dropdown-item" href="#">판교점</a></li>
           </ul>
         </li>
         

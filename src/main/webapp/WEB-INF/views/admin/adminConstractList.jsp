@@ -44,10 +44,9 @@
                     <th>NO</th>
                     <th>임차인</th>
                     <th>임차인 연락처</th>
-                    <th>임대인</th>
+                    <th>계약일</th>
                     <th>임대시작일</th>
                     <th>임대종료일</th>
-                    <th>계약일</th>
                 </tr>
             </thead>
             <c:choose>
@@ -58,10 +57,9 @@
                     <td>${constract.con_indexnum}</td>
                     <td>${constract.lessee_name}</td>
                     <td>${constract.lessee_tel}</td>
-                    <td>${constract.lessor_name}</td>
+                    <td>${constract.con_date}</td>
                     <td>${constract.con_start_date}</td>
                     <td>${constract.con_end_date}</td>
-                    <td>${constract.con_date}</td>
                 </tr>
              </c:forEach>
             </tbody>
