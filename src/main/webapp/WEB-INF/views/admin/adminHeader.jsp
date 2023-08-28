@@ -38,7 +38,7 @@
           <a class="nav-link" href="MoveLogin.do">로그인</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogo2.png' alt='setbang'/></a>
+          <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogofinal2.png' alt='setbang'/></a>
         </li>
     </ul>
     </div>
@@ -81,7 +81,7 @@
           <a class="nav-link" href="adminLogout.do">로그아웃</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogo2.png' alt='setbang'/></a>
+          <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogofinal2.png' alt='setbang'/></a>
         </li>
     </ul>
     </div>

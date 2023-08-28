@@ -6,6 +6,9 @@
 	font-family: 'REM', sans-serif;
 }
 
+
+/* 메인 기본 */
+
 span {
 	font-family: 'Noto Sans KR', sans-serif !important;
 }
@@ -63,3 +66,76 @@ a{
 	text-decoration: none !important;
 	color: inherit !important; 
 }
+
+
+.main-intro {
+	margin-top: 150px !important;
+}
+
+#forInqueryPage {
+	background-image : url(../image/SETbangMainLast.jpg) !important;
+}
+
+  /**메인 슬라이더**/
+   .swiper-slide-active.main-header-swiper-slide  {
+      position: relative;
+      z-index: 1;
+   }
+   .main-header-swiper-pagination-container {
+      z-index: 1;
+   }
+
+   @media screen and (max-width: 768px) {
+
+      .branding-logo {
+         width: 93px;
+         height: 16px;
+      }
+
+      .main-header-swiper-pagination-bottom {
+         margin-top: 10px;
+      }
+
+      .main-header-swiper-pagination-container {
+         padding-left: 35px;
+         padding-right: 35px;
+      }
+      
+      .main-header-swiper-slide-item-link {
+         padding-left: 34px;
+      }
+      
+      .area-use-description-1 {
+         color: #97A0AB;
+         font-size: 14px;
+         font-weight: 600;
+         line-height: 19.6px;
+         letter-spacing: -0.03em;
+         text-align: center;
+      }
+      
+      .main-branch-swiper-slide-item-caption::before {
+         content: url("/wp-content/uploads/2023/01/con_dot_icon-1.svg");
+         padding-bottom:5px;
+      }
+      .main-branch-swiper-slide-item-caption {
+         display: flex;
+          align-items: center;
+      }
+      /***브랜드 로그 간격***/
+      .membership-row-container:nth-of-type(odd) .membership-row img {
+         margin-right: 60px;
+      }
+      .membership-row img {
+         margin-right: 60px;
+      }
+      .membership-row {
+         animation-timing-function: ease-out;
+      }
+      
+      .row{
+      margin-left : 0;
+      margin-right : 0;
+      padding-left : 0;
+      padding-right : 0;
+      }

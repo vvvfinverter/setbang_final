@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.jsp">
-<img src="./resources/image/setbanglogo.png" width=320px height=130px />
+<img src="./resources/image/setbanglogofinal.png" width=360px height=130px />
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -47,9 +47,9 @@
             	지점 안내
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">구로점</a></li>
-            <li><a class="dropdown-item" href="#">강남점</a></li>
-            <li><a class="dropdown-item" href="#">판교점</a></li>
+            <li><a class="dropdown-item" href="#">구로점 소개</a></li>
+            <li><a class="dropdown-item" href="#">강남점 소개</a></li>
+            <li><a class="dropdown-item" href="#">판교점 소개</a></li>
           </ul>
         </li>
         

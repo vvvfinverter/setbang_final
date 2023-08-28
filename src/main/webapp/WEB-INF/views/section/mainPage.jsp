@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
-
 <!-- JS / Jquery -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
 <script src="/v2/js/jquery-3.3.1.min.js"></script>
@@ -16,17 +15,25 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127341454-1"></script>
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script defer="defer" src="https://static.msscdn.net/static/ui-studio/pc/Main.js?20230725"></script>
-
-
 <!-- Style CSS -->
 <link rel="stylesheet" href="./resources/css/mainPage.css">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
+<link rel="stylesheet" href="./resources/jquery-ui-1.12.1/jquery-ui.min.css">
 <link href="https://static.msscdn.net/static/ui-studio/pc/Main.css?20230725" rel="stylesheet">
-
+<link rel='stylesheet' id='fastfive-main-css' href='https://fastfive.co.kr/wp-content/themes/fastfive/assets/css/main.css?ver=64ebfd80961dc' media='all' />
+<link rel="stylesheet" id="fastfive-main-css" href="https://fastfive.co.kr/wp-content/themes/fastfive/assets/css/main.css?ver=64ead2bfc24e5" media="all"/>
+<link rel="stylesheet" id="fastfive-responsive-css" href="https://fastfive.co.kr/wp-content/themes/fastfive/assets/css/responsive.css?ver=64ead2bfc24e5" media="all"/>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script src='https://fastfive.co.kr/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js'></script>
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
+<link rel='stylesheet' id='e-animations-css' href='https://fastfive.co.kr/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.15.1' media='all' />
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src='https://fastfive.co.kr/wp-content/themes/fastfive/assets/js/main.js?ver=64ebfd80961dc' id='fastfive-main-js'></script>
+<script src='https://fastfive.co.kr/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1' id='smartmenus-js'></script>
+<script src='https://fastfive.co.kr/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.14.1' id='elementor-pro-webpack-runtime-js'></script>
 <title>SETbang</title>
 </head>
 <body>
@@ -52,7 +59,7 @@
         </div>
         <div class="main-intro__item gsap-animation-enter">
           <div class="main-intro__image">
-            <img src="//image.musinsa.com/studioImg/renew/main/main-intro-img-1.jpg?202208081500" alt="">
+            <img src="./resources/image/SETbangMain2.jpg" alt="SETbangMain2">
           </div>
           <div class="main-intro__text">
             <strong class="main-intro__text__title">
@@ -68,15 +75,15 @@
         </div>
         <div class="main-intro__item gsap-animation-enter">
           <div class="main-intro__image">
-            <img src="//image.musinsa.com/studioImg/renew/main/main-intro-img-2.jpg?2022080815001037" alt="">
+            <img src="./resources/image/SETbangMain3.jpg" alt="SETbangMain3">
           </div>
           <div class="main-intro__text">
             <strong class="main-intro__text__title">
               <span>
-                비즈니스에 필요한 모든 것!
+                사업에 필요한 모든 것
               </span>
               <span>
-                통합서비스를 제공하는
+                통합 서비스를 제공하는
               </span>
               <span>
         SETbang
@@ -288,6 +295,10 @@
           </ul>
         </div>
       </section>
+      
+
+
+    
       <section class="main-office">
         <header>
           <h2 style="color: #000000 !important;">사업에 최적화된 도심 중심의 오피스</h2>
@@ -355,6 +366,46 @@
         </article>
       </section>
 
+<section class="section blue-bg-section main-section-4 correct_newff">
+            <div class="wide-row">
+                <div class="row">
+                    <h2 class="section-heading">
+                        다양한 분야의 업체들과 제휴
+                    </h2>
+                    <p class="section-description">
+			서류작성에서 협력업체 예약까지<br class="hidden_pc" />
+			SETbang에서 간편하게
+                    </p>
+                </div>
+                <div class="membership-container">
+                    <div class="membership-row-container">
+                        <div id="membership-row-1" class="membership-row membership-row-1" role="list">
+                            <img role="listitem" alt="현대자동차 에어랩" src="./resources/image/kakao.png" style="width:200px; height:50px;">
+                            <img role="listitem" alt="동화약품" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-2.svg">
+                            <img role="listitem" alt="KB금융그룹" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-3.svg">
+                            <img role="listitem" alt="마켓컬리" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-4.svg">
+                            <img role="listitem" alt="JANDI" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-5.svg">
+                            <img role="listitem" alt="영화진흥위원회" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-6.svg">
+                            <img role="listitem" alt="집꾸미기" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-7.svg">
+                            <img role="listitem" alt="서울산업진흥원" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-8.png">
+                        </div>
+                    </div>
+                    <div class="membership-row-container">
+                        <div id="membership-row-2" class="membership-row membership-row-2" role="list">
+                            <img role="listitem" alt="텀블벅" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-1.svg">
+                            <img role="listitem" alt="miso" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-2.png">
+                            <img role="listitem" alt="네이버 커텍트" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-3.svg">
+                            <img role="listitem" alt="프레인글로벌" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-4.png">
+                            <img role="listitem" alt="한화시스템" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-5.svg">
+                            <img role="listitem" alt="퍼블리" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-6.svg">
+                            <img role="listitem" alt="바카디" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-7.png">
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </section>  
+
+
       <section class="main-infra" style="background-color: #707070;">
         <div class="main-infra__inner">
           <header>
@@ -397,7 +448,7 @@
         </div>
       </section>
 
-      <section class="main-story gsap-animation-enter">
+      <section id="forInqueryPage" class="main-story gsap-animation-enter">
         <h2 class="main-story__title" style="color: #ffffff !important;">MAKE YOUR DREAM</h2>
         <h2 class="main-story__title" style="color: #40b8c9 !important;">WE WILL SURPPORT</h2>
         <p class="main-story__sub-text">SETbang은 새롭게 시작하는 모든 사업주를 응원합니다.</p>
