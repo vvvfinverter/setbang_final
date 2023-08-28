@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="adminLogin.do">로그인</a>
+          <a class="nav-link" href="MoveLogin.do">로그인</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="loginPage.do"><img style="width:30px; height:30px;" src='./resources/image/setbanglogo2.png' alt='setbang'/></a>

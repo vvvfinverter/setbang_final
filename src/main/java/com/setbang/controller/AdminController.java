@@ -26,8 +26,8 @@ public class AdminController {
 	@Autowired
 	private AdminService adminservice;
 	
-	// 관리자 로그인페이지로 이동
-	@RequestMapping(value="adminLogin.do")
+	// 관리자 로그인을 누르면 회원은 로그아웃 처리(회원 헤더의 로그인 옆 (주)co-space 로고 누르면 작동)
+	@RequestMapping(value="memberLogout.do")
 	public String loginAdmin(AdminVO vo, HttpSession session, HttpServletRequest request) {
 		
 		// 관리자로그인이 되면 회원은 로그아웃처리
@@ -36,27 +36,37 @@ public class AdminController {
 		
 		return "/admin/adminLogin";
 	}
+
+	// 로그인페이지로 이동(adminHeader.jsp에 세션 == null 일때 로그인을 누르면 관리자로그인 화면이 나오게 작동)
+	@RequestMapping(value="MoveLogin.do")
+	public String moveLogin(AdminVO vo) {		
+		return "/admin/adminLogin";
+	}
 	
-	// 메인 페이지로 이동
-	@RequestMapping(value="admin.do")
+	// 메인 페이지로 이동(말 그대로 관리자 메인페이지로 이동하도록 수정)
+	@RequestMapping(value="adminMain.do")
 	public String adminMain(AdminVO vo) {		
 		return "/admin/admin";
 	}
-
-	// 관리자 로그인
-	@RequestMapping(value="adminMain.do")
+	
+	// 관리자 로그인(말 그대로 관리자페이지 로그인 관련)
+	@RequestMapping(value="adminLogin.do")
 	public String findAdmin(AdminVO vo, Model model, HttpSession session) {
 		
 		AdminVO admin = adminservice.findAdmin(vo);
-		
+		System.out.println("vo : " + vo);
+
 		if(admin != null) {
 			session.setAttribute("sessionAdminId", admin.getAdmin_id());
+
 		
 		}else {
 			return "/admin/adminLogin";
 		}
 		
+		System.out.println("sessionAdminId : " + session.getAttribute("sessionAdminId"));		
 		return "/admin/admin";
+		
 	}
 	
 	// 임대차 계약서 등록

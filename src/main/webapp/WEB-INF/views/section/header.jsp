@@ -128,7 +128,7 @@
           </c:when>
         </c:choose>      
         <li class="nav-item">
-          <a class="nav-link" href="adminLogin.do"><img style="width:30px; height:30px;" src='./resources/image/cospacelogo.png' alt='co-space'/></a>
+          <a class="nav-link" href="memberLogout.do"><img style="width:30px; height:30px;" src='./resources/image/cospacelogo.png' alt='co-space'/></a>
         </li>
     </ul>
     </div>

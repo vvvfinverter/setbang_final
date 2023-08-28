@@ -32,7 +32,7 @@
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">관리자 로그인</label>
     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
     <div class="login-form">
-      <form class="sign-in-htm" name="login" method="post" action="adminMain.do">
+      <form class="sign-in-htm" name="login" method="post" action="adminLogin.do">
         <div class="group">
           <label for="admin_id" class="label">아이디</label>
           <input id="admin_id" name = "admin_id" type="text" class="input">
