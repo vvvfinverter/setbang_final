@@ -29,16 +29,15 @@
 			<jsp:include page="../admin/adminHeader.jsp"/>
 	</div>
 		
-<div class="wrap">
 		<h2>회원 현황</h2>
-
 <!-- 총 인원 현황  -->
-	<div id="totalmember">
-		<h4>총 회원수</h4>
+		<h4><img src="./resources/image/setbanglogofinal.png" width=360px height=130px /><br/>
+		SETbang에 가입한 총 회원수</h4>
 		<h6>현재까지 총 회원의 수는 ${totalmember}명 입니다.</h6>
-	</div>	
+
 	
     <!--지점별 회원현황 막대차트-->
+    <h4>지점별 회원현황</h4>
   		<div class="chart" id="privcount">
 			<div id="columnchart_values" ></div>
 			<input type="hidden" id="guromember" name="guromember" value="${guromember}">
@@ -56,15 +55,14 @@
 			<input type="hidden" id="premium_annual" name="premium_annual" value="${premium_annual}">
 		</div>
 
-	<!-- 서비스 등급현황 도넛차트 -->	
+	<!-- 서비스 플랜 이용현황 도넛차트 -->	
+	<h4>서비스 플랜 이용현황</h4>
 	<div class="chart-area">
   		<div class="chart">
 			<div id="donutchart"></div>
 		</div>
 	</div>
 
-</div>	
-	
 	
 	<div id="adminFooter">
 			<jsp:include page="../admin/adminFooter.jsp" />

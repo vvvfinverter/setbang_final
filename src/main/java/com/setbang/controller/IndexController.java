@@ -22,5 +22,26 @@ public class IndexController {
 		
 		return "index";
 	}
+	
+	// 구로점 안내 실행
+	@RequestMapping(value = "branchGuro.do", method = RequestMethod.GET)
+	public String branchGuro(Locale locale, Model model) {
+		
+		return "/branch/branchGuro";
+	}
+	
+	// 강남점 안내 실행
+	@RequestMapping(value = "branchGangnam.do", method = RequestMethod.GET)
+	public String branchGangnam(Locale locale, Model model) {
+		
+		return "/branch/branchGangnam";
+	}
+	
+	// 판교점 안내 실행
+	@RequestMapping(value = "branchPangyo.do", method = RequestMethod.GET)
+	public String branchPangyo(Locale locale, Model model) {
+		
+		return "/branch/branchPangyo";
+	}
 
 }

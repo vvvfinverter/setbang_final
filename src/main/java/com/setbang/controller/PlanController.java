@@ -74,7 +74,7 @@ public class PlanController {
                 List<PlanVO> planPaymentList = planService.getPlanPaymentList(memCode);
                 model.addAttribute("planPaymentList", planPaymentList);
                 
-                return "/plan/myPagePlanPayment";
+                return "/myPage/myPagePlanPayment";
             }
     	}
     	return "redirect:/loginPage.do";

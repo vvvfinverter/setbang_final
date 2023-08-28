@@ -11,8 +11,8 @@
 <!-- ##### oracle ##### -->
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-   <property name="url" value="jdbc:oracle:thin:@192.168.0.7:1521:air3"></property>
-   <!-- <property value="jdbc:oracle:thin:@localhost:1521:orcl" name="url"></property> -->
+   <!-- <property name="url" value="jdbc:oracle:thin:@192.168.0.7:1521:air3"></property> -->
+   <property value="jdbc:oracle:thin:@localhost:1521:orcl" name="url"></property>
    <property name="username" value="sett2"></property>
    <property name="password" value="bang"></property>
 </bean>
@@ -35,6 +35,7 @@
          <value>com.setbang.domain.ItemVO</value>
          <value>com.setbang.domain.PartnerVO</value>
          <value>com.setbang.domain.ConstractVO</value>
+         <value>com.setbang.domain.MyPageListVO</value>
       </list>
    </property>
  </bean>

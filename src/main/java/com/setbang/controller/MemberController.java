@@ -102,7 +102,7 @@ public class MemberController {
         String sessionId = (String) session.getAttribute("sessionId");
         if (sessionId != null) {
             model.addAttribute("member", sessionId);
-            return "/member/myPageInfo";
+            return "/myPage/myPageInfo";
         } else {
             return "redirect:/loginPage.do";
         }
@@ -117,7 +117,7 @@ public class MemberController {
         if (enteredPw != null && sessionPw != null && enteredPw.equals(sessionPw)) {
             return "redirect:/myPageInfo.do";
         } else {
-            return "/member/myPagePwCheck";
+            return "/myPage/myPagePwCheck";
         }
     }
 
@@ -127,7 +127,7 @@ public class MemberController {
         String sessionId = (String) session.getAttribute("sessionId");
         if (sessionId != null) {
             model.addAttribute("sessionId", sessionId);
-            return "/member/myPagePwCheck";
+            return "/myPage/myPagePwCheck";
         } else {
             return "redirect:/loginPage.do";
         }
@@ -139,7 +139,7 @@ public class MemberController {
 	    String sessionId = (String) session.getAttribute("sessionId");
 	    if (sessionId != null) {
 	        model.addAttribute("sessionId", sessionId);
-	        return "/member/myPage";
+	        return "/myPage/myPageCard";
 	    } else {
 	        return "redirect:/loginPage.do";
 	    }

@@ -46,7 +46,7 @@ public class AdminController {
 	// 메인 페이지로 이동(말 그대로 관리자 메인페이지로 이동하도록 수정)
 	@RequestMapping(value="adminMain.do")
 	public String adminMain(AdminVO vo) {		
-		return "/admin/admin";
+		return "/admin/adminMemberApproval";
 	}
 	
 	// 관리자 로그인(말 그대로 관리자페이지 로그인 관련)
@@ -65,7 +65,7 @@ public class AdminController {
 		}
 		
 		System.out.println("sessionAdminId : " + session.getAttribute("sessionAdminId"));		
-		return "/admin/admin";
+		return "/admin/adminMemberApproval";
 		
 	}
 	

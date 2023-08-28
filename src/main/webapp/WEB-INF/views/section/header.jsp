@@ -36,10 +36,11 @@
             SETbang
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="index.jsp#intro1">기업 소개</a></li>
-            <li><a class="dropdown-item" href="index.jsp#intro2">서비스 소개</a></li>
-            <li><a class="dropdown-item" href="index.jsp#intro3">협력업체 소개</a></li>
-            <li><a class="dropdown-item" href="index.jsp#intro4">서비스 플랜</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro1">SETbang 소개</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro2">서비스 플랜</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro3">지점 소개</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro4">제휴업체 소개</a></li>
+            <li><a class="dropdown-item" href="index.jsp#intro5">ABOUT US</a></li>
           </ul>
         </li>
          <li class="nav-item dropdown">
@@ -47,9 +48,9 @@
             	지점 안내
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">구로점 소개</a></li>
-            <li><a class="dropdown-item" href="#">강남점 소개</a></li>
-            <li><a class="dropdown-item" href="#">판교점 소개</a></li>
+            <li><a class="dropdown-item" href="branchGuro.do">구로점</a></li>
+            <li><a class="dropdown-item" href="branchGangnam.do">강남점</a></li>
+            <li><a class="dropdown-item" href="branchPangyo.do">판교점</a></li>
           </ul>
         </li>
         

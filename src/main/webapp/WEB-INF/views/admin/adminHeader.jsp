@@ -58,13 +58,10 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="adminMain.do">메인 화면</a>
+          <a class="nav-link" href="adminMemberApproval.do">회원가입 승인</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="adminMemberCount.do">회원 현황</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="adminMemberApproval.do">회원가입 승인</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="adminInqueryCheck.do">입주문의 내역</a>

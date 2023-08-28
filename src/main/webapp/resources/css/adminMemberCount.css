@@ -7,34 +7,27 @@
 	
 }
 
-.wrap {
-	text-align : center !important;
-	margin : 150px !important;
-}
-
 h2 {
 	font-family: 'Noto Sans KR', sans-serif;
+	padding-top : 150px;
+	padding-bottom : 100px;
+	text-align: center;
+
 }
 
-th {
+h4{
 	font-family: 'Noto Sans KR', sans-serif;
+	text-align: center;
+	padding : 50px;
 }
 
-h5{
+h6 {
 	font-family: 'Noto Sans KR', sans-serif;
+	text-align: center;
+	padding-bottom : 100px;
+	
 }
 
-.wrap {
-  text-align: center !important;
-  margin: 150px !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* 수직 가운데 정렬을 위한 설정 추가 */
-  height: 100vh;
-  text-align: center; /* 가운데 정렬을 위한 설정 추가 */
-  margin-top: 100px; /* 마진값 조정 */
-}
 #privcount {
   margin-bottom: 100px; /* 원하는 간격 값으로 조절 */
 }
@@ -65,13 +58,11 @@ h5{
 }
 
 rect{
-	margin-bottom: 150px;
 	display: flex;
 	text-align: center;
 	align-items: center;
-	padding-bottom: 100px;
 }
 
-#myPageMenu {
-	position : fixed;
+.wrap {
+	padding: 0px !important;
 }

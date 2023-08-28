@@ -1,0 +1,55 @@
+package com.setbang.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.setbang.dao.MyPageListDAO;
+import com.setbang.domain.MyPageListVO;
+
+@Service("MypageListService")
+public class MyPageListServiceImpl implements MyPageListService{
+
+	@Autowired
+	private MyPageListDAO myPageListDAO;
+	
+	// mem_code 찾기
+	public int findmemcode(String id) {
+		System.out.println("가져가라 : " + id);
+		myPageListDAO.findmemcode(id);
+		return myPageListDAO.findmemcode(id);
+	}
+
+	@Override
+	public List<MyPageListVO> supportlist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("supportlist " + mem_code);
+		myPageListDAO.supportlist(mem_code);
+		return myPageListDAO.supportlist(mem_code);
+	}
+
+	@Override
+	public List<MyPageListVO> partnerlist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("partnerlist " + mem_code);
+		myPageListDAO.partnerlist(mem_code);
+		return myPageListDAO.partnerlist(mem_code);
+	}
+
+	@Override
+	public List<MyPageListVO> pubbookinglist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("pubbookinglist " + mem_code);
+		myPageListDAO.pubbookinglist(mem_code);
+		return myPageListDAO.pubbookinglist(mem_code);
+	}
+
+	@Override
+	public List<MyPageListVO> itemlist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("itemlist " + mem_code);
+		myPageListDAO.itemlist(mem_code);
+		return myPageListDAO.itemlist(mem_code);
+	}
+}

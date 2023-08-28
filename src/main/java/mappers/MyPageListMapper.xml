@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyPageListDAO">
+
+	<!-- memcode 찾아오기 -->
+	<select id="findmemcode" parameterType="string" resultType="int">
+		select mem_code from member where id=#{id}
+	</select>
+
+	<!--memcode로  업무지원서비스 내역찾기-->
+	<select id="supportlist" parameterType="int" resultType="myPageList">
+	<![CDATA[ select rownum as support_indexnum, sup_apply_code, sup_code, mem_code, to_char(sup_counseling_date, 'YYYY-MM-DD') as sup_counseling_date, sup_content, sup_email, to_char(sup_apply_date, 'YYYY-MM-DD') as sup_apply_date, sup_name
+		from (select sp.sup_apply_code, sp.sup_code, sp.mem_code, sp.sup_counseling_date, sp.sup_content, sp.sup_email, sp.sup_apply_date, s.sup_name 
+		from support_apply sp, support s where sp.sup_code = s.sup_code order by sp.sup_apply_code) where mem_code=#{mem_code} 	]]>
+	</select>
+
+	<!--memcode로  협력업체지원서비스 내역찾기-->
+	<select id="partnerlist" parameterType="int" resultType="myPageList">
+	<![CDATA[ select rownum as partner_indexnum, ptr_apply_code, ptr_code, mem_code, to_char(ptr_apply_date, 'YYYY-MM-DD') as ptr_apply_date, to_char(ptr_start, 'YYYY-MM-DD') as ptr_start, to_char(ptr_end, 'YYYY-MM-DD') as ptr_end, ptr_apply_name, ptr_tel
+			  ptr_name, ptr_cat_code, ptr_cat
+			  from (select p.ptr_apply_code, p.ptr_code, p.mem_code, p.ptr_apply_date, p.ptr_start, p.ptr_end, p.ptr_apply_name, p.ptr_tel,
+			  		pt.ptr_name, cat.ptr_cat_code, cat.ptr_cat from partner_apply p, partner pt, partner_cat cat
+			  		where p.ptr_code = pt.ptr_code and pt.ptr_cat_code = cat.ptr_cat_code order by p.ptr_apply_code)
+			  where mem_code=#{mem_code}]]>
+	</select>
+	
+		<!--memcode로  협력업체지원서비스 내역찾기-->
+	<select id="pubbookinglist" parameterType="int" resultType="myPageList">
+	<![CDATA[ select rownum as book_indexnum, book_code, mem_code, pub_code, book_start, num_of_per, to_char(book_date, 'YYYY-MM-DD') as book_date, pub_unit, pub_cat_code, pub_cat
+			  from (select b.book_code, b.mem_code, b.book_start, b.num_of_per, b.book_date, po.pub_code, po.pub_unit, pc.pub_cat_code, pc.pub_cat
+			  		from booking b, pub_office po, pub_cat pc where b.pub_code=po.pub_code and po.pub_cat_code=pc.pub_cat_code order by b.book_code)
+			  where mem_code=#{mem_code}]]>
+	</select>
+
+	<select id="itemlist" parameterType="int" resultType="myPageList">
+	<![CDATA[ select rownum as item_indexnum, i_cat, mem_code, i_name, i_unit_amount, to_char(i_apply_date, 'YYYY-MM-DD') as i_apply_date
+			  from (select a.i_unit_amount, a.mem_code, a.i_apply_date, c.i_cat, m.i_name from item_apply a, item_cat c, item m
+			  where a.i_code = m.i_code and m.i_cat_code = c.i_cat_code order by a.i_apply_code)
+			  where mem_code=#{mem_code}]]>
+	</select>	
+	
+</mapper>
