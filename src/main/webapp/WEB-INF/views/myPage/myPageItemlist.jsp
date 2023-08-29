@@ -53,12 +53,12 @@
             <tbody>
             <c:forEach var="item" items="${itemlist}">
                 <tr>
-                    <td>${item.item_indexnum}</td>                    
+                    <td>${item.item_indexnum}<input type="hidden" name="i_apply_code" value="${item.i_apply_code}"/></td>                    
                     <td>${item.i_cat}</td>
                     <td>${item.i_name}</td>
                     <td>${item.i_unit_amount}</td>
                     <td>${item.i_apply_date}</td>
-                    <td><input type="checkbox" name="membercheck"></td>                                                                                             
+                    <td><input type="checkbox" name="itemcheck" data-i-apply-code="${item.i_apply_code}"></td>                                                                                             
                 </tr>
              </c:forEach>
             </tbody>
@@ -73,7 +73,7 @@
             </c:choose>
         </table>		
 	</div>
-             <button type="submit" class="button" id="">삭 제</button>
+             <button id="itemDeleteBtn" type="button" class="button" >삭 제</button>
 		</div>
 	
 		</div>
@@ -89,50 +89,51 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-$("#approvalBtn").click(function(){
-	
-var rowData = new Array();
-var tdArr = new Array();
-var checkbox = $("input[name=membercheck]:checked");
-var params = [];
+	$("#itemDeleteBtn").click(function(){
+		
+	var rowData = new Array();
+	var tdArr = new Array();
+	var checkbox = $("input[name=itemcheck]:checked");
+	var params = [];
 
-checkbox.each(function() {
-    var tr = $(this).closest('tr');
-    var td = tr.children();
-    
-    var name = td.eq(1).text();
-    var id = td.eq(7).text();
-    var approval = td.eq(11).text();
+	checkbox.each(function() {
+	    var tr = $(this).closest('tr');
+	    var td = tr.children();
+	    
+	    var i_apply_code = td.find('input[name=i_apply_code]').val();
+	    //var i_apply_code = td.eq(1).text();
+	    params.push({
+	    	i_apply_code: i_apply_code
+	    });
+	});
 
-    params.push({
-        mem_id: id,
-        mem_name: name,
-        mem_approval: approval
-    });
-});
+	$.ajax({
+		anyne:true,
+		type:'POST',
+		data: JSON.stringify(params),
+		contentType: "application/json; charset=utf-8",
+		url: "itemDelete.do",
+		dataType: "text",
+		success : function(data) {
+		    if (data) { // 서버로부터 받은 성공 여부 상태 코드나 메시지를 확인
+		        alert('신청 취소가 완료되었습니다.');
+		        //location.href = 'itemlist.do';
+		        window.location.href = 'itemlist.do'; // 리다이렉트
+		    } else {
+		        alert('신청 취소에 실패하였습니다.'); // 실패시 알림
+		    }
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			alert("ERROR : " + textStatus + " : " + errorThrown);
+		}
+	});
 
-$.ajax({
-	anyne:true,
-	type:'POST',
-	data: JSON.stringify(params),
-	contentType: "application/json; charset=utf-8",
-	url: "approvalModify.do",
-	dataType: "text",
-	success : function(data) {	
-		alert("신청 취소가 완료되었습니다.");
-		location.href="itemlist.do";
-	},
-	error: function(jqXHR, textStatus, errorThrown) {
-		alert("ERROR : " + textStatus + " : " + errorThrown);
-	}
-});
-
-});
-});
+	});
+	});
 
 </script>
 
 <!-- JS / Jquery -->		
-<script type="text/javascript" src="./resources/js/myPagePlanPayment.js"></script>		
+<!-- <script type="text/javascript" src="./resources/js/myPagePlanPayment.js"></script>	 -->	
 </body>
 </html>

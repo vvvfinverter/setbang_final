@@ -10,6 +10,10 @@
 <!-- 테스트용 css -->
 <link rel="stylesheet" href="./resources/css/item.css">
 
+<!-- JS / Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script type="text/javascript" src="./resources/js/itemApply.js"></script> -->
+
 <!-- Bootstrap CSS -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -27,209 +31,224 @@
 <script src="./resources/jquery-ui-1.12.1/datepicker-ko.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+/**
+물품신청
+*/
 const selectBoxChange1 = function() {
-	//카테고리 코드 선택
-    const comboItemCatSelect = document.getElementById("itemCat");
-	//히든값 변수 선언
-    const hiddenInput1 = document.getElementById("selectedValue1");
-	
-    //카테고리 코드 선택 값 변수 선언 
-    let selectValue = comboItemCatSelect.value;
-    //콘솔로 값 나오는 것 테스트 
-    console.log("selectvalue : " + selectValue);
-    
-    //카테고리 선택 값을 히든 값에 넣음
-    hiddenInput1.value = selectValue;
-    //히든값 콘솔로 값 나오는 것 테스트
-    console.log("hidden : " + hiddenInput1.value);
-    
-    //아래와 같은 방법으로도 사용 가능함
-    /*     let selectValue1 = comboItemCatSelect.options[comboItemCatSelect.selectedIndex].value;
-    console.log("selectedValue : " + selectValue1);
+//카테고리 코드 선택
+const comboItemCatSelect = document.getElementById("itemCat");
+//히든값 변수 선언
+const hiddenInput1 = document.getElementById("selectedValue1");
 
-    hiddenInput1.value = selectValue1;
-    console.log("hiddenInput1 : " + hiddenInput1.value); */
-    
-    
-    //텍스트에 나오는 값 보는 용도 이 부분은 javascript 학습용
-    let selectedText = comboItemCatSelect.options[comboItemCatSelect.selectedIndex].text;
-    console.log("selected text : " + selectedText);
+//카테고리 코드 선택 값 변수 선언 
+let selectValue = comboItemCatSelect.value;
+//콘솔로 값 나오는 것 테스트 
+console.log("selectvalue : " + selectValue);
 
-    
-    //selecteListChange 함수에 히든 값을 파라미터로 넘기고 실행
-    selecteListChange(hiddenInput1.value);
-    
+//카테고리 선택 값을 히든 값에 넣음
+hiddenInput1.value = selectValue;
+//히든값 콘솔로 값 나오는 것 테스트
+console.log("hidden : " + hiddenInput1.value);
+
+
+//텍스트에 나오는 값 보는 용도 이 부분은 javascript 학습용
+let selectedText = comboItemCatSelect.options[comboItemCatSelect.selectedIndex].text;
+console.log("selected text : " + selectedText);
+
+
+//selecteListChange 함수에 히든 값을 파라미터로 넘기고 실행
+selecteListChange(hiddenInput1.value);
+
 }
 
-// hidden 값을 parameter에 받고 aJax의 data에 selectedValue1라고 추가하면 url로 설정한 대상 컨트롤러를 타서 서비스 및 DAO 마이바티스 맵퍼까지 가서 조건절 파라미터 값에 삽입됨
+//hidden 값을 parameter에 받고 aJax의 data에 selectedValue1라고 추가하면 url로 설정한 대상 컨트롤러를 타서 서비스 및 DAO 마이바티스 맵퍼까지 가서 조건절 파라미터 값에 삽입됨
 const selecteListChange = function(hiddenInput1){
-	console.log("hiddenInput1 : " + hiddenInput1);
-	//I_CODE, I_NAME, I_CAT_CODE 
-	$.ajax({
-		url : "aJaxItem.do",
-		type : 'post',
-		data : {
-			selectedValue1: hiddenInput1 // hiddenInput1 값을 data에 추가
-		},
-		success : function(data) {
-				console.log(data); //콘솔에서 값 확인 용도
-				const itemListDiv = $("#itemList"); // 화면에 데이터를 추가할 영역 선택
+console.log("hiddenInput1 : " + hiddenInput1);
+//I_CODE, I_NAME, I_CAT_CODE 
+$.ajax({
+	url : "aJaxItem.do",
+	type : 'post',
+	data : {
+		selectedValue1: hiddenInput1 // hiddenInput1 값을 data에 추가
+	},
+	success : function(data) {
+			console.log(data); //콘솔에서 값 확인 용도
+			const itemListDiv = $("#itemList"); // 화면에 데이터를 추가할 영역 선택
+			
+			itemListDiv.empty(); //기준 데이터 삭제
+			
+			for(const item of data){
+				const iCode = item.iCode;
+				const iName = item.iName;
+				console.log("iCode : " + iCode);
+				console.log("iName : " + iName);
+				//백틱 사용하는 영역, 백틱(`)은 자바스크립트 안에서 html코드를 더 자유롭게 사용 가능함, 여기선 템플릿 리터럴 사용할 때 앞에 \를 해야 사용 가능함
+				// 그 이유는 jsp 파일이기 때문이다
+				itemListDiv.append(`<div class="menus" id="itemDiv\${iCode}" value="\${iName}">\${iName}<img style="width: 200px; height: 300px;" src="./resources/image/itemImg\${iCode}.jpg" />
+				<select id="selectedItem\${iCode}">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				<td data-code="\${iCode}">
+				<button id="btnAddItem\${iCode}" type="button" data-code="\${iCode}" data-name="\${iName}" onclick="clickBtn(this)">추가</button>
+				</td>
+				</div>
+				<br/>`);
+				//백틱코드(`) 사용 영역 종료
 				
-				itemListDiv.empty(); //기준 데이터 삭제
-				
-				for(const item of data){
-					const iCode = item.iCode;
-					const iName = item.iName;
-					console.log("iCode : " + iCode);
-					console.log("iName : " + iName);
-					//백틱 사용하는 영역, 백틱(`)은 자바스크립트 안에서 html코드를 더 자유롭게 사용 가능함, 여기선 템플릿 리터럴 사용할 때 앞에 \를 해야 사용 가능함
-					// 그 이유는 jsp 파일이기 때문이다
-					itemListDiv.append(`<div class="menus" id="itemDiv\${iCode}" value="\${iName}">\${iName}<img style="width: 200px; height: 300px;" src="./resources/image/itemImg\${iCode}.jpg" />
-					<select id="selectedItem\${iCode}">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-					</select>
-					<td data-code="\${iCode}">
-					<button id="btnAddItem\${iCode}" type="button" data-code="\${iCode}" data-name="\${iName}" onclick="clickBtn(this)">추가</button>
-					</td>
-					</div>
-					<br/>`);
-					//백틱코드(`) 사용 영역 종료
-					
-				}
-				
-				
-	     },
-		error : function() {
-			alert("error");
-		}
-	});
-	
-	
+			}
+			
+			
+     },
+	error : function() {
+		alert("error");
+	}
+});
+
+
 }
 
-
-//hidden속성으로 iCode row에 여러개 받으면서 보여주는 것 시도하려다가 안돼서 실패
-/* function createHiddenInput(iCode) {
-    const hiddenInput = document.createElement("input");
-    hiddenInput.type = "hidden";
-    hiddenInput.name = "hidden_iCode"; // Set the name attribute for the form data
-    hiddenInput.value = iCode; // Set the value to the iCode
-    return hiddenInput;
-} */
 
 const clickBtn = function(buttonElement){
-	
-    const iCode = buttonElement.getAttribute("data-code");
-    const iName = buttonElement.getAttribute("data-name");
 
-    // Create hidden input element for iCode
-   // const hiddenInput = createHiddenInput(iCode);
+const iCode = buttonElement.getAttribute("data-code");
+const iName = buttonElement.getAttribute("data-name");
 
-    
 
-    // Get selected quantity value
-    const selectItem = document.getElementById(`selectedItem\${iCode}`);
+const selectItemId = `selectedItem\${iCode}`;
+const selectItem = document.getElementById(selectItemId);
+
+if (selectItem) {
     const selectValue = selectItem.value;
 
-    // Create new row and cells
-    const newRow = document.createElement("tr");
-    const nameCell = document.createElement("td");
-    const countCell = document.createElement("td");
-    const deleteCell = document.createElement("td");
-    const numCell = document.createElement("td");
+// Create new row and cells
+const newRow = document.createElement("tr");
+const nameCell = document.createElement("td");
+const countCell = document.createElement("td");
+const deleteCell = document.createElement("td");
+const numCell = document.createElement("td");
 
-    // Set cell content
-    nameCell.textContent = iName; // Item name
-    countCell.textContent = selectValue; // Quantity
-    numCell.textContent = iCode;
+// Set cell content
+nameCell.textContent = iName; // Item name
+countCell.textContent = selectValue; // Quantity
+numCell.textContent = iCode;
 
-    // Create delete button
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "deleteBtn";
-    deleteButton.textContent = "삭제";
-    deleteButton.addEventListener("click", function() {
-        // Remove the row
-        const row = this.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-    });
 
-    // Append delete button to delete cell
-    deleteCell.appendChild(deleteButton);
+// Create delete button
+const deleteButton = document.createElement("button");
+deleteButton.id = `deleteBtn\${iCode}`; // 각 버튼에 iCode를 이용하여 고유한 id 생성
+deleteButton.name = `deleteBtn\${iCode}`; // 각 버튼에 iCode를 이용하여 고유한 name 생성
+/*     deleteButton.id = "deleteBtn";
+deleteButton.name = "deleteBtn"; */
+deleteButton.className = "deleteBtn";
+deleteButton.textContent = "삭제";
+deleteButton.addEventListener("click", function() {
+    // Remove the row
+    const row = this.parentNode.parentNode;
+    const iCode = row.getAttribute("data-code");
 
-    // Append cells to the new row
-    //새로운 행에 각각 컬럼을 순서대로 추가
-    newRow.appendChild(numCell);
-    newRow.appendChild(nameCell);
-    newRow.appendChild(countCell);
-    newRow.appendChild(deleteCell);
-    
+    row.parentNode.removeChild(row);
 
-    // Append hidden input to the form
-    const frm = document.getElementById("frm");
-    frm.appendChild(newRow);
+    // 삭제한 항목의 버튼 활성화 처리
+    const addButton = document.getElementById(`btnAddItem\${iCode}`); // 고유한 id 사용
+    if (addButton) {
+    addButton.disabled = false;
+    }
+});
 
-    // Append the new row to the table
-    const selectlistCnt = document.getElementById("listTable");
-    selectlistCnt.appendChild(newRow);
 
-    const totalListRow = document.getElementById("totallist");
-    totalListRow.parentNode.appendChild(totalListRow);
+// Append delete button to delete cell
+deleteCell.appendChild(deleteButton);
 
+// Append cells to the new row
+//새로운 행에 각각 컬럼을 순서대로 추가
+newRow.appendChild(numCell);
+newRow.appendChild(nameCell);
+newRow.appendChild(countCell);
+newRow.appendChild(deleteCell);
+
+
+// Append hidden input to the form
+const frm = document.getElementById("frm");
+frm.appendChild(newRow);
+
+// Append the new row to the table
+const selectlistCnt = document.getElementById("listTable");
+selectlistCnt.appendChild(newRow);
+
+const totalListRow = document.getElementById("totallist");
+totalListRow.parentNode.appendChild(totalListRow);
+
+// 비활성화 처리
+buttonElement.disabled = true;
+
+}//if
 
 }
 
 
 $(document).ready(function() {
-    // 주문하기 버튼 클릭 이벤트 리스너 추가
-    $("#insertBtn").on("click", function(event) {
-        event.preventDefault();
-
-        const orderList = [];
-        const frm = $("#frm"); // 폼 엘리먼트를 참조하는 변수
-        
-        const rows = $("#listTable tr:not(#listtr)");
-        
-        rows.each(function(index, row) {
-        	
-        	const iCode = $(row).find("td:nth-child(1)").text();
-            const itemName = $(row).find("td:nth-child(2)").text();
-            const itemCount = $(row).find("td:nth-child(3)").text();
-            
-   		 	 // Push to orderList
-           orderList.push({iCode: iCode,iName: itemName, iUnitAmount: itemCount });
-           
-        });
 
 
-		console.log("orderList: ", orderList);
-		
-        // Create hidden input element for orderList
-        const orderListInput = $("<input>")
-        .attr("type", "hidden")
-        .attr("name", "orderList")
-        .val(JSON.stringify(orderList));
+// 상위 요소에 이벤트 핸들러 등록
+$("#listTable").on("click", ".deleteBtn", function() {
+    const row = this.parentNode.parentNode;
+    const iCode = row.getAttribute("data-code");
+
+    row.parentNode.removeChild(row);
+
+    // 삭제한 항목의 버튼 활성화 처리
+    const addButton = document.getElementById(`btnAddItem\${iCode}`);
+    if (addButton) {
+        addButton.disabled = false;
+    }
+});
+
+// 주문하기 버튼 클릭 이벤트 리스너 추가
+$("#insertBtn").on("click", function(event) {
+    event.preventDefault();
+
+    const orderList = [];
+    const frm = $("#frm"); // 폼 엘리먼트를 참조하는 변수
+    
+    const rows = $("#listTable tr:not(#listtr)");
+    
+    rows.each(function(index, row) {
     	
-    	frm.append(orderListInput);
-    	frm.submit();
-    	alert("물품 신청이 성공적으로 완료하였습니다.");
+    	const iCode = $(row).find("td:nth-child(1)").text();
+        const itemName = $(row).find("td:nth-child(2)").text();
+        const itemCount = $(row).find("td:nth-child(3)").text();
+        
+		 	 // Push to orderList
+       orderList.push({iCode: iCode,iName: itemName, iUnitAmount: itemCount });
+       
     });
+
+
+	console.log("orderList: ", orderList);
+	
+    // Create hidden input element for orderList
+    const orderListInput = $("<input>")
+    .attr("type", "hidden")
+    .attr("name", "orderList")
+    .val(JSON.stringify(orderList));
+	
+	frm.append(orderListInput);
+	frm.submit();
+	alert("물품 신청이 성공적으로 완료하였습니다.");
+});
 });
 
 
-
-
 </script>
-
-
 <title>물품신청</title>
 </head>
 <body>
@@ -238,6 +257,7 @@ $(document).ready(function() {
 		<div id="header">
 			<jsp:include page="../section/header.jsp" />
 		</div>
+		
 <form name="frm" id="frm" action="itemApplyInsert.do" method="post">
 <div id="leftdiv">
 <table class="menutbl">
@@ -263,14 +283,11 @@ $(document).ready(function() {
 	</tr>
 	<tr>
 			<td id='menu2' class='menu'>
-			<!-- <img src="./images/unknown2.jpg" /> <br/> -->
-			<!-- <span id="label2">물품</span><br/> -->
 			<div id="itemList">
 
 			</div> 
 		</td>
 		<td id='menu3' class='menu'>
-			<!-- <img src="./images/unkown3.jpg" /> <br/> -->
 		</td>
 	</tr>
 </table>
@@ -293,7 +310,6 @@ $(document).ready(function() {
 <table>
 	<tr id="totallist">
 		<td colspan='4'>
-			<!-- 물품 : <input type='text'  id='total'/>  -->
 			 <input type='submit' value='주문하기'  id='insertBtn'/> 
 		</td>
 	</tr>
@@ -301,6 +317,9 @@ $(document).ready(function() {
 </div>
 		
 </form>
+<div id="footer">
+	<jsp:include page="../section/footer.jsp" />
+</div>
 </div>	
 		
 </body>

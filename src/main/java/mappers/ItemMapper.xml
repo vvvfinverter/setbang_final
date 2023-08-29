@@ -26,11 +26,13 @@
 		,I_APPLY_DATE
 		)
 	VALUES
-		(S_I_APPLY_CODE.NEXTVAL
+		(S_I_CODE.NEXTVAL
 		,#{memCode}
 		,#{iCode}
 		,#{iUnitAmount}
 		,TRUNC(sysdate)
 		)
 	</insert>
+	
+
 </mapper>

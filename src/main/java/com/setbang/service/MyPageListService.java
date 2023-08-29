@@ -2,7 +2,6 @@ package com.setbang.service;
 
 import java.util.List;
 
-import com.setbang.domain.AdminVO;
 import com.setbang.domain.MyPageListVO;
 
 public interface MyPageListService {
@@ -25,4 +24,7 @@ public interface MyPageListService {
 	
 	// 임대차계약서 현황
 	List<MyPageListVO> constractlist(int mem_code);
+	
+	//물품신청 취소
+	public void deleteItemApply(List<MyPageListVO> voList);
 }

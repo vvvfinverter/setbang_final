@@ -125,7 +125,10 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 		
 		logger.info("PubOfficeDAO.compareTimes 라디오 상자 시간비교");
 		System.out.println("pubCode : " + vo.getPubCode());
-		
+		System.out.println("pubtime  : " + vo.getPubTime());
+		System.out.println("bookDate : " + vo.getBookDate());
+		System.out.println("bookstart : " + vo.getBookStart());
+		System.out.println("DAO 콘솔로그 끝나는 부분");
 		PubOfficeVO compareTimes = mybatis.selectOne("PubOfficeDAO.compareTimes",vo);
 		
 		return compareTimes;

@@ -23,4 +23,10 @@ public interface MyPageListDAO {
 	
 	// 임대차계약서 현황
 	List<MyPageListVO> constractlist(int mem_code);
+	
+	/**
+	 * 물품신청 취소
+	 * @param vo
+	 */
+	public void deleteItemApply(MyPageListVO vo);
 }

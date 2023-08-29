@@ -9,9 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.setbang.domain.AdminVO;
+import com.setbang.domain.JsonResponse;
 import com.setbang.domain.MyPageListVO;
 import com.setbang.service.MyPageListService;
 
@@ -103,5 +106,29 @@ public class MyPageListController {
 			model.addAttribute("constractlist", constractlist);		
 		
 		return "/myPage/myPageConstractlist";
+	}
+	
+	//물품 신청 취소
+	@PostMapping("/itemDelete.do")
+	@ResponseBody
+	public JsonResponse deleteItem(@RequestBody List<MyPageListVO> voList) {
+		logger.info("MypageSubController.deleteItem 접근");
+		//JSON관련
+		JsonResponse response = new JsonResponse();
+		
+	    try {
+	    	
+//	    	System.out.println(" ss : " +voList.get(0).getI_apply_code());
+	    	myPageListService.deleteItemApply(voList); // 서비스 메소드를 호출하여 비즈니스 로직 처리
+	        response.setSuccess(true);
+	        response.setMessage("신청 취소가 완료되었습니다.");
+	    } catch (Exception e) {
+	    	logger.error("Error during item deletion: " + e.getMessage());
+	        response.setSuccess(false);
+	        response.setMessage("신청 취소에 실패하였습니다.");
+	    }
+	    
+	    return response;
+		
 	}
 }

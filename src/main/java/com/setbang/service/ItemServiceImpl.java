@@ -19,28 +19,52 @@ public class ItemServiceImpl implements ItemService {
 	private ItemDAO itemDAO;
 	
 
+	/**
+	 * 
+	 * @param vo
+	 */
 	@Override
 	public List<ItemVO> comboSelect1(ItemVO vo) {
-		logger.info("ItemServiceImpl.comboSelect 서비스 ");
+		logger.info("ItemService.comboSelect 서비스 ");
 		List<ItemVO> list1 = itemDAO.comboItemCat(vo);
 		return list1;
 	}
 
+	/**
+	 * 
+	 * @param vo
+	 */
 	@Override
 	public List<ItemVO> comboSelect2(int iCatCode) {
-		logger.info("ItemServiceImpl.comboSelect2 서비스");
+		logger.info("ItemService.comboSelect2 서비스");
 		System.out.println("iCatCode : " + iCatCode);
 		List<ItemVO> list2 = itemDAO.comboItem(iCatCode);
 		return list2;
 	}
 
+	/**
+	 * 
+	 * @param vo
+	 */
 	@Override
 	public void insertItemApply(ItemVO vo) {
-		logger.info("ItemServiceImpl.insertItemApply");
+		logger.info("ItemService.insertItemApply");
 		itemDAO.insertItemApply(vo);
 	}
-	
-	
+
+	/**
+	 * 
+	 * @param vo
+	 */
+//	@Override
+//	public void insertItemApplyDetail(ItemVO vo) {
+//		
+//		logger.info("ItemService.insertItemApplyDetail");
+//		
+//		itemDAO.insertItemApplyDetail(vo);
+//		
+//	}
+
 
 	
 }

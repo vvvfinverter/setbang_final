@@ -61,7 +61,7 @@ public class PubOfficeController {
 	 *  **/
 	@PostMapping("/compareTimes.do")
 	@ResponseBody
-	public ResponseEntity<Map<String, String>> compareTimes(@RequestParam String selectValue,PubOfficeVO vo, Model model){
+	public ResponseEntity<Map<String, String>> compareTimes(@RequestParam String selectValue, @RequestParam String bookDate, PubOfficeVO vo, Model model){
 		logger.info("pubOffice.compareTimes");
 		//int pubCode = vo.getPubCode();
 		Map<String, String> response = new HashMap<>();
@@ -69,21 +69,24 @@ public class PubOfficeController {
 		int pubCode = Integer.parseInt(selectValue);
 		vo.setPubCode(pubCode);
 
-		PubOfficeVO pubTime = pubOfficeService.selectCompareTimes(vo);
-		if(pubTime == null) {
+		PubOfficeVO compare = pubOfficeService.selectCompareTimes(vo);
+		if(compare == null) {
 			// return ResponseEntity.ok("no-data"); // 데이터가 없는 경우 
 			response.put("result", "no-data");
 		}else {
-			String bookStart = pubTime.getBookStart();
-			String time =  pubTime.getPubTime(); // 데이터베이스에서 가져온 시간 값
-			System.out.println("timeValue : " + time);
-			if(bookStart.equals(time)) {
-				System.out.println("시간이 일치하는지 확인");
+	        String dbBookDate = compare.getBookDate(); // 데이터베이스에서 가져온 예약일자 값
+	        String dbBookStart = compare.getBookStart(); // 데이터베이스에서 가져온 시작 시간 값
+	        System.out.println("dbBookDate : " + dbBookDate);
+	        System.out.println("dbBookDate : " + dbBookStart);
+
+			System.out.println("dbBookStart : " + dbBookStart);
+			if(dbBookDate.equals(bookDate)) {  // 예약일자와 클라이언트에서 보낸 예약일자 비교
+				System.out.println("날자 일치하는지 확인");
 				response.put("result", "match");// 일치하는 경우 return ResponseEntity.ok("match"); 
 			}else {
 				response.put("result", "not-match"); //return ResponseEntity.ok("not-match"); 불일치하는 경우
 			}
-			response.put("time", time); //	model.addAttribute("time", time);
+			response.put("time", dbBookStart); //	model.addAttribute("time", time);
 		}
 		
 		return ResponseEntity.ok(response);

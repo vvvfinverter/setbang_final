@@ -35,8 +35,9 @@
 	</select>
 
 	<select id="itemlist" parameterType="int" resultType="myPageList">
-	<![CDATA[ select rownum as item_indexnum, i_cat, mem_code, i_name, i_unit_amount, to_char(i_apply_date, 'YYYY-MM-DD') as i_apply_date
-			  from (select a.i_unit_amount, a.mem_code, a.i_apply_date, c.i_cat, m.i_name from item_apply a, item_cat c, item m
+	<![CDATA[ select rownum as item_indexnum, i_apply_code, i_cat, mem_code, i_name, i_unit_amount, to_char(i_apply_date, 'YYYY-MM-DD') as i_apply_date
+			  from (select a.i_apply_code,c.i_cat, a.i_unit_amount, a.mem_code, a.i_apply_date, m.i_name 
+			  from item_apply a, item_cat c, item m
 			  where a.i_code = m.i_code and m.i_cat_code = c.i_cat_code order by a.i_apply_code)
 			  where mem_code=#{mem_code}]]>
 	</select>	
@@ -50,4 +51,10 @@
 			where c.priv_code = p.priv_code and p.branch_code = b.branch_code order by c.con_code)
 			where mem_code=#{mem_code}]]>
 	</select>
+	
+	<!-- 물품신청 취소 -->
+	<!-- MypageSubDAO.deleteItemApply -->
+	<delete id="deleteItemApply" parameterType = "myPageList">
+		DELETE FROM ITEM_APPLY WHERE I_APPLY_CODE = #{i_apply_code}
+	</delete>		
 </mapper>

@@ -70,8 +70,6 @@
 		<input type="radio" name="bookStart" value="13:00" />13:00<br/>
 		<input type="radio" name="bookStart" value="15:00" />15:00<br/>
 		<input type="radio" name="bookStart" value="17:00" />17:00<br/>
-		<%--  아래와 같이 구현하려고 했을 때 방법이 너무 복잡해서 잘 안됐음  --%>
-		<%-- <input type="time" id="bookStart" name="bookStart" /> <br/> --%>
 	</div>
 
   	<input id ="btnSubmit" type="button" value="예약하기"/> 

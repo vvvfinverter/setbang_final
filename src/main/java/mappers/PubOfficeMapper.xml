@@ -15,12 +15,14 @@
 	</select>
 	
 	<!-- PubOfficeDAO.compareTimes  -->
-	<select id="compareTimes" resultType="pubOffice" parameterType="int">
-		SELECT PUB_TIME, BOOK_START  
+	<select id="compareTimes" resultType="pubOffice" parameterType="pubOffice">
+		SELECT po.PUB_TIME, b.BOOK_START,TO_CHAR(b.BOOK_DATE, 'YYYY-MM-DD') AS BOOK_DATE
  			FROM PUB_OFFICE po,BOOKING b
-		WHERE po.PUB_CODE = b.PUB_CODE
+		WHERE po.PUB_CODE = b.PUB_CODE 
  			AND b.BOOK_START = po.PUB_TIME
+ 			AND TO_CHAR(b.BOOK_DATE, 'YYYY-MM-DD') = #{bookDate}
  			AND b.PUB_CODE = #{pubCode}
+ 			
 	</select>
 	
 	<!--   PubOfficeDAO.insertOffice  -->

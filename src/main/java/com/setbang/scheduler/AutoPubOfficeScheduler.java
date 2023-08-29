@@ -26,11 +26,11 @@ public class AutoPubOfficeScheduler {
 	 * 쉐줄러는 리턴 값이 없고 파라미터를 안 받는 방식으로 만듬
 	 * 
 	 */
-	@Scheduled(cron = "0 0 0 * * ?")  
+	//@Scheduled(cron = "0 0 0 * * ?")  
 	public void updatePubOfficeN() { 
 		PubOfficeVO pubOfficeVO = new PubOfficeVO();
 		pubOfficeService.updatePubOfficeN(pubOfficeVO.getPubCode());
-		pubOfficeService.deleteOfficeBooking();
+		//pubOfficeService.deleteOfficeBooking();
 		
 	}
 	

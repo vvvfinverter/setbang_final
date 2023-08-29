@@ -2,8 +2,11 @@ package com.setbang.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.setbang.dao.MyPageListDAO;
 import com.setbang.domain.MyPageListVO;
@@ -11,6 +14,8 @@ import com.setbang.domain.MyPageListVO;
 @Service("MypageListService")
 public class MyPageListServiceImpl implements MyPageListService{
 
+	private static final Logger logger = LoggerFactory.getLogger(MyPageListServiceImpl.class);
+	
 	@Autowired
 	private MyPageListDAO myPageListDAO;
 	
@@ -60,4 +65,23 @@ public class MyPageListServiceImpl implements MyPageListService{
 		myPageListDAO.constractlist(mem_code);
 		return myPageListDAO.constractlist(mem_code);
 	}
+	
+	/**
+	 * 물품신청 취소 delete 문 실행
+	 * @param vo
+	 */
+	@Override
+	@Transactional
+	public void deleteItemApply(List<MyPageListVO> voList) {
+
+		logger.info("MyPageListService.deleteItemApply");
+		
+        // 삭제 로직 수행
+    	for (MyPageListVO vo : voList) {
+//    		System.out.println("applyCode : " + vo.getI_apply_code());
+    		myPageListDAO.deleteItemApply(vo);
+	    }
+
+	}
+	
 }

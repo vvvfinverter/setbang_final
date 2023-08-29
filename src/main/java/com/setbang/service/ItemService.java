@@ -11,4 +11,8 @@ public interface ItemService {
 	public List<ItemVO> comboSelect2(int iCatCode);
 	
 	public void insertItemApply(ItemVO vo);
+	
+//	public void insertItemApplyDetail(ItemVO vo);
+	
+	
 }

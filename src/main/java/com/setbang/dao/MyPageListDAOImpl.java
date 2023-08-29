@@ -5,11 +5,15 @@ import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.setbang.domain.MyPageListVO;
 
 @Repository("MypageListDAO")
 public class MyPageListDAOImpl implements MyPageListDAO{
+	
+	private static final Logger logger = LoggerFactory.getLogger(MyPageListDAOImpl.class);
 	
 	@Autowired
 	private SqlSessionTemplate mybatis;
@@ -56,6 +60,13 @@ public class MyPageListDAOImpl implements MyPageListDAO{
 		return mybatis.selectList("MyPageListDAO.constractlist", mem_code);
 	}
 	
-	
+	//물품 신청 취소
+	@Override
+	public void deleteItemApply(MyPageListVO vo) {
+		
+		logger.info("MyPageListDAO.deleteItemApply 메소드");
+		
+		mybatis.delete("MyPageListDAO.deleteItemApply", vo);
+	}
 
 }

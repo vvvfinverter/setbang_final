@@ -22,20 +22,7 @@ document.querySelector('#btnSubmit').addEventListener('click', function(){
     var selectedDate = new Date(document.querySelector('#bookDate').value);
     var selectedDay = selectedDate.getDate(); // 선택한 날짜의 날짜 부분
 
-    // 만약 현재 시간이 17시 이후이고 선택한 날짜가 오늘 날짜면 예약 불가능 처리
-/*     if (selectedDay === currentDate.getDate() && currentHour >= 17) {
-        alert("오늘은 17시 이후에는 예약이 불가능합니다.");
-        return;
-    } */
 
-    // 선택한 날짜가 내일 이후인지 확인
-    var tomorrow = new Date();
-    tomorrow.setDate(currentDate.getDate() + 1); // 내일 날짜
-    if (selectedDate > tomorrow) {
-        // 이 부분이 내일 이후의 날짜가 아니라면 등록 불가능 처리
-        alert("내일 이후 날짜만 예약 가능합니다.");
-        return;
-    }
 		//선택한 값
 		var bookDate = document.querySelector('#bookDate').value;
 		//var bookStartInput = document.querySelector('input[name="bookStart"]');
@@ -83,54 +70,6 @@ document.querySelector('#btnSubmit').addEventListener('click', function(){
 		frm.submit();
 	});
 	
-	
-
-	
-	
-	// 처음에 접근을 잘못해서 만든 것들이라 아직 아까워서 못 지웠음 그리고 혹시 몰라서 아직은 놔둠 - 추후 제거 예정 
-	//라디오 버튼 선택시 실행되는 함수
-	/* 	function handleRadioChange() {
-		    var selectedRadio = document.querySelector('input[name="bookStart"]:checked');
-		    
-		    if (selectedRadio) {
-		        var selectedTime = selectedRadio.value;
-		        console.log("Selected Time: " + selectedTime);
-		       
-		        // AJAX를 이용해 서버로 비교 요청 보내기
-		        var xhr = new XMLHttpRequest();
-		        xhr.open('POST', 'compareTimes.do', true);
-		        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		        
-		        xhr.onreadystatechange = function() {
-		            if (xhr.readyState === XMLHttpRequest.DONE) {
-		                if (xhr.status === 200) {
-		                    var response = xhr.responseText;
-		                    
-		                    if (response === "no-data") {
-		                        console.log("No data available from the server.");
-		                    } else if (response === "match") {
-		                        console.log("Selected Time matches DB Value.");
-		                        disableRadioButtons();
-		                    } else if (response === "not-match") {
-		                        console.log("Selected Time does not match DB Value.");
-		                    }
-		                }
-		            }
-		        };
-		        
-		        xhr.send('selectedTime=' + encodeURIComponent(selectedTime));
-		    }
-		}
-	 */
-
-	//라디오 버튼의 선택 이벤트에 함수 연결
-	/* */
-	/* var radioButtons = document.querySelectorAll('input[name="bookStart"]');
-	for (var i = 0; i < radioButtons.length; i++) {
-	    radioButtons[i].addEventListener('change', handleRadioChange);
-	} */
-
-	
 } // onload 종료
 
 
@@ -151,22 +90,13 @@ function enableRadioButtons() {
     }
 }
 
-//라디오 버튼 비활성화 함수 --> 지금 이 함수는 사용 안함
-function disableUnavailableRadioButtons(time) {
-    var radioButtons = document.querySelectorAll('input[name="bookStart"]');
-    for (var i = 0; i < radioButtons.length; i++) {
-        var radioValue = radioButtons[i].value;
-        if (radioValue !== time) {
-            radioButtons[i].disabled = true; // 선택할 수 없는 시간은 비활성화
-        }
-    }
-}
 
 //임대호실 콤보상자 
 const selectBoxChange = function(){
 	 const comboUnitSelect = document.getElementById("comboUnits");
 	 const hiddenInput = document.getElementById("selectedValue");
-	//let comboUnitSelect = document.getElementById("comboUnits");
+	 const bookDate = document.getElementById("bookDate"); // 예약일자 input 요소소
+	 const bookStartRadios = document.getElementsByName("bookStart");
 	
 	//  select element에서 선택된 option의 value가 저장된다.
 	let selectValue = comboUnitSelect.options[comboUnitSelect.selectedIndex].value;
@@ -176,14 +106,13 @@ const selectBoxChange = function(){
 	let selectText = comboUnitSelect.options[comboUnitSelect.selectedIndex].text;
 	console.log("selectText : " + selectText);
 	
+	//comboUnitSelect 값을 히든 값에 대입 
 	hiddenInput.value = comboUnitSelect.value;
 	console.log("hidden : " + hiddenInput.value);
 	
+	const bookDateSelect = bookDate.value; // 예약일자 값
+	console.log("bookDateSelect : " + bookDateSelect);
 	
-	
-    if (selectValue) {
-       // var selectedTime = selectedRadio.value;
-        //console.log("Selected Time: " + selectedTime);
        
         // AJAX를 이용해 서버로 비교 요청 보내기
         var xhr = new XMLHttpRequest();
@@ -207,17 +136,21 @@ const selectBoxChange = function(){
                         enableRadioButtons(); // 버튼 활성화
                     } else if (responseData.result === "match") {
                         console.log("Selected Time matches DB Value.");
+
                         
-                        // 예약된 시간에 대한 라디오 버튼 처리
-                        var radioButtons = document.querySelectorAll('input[name="bookStart"]');
-                        for (var i = 0; i < radioButtons.length; i++) {
-                            var radioValue = radioButtons[i].value;
-                            if (radioValue === time) {
-                                radioButtons[i].checked = true; // 선택된 시간으로 체크
-                            }
-                        }
+                       // 예약된 시간에 대한 라디오 버튼 처리
+                var radioButtons = document.querySelectorAll('input[name="bookStart"]');
+                for (var i = 0; i < radioButtons.length; i++) {
+                    var radioValue = radioButtons[i].value;
+
+                    if (radioValue === time && bookDateSelect === responseData.bookDate) {
+                        radioButtons[i].checked = true;
+                        radioButtons[i].disabled = true;
+                    } else {
+                        radioButtons[i].disabled = false;
+                    }
+                }
                         disableRadioButtons(); //버튼 비활성화
-                        //disableUnavailableRadioButtons(time); 
                     } else if (responseData.result === "not-match") {
                         console.log("Selected Time does not match DB Value.");
                         enableRadioButtons(); // 버튼 활성화
@@ -227,8 +160,8 @@ const selectBoxChange = function(){
             
         };
         
-        xhr.send('selectValue=' + encodeURIComponent(selectValue));
-    }
+        xhr.send('selectValue=' + encodeURIComponent(selectValue)+
+         '&bookDate=' + encodeURIComponent(bookDateSelect));
     
 }
  
