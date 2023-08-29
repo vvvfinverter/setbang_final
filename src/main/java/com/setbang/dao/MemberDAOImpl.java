@@ -74,8 +74,8 @@ public class MemberDAOImpl implements MemberDAO {
 	public MemberVO findPw(MemberVO vo) {
 		// TODO Auto-generated method stub
 		logger.info("findId DAO");
-		System.out.println("=> Mybatis findId() 호출");
-        return mybatis.selectOne("MemberDAO.findId", vo);
+		System.out.println("=> Mybatis findPw() 호출");
+        return mybatis.selectOne("MemberDAO.findPw", vo);
 	}
 	
     // 프로필 사진 변경

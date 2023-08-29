@@ -104,7 +104,7 @@
       <c:choose>
         <c:when test="${sessionId == null }">
         <li class="nav-item">
-          <a class="nav-link" href="inquery.do">문의하기</a>
+          <a class="nav-link" href="inquery.do">입주 문의</a>
         </li>
           </c:when>
           <c:when test="${sessionId != null }">

@@ -36,7 +36,7 @@ public class MyPageListController {
 			model.addAttribute("supportlist", supportlist);
 		
 		
-		return "/mypage_sub/myPageSupportlist";
+		return "/myPage/myPageSupportlist";
 	}
 	
 	
@@ -54,7 +54,7 @@ public class MyPageListController {
 			System.out.println("ptr_apply_date : " + vo.getPtr_apply_date());
 			model.addAttribute("partnerlist", partnerlist);
 			
-		return "/mypage_sub/myPagePartnerlist";
+		return "/myPage/myPagePartnerlist";
 	}
 	
 	// 공용공간 예약신청현황
@@ -70,7 +70,7 @@ public class MyPageListController {
 			System.out.println("pubbookinglist : " + pubbookinglist);
 			model.addAttribute("pubbookinglist", pubbookinglist);
 			
-		return "/mypage_sub/myPagePubBookinglist";
+		return "/myPage/myPagePubBookinglist";
 	}
 	
 	// 물품신청 신청현황
@@ -86,6 +86,6 @@ public class MyPageListController {
 			System.out.println("itemlist : " + itemlist);
 			model.addAttribute("itemlist", itemlist);
 			
-		return "/mypage_sub/myPageItemlist";
+		return "/myPage/myPageItemlist";
 	}
 }

@@ -39,9 +39,9 @@
 
             <div class="group">
                 <div class="left">
-                    <label for="tel">연락처</label>
+                    <label for="email">이메일</label>
                 </div>
-                <input type="text" id="tel" name="tel" class="input" placeholder="ex) 010-0000-0000" required/>
+                <input type="text" id="email" name="email" class="input" placeholder="ex) setbang@setbang.com" required/>
             </div>
     </div>
 
