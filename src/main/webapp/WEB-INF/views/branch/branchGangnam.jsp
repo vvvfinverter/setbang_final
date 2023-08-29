@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- JS / Jquery -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
-<script src="/v2/js/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127341454-1"></script>
 <script defer="defer" src="https://static.msscdn.net/static/ui-studio/pc/Branch/Branch1.js?20230725"></script>
@@ -46,7 +46,7 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="Branch__visual__slide">
-                  <img src="//static.musinsa.com/studioImg/renew/branch/branch1-visual-2.jpg?20220628" alt="동대문 지점 이미지2">
+                  <img src="./resources/image/slide1-1_gangnam.jpg" alt="강남지점 이미지1">
                   <span class="Branch__visual__label">
                     개인 오피스
                   </span>
@@ -54,7 +54,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="Branch__visual__slide">
-                  <img src="//static.musinsa.com/studioImg/renew/branch/branch1-visual-4.jpg?20220628" alt="동대문 지점 이미지4">
+                  <img src="./resources/image/slide1-2_gangnam.jpg" alt="강남지점 이미지2">
                   <span class="Branch__visual__label">
                     공용 오피스
                   </span>
@@ -62,7 +62,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="Branch__visual__slide">
-                  <img src="//static.musinsa.com/studioImg/renew/branch/branch1-visual-5.jpg?20220628" alt="동대문 지점 이미지5">
+                  <img src="./resources/image/slide1-3_gangnam.jpg" alt="강남지점 이미지3">
                   <span class="Branch__visual__label">
                     휴게 공간
                   </span>
@@ -93,7 +93,7 @@
                 <div class="swiper-slide">
                   <div class="Branch__slide">
                     <div class="Branch__slide__photo">
-                      <img src="//static.musinsa.com/studioImg/renew/branch/branch1-office-1.jpg?20220628" alt="사무 공간 이미지1">
+                      <img src="./resources/image/slide2-1_gangnam.jpg" alt="사무 공간 이미지1">
                     </div>
                     <div class="Branch__slide__information">
                       <strong>개인 오피스</strong>
@@ -104,7 +104,7 @@
                 <div class="swiper-slide">
                   <div class="Branch__slide">
                     <div class="Branch__slide__photo">
-                      <img src="//static.musinsa.com/studioImg/renew/branch/branch1-office-2.jpg?20220628" alt="사무 공간 이미지2">
+                      <img src="./resources/image/slide2-2_gangnam.jpg" alt="사무 공간 이미지2">
                     </div>
                     <div class="Branch__slide__information">
                       <strong>회의실</strong>
@@ -115,7 +115,7 @@
                 <div class="swiper-slide">
                   <div class="Branch__slide">
                     <div class="Branch__slide__photo">
-                      <img src="//static.musinsa.com/studioImg/renew/branch/branch1-office-3.jpg?20220628" alt="사무 공간 이미지3">
+                      <img src="./resources/image/slide2-3_gangnam.jpg" alt="사무 공간 이미지3">
                     </div>
                     <div class="Branch__slide__information">
                       <strong>사무기기실</strong>
@@ -126,7 +126,7 @@
                 <div class="swiper-slide">
                   <div class="Branch__slide">
                     <div class="Branch__slide__photo">
-                      <img src="//static.musinsa.com/studioImg/renew/branch/branch1-office-5.jpg?20220628" alt="사무 공간 이미지5">
+                      <img src="./resources/image/slide2-4_gangnam.jpg" alt="사무 공간 이미지4">
                     </div>
                     <div class="Branch__slide__information">
                       <strong>탭룸</strong>
@@ -137,7 +137,7 @@
                 <div class="swiper-slide">
                   <div class="Branch__slide">
                     <div class="Branch__slide__photo">
-                      <img src="//static.musinsa.com/studioImg/renew/branch/branch1-office-6.jpg?20220628" alt="사무 공간 이미지6">
+                      <img src="./resources/image/slide2-5_gangnam.jpg" alt="사무 공간 이미지5">
                     </div>
                     <div class="Branch__slide__information">
                       <strong>힐링룸</strong>

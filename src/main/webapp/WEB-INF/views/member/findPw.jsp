@@ -31,23 +31,17 @@
 	<form method="post" class="form-signin" action="findPwAction.do" name="findform">
 	<div class="findPw">
 			<div class="group">
-	        <div class="left">
-			<label for="id">ID</label>
-			</div>
+			<label for="id">ID</label><br/>
 			<input type="text" id="id" name="id" class="input" required/>
 		</div>
 		
 		<div class="group">
-	        <div class="left">
-			<label for="name">성함</label>
-			</div>
+			<label for="name">성함</label><br/>
 			<input type="text" id="name" name="name" class="input" placeholder="ex) 홍길동" required/>
 		</div>
 		
 		<div class="group">
-		<div class="left">
-			<label for="email">이메일 주소</label>
-		</div>
+			<label for="email">이메일 주소</label><br/>
 			<input type="text" id="email" name="email" class="input" placeholder="ex) setbang@setbang.com" required/>
 		</div>
 	</div>

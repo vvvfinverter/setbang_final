@@ -31,16 +31,12 @@
         <form method="post" class="form-signin" action="findIdAction.do" name="findform">
     <div class="findId">
             <div class="group">
-                <div class="left">
-                    <label for="name">성함</label>
-                </div>
+                    <label for="name">성함</label><br/>
                 <input type="text" id="name" name="name" class="input" placeholder="ex) 홍길동" required/>
             </div>
 
             <div class="group">
-                <div class="left">
-                    <label for="email">이메일</label>
-                </div>
+                    <label for="email">이메일</label><br/>
                 <input type="text" id="email" name="email" class="input" placeholder="ex) setbang@setbang.com" required/>
             </div>
     </div>

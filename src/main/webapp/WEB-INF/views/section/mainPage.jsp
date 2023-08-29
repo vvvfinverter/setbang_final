@@ -198,7 +198,7 @@
           </dl>
         </article>
         <article class="main-office__item">
-         <img src="./resources/image/mainOffice3.jpg" class="main-office__image" alt="Gangnam">
+         <img src="./resources/image/mainOffice2.jpg" class="main-office__image" alt="Gangnam">
           <dl class="main-office__information">
             <dt class="main-office__information__title">SETbang 강남점</dt>
             <dd class="main-office__information__address">서울 강남구 테헤란로 191, 14층</dd>
@@ -216,7 +216,7 @@
           </dl>
         </article>
         <article class="main-office__item">
-         <img src="./resources/image/mainOffice2.jpg" class="main-office__image" alt="Pangyo">
+         <img src="./resources/image/mainOffice3.jpg" class="main-office__image" alt="Pangyo">
           <dl class="main-office__information">
             <dt class="main-office__information__title">SETbang 판교점</dt>
             <dd class="main-office__information__address">경기도 성남시 분당구 판교동 33, 10층</dd>

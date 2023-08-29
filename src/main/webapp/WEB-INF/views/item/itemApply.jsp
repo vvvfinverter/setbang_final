@@ -7,20 +7,15 @@
 <meta charset="UTF-8">
 
 <!-- Style CSS -->
-<!-- 테스트용 css -->
-<link rel="stylesheet" href="./resources/css/item.css">
+<link rel="stylesheet" href="./resources/css/itemApply.css">
 
 <!-- JS / Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- <script type="text/javascript" src="./resources/js/itemApply.js"></script> -->
 
 <!-- Bootstrap CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous">
-	
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
@@ -246,21 +241,19 @@ $("#insertBtn").on("click", function(event) {
 	alert("물품 신청이 성공적으로 완료하였습니다.");
 });
 });
-
-
 </script>
 <title>물품신청</title>
 </head>
 <body>
 
-<div id="wrap">
 		<div id="header">
 			<jsp:include page="../section/header.jsp" />
 		</div>
 		
+<div id="wrap">
 <form name="frm" id="frm" action="itemApplyInsert.do" method="post">
 <div id="leftdiv">
-<table class="menutbl">
+<table class="menutbl" style="align-items: center !important;">
 	<tr id="menutitle">
 		<th colspan=3 id="titleText">물품 신청</th>
 	</tr>
@@ -317,10 +310,12 @@ $("#insertBtn").on("click", function(event) {
 </div>
 		
 </form>
+</div>	
+
+
 <div id="footer">
 	<jsp:include page="../section/footer.jsp" />
 </div>
-</div>	
 		
 </body>
 </html>
