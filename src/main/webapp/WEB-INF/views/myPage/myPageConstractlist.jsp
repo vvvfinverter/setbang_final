@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>임대차계약서</title>
+<title>임대차 내역</title>
 
 <!-- Style CSS -->
 <link rel="stylesheet" href="./resources/css/myPageConstractlist.css">
@@ -31,10 +31,9 @@
 		
 		<div class="wrap">
 
-	<h2>임대차계약서</h2>
+	<h2>임대차 내역</h2>
 			
 		
-	<!-- 서비스 플랜 결제 내역 -->
 	<div id="constractlist">	
 		<div class="constractlistTable">	
 	 <table>
@@ -63,6 +62,13 @@
              </c:forEach>
             </tbody>
             </c:when>
+            <c:otherwise>
+            <tbody>
+                <tr>
+                    <td colspan="6"><h6 class="emptySpace">임대차 내역이 없습니다.</h6></td>
+                </tr>
+            </tbody>
+            </c:otherwise>
             </c:choose>
         </table>		
 	</div>

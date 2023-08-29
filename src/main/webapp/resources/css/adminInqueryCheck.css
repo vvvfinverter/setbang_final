@@ -46,3 +46,8 @@ th {
     background-color: #e5e5e5;
     font-weight: bold;
 }
+
+.emptySpace {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding : 100px;
+}

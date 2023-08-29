@@ -28,7 +28,7 @@
 <div class="wrap">
     <h2>아이디 찾기</h2>
 
-        <form method="post" class="form-signin" action="findIdAction.do" name="findform">
+        <form method="post" class="frm" action="findIdAction.do" name="findform">
     <div class="findId">
             <div class="group">
                     <label for="name">성함</label><br/>
@@ -41,9 +41,9 @@
             </div>
     </div>
 
-		<div class="group">
-			<input class="btn btn-lg btn-secondary btn-block text-uppercase"
-				type="submit" value="확인">
+		<div class="group" >
+			<input class="button"
+				type="submit" value="확인" >
 		</div>
 
     	<!-- 이름과 연락처가 일치하지 않을 때-->
@@ -57,7 +57,7 @@
 
 		<!-- 이름과 연락처가 일치할 때 -->
 		<c:if test="${check == 0 }">
-		<p>찾으시는 아이디는' ${id}' 입니다.</p>
+		<p class="checkId">찾으시는 아이디는 '${id}' 입니다.</p>
 		</c:if>
         </form>
 

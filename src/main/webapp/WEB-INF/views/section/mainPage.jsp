@@ -119,7 +119,7 @@
             <li>
               <figure>
                <img src="./resources/image/planicon1.png" width=60px height=60px />
-                <figcaption>기본 서비스<br/>공용 오피스 예약</figcaption>
+                <figcaption>기본 서비스<br/>특색있는<br/>공용 공간 예약</figcaption>
               </figure>
             </li>
             <li>
@@ -147,7 +147,7 @@
             <li>
               <figure>
                <img src="./resources/image/planicon1.png" width=60px height=60px />
-                <figcaption>기본 서비스<br/>공용 오피스 예약</figcaption>
+                <figcaption>기본 서비스<br/>특색있는<br/>공용 공간 예약</figcaption>
               </figure>
             </li>
             <li>
@@ -314,7 +314,7 @@
         <div class="main-infra__inner">
           <header>
             <h2 style="color: #ffffff;">사업이 성장하는데<br/>필요한 인프라가 있는 곳</h2>
-            <p style="color: #ffffff !important;">(주)CO-SPACE는 '동반 성장'이란 철학을 바탕으로<br/>사업 편의성을 제공하는 SETbang을 설립했습니다.<br/>더 큰 꿈을 이룰 수 있는 공간을 제공하겠습니다.</p>
+            <p style="color: #ffffff !important;">(주)CO-SPACE는 '동반 성장'이란 철학을 바탕으로<br/>사업 편의성을 제공하는 SETbang을 설립했습니다.<br/>더 큰 꿈을 SET 해드릴 수 있는 bang을 제공하겠습니다.</p>
           </header>
           <div class="main-infra__swiper-wrap">
             <div class="swiper main-infra__swiper">

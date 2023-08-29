@@ -76,7 +76,7 @@
             <c:otherwise>
             <tbody>
                 <tr>
-                    <td colspan="11"><h6 class="emptyPlanPayment">승인 대기중인 회원이 없습니다.</h6></td>
+                    <td colspan="11"><h6 class="emptySpace">승인 대기중인 회원이 없습니다.</h6></td>
                 </tr>
             </tbody>
             </c:otherwise>

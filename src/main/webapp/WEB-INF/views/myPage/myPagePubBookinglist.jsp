@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>공용공간 예약 신청목록</title>
+<title>공용 공간 예약 신청목록</title>
 
 <!-- Style CSS -->
 <link rel="stylesheet" href="./resources/css/pubofficebookinglist.css">
@@ -31,10 +31,10 @@
 		
 		<div class="wrap">
 
-	<h2>공용공간 예약신청현황</h2>
+	<h2>공용 공간 예약 내역</h2>
 			
 		
-	<!-- 서비스 플랜 결제 내역 -->
+	<!-- 공용 공간 예약 내역 -->
 	<div id="pubbookinglist">	
 		<div class="pubbookinglistTable">	
 	 <table>
@@ -66,7 +66,7 @@
             <c:otherwise>
             <tbody>
                 <tr>
-                    <td colspan="6"><h6 class="emptyPlanPayment">공용오피스 예약 내역이 없습니다.</h6></td>
+                    <td colspan="6"><h6 class="emptySpace">공용 공간 예약 내역이 없습니다.</h6></td>
                 </tr>
             </tbody>
             </c:otherwise>

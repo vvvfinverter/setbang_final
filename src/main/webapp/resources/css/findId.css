@@ -55,9 +55,18 @@ input {
 	width : 420px;	
 }
 
-p {
+.checkId {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 18px;
 	font-weight: bold;
 	padding : 50px;
+}
+
+.button {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #D6AF91;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 420px;
 }

@@ -123,75 +123,7 @@
               <img role="listitem" alt="파워로직스" src="./resources/image/partner_powerlogics.png" width="90" height="90">
               <img role="listitem" alt="고려산업" src="./resources/image/partner_koreaindustrial.png" width="90" height="90">
           </div>
-<!--           <div class="membership-row-container">
-              <div id="membership-row-2" class="membership-row membership-row-2 membership-ani-ltr membership-ani-rtl" role="list">           
-                  <img role="listitem" alt="텀블벅" src="./resources/image/cnf.jpg">
-                  <img role="listitem" alt="miso" src="./resources/image/noplasticsunday.jpg">
-                  <img role="listitem" alt="네이버 커텍트" src="./resources/image/skinfarm.png">
-                  <img role="listitem" alt="프레인글로벌" src="./resources/image/greencar.png">
-                  <img role="listitem" alt="한화시스템" src="./resources/image/socar.png">
-                  <img role="listitem" alt="퍼블리" src="./resources/image/modu.jpg">
-                  <img role="listitem" alt="바카디" src="./resources/image/ezstudio.jpeg">
-              <img role="listitem" alt="텀블벅" src="./resources/image/rejoysstudio.png">
-              <img role="listitem" alt="miso" src="./resources/image/makepan.jpg">
-              <img role="listitem" alt="네이버 커텍트" src="./resources/image/storehub.png">
-              <img role="listitem" alt="프레인글로벌" src="./resources/image/Lcamp.png">
-              <img role="listitem" alt="한화시스템" src="./resources/image/yamuzim.png">
-              <img role="listitem" alt="퍼블리" src="./resources/image/KCTC.jpg">
-              <img role="listitem" alt="바카디" src="./resources/image/donga.png">
-              <img role="listitem" alt="텀블벅" src="./resources/image/cj.jpg">
-              <img role="listitem" alt="miso" src="./resources/image/cnf.jpg">
-              <img role="listitem" alt="네이버 커텍트" src="./resources/image/noplasticsunday.jpg">
-              <img role="listitem" alt="프레인글로벌" src="./resources/image/skinfarm.png">
-              <img role="listitem" alt="한화시스템" src="./resources/image/greencar.png">
-              <img role="listitem" alt="퍼블리" src="./resources/image/socar.png">
-              <img role="listitem" alt="바카디" src="./resources/image/modu.jpg">
-              <img role="listitem" alt="텀블벅" src="./resources/image/ezstudio.jpeg">
-              <img role="listitem" alt="miso" src="./resources/image/rejoysstudio.png">
-              <img role="listitem" alt="네이버 커텍트" src="./resources/image/makepan.jpg">
-              <img role="listitem" alt="프레인글로벌" src="./resources/image/storehub.png">
-              <img role="listitem" alt="한화시스템" src="./resources/image/Lcamp.png">
-              <img role="listitem" alt="퍼블리" src="./resources/image/yamuzim.png">
-              <img role="listitem" alt="바카디" src="./resources/image/KCTC.jpg">
-              <img role="listitem" alt="퍼블리" src="./resources/image/donga.png">
-              <img role="listitem" alt="바카디" src="./resources/image/cj.jpg">
-              </div>
-          </div>
-          <div class="membership-row-container">
-              <div id="membership-row-3" class="membership-row membership-row-3 membership-ani-ltr" role="list">
-                  <img role="listitem" alt="차봇" src="./resources/image/cj.jpg">
-                  <img role="listitem" alt="패스트캠퍼스" src="./resources/image/donga.png">
-                  <img role="listitem" alt="원룸만들기" src="./resources/image/KCTC.jpg">
-                  <img role="listitem" alt="광동제약" src="./resources/image/yamuzim.png">
-                  <img role="listitem" alt="여행에미치다" src="./resources/image/Lcamp.png">
-                  <div><img role="listitem" alt="차이코퍼레이션" src="./resources/image/storehub.png">
-              </div>
-          <img role="listitem" alt="차봇" src="./resources/image/makepan.jpg">
-          <img role="listitem" alt="패스트캠퍼스" src="./resources/image/rejoysstudio.png">
-          <img role="listitem" alt="원룸만들기" src="./resources/image/ezstudio.jpeg">
-          <img role="listitem" alt="광동제약" src="./resources/image/modu.jpg">
-          <img role="listitem" alt="여행에미치다" src="./resources/image/socar.png">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/greencar.png">
-          <img role="listitem" alt="차봇" src="./resources/image/skinfarm.png">
-          <img role="listitem" alt="패스트캠퍼스" src="./resources/image/noplasticsunday.jpg">
-          <img role="listitem" alt="원룸만들기" src="./resources/image/cnf.jpg">
-          <img role="listitem" alt="여행에미치다" src="./resources/image/cj.jpg">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/donga.png">
-          <img role="listitem" alt="차봇" src="./resources/image/KCTC.jpg">
-          <img role="listitem" alt="패스트캠퍼스" src="./resources/image/yamuzim.png">
-          <img role="listitem" alt="원룸만들기" src="./resources/image/Lcamp.png">
-          <img role="listitem" alt="광동제약" src="./resources/image/storehub.png">
-          <img role="listitem" alt="여행에미치다" src="./resources/image/makepan.jpg">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/rejoysstudio.png">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/ezstudio.jpeg">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/modu.jpg">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/socar.png">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/greencar.png">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/skinfarm.png">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/noplasticsunday.jpg">
-          <img role="listitem" alt="차이코퍼레이션" src="./resources/image/cnf.jpg">
-          </div>
-      </div> -->
+  </div>
   </div>
 </div></section>
 

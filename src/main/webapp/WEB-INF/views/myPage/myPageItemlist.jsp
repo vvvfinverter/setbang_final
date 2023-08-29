@@ -66,7 +66,7 @@
             <c:otherwise>
             <tbody>
                 <tr>
-                    <td colspan="7"><h6 class="emptyPlanPayment">물품 신청 내역이 없습니다.</h6></td>
+                    <td colspan="6"><h6 class="emptySpace">물품 신청 내역이 없습니다.</h6></td>
                 </tr>
             </tbody>
             </c:otherwise>

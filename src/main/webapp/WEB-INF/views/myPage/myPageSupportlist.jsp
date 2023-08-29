@@ -64,7 +64,7 @@
             <c:otherwise>
             <tbody>
                 <tr>
-                    <td colspan="5"><h6 class="emptyPlanPayment">업무지원 신청 내역이 없습니다.</h6></td>
+                    <td colspan="5"><h6 class="emptySpace">업무지원 신청 내역이 없습니다.</h6></td>
                 </tr>
             </tbody>
             </c:otherwise>

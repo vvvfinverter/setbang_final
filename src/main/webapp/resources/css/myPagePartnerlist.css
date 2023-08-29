@@ -21,7 +21,6 @@ h6 {
 	padding: 50px;
 }
 
-/* 서비스 플랜 결제 내역 */
 
 .partnerlistTable {
 	padding : 50px;
@@ -45,4 +44,9 @@ th {
 	font-family: 'Noto Sans KR', sans-serif !important;
     background-color: #e5e5e5;
     font-weight: bold;
+}
+
+.emptySpace {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding : 100px;
 }

@@ -66,7 +66,7 @@
             <c:otherwise>
             <tbody>
                 <tr>
-                    <td colspan="6"><h6 class="emptyPlanPayment">협력업체 예약 내역이 없습니다.</h6></td>
+                    <td colspan="6"><h6 class="emptySpace">협력업체 예약 내역이 없습니다.</h6></td>
                 </tr>
             </tbody>
             </c:otherwise>

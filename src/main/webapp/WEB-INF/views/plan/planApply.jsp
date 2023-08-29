@@ -203,7 +203,7 @@ $(document).ready(function () {
 <form class = "planPaymentForm" action="getPlanName.do" method="post">
 <div class = "planPayment" id="planPayment">
 	<div class="planwrap">
-    <div class="image" ><img style="width:500px; height:750px;" src='./resources/image/planPaymentImage.jpg' alt='test' /></div>
+    <div class="image" ><img style="width:500px; height:750px;" src='./resources/image/planPaymentImage.png' alt='planPaymentImage' /></div>
 
 	<div class="plans">
     <div class="subscription-panel-offers">

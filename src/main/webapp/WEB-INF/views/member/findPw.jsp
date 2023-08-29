@@ -28,7 +28,7 @@
 <div class="wrap">
     <h2>비밀번호 찾기</h2>
 
-	<form method="post" class="form-signin" action="findPwAction.do" name="findform">
+	<form method="post" class="frm" action="findPwAction.do" name="findform">
 	<div class="findPw">
 			<div class="group">
 			<label for="id">ID</label><br/>
@@ -46,7 +46,7 @@
 		</div>
 	</div>
 		<div class="group">
-			<input class="btn btn-lg btn-secondary btn-block text-uppercase"
+			<input class="button"
 				type="submit" value="확인">
 		</div>
 
@@ -62,7 +62,7 @@
 
 		<!-- ID, 이름, 이메일이 일치하지 일치할 때 -->
 		<c:if test="${check == 0 }">
-		<p>임시 비밀번호를 메일로 발송하였습니다.<br/>
+		<p class ="checkPw">임시 비밀번호를 메일로 발송하였습니다.<br/>
 			확인 부탁드립니다.</p>
 		</c:if>
 

@@ -17,41 +17,8 @@ h6 {
 	padding: 50px;
 }
 
-#wrap {
-	margin: 150px;
-	text-align : center;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-}
 
-/* 업무지원 신청 */
-.partner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-img.ui-datepicker-trigger {
-  margin-left: 5px;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-
-label   {
-	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 15px;
-}
-
-.group {
-	font-family: 'Noto Sans KR', sans-serif;
-	margin : 20px;
-}
-
-.input {
+input {
 	font-family: 'Noto Sans KR', sans-serif;
 	background: #e5e5e5;
 	border: none;
@@ -69,9 +36,9 @@ label   {
 	width : 390px;
 }
 
-.form-control{
+#numOfPer,
+#comboUnits {
 	font-family: 'Noto Sans KR', sans-serif;
-	margin: 20px;
 	background: #e5e5e5;
 	border: none;
 	padding: 15px 20px;
@@ -79,73 +46,44 @@ label   {
 	width : 420px;
 }
 
-select {
+#btnSubmit {
 	font-family: 'Noto Sans KR', sans-serif;
-	margin: 20px;
-	background: #e5e5e5;
-	border: none;
-	padding: 15px 20px;
-	border-radius: 25px;
-	width : 420px;
-}
-
-.button {
-	font-family: 'Noto Sans KR', sans-serif;
-	margin: 20px;
 	background: #D6AF91;
 	border: none;
 	padding: 15px 20px;
 	border-radius: 25px;
 	width : 420px;
+	margin-top: 50px;
 }
 
-#context{
-	height : 250px;
+form {
+	max-width: 420px;
 }
 
-.left {
-	text-align : left;
-	align-items: left;
-	justify-content: left;
+#booking {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 250px;
 }
 
+ label {
+ 	margin-top: 15px;
+ }
+ 
 
-
-/* 업무지원 선택 */
-.tax-radio,
-.corporate-radio,
-.patent-radio {
-    display: none;
-}
-
-.support-panel-offer {
-    border: 2px solid #e5e5e5;
-    padding: 20px;
+.styled-button {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #e5e5e5;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    width: 80px;
     cursor: pointer;
-    transition: border-color 0.3s;
-    width: 420px;
-    height: 150px;
-    margin: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
-.support-panel-offer.selected {
-    border-color: #D6AF91;
+.styled-button:focus {
+    outline: none;
+    border: 2px solid #D6AF91;
 }
-
-.radio-input:checked + .support-panel-offer {
-    border-color: #D6AF91;
-}
-
-strong {
-	font-family: 'Noto Sans KR', sans-serif;
-}
-
-.support-panel-offers img {
-	padding : 10px;
-}
+ 

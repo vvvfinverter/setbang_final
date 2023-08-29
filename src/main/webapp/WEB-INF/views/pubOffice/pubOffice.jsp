@@ -9,31 +9,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="./resources/css/branch.css">
 <link rel="stylesheet" href="./resources/css/pubOffice.css">
+<link rel="stylesheet" href="./resources/css/branch.css">
 <link href="https://static.msscdn.net/static/ui-studio/pc/Branch/Branch1.css?20230725" rel="stylesheet">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" sizes="180x180" href="/v2/home.jpg" />
 <link rel="icon" type="image/jpg" href="/v2/home.jpg" sizes="192x192"/>
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
 <!-- JS / Jquery -->
 <script type="text/javascript" src="./resources/js/pubOffice.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <!-- jQuery UI -->
 <link rel="stylesheet" href="./resources/jquery-ui-1.12.1/jquery-ui.min.css">
@@ -41,7 +34,7 @@
 <script src="./resources/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 <script src="./resources/jquery-ui-1.12.1/datepicker-ko.js"></script> 
 
-<title>공용 오피스 예약</title>
+<title>공용 공간 예약</title>
 </head>
 <body>
 
@@ -50,12 +43,11 @@
 </div>
 
 <div id="branchTitle">
-          <h2>공용 오피스 예약</h2>
+          <h2>공용 공간 예약</h2>
           </div>
       <div class="Branch">
 
         <div class="Branch__space">
-          <h4 class="Branch__title">공용 오피스 소개</h4>
           <div class="Branch__slide-wrap">
             <div class="Branch__slide__swipe" id="officeSwiper">
               <div class="swiper-wrapper">
@@ -66,7 +58,7 @@
                     </div>
                     <div class="Branch__slide__information">
                       <strong>회의실</strong>
-                      <p>대형 스크린, 고사양의 프레젠테이션 기기 도입</p>
+                      <p>대형 스크린, 고사양의 프레젠테이션 기기 도입<br/><br/>최대 예약 가능 인원 : 10명<br/>최대 이용시간 : 2시간</p>
                     </div>
                   </div>
                 </div>
@@ -77,7 +69,7 @@
                     </div>
                     <div class="Branch__slide__information">
                       <strong>회의실</strong>
-                      <p>대형 스크린, 고사양의 프레젠테이션 기기 도입</p>
+                      <p>대형 스크린, 고사양의 프레젠테이션 기기 도입<br/><br/>최대 예약 가능 인원 : 10명<br/>최대 이용시간 : 2시간</p>
                     </div>
                   </div>
                 </div>
@@ -88,7 +80,7 @@
                     </div>
                     <div class="Branch__slide__information">
                       <strong>힐링룸</strong>
-                      <p>안마기기 및 전문 마사지사 예약 가능</p>
+                      <p>안마기기 및 전문 마사지사 예약 가능<br/><br/>최대 예약 가능 인원 : 2명<br/>최대 이용시간 : 2시간</p>
                     </div>
                   </div>
                 </div>
@@ -99,7 +91,7 @@
                     </div>
                     <div class="Branch__slide__information">
                       <strong>힐링룸</strong>
-                      <p>안마기기 및 전문 마사지사 예약 가능</p>
+                      <p>안마기기 및 전문 마사지사 예약 가능<br/><br/>최대 예약 가능 인원 : 2명<br/>최대 이용시간 : 2시간</p>
                     </div>
                   </div>
                 </div>
@@ -110,7 +102,7 @@
                     </div>
                     <div class="Branch__slide__information">
                       <strong>멀티미디어룸</strong>
-                      <p>전자기기 사용, 영화 관람</p>
+                      <p>전자기기 사용, 영화 관람<br/><br/>최대 예약 가능 인원 : 15명<br/>최대 이용시간 : 2시간</p>
                     </div>
                   </div>
                 </div>
@@ -131,15 +123,15 @@
             </div>
           </div>
         </div>
+        </div>
 
+<div id="booking">
 <form name="frm">
-	<!-- 아래의 이미지는 그냥 테스트 용으로 올림 이 부분은 나중에 제거 해야 할 것 같음 -->
 	<label for="bookDate">예약일자</label><br/>
 	<input type="text" class="datePicker" name="bookDate" id="bookDate" size="12" readonly/><br/>
-	<!-- <input type="date" id="bookDate" name="bookDate" /> <br/> -->
 	<label for="numOfPer">인원</label> <br/>
 	<select id = "numOfPer" name="numOfPer" required>
-		<option value="">인원 선택</option>
+		<option value="">선택</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
@@ -148,8 +140,15 @@
 		<option value="6">6</option>
 		<option value="7">7</option>
 		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		<option value="15">15</option>
 	</select> <br/>
-		<label>임대호실</label> <br/>
+		<label>공용공간 호실</label><br/>
 		<select name="comboUnits" id = "comboUnits" onchange="selectBoxChange()" required="required">
  			<option value="" selected="selected">선택</option>
  			<c:forEach var="i" items="${pubUnits}">
@@ -158,18 +157,36 @@
 			</select> <br/>
 	<input type="hidden" name = "selectedValue" id="selectedValue" /> 
 	
-	<div class="bookingStart">
-		<label for="bookStart">사용시간</label><br/>
-		<input type="radio" name="bookStart" value="08:00" />08:00<br/>
-		<input type="radio" name="bookStart" value="10:00" />10:00<br/>
-		<input type="radio" name="bookStart" value="13:00" />13:00<br/>
-		<input type="radio" name="bookStart" value="15:00" />15:00<br/>
-		<input type="radio" name="bookStart" value="17:00" />17:00<br/>
-	</div>
+<div class="bookingStart">
+<label>사용 시간</label><br/>
+    <label>
+        <input type="radio" name="bookStart" value="08:00" class="radio-button" hidden>
+        <button type="button" class="styled-button">8:00</button>
+    </label>
+    <label>
+        <input type="radio" name="bookStart" value="10:00" class="radio-button" hidden>
+        <button type="button" class="styled-button">10:00</button>
+    </label>
+    <label>
+        <input type="radio" name="bookStart" value="13:00" class="radio-button" hidden>
+        <button type="button" class="styled-button">13:00</button>
+    </label>
+    <label>
+        <input type="radio" name="bookStart" value="15:00" class="radio-button" hidden>
+        <button type="button" class="styled-button">15:00</button>
+    </label>
+    <label>
+        <input type="radio" name="bookStart" value="17:00" class="radio-button" hidden>
+        <button type="button" class="styled-button">17:00</button>
+    </label>
+</div>
 
-  	<input id ="btnSubmit" type="button" value="예약하기"/> 
+
+  	<button id ="btnSubmit" type="button" value="예약하기">예약하기</button>
 </form>
 </div>
+
+
 
 <div id="footer">
 	<jsp:include page="../section/footer.jsp" />

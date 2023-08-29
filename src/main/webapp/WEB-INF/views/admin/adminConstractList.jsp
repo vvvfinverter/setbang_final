@@ -67,7 +67,7 @@
             <c:otherwise>
             <tbody>
                 <tr>
-                    <td colspan="6"><h6 class="emptyPlanPayment">임대차 계약서 내역이 없습니다.</h6></td>
+                    <td colspan="6"><h6 class="emptySpace">임대차 계약서 내역이 없습니다.</h6></td>
                 </tr>
             </tbody>
             </c:otherwise>

@@ -21,8 +21,6 @@ h6 {
 	padding: 50px;
 }
 
-/* 서비스 플랜 결제 내역 */
-
 #constractlist {
 	padding : 50px;
 }
@@ -74,4 +72,9 @@ th {
 	padding: 15px 20px;
 	border-radius: 25px;
 	width : 250px;
+}
+
+.emptySpace {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding : 100px;
 }

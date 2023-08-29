@@ -55,3 +55,8 @@ th {
 #approvalBtn{
 	margin-top: 50px;
 }
+
+.emptySpace {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding : 100px;
+}
