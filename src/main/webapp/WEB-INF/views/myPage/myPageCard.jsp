@@ -30,6 +30,42 @@
 	    $('#cardCode').val(cardCode); 
 	  });
 	}); 
+ $(document).ready(function () {
+	    $(".btn-delete").click(function(event) {
+
+	        if (confirm("정말로 해당 카드를 삭제하시겠습니까?")) {
+	            alert("해당 카드를 삭제하였습니다.");
+	            form.submit();
+	        } else {
+	            alert("삭제가 취소되었습니다.");
+	        	event.preventDefault(); // 이벤트 전파 막기
+	            return;
+	        }
+	    });
+
+	    $("#btn-add").click(function(event) {
+
+	        if (confirm("정말로 해당 카드를 추가하시겠습니까?")) {
+	            alert("카드가 추가되었습니다.");
+	            form.submit();
+	        } else {
+	            alert("카드 추가를 취소하였습니다.");
+	        	event.preventDefault(); // 이벤트 전파 막기
+	            return;
+	        }
+	    });
+	    $("#btn-edit1").click(function(event) {
+
+	        if (confirm("정말로 간편 비밀번호를 수정하시겠습니까?")) {
+	            alert("간편 비밀번호가 수정 되었습니다.");
+	            form.submit();
+	        } else {
+	            alert("간편 비밀번호 수정이 취소되었습니다.");
+	        	event.preventDefault(); // 이벤트 전파 막기
+	            return;
+	        }
+	    });
+	});
 </script>
 
 </head>
@@ -151,7 +187,7 @@
 		    <span id="newEasypwMessage"></span>
       </div>
       <div class="modal-footer">
-        <button id="btn-edit" type="submit" class="btn btn-primary">수정</button>
+        <button id="btn-edit1" type="submit" class="btn btn-primary">수정</button>
         <button id="btn-cancle" type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
       </div>
       </form>
@@ -302,7 +338,7 @@
         <input type="password" id="card-password2" name="cardPassword2" maxlength="6" pattern="[0-9]*" required/>
     </div>
     
-    <button type="submit" class="button">카드 등록</button>
+    <button type="submit" class="button" id="btn-add">카드 등록</button>
 </form>
   
   

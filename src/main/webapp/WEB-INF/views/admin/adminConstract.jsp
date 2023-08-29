@@ -172,6 +172,20 @@ $(function(){
 	});
 });
 
+$(document).ready(function () {
+	$(".button").click(function() {
+	if ($("#lessor_name").val() !== "" && $("#lessee_name").val() !== ""
+			&& $("#lessee_tel").val() !== "" && $("#brunch").val() !== ""
+			&& $("#priv_code").val() !== "" && $("#con_start_date").val() !== ""
+			&& $("#con_end_date").val() !== "" && $("#con_date").val() !== "") {
+		    alert("임대차 계약서 작성을 완료하였습니다.");
+    location.href = "./resources/views/admin/adminConstract.jsp";
+    }else{
+    	alert("임대차 계약서 양식에 맞게 작성해주세요.");
+    }
+});
+});
+
 </script>
 </body>
 </html>

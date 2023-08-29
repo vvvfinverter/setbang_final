@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>협력업체서비스 신청목록</title>
+<title>협력업체 서비스 예약 내역</title>
 
 <!-- Style CSS -->
 <link rel="stylesheet" href="./resources/css/myPagePartnerlist.css">
@@ -31,21 +31,21 @@
 		
 		<div class="wrap">
 
-	<h2>협력업체서비스 신청현황</h2>
+	<h2>협력업체 서비스 예약 내역</h2>
 			
 		
-	<!-- 서비스 플랜 결제 내역 -->
+	<!-- 협력업체 서비스 예약 내역 -->
 	<div id="partnerlist">	
 		<div class="partnerlistTable">	
 	 <table>
             <thead>
                 <tr>
                     <th>NO</th>
-                    <th>신청서비스</th>
-                    <th>신청업체명</th>
-                    <th>서비스 시작날짜</th>
-                    <th>서비스 종료날짜</th>
-                    <th>신청일</th>
+                    <th>예약 서비스</th>
+                    <th>예약 업체명</th>
+                    <th>예약 시작날짜</th>
+                    <th>예약 종료날짜</th>
+                    <th>예약일</th>
                 </tr>
             </thead>
             <c:choose>
@@ -63,6 +63,13 @@
              </c:forEach>
             </tbody>
             </c:when>
+            <c:otherwise>
+            <tbody>
+                <tr>
+                    <td colspan="6"><h6 class="emptyPlanPayment">협력업체 예약 내역이 없습니다.</h6></td>
+                </tr>
+            </tbody>
+            </c:otherwise>
             </c:choose>
         </table>		
 	</div>

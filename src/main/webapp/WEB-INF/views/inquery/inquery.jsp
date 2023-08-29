@@ -13,8 +13,25 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
 <!-- Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<title>문의하기</title>
+<title>입주 문의</title>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#btn").click(function() {
+	if ($("#inquery_company").val() !== "" && $("#inquery_homepage").val() !== ""
+			&& $("#inq_name").val() !== "" && $("#inquery_tel").val() !== ""
+			&& $("#inquery_email").val() !== "" && $("#ptr_name").val() !== ""
+			&& $("#inquery_people").val() !== "" && $("#inquery_select_branch").val() !== ""
+			&& $("#inquery_title").val() !== "" && $("#inq_content").val() !== "") {
+		    alert("입주 문의 신청서 제출이 완료되었습니다.\n확인 후 회신드리겠습니다.😊");
+    location.href = "./resources/views/admin/inquery.jsp";
+    }else{
+    	alert("입주 문의 신청서 양식에 맞게 작성해주세요.");
+    }
+});
+});
+</script>
 </head>
 <body>
 
@@ -24,8 +41,8 @@
 
 <div id="wrap">
 
-	<!-- 문의 하기 -->
-			<h2>문의하기</h2>
+	<!-- 입주 문의 -->
+			<h2>입주 문의</h2>
 			<h5>첫 사업에 대한 두근거림, SETBang에서 시작하세요!</h5>
 			<h6> 업무지원부터 협력업체 예약까지 한번에!<br/>
 				사업에만 집중하실 수 있게 도와드리겠습니다.
@@ -97,11 +114,10 @@
 					<div class="left2">
 						<label for="inquery_content" class="inquery_label">내용</label>
 					</div>
-						<textarea class="inq_content" id="inquery_title" name="inq_content" required>
-              			</textarea>
+						<textarea class="inq_content" id="inquery_title" name="inq_content" required></textarea>
 					</div>
 				</div>
-			<button class="button" type="submit">제출하기</button>
+			<button class="button" type="submit" id="btn">제출하기</button>
 		</form>
 			</div>
 

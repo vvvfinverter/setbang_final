@@ -21,6 +21,26 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 <title>로그인/회원가입</title>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#btn-login").click(function() {
+	    if ($("#id").val() !== "" && $("#pw").val() !== "") {
+	        alert("SETbang에 오신걸 환영합니다!☺️\n로그인에 성공하였습니다.");
+	        location.href = "./resources/views/member/myPage.jsp";
+	    } else {
+	        alert("로그인에 실패하였습니다.\n다시 시도해주세요.");
+	    }
+	});//수정필요
+	$("#btn-signup").click(function() {
+	    if ($("#mem_id").val() !== "" && $("#mem_pw").val() !== "" && $("#checkPw").val() !== "" && $("#mem_name").val() !== "" && $("#mem_tel").val() !== "" && $("#mem_email").val() !== "" && $("#industry").val() !== "" && $("#business_no").val() !== "" && $("#sample6_postcode").val() !== "" && $("#sample6_address").val() !== "" && $("#sample6_extraAddress").val() !== "" && $("#requiredCheck").prop("checked")) {
+	        alert("SETbang에 오신걸 환영합니다!☺️\n회원가입에 성공하였습니다.");
+	        location.href = "./resources/views/member/loginSignup.jsp";
+	    } else {
+	        alert("회원가입 실패하였습니다.\n다시 시도해주세요.");
+	    }
+	});
+	});
+</script>
 </head>
 <body>
 

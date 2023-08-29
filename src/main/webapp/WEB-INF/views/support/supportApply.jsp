@@ -145,6 +145,16 @@ $(function(){
 	});
 });
 //]]>
+	$(document).ready(function() {
+	    $(".button").click(function() {
+	        if($("#name").val() !== "" && $("input[name='sup_code']:checked").length > 0 && $("#tel").val() !== "" && $("#email").val() !== "" && $("#sup_counseling_date").val() !== "" && $("#context").val() !== ""){
+	       alert("신청서 작성을 완료하였습니다.");
+	        location.href = "./resources/views/support/supportApply.jsp";
+	        }else{
+	           alert("신청서 양식에 맞게 작성해주세요.");
+	        }
+	    });
+	});
 
 </script>
 </body>

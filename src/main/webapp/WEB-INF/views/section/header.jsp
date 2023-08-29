@@ -16,6 +16,14 @@
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <title>SETbang</title>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#getlogin").click(function() {
+		alert("로그인 후 이용가능합니다.");
+	    location.href = "./resources/views/member/loginSignup.jsp";
+	});
+});
+</script>
 </head>
 <body>
 
@@ -58,7 +66,7 @@
       <c:choose>
         <c:when test="${sessionId == null }">
         <li class="nav-item">
-          <a class="nav-link" href="loginPage.do">예약·서비스</a>
+          <a class="nav-link" href="loginPage.do" id="getlogin">예약·서비스</a>
         </li>
           </c:when>
           <c:when test="${sessionId != null }">

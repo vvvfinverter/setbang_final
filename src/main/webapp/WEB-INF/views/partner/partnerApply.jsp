@@ -262,14 +262,15 @@ $(document).ready(function () {
              }    
 
         });    
-});
-
-var message = "<%= request.getParameter("message") %>";
-if (message === "success") {
-	alert("협력업체 예약이 완료되었습니다.");
-} else if (message === "fail") {
-	alert("협력업체 예약에 실패하였습니다.");
-}
+        $(".button").click(function() {
+            if ($("#name").val() !== "" && $("#tel").val() !== "" && $("#ptr_start").val() !== "" && $("#ptr_end").val() !== "" && $("#ptr_cat_code").val() !== "" && $("#ptr_name").val() !== "") {
+                  alert("예약이 완료되었습니다.");
+             location.href = "./resources/views/partner/partnerApply.jsp";
+             }else{
+                alert("예약 신청서 양식에 맞게 작성해주세요.");
+             }
+        });
+ });
 
 </script>
 

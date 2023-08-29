@@ -70,6 +70,13 @@
              </c:forEach>
             </tbody>
             </c:when>
+            <c:otherwise>
+            <tbody>
+                <tr>
+                    <td colspan="9"><h6 class="emptyPlanPayment">임대차 계약서 내역이 없습니다.</h6></td>
+                </tr>
+            </tbody>
+            </c:otherwise>
             </c:choose>
         </table>		
 				

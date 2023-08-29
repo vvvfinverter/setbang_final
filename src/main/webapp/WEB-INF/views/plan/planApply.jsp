@@ -55,13 +55,19 @@ var selectedBoxChange = function() {
 	  let selectedText = cardCodeSelect.options[cardCodeSelect.selectedIndex].text;
 	}
 	
-/* 모달 - 결제 완료 or 결제 실패 alert */
-var message = "<%= request.getParameter("message") %>";
-if (message === "success") {
-	alert("결제가 완료되었습니다.");
-} else if (message === "failed") {
-	alert("결제가 실패하였습니다.");
-}
+$(document).ready(function () {
+    $("#btn-payment").click(function(event) {
+
+        if (confirm("정말로 해당 서비스 플랜을 결제 하시겠습니까?")) {
+            alert("결제에 성공했습니다!\n보다 나은 서비스로 보답하겠습니다.😊");
+            form.submit();
+        } else {
+            alert("결제가 취소되었습니다.");
+        	event.preventDefault(); // 이벤트 전파 막기
+            return;
+        }
+    });
+});
 
 </script>
  

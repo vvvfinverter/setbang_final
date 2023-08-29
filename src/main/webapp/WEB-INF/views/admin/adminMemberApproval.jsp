@@ -73,6 +73,13 @@
              </c:forEach>
             </tbody>
             </c:when>
+            <c:otherwise>
+            <tbody>
+                <tr>
+                    <td colspan="11"><h6 class="emptyPlanPayment">승인 대기중인 회원이 없습니다.</h6></td>
+                </tr>
+            </tbody>
+            </c:otherwise>
             </c:choose>
         </table>		
           <button type="button" class="button" id="approvalBtn" name="approvalBtn" >가입 승인</button>	
@@ -120,7 +127,7 @@ $.ajax({
 	url: "approvalModify.do",
 	dataType: "text",
 	success : function(data) {	
-		alert("해당 회원을 승인하였습니다.");
+		alert("해당 회원의 가입을 승인하였습니다.");
 		location.href="adminMemberApproval.do";
 	},
 	error: function(jqXHR, textStatus, errorThrown) {

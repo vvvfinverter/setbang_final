@@ -21,7 +21,31 @@
 
 <meta charset="UTF-8">
 <title>내 정보 변경</title>
-
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#btn-profile").click(function() {
+		if($("#file").val() !== ""){
+			alert("프로필 사진이 변경되었습니다.");
+	    location.href = "./resources/views/myPage/myPageInfo.jsp";
+	    }else{
+	    	alert("변경하실 프로필 사진을 선택해주세요");
+	    }
+		});
+	$("#btn-info").click(function() {
+		if ($("#memPlan").val() !== "" && $("#id").val() !== "" && $("#mem_pw").val() !== ""
+				&& $("#checkPw").val() !== "" && $("#name").val() !== ""
+				&& $("#mem_tel").val() !== "" && $("#mem_email").val() !== ""
+				&& $("#industry").val() !== "" && $("#business_no").val() !== ""
+				&& $("#sample6_postcode").val() !== "" && $("#sample6_address").val() !== ""
+				&& $("#sample6_extraAddress").val() !== "") {
+			    alert("내 정보가 성공적으로 수정되었습니다.");
+	    location.href = "./resources/views/myPage/myPageInfo.jsp";
+	    }else{
+	    	alert("내 정보 수정 양식에 맞게 작성해주세요.");
+	    }
+	});
+	});
+</script>
 </head>
 <body>
 
@@ -49,7 +73,7 @@
 			</c:otherwise>
 		</c:choose>
 			<input type="file" name="file" class="file">
-          <input type="submit" class="button" value="프로필 변경">
+          <input type="submit" class="button" id="btn-profile" value="프로필 변경">
 		</div>
 		</form>
 		
@@ -120,7 +144,7 @@
         </div>
       
         <div class="group">
-          <input type="submit" class="button" value="확인">
+          <input type="submit" class="button" id="btn-info" value="확인">
         </div>
         </form>
         </div>

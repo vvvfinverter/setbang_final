@@ -1,5 +1,6 @@
 package com.setbang.controller;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.setbang.domain.CardVO;
 import com.setbang.domain.MemberVO;
+import com.setbang.service.CardService;
 import com.setbang.service.MemberService;
 
 
@@ -28,6 +31,9 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private CardService cardService;
 	
 	// 회원 정보 변경
 	@RequestMapping(value = "updateMemberInfo.do", method = RequestMethod.POST)
@@ -133,17 +139,25 @@ public class MemberController {
         }
     }
 	
-	// 마이페이지로 이동
+	// 마이페이지로 이동 (간편 카드로 이동)
 	@RequestMapping(value = "myPage.do", method = RequestMethod.GET)
 	public String myPage(HttpSession session, Model model) {
-	    String sessionId = (String) session.getAttribute("sessionId");
-	    if (sessionId != null) {
-	        model.addAttribute("sessionId", sessionId);
-	        return "/myPage/myPageCard";
-	    } else {
+	        String sessionId = (String) session.getAttribute("sessionId");
+	        if (sessionId != null) {
+	            int memCode = memberService.getMemCodeBySessionId(sessionId);
+	            if (memCode != 0) {
+	                // 등록된 카드 불러오기
+	                CardVO card = new CardVO();
+	                card.setMem_code(memCode);
+	                List<CardVO> cardList = cardService.getCardList(card);
+	                model.addAttribute("cardList", cardList);
+	                
+	                return "/myPage/myPageCard";
+	            }
+	        }
 	        return "redirect:/loginPage.do";
 	    }
-	}
+
 	
 	
 	// 로그인 페이지로 이동

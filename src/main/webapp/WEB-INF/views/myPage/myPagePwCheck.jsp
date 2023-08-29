@@ -14,7 +14,21 @@
 
 <meta charset="UTF-8">
 <title>내 정보 변경</title>
-
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#btn-pw").click(function() {
+	    var enteredPw = $("#pw").val(); // 사용자가 입력한 비밀번호
+	    var actualPw = "<%= session.getAttribute("sessionPw") %>"; // 실제 회원 비밀번호
+	    
+	    if (enteredPw == actualPw) {
+	        alert("정보변경페이지 이동");
+            location.href = "./resources/views/member/myPage.jsp";
+	    } else {
+	        alert("비밀번호가 일치하지 않습니다.");
+	    }
+	});
+});//수정필요
+</script>
 </head>
 
 		<div id="header">
@@ -34,7 +48,7 @@
           <input id="pw" name = "pw" type="password" class="input" data-type="password">
         </div>
         <div class="group">
-          <input type="submit" class="button" value="확인">
+          <input type="submit" class="button" id="btn-pw" value="확인">
         </div>
       </form>
         </div>

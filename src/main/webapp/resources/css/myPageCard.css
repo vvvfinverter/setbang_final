@@ -63,6 +63,16 @@ h6 {
 	width : 100px;
 	color : #000000;
 }
+#btn-edit1 {
+	font-family: 'Noto Sans KR', sans-serif;
+	background: #D6AF91;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	width : 100px;
+	color : #000000;
+}
+
 .btn-delete,
 #btn-cancle {
 	font-family: 'Noto Sans KR', sans-serif;

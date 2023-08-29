@@ -20,7 +20,20 @@
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#btn-cancel").click(function() {
+	    if (confirm("정말로 서비스 플랜 자동결제를 취소하시겠습니까?😢\n더욱 많은 혜택들이 회원님을 기다리고 있어요!\n다양한 서비스를 제공하는 SETbang의 혜택을 놓치지마세요👍")){
+	        alert("자동결제가 정상적으로 취소되었습니다.\n다음에 또 이용해주세요!💖");
+	        form.submit(); // 폼 제출
+	    } else {
+	        alert("자동결제를 취소하지 않았습니다.\nSETbang만의 서비스를 더 오래 즐겨주세요!😊");
+	    	event.preventDefault(); // 이벤트 전파 막기
+	        return;
+	    }
+	});
+});
+</script>
 </head>
 <body>
 
@@ -100,7 +113,6 @@
             </c:otherwise>
             </c:choose>
         </table>		
-		
 	</div>
 		</div>
 		
@@ -108,7 +120,7 @@
 	<!-- 자동결제 취소 -->
 		<div class="cancelPlanPayment">
 	  <form class="form" action="cancelAutoPlanPayment.do" method="post">
-		<button type="submit" class="button">자동결제 취소하기</button>
+		<button type="submit" class="button" id="btn-cancel">자동결제 취소하기</button>
 		</form>
 		</div>
 		
@@ -123,7 +135,5 @@
 		<div id="footer">
 			<jsp:include page="../section/footer.jsp" />
 		</div>
-	
-
 </body>
 </html>
