@@ -45,7 +45,10 @@ public class AdminController {
 	
 	// 메인 페이지로 이동(말 그대로 관리자 메인페이지로 이동하도록 수정)
 	@RequestMapping(value="adminMain.do")
-	public String adminMain(AdminVO vo) {		
+	public String adminMain(AdminVO vo, Model model) {	
+		
+		List<AdminVO> memberapprovalList = adminservice.memberapprovalList(vo);
+		model.addAttribute("memberapprovalList", memberapprovalList);
 		return "/admin/adminMemberApproval";
 	}
 	
@@ -58,11 +61,13 @@ public class AdminController {
 
 		if(admin != null) {
 			session.setAttribute("sessionAdminId", admin.getAdmin_id());
-
 		
 		}else {
 			return "/admin/adminLogin";
 		}
+		
+		List<AdminVO> memberapprovalList = adminservice.memberapprovalList(vo);
+		model.addAttribute("memberapprovalList", memberapprovalList);
 		
 		System.out.println("sessionAdminId : " + session.getAttribute("sessionAdminId"));		
 		return "/admin/adminMemberApproval";
@@ -217,6 +222,7 @@ public class AdminController {
 	}
 	
 
+	// 회원승인 체크하면 회원상태가 'N' -> 'Y'로 바뀌게 하는 메서드
     @RequestMapping(value = "approvalModify.do", method = RequestMethod.POST)
     @ResponseBody
 	public String modifyApproval(@RequestBody List<AdminVO> voList) throws Exception {

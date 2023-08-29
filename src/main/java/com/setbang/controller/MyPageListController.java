@@ -88,4 +88,20 @@ public class MyPageListController {
 			
 		return "/myPage/myPageItemlist";
 	}
+	
+	// 임대차계약서 현황
+	@RequestMapping(value="constractlist.do")
+	public String constractlist(MyPageListVO vo, Model model, HttpSession session) {
+		
+		// Session에서 Mem_code 가져오기
+		String sessionId = (String) session.getAttribute("sessionId");
+		int mem_code = myPageListService.findmemcode(sessionId);
+		
+		// Mem_code로 자신의 임대차계약현황 가져오기
+		List<MyPageListVO> constractlist = myPageListService.constractlist(mem_code);
+			System.out.println("constractlist : " + constractlist);
+			model.addAttribute("constractlist", constractlist);		
+		
+		return "/myPage/myPageConstractlist";
+	}
 }

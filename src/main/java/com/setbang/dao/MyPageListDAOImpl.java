@@ -48,6 +48,13 @@ public class MyPageListDAOImpl implements MyPageListDAO{
 		System.out.println("=> Mybatis itemlist() 호출");	
 		return mybatis.selectList("MyPageListDAO.itemlist", mem_code);
 	}
+
+	@Override
+	public List<MyPageListVO> constractlist(int mem_code) {
+		// TODO Auto-generated method stub
+		System.out.println("=> Mybatis constractlist() 호출");	
+		return mybatis.selectList("MyPageListDAO.constractlist", mem_code);
+	}
 	
 	
 

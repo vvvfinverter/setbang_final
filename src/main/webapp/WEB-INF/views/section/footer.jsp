@@ -60,7 +60,7 @@
 
 <!-- chatbot -->
 	<div id="chatbot">
-		<a href =#><img src='./resources/image/chatbot.png' alt='chatbot' /></a>
+		<a href ="chatbot.do"><img src='./resources/image/chatbot.png' alt='chatbot' /></a>
 	</div>
 	
 <!-- top button -->

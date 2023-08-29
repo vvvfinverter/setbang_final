@@ -46,6 +46,8 @@ public class InqueryController {
         vo.setReceiver("choitk5639@gmail.com");
         vo.setContent("내용이 들어갑니다");
         vo.setSubject("제목이 들어갑니다");
+ 
+    	
         
 //        inqueryService.SendEmail
      

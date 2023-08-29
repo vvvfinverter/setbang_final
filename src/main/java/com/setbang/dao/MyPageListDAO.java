@@ -20,4 +20,7 @@ public interface MyPageListDAO {
 	
 	// 물품신청 현황
 	List<MyPageListVO> itemlist(int mem_code);
+	
+	// 임대차계약서 현황
+	List<MyPageListVO> constractlist(int mem_code);
 }

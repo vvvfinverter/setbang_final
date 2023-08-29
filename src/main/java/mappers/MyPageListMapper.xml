@@ -26,7 +26,7 @@
 			  where mem_code=#{mem_code}]]>
 	</select>
 	
-		<!--memcode로  협력업체지원서비스 내역찾기-->
+		<!--memcode로  공용공간 신청 내역찾기-->
 	<select id="pubbookinglist" parameterType="int" resultType="myPageList">
 	<![CDATA[ select rownum as book_indexnum, book_code, mem_code, pub_code, book_start, num_of_per, to_char(book_date, 'YYYY-MM-DD') as book_date, pub_unit, pub_cat_code, pub_cat
 			  from (select b.book_code, b.mem_code, b.book_start, b.num_of_per, b.book_date, po.pub_code, po.pub_unit, pc.pub_cat_code, pc.pub_cat
@@ -41,4 +41,13 @@
 			  where mem_code=#{mem_code}]]>
 	</select>	
 	
+	<!-- mem_code로  임대차계약서 보기-->
+	<select id="constractlist" parameterType="int" resultType="myPageList">
+	<![CDATA[ select rownum as constract_indexnum, con_code, mem_code, priv_code, to_char(con_start_date, 'YYYY-MM-DD') as con_start_date, to_char(con_end_date, 'YYYY-MM-DD') as con_end_date, to_char(con_date, 'YYYY-MM-DD') as con_date, lessor_name, lessee_name, lessee_tel,
+			branch_code, priv_yn, priv_unit, branch_name
+			from (select c.con_code, c.mem_code, p.priv_code, c.con_start_date, c.con_end_date, c.con_date, c.lessor_name, c.lessee_name, c.lessee_tel,
+			p.priv_yn, p.priv_unit, b.branch_code, b.branch_name from constract c, priv_office p, branch b
+			where c.priv_code = p.priv_code and p.branch_code = b.branch_code order by c.con_code)
+			where mem_code=#{mem_code}]]>
+	</select>
 </mapper>

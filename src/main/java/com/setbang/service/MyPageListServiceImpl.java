@@ -52,4 +52,12 @@ public class MyPageListServiceImpl implements MyPageListService{
 		myPageListDAO.itemlist(mem_code);
 		return myPageListDAO.itemlist(mem_code);
 	}
+	
+	@Override
+	// 임대차계약서 현황
+	public List<MyPageListVO> constractlist(int mem_code) {
+		System.out.println("constractlist " + mem_code);
+		myPageListDAO.constractlist(mem_code);
+		return myPageListDAO.constractlist(mem_code);
+	}
 }

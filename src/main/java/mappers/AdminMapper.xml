@@ -8,7 +8,7 @@
 	</select>
 
 	<select id="findadmin" parameterType="admin" resultType="admin">
-		select admin_id, admin_pw from admin where admin_id=#{admin_id}
+		select * from admin where admin_id=#{admin_id} and admin_pw=#{admin_pw}
 	</select>
 	
 	<insert id="insertcontract" parameterType="admin">

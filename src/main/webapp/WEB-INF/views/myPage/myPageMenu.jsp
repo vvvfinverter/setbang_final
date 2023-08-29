@@ -126,7 +126,7 @@
     
     </li>
     <li>
-      <a class="no-underline" href="#">임대차 내역</a>
+      <a class="no-underline" href="constractlist.do">임대차 내역</a>
     </li>
   </ul>
   </aside>
