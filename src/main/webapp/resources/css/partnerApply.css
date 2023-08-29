@@ -43,7 +43,7 @@
         margin-right: 30px;
       }
       .membership-row {
-        animation-timing-function: ease-out;
+         animation-timing-function: linear;
       }
       
 		.blue-bg-section {

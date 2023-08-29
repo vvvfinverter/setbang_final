@@ -249,30 +249,65 @@
                 <div class="membership-container">
                     <div class="membership-row-container">
                         <div id="membership-row-1" class="membership-row membership-row-1" role="list">
-                            <img role="listitem" alt="현대자동차 에어랩" src="./resources/image/kakao.png" style="width:200px; height:50px;">
-                            <img role="listitem" alt="동화약품" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-2.svg">
-                            <img role="listitem" alt="KB금융그룹" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-3.svg">
-                            <img role="listitem" alt="마켓컬리" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-4.svg">
-                            <img role="listitem" alt="JANDI" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-5.svg">
-                            <img role="listitem" alt="영화진흥위원회" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-6.svg">
-                            <img role="listitem" alt="집꾸미기" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-7.svg">
-                            <img role="listitem" alt="서울산업진흥원" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-1-8.png">
+              <img role="listitem" alt="CJ대한통운" src="./resources/image/partner_cj.png" width="90" height="90">
+              <img role="listitem" alt="KCTC" src="./resources/image/partner_kctc.png" width="90" height="90">
+              <img role="listitem" alt="판토스" src="./resources/image/partner_pantos.png" width="90" height="90">
+              <img role="listitem" alt="한진택배" src="./resources/image/partner_hanjin.png" width="90" height="90">
+              <img role="listitem" alt="GS택배" src="./resources/image/partner_gs.png" width="90" height="90">
+              <img role="listitem" alt="용마로지스" src="./resources/image/partner_yongma.png" width="90" height="90">
+              <img role="listitem" alt="스토어허브" src="./resources/image/partner_storehub.png" width="90" height="90">
+              <img role="listitem" alt="롯데로지스" src="./resources/image/parter_lottelogistics.png" width="90" height="90">
+              <img role="listitem" alt="동부로지스" src="./resources/image/parter_dongbu.png" width="90" height="90">
+              <img role="listitem" alt="마이창고" src="./resources/image/partner_mychanggo.png" width="90" height="90">
+              <img role="listitem" alt="리조이스스튜디오" src="./resources/image/partner_rejoice.png" width="90" height="90">
+              <img role="listitem" alt="이지스튜디오" src="./resources/image/partner_ez.png" width="90" height="90">
+              <img role="listitem" alt="와우플레닛" src="./resources/image/partner_wowplanet.png" width="90" height="90">
+              <img role="listitem" alt="모멘트스튜디오" src="./resources/image/partner_moment.png" width="90" height="90">
+              <img role="listitem" alt="스튜디오파로" src="./resources/image/parnter_paro.png" width="90" height="90">
+              <img role="listitem" alt="모두의셔틀" src="./resources/image/partner_modu.png" width="90" height="90">
+              <img role="listitem" alt="쏘카" src="./resources/image/partner_socar.png" width="90" height="90">
+              <img role="listitem" alt="그린카" src="./resources/image/partner_greencar.png" width="90" height="90">
+              <img role="listitem" alt="티머니온다" src="./resources/image/partner_tmoney.png" width="90" height="90">
+              <img role="listitem" alt="대한항공" src="./resources/image/partner_koreanair.png" width="90" height="90">
+              <img role="listitem" alt="NoPlasticSunday" src="./resources/image/partner_noplasticsunday.png" width="90" height="90">
+              <img role="listitem" alt="씨엔에프" src="./resources/image/partner_cnf.png" width="90" height="90">
+              <img role="listitem" alt="아이디스" src="./resources/image/partner_idis.png" width="90" height="90">
+              <img role="listitem" alt="파워로직스" src="./resources/image/partner_powerlogics.png" width="90" height="90">
+              <img role="listitem" alt="고려산업" src="./resources/image/partner_koreaindustrial.png" width="90" height="90">
                         </div>
                     </div>
                     <div class="membership-row-container">
                         <div id="membership-row-2" class="membership-row membership-row-2" role="list">
-                            <img role="listitem" alt="텀블벅" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-1.svg">
-                            <img role="listitem" alt="miso" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-2.png">
-                            <img role="listitem" alt="네이버 커텍트" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-3.svg">
-                            <img role="listitem" alt="프레인글로벌" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-4.png">
-                            <img role="listitem" alt="한화시스템" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-5.svg">
-                            <img role="listitem" alt="퍼블리" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-6.svg">
-                            <img role="listitem" alt="바카디" src="/wp-content/themes/fastfive/assets/images/pages/main/membership/membership-row-2-7.png">
+              <img role="listitem" alt="CJ대한통운" src="./resources/image/partner_cj.png" width="90" height="90">
+              <img role="listitem" alt="KCTC" src="./resources/image/partner_kctc.png" width="90" height="90">
+              <img role="listitem" alt="판토스" src="./resources/image/partner_pantos.png" width="90" height="90">
+              <img role="listitem" alt="한진택배" src="./resources/image/partner_hanjin.png" width="90" height="90">
+              <img role="listitem" alt="GS택배" src="./resources/image/partner_gs.png" width="90" height="90">
+              <img role="listitem" alt="용마로지스" src="./resources/image/partner_yongma.png" width="90" height="90">
+              <img role="listitem" alt="스토어허브" src="./resources/image/partner_storehub.png" width="90" height="90">
+              <img role="listitem" alt="롯데로지스" src="./resources/image/parter_lottelogistics.png" width="90" height="90">
+              <img role="listitem" alt="동부로지스" src="./resources/image/parter_dongbu.png" width="90" height="90">
+              <img role="listitem" alt="마이창고" src="./resources/image/partner_mychanggo.png" width="90" height="90">
+              <img role="listitem" alt="리조이스스튜디오" src="./resources/image/partner_rejoice.png" width="90" height="90">
+              <img role="listitem" alt="이지스튜디오" src="./resources/image/partner_ez.png" width="90" height="90">
+              <img role="listitem" alt="와우플레닛" src="./resources/image/partner_wowplanet.png" width="90" height="90">
+              <img role="listitem" alt="모멘트스튜디오" src="./resources/image/partner_moment.png" width="90" height="90">
+              <img role="listitem" alt="스튜디오파로" src="./resources/image/parnter_paro.png" width="90" height="90">
+              <img role="listitem" alt="모두의셔틀" src="./resources/image/partner_modu.png" width="90" height="90">
+              <img role="listitem" alt="쏘카" src="./resources/image/partner_socar.png" width="90" height="90">
+              <img role="listitem" alt="그린카" src="./resources/image/partner_greencar.png" width="90" height="90">
+              <img role="listitem" alt="티머니온다" src="./resources/image/partner_tmoney.png" width="90" height="90">
+              <img role="listitem" alt="대한항공" src="./resources/image/partner_koreanair.png" width="90" height="90">
+              <img role="listitem" alt="NoPlasticSunday" src="./resources/image/partner_noplasticsunday.png" width="90" height="90">
+              <img role="listitem" alt="씨엔에프" src="./resources/image/partner_cnf.png" width="90" height="90">
+              <img role="listitem" alt="아이디스" src="./resources/image/partner_idis.png" width="90" height="90">
+              <img role="listitem" alt="파워로직스" src="./resources/image/partner_powerlogics.png" width="90" height="90">
+              <img role="listitem" alt="고려산업" src="./resources/image/partner_koreaindustrial.png" width="90" height="90">
                         </div>
                     </div>
             </div>
             </div>
-        </section>  
+        </section>    
 
 
       <section class="main-infra" style="background-color: #707070;" id="intro5">

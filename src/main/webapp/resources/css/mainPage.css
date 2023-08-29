@@ -122,15 +122,21 @@ a{
          display: flex;
           align-items: center;
       }
+      
+      img {
+      	max-width: 80px !important;
+      	max-height: 80px !important;
+      }
+      
       /***브랜드 로그 간격***/
       .membership-row-container:nth-of-type(odd) .membership-row img {
-         margin-right: 60px;
+         margin-right: 40px;
       }
       .membership-row img {
-         margin-right: 60px;
+         margin-right: 40px;
       }
       .membership-row {
-         animation-timing-function: ease-out;
+         animation-timing-function: linear;
       }
       
       .row{

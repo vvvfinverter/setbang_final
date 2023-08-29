@@ -97,36 +97,31 @@
                 <div class="membership-container">
           <div class="membership-row-container">
               <div id="membership-row-1" class="membership-row membership-row-1 membership-ani-ltr" role="list">
-                  <img role="listitem" alt="CJ대한통운" src="./resources/image/cj.jpg" width="75" height="75">
-                  <img role="listitem" alt="동아운수" src="./resources/image/donga.png" width="75" height="75">
-                  <img role="listitem" alt="KCTC" src="./resources/image/KCTC.jpg" width="75" height="75">
-                  <img role="listitem" alt="야무짐" src="./resources/image/yamuzim.png" width="75" height="75">
-                  <img role="listitem" alt="로지스캠프" src="./resources/image/Lcamp.png" width="75" height="75">
-                  <img role="listitem" alt="영화진흥위원회" src="./resources/image/storehub.png" width="75" height="75">
-                  <img role="listitem" alt="집꾸미기" src="./resources/image/makepan.jpg" width="75" height="75">
-                  <img role="listitem" alt="서울산업진흥원" src="./resources/image/rejoysstudio.png" width="75" height="75">
-              <img role="listitem" alt="현대자동차 에어랩" src="./resources/image/ezstudio.jpeg" width="75" height="75">
-              <img role="listitem" alt="동화약품" src="./resources/image/modu.jpg" width="75" height="75">
-              <img role="listitem" alt="KB금융그룹" src="./resources/image/socar.png" width="75" height="75">
-              <img role="listitem" alt="마켓컬리" src="./resources/image/greencar.png" width="75" height="75">
-              <img role="listitem" alt="JANDI" src="./resources/image/skinfarm.png" width="75" height="75">
-              <img role="listitem" alt="영화진흥위원회" src="./resources/image/noplasticsunday.jpg" width="75" height="75">
-              <img role="listitem" alt="집꾸미기" src="./resources/image/cnf.jpg" width="75" height="75">
-              <img role="listitem" alt="CJ대한통운" src="./resources/image/cj.jpg" width="75" height="75">
-              <img role="listitem" alt="동아운수" src="./resources/image/donga.png" width="75" height="75">
-              <img role="listitem" alt="KCTC" src="./resources/image/KCTC.jpg" width="75" height="75">
-              <img role="listitem" alt="야무짐" src="./resources/image/yamuzim.png" width="75" height="75">
-              <img role="listitem" alt="로지스캠프" src="./resources/image/Lcamp.png" width="75" height="75">
-              <img role="listitem" alt="JANDI" src="./resources/image/storehub.png" width="75" height="75">
-              <img role="listitem" alt="영화진흥위원회" src="./resources/image/makepan.jpg" width="75" height="75">
-              <img role="listitem" alt="집꾸미기" src="./resources/image/rejoysstudio.png" width="75" height="75">
-              <img role="listitem" alt="서울산업진흥원" src="./resources/image/ezstudio.jpeg" width="75" height="75">
-              <img role="listitem" alt="현대자동차 에어랩" src="./resources/image/modu.jpg" width="75" height="75">
-              <img role="listitem" alt="동화약품" src="./resources/image/socar.png" width="75" height="75">
-              <img role="listitem" alt="KB금융그룹" src="./resources/image/greencar.png" width="75" height="75">
-              <img role="listitem" alt="마켓컬리" src="./resources/image/skinfarm.png" width="75" height="75">
-              <img role="listitem" alt="JANDI" src="./resources/image/noplasticsunday.jpg" width="75" height="75">
-              <img role="listitem" alt="영화진흥위원회" src="./resources/image/cnf.jpg" width="75" height="75">
+              <img role="listitem" alt="CJ대한통운" src="./resources/image/partner_cj.png" width="90" height="90">
+              <img role="listitem" alt="KCTC" src="./resources/image/partner_kctc.png" width="90" height="90">
+              <img role="listitem" alt="판토스" src="./resources/image/partner_pantos.png" width="90" height="90">
+              <img role="listitem" alt="한진택배" src="./resources/image/partner_hanjin.png" width="90" height="90">
+              <img role="listitem" alt="GS택배" src="./resources/image/partner_gs.png" width="90" height="90">
+              <img role="listitem" alt="용마로지스" src="./resources/image/partner_yongma.png" width="90" height="90">
+              <img role="listitem" alt="스토어허브" src="./resources/image/partner_storehub.png" width="90" height="90">
+              <img role="listitem" alt="롯데로지스" src="./resources/image/parter_lottelogistics.png" width="90" height="90">
+              <img role="listitem" alt="동부로지스" src="./resources/image/parter_dongbu.png" width="90" height="90">
+              <img role="listitem" alt="마이창고" src="./resources/image/partner_mychanggo.png" width="90" height="90">
+              <img role="listitem" alt="리조이스스튜디오" src="./resources/image/partner_rejoice.png" width="90" height="90">
+              <img role="listitem" alt="이지스튜디오" src="./resources/image/partner_ez.png" width="90" height="90">
+              <img role="listitem" alt="와우플레닛" src="./resources/image/partner_wowplanet.png" width="90" height="90">
+              <img role="listitem" alt="모멘트스튜디오" src="./resources/image/partner_moment.png" width="90" height="90">
+              <img role="listitem" alt="스튜디오파로" src="./resources/image/parnter_paro.png" width="90" height="90">
+              <img role="listitem" alt="모두의셔틀" src="./resources/image/partner_modu.png" width="90" height="90">
+              <img role="listitem" alt="쏘카" src="./resources/image/partner_socar.png" width="90" height="90">
+              <img role="listitem" alt="그린카" src="./resources/image/partner_greencar.png" width="90" height="90">
+              <img role="listitem" alt="티머니온다" src="./resources/image/partner_tmoney.png" width="90" height="90">
+              <img role="listitem" alt="대한항공" src="./resources/image/partner_koreanair.png" width="90" height="90">
+              <img role="listitem" alt="NoPlasticSunday" src="./resources/image/partner_noplasticsunday.png" width="90" height="90">
+              <img role="listitem" alt="씨엔에프" src="./resources/image/partner_cnf.png" width="90" height="90">
+              <img role="listitem" alt="아이디스" src="./resources/image/partner_idis.png" width="90" height="90">
+              <img role="listitem" alt="파워로직스" src="./resources/image/partner_powerlogics.png" width="90" height="90">
+              <img role="listitem" alt="고려산업" src="./resources/image/partner_koreaindustrial.png" width="90" height="90">
           </div>
 <!--           <div class="membership-row-container">
               <div id="membership-row-2" class="membership-row membership-row-2 membership-ani-ltr membership-ani-rtl" role="list">           
