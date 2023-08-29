@@ -41,14 +41,14 @@ footer {
   color: #ffffff;
 }
 
-/* p {
-  color: #ffffff;
-} */
+.footerP {
+  color: #ffffff !important;
+}
 
-/* strong {
-  color: #ffffff;
-  font-size: 14px;
-} */
+.footerStrong {
+  color: #ffffff !important;
+  font-size: 14px !important;
+} 
 
 .cospaceInfo,
 .cospaceLogo {

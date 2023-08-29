@@ -29,12 +29,12 @@
     <img width="450" height="130" src="./resources/image/footerCatchphrase2.png" alt="CoSpace Catchphrase">
     </div>
     <div class="cospaceInfo">
-        <p>(주)CO-SPACE | 대표 홍성민<br/>
+        <p class="footerP">(주)CO-SPACE | 대표 홍성민<br/>
             서울 구로구 디지털로34길 27 대륭포스트 2차 11층<br/>
             setbang@setbang.com | +82 02-6578-9000</p>
     </div>
     <div class="cospaceInfo">
-        <p>사업자 등록 번호 : 325-81-69715<br/>
+        <p class="footerP">사업자 등록 번호 : 325-81-69715<br/>
             통신판매업 : 제2001-서울구로-13579<br/>
             운영시간 : 09:00 ~ 18:00 (점심시간 11시 ~ 1시)</p>
     </div>
@@ -42,9 +42,9 @@
 
     <div class="footer-bottom-wrapper">   
             <div class="cospaceEtc">
-                <a><strong>이용약관</strong></a>&nbsp;|&nbsp;
-                <a><strong>개인정보 처리 방침</strong></a>&nbsp;|&nbsp;
-                <a><strong>영상정보처리기기 운영 관리 방침</strong></a>
+                <a><strong class="footerStrong">이용약관</strong></a>&nbsp;|&nbsp;
+                <a><strong class="footerStrong">개인정보 처리 방침</strong></a>&nbsp;|&nbsp;
+                <a><strong class="footerStrong">영상정보처리기기 운영 관리 방침</strong></a>
             </div>
             <p class="established">2023 Established in Seoul, KR - All Rights Reserved</p>  
             <div class="logos">

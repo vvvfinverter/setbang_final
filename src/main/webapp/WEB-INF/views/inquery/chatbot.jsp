@@ -37,13 +37,28 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+<!-- JS / Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./resources/js/myPageCard.js"></script>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
    </head>
    <body class="dashboard dashboard_1">
+   
+   		<div id="header">
+			<jsp:include page="../section/header.jsp" />
+		</div>
+   
+   
       <div class="full_container">					            
 		<div class="chat-container">
 		   <div class="chat-header">
-			  <h1>(주)SETbang</h1>
+			  <h1>SETbang</h1>
 				<div class="chat-intro">
 	           <!--  	<p>업무 대화나 일상 대화 문제를 풀어보고 싶다면<br/> '<strong>업무대화 문제풀고싶어</strong>' 또는 '<strong>일상대화 문제풀고싶어</strong>'라고 입력해보세요.</p>  -->
 				</div>
@@ -56,7 +71,11 @@
 		</div>
 
 		</div>
-	   </div>
+		
+		<div id="footer">
+			<jsp:include page="../section/footer.jsp" />
+		</div>
+		
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="resources/js/jquery-3.3.1.min.js"></script>
