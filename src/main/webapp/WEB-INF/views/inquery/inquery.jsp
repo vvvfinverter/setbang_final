@@ -99,9 +99,9 @@ $(document).ready(function () {
 					<div class="inquery_select_branch">
 						<select class="inquery_select_branch" id="inquery_select_branch" name="inq_branch" required>
 							<option value="">선택하세요</option>
-							<option value="강남점">강남점</option>
 							<option value="구로점">구로점</option>
-							<option value="종로점">종로점</option>
+							<option value="강남점">강남점</option>
+							<option value="판교점">판교점</option>
 						</select>
 					</div>
 					<div class="group">
