@@ -158,26 +158,26 @@
 	<input type="hidden" name = "selectedValue" id="selectedValue" /> 
 	
 <div class="bookingStart">
-<label>사용 시간</label><br/>
+    <label>사용 시간</label><br/>
     <label>
         <input type="radio" name="bookStart" value="08:00" class="radio-button" hidden>
-        <button type="button" class="styled-button">8:00</button>
+        <button type="button" name="bookStartBtn" class="styled-button" value="08:00" onclick="connectButtonToRadio(this)">8:00</button>
     </label>
     <label>
-        <input type="radio" name="bookStart" value="10:00" class="radio-button" hidden>
-        <button type="button" class="styled-button">10:00</button>
+        <input type="radio"  name="bookStart" value="10:00" class="radio-button" hidden>
+        <button type="button" name="bookStartBtn" class="styled-button" value="10:00" onclick="connectButtonToRadio(this)">10:00</button>
     </label>
     <label>
-        <input type="radio" name="bookStart" value="13:00" class="radio-button" hidden>
-        <button type="button" class="styled-button">13:00</button>
+        <input type="radio"  name="bookStart" value="13:00" class="radio-button" hidden>
+        <button type="button" name="bookStartBtn" class="styled-button" value="13:00" onclick="connectButtonToRadio(this)">13:00</button>
     </label>
     <label>
-        <input type="radio" name="bookStart" value="15:00" class="radio-button" hidden>
-        <button type="button" class="styled-button">15:00</button>
+        <input type="radio"  name="bookStart" value="15:00" class="radio-button" hidden>
+        <button type="button" name="bookStartBtn" class="styled-button" value="15:00" onclick="connectButtonToRadio(this)">15:00</button>
     </label>
     <label>
-        <input type="radio" name="bookStart" value="17:00" class="radio-button" hidden>
-        <button type="button" class="styled-button">17:00</button>
+        <input type="radio"  name="bookStart" value="17:00" class="radio-button" hidden>
+        <button type="button" name="bookStartBtn" class="styled-button" value="17:00" onclick="connectButtonToRadio(this)">17:00</button>
     </label>
 </div>
 
