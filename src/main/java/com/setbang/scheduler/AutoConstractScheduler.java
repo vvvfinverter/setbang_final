@@ -8,7 +8,7 @@ import com.setbang.domain.ConstractVO;
 import com.setbang.service.ConstractSchedulerService;
 
 @Component
-public class ConstractScheduler {
+public class AutoConstractScheduler {
 	
 	@Autowired
 	private ConstractSchedulerService constractSchedulerService;
