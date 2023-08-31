@@ -5,14 +5,20 @@ import java.util.List;
 import com.setbang.domain.ItemVO;
 
 public interface ItemService {
-
-	public List<ItemVO> comboSelect1(ItemVO vo);
 	
-	public List<ItemVO> comboSelect2(int iCatCode);
+	// i_cat_code로 item리스트 가져와서 List에 담기 
+	public List<ItemVO> selectItem(int icatcode);
 	
-	public void insertItemApply(ItemVO vo);
 	
-//	public void insertItemApplyDetail(ItemVO vo);
+	// i_code로 item이름 가져와서 List에 담기
+	public List<ItemVO> selectItemName(int itemCode);
+	
+	// session으로 mem_code 가져오기
+	public int getMemCodeBySessionId(String id);
+	
+	
+	// 주문 insert 
+	public void insetOrder(ItemVO vo);
 	
 	
 }

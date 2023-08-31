@@ -18,44 +18,72 @@ public class ItemServiceImpl implements ItemService {
 	@Autowired
 	private ItemDAO itemDAO;
 	
-
-	/**
-	 * 
-	 * @param vo
-	 */
+	// i_cat_code로 item리스트 가져와서 List에 담기
 	@Override
-	public List<ItemVO> comboSelect1(ItemVO vo) {
-		logger.info("ItemService.comboSelect 서비스 ");
-		List<ItemVO> list1 = itemDAO.comboItemCat(vo);
-		return list1;
+	public List<ItemVO> selectItem(int icatcode) {
+		logger.info("ItemService.selectItem 서비스 ");
+		List<ItemVO> itemlist = itemDAO.selectItem(icatcode);
+		return itemlist;
 	}
 
-	/**
-	 * 
-	 * @param vo
-	 */
+	// i_name 가져오기
 	@Override
-	public List<ItemVO> comboSelect2(int iCatCode) {
-		logger.info("ItemService.comboSelect2 서비스");
-		System.out.println("iCatCode : " + iCatCode);
-		List<ItemVO> list2 = itemDAO.comboItem(iCatCode);
-		return list2;
+	public List<ItemVO> selectItemName(int itemCode) {
+		// TODO Auto-generated method stub
+		
+		List<ItemVO> ItemNamelist = itemDAO.selectItemName(itemCode);
+		return ItemNamelist;
 	}
 
-	/**
-	 * 
-	 * @param vo
-	 */
+	// session으로 mem_code 가져오기
 	@Override
-	public void insertItemApply(ItemVO vo) {
-		logger.info("ItemService.insertItemApply");
-		itemDAO.insertItemApply(vo);
+	public int getMemCodeBySessionId(String id) {
+		// TODO Auto-generated method stub
+		int memcode = itemDAO.getMemCodeBySessionId(id);
+		return memcode;
 	}
 
-	/**
-	 * 
-	 * @param vo
-	 */
+	@Override
+	public void insetOrder(ItemVO vo) {
+		// TODO Auto-generated method stub		
+		itemDAO.insetOrder(vo);	
+	}
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+//	/**
+//	 * 
+//	 * @param vo
+//	 */
+//	@Override
+//	public List<ItemVO> comboSelect2(int iCatCode) {
+//		logger.info("ItemService.comboSelect2 서비스");
+//		System.out.println("iCatCode : " + iCatCode);
+//		List<ItemVO> list2 = itemDAO.comboItem(iCatCode);
+//		return list2;
+//	}
+//
+//	/**
+//	 * 
+//	 * @param vo
+//	 */
+//	@Override
+//	public void insertItemApply(ItemVO vo) {
+//		logger.info("ItemService.insertItemApply");
+//		itemDAO.insertItemApply(vo);
+//	}
+//
+//	/**
+//	 * 
+//	 * @param vo
+//	 */
 //	@Override
 //	public void insertItemApplyDetail(ItemVO vo) {
 //		

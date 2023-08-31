@@ -2,36 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ItemDAO">
-
-	<!-- ItemDAO.comboItemCat -->
-	<select id="comboItemCat" parameterType="item" resultType="item">
-		SELECT I_CAT_CODE, I_CAT 
-			FROM ITEM_CAT 
+	
+	<!-- i_cat_code로 item 가져오기 -->
+	<select id="selectItem" parameterType="int" resultType="item">
+		select i_code, i_name from item where i_cat_code = #{i_cat_code}
 	</select>
 	
-	<!-- ItemDAO.comboItem -->
-	<select id="comboItem" parameterType="int" resultType="item">
-		SELECT I_CODE, I_NAME, I_CAT_CODE 
-			FROM ITEM 
-		WHERE i_cat_code = #{iCatCode}
+	
+	<!-- i_code로 i_name 찾기 -->
+	<select id="selectItemName" parameterType="int" resultType="item">
+		select i_name from item where i_code = #{i_code}
+	</select>	
+	
+	
+	<!-- mem_code 찾기 -->
+	<select id="findmemcode" parameterType="String" resultType="int">
+		select mem_code from member where id=#{id}
 	</select>
-                                                                                                                                                                                   
-	<!-- ItemDAO.insertItemApply -->
-	<insert id="insertItemApply" parameterType="item">
-		INSERT INTO ITEM_APPLY
-		(I_APPLY_CODE
-		,MEM_CODE
-		,I_CODE
-		,I_UNIT_AMOUNT
-		,I_APPLY_DATE
-		)
-	VALUES
-		(S_I_CODE.NEXTVAL
-		,#{memCode}
-		,#{iCode}
-		,#{iUnitAmount}
-		,TRUNC(sysdate)
-		)
+	
+	<insert id="orderinsert" parameterType="item">
+		INSERT INTO ITEM_APPLY (i_apply_code, MEM_CODE, I_CODE, I_UNIT_AMOUNT, I_APPLY_DATE)
+		VALUES(s_i_apply_code.nextval, #{mem_code}, #{i_code}, #{i_unit_amount}, sysdate);
 	</insert>
 	
 

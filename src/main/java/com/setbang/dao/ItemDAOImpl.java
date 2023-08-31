@@ -17,24 +17,58 @@ public class ItemDAOImpl implements ItemDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
+	// i_cat_code로 item리스트 가져와서 List에 담기 
 	@Override
-	public List<ItemVO> comboItemCat(ItemVO vo) {
-		logger.info("ItemDAO.comboItemCat 호출");
-		return mybatis.selectList("ItemDAO.comboItemCat",vo);
+	public List<ItemVO> selectItem(int icatcode) {
+		// TODO Auto-generated method stub
+		System.out.println("=> Mybatis selectItem() 호출");
+		return mybatis.selectList("ItemDAO.selectItem", icatcode);
 	}
 
 	@Override
-	public List<ItemVO> comboItem(int iCatCode) {
-		logger.info("ItemDAO.comboItem 호출");
-		System.out.println("iCatCode : " + iCatCode);
-		return mybatis.selectList("ItemDAO.comboItem", iCatCode);
+	public List<ItemVO> selectItemName(int itemCode) {
+		// TODO Auto-generated method stub
+		System.out.println("=> Mybatis selectItemName() 호출");
+		return mybatis.selectList("ItemDAO.selectItemName", itemCode);
 	}
 
+	// mem_code 가져오기
 	@Override
-	public void insertItemApply(ItemVO vo) {
-		logger.info("ItemDAO.insertItemApply 호출");
-		mybatis.insert("ItemDAO.insertItemApply",vo);
+	public int getMemCodeBySessionId(String id) {
+		// TODO Auto-generated method stub
+		System.out.println("=> Mybatis getMemCodeBySessionId() 호출");
+		return mybatis.selectOne("ItemDAO.selectItemName", id);
 	}
+
+	// 주문 insert
+	@Override
+	public void insetOrder(ItemVO vo) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("=> Mybatis insetOrder() 호출");
+		mybatis.insert("ItemDAO.orderinsert", vo);
+		
+	}
+	
+
+	
+	
+	
+	
+	
+
+//	@Override
+//	public List<ItemVO> comboItem(int iCatCode) {
+//		logger.info("ItemDAO.comboItem 호출");
+//		System.out.println("iCatCode : " + iCatCode);
+//		return mybatis.selectList("ItemDAO.comboItem", iCatCode);
+//	}
+//
+//	@Override
+//	public void insertItemApply(ItemVO vo) {
+//		logger.info("ItemDAO.insertItemApply 호출");
+//		mybatis.insert("ItemDAO.insertItemApply",vo);
+//	}
 
 	/**
 	 * 

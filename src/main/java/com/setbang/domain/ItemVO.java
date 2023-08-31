@@ -18,90 +18,94 @@ public class ItemVO {
 	private int i_cancel_yn;
 	
 	
-	public int getiCatCode() {
+	
+	public int getI_cat_code() {
 		return i_cat_code;
 	}
-	public void setiCatCode(int iCatCode) {
-		this.i_cat_code = iCatCode;
+	public void setI_cat_code(int i_cat_code) {
+		this.i_cat_code = i_cat_code;
 	}
-	public String getiCat() {
+	public String getI_cat() {
 		return i_cat;
 	}
-	public void setiCat(String iCat) {
-		this.i_cat = iCat;
+	public void setI_cat(String i_cat) {
+		this.i_cat = i_cat;
 	}
-	public int getiCode() {
+	public int getI_code() {
 		return i_code;
 	}
-	public void setiCode(int iCode) {
-		this.i_code = iCode;
+	public void setI_code(int i_code) {
+		this.i_code = i_code;
 	}
-	public String getiName() {
+	public String getI_name() {
 		return i_name;
 	}
-	public void setiName(String iName) {
-		this.i_name = iName;
+	public void setI_name(String i_name) {
+		this.i_name = i_name;
 	}
-	public int getiApplyCode() {
+	public int getI_apply_code() {
 		return i_apply_code;
 	}
-	public void setiApplyCode(int iApplyCode) {
-		this.i_apply_code = iApplyCode;
+	public void setI_apply_code(int i_apply_code) {
+		this.i_apply_code = i_apply_code;
 	}
-	public int getMemCode() {
+	public int getMem_code() {
 		return mem_code;
 	}
-	public void setMemCode(int memCode) {
-		this.mem_code = memCode;
+	public void setMem_code(int mem_code) {
+		this.mem_code = mem_code;
 	}
-	public int getiUnitAmount() {
+	public int getI_unit_amount() {
 		return i_unit_amount;
 	}
-	public void setiUnitAmount(int iUnitAmount) {
-		this.i_unit_amount = iUnitAmount;
+	public void setI_unit_amount(int i_unit_amount) {
+		this.i_unit_amount = i_unit_amount;
 	}
-	public String getiApplyDate() {
+	public String getI_apply_date() {
 		return i_apply_date;
 	}
-	public void setiApplyDate(String iApplyDate) {
-		this.i_apply_date = iApplyDate;
+	public void setI_apply_date(String i_apply_date) {
+		this.i_apply_date = i_apply_date;
 	}
-	public int getiApplyDetailCode() {
+	public int getI_apply_detail_code() {
 		return i_apply_detail_code;
 	}
-	public void setiApplyDetailCode(int iApplyDetailCode) {
-		this.i_apply_detail_code = iApplyDetailCode;
+	public void setI_apply_detail_code(int i_apply_detail_code) {
+		this.i_apply_detail_code = i_apply_detail_code;
 	}
-	public int getiAmount() {
+	public int getI_amount() {
 		return i_amount;
 	}
-	public void setiAmount(int iAmount) {
-		this.i_amount = iAmount;
+	public void setI_amount(int i_amount) {
+		this.i_amount = i_amount;
 	}
-	public int getiCancelCode() {
+	public int getI_cancel_code() {
 		return i_cancel_code;
 	}
-	public void setiCancelCode(int iCancelCode) {
-		this.i_cancel_code = iCancelCode;
+	public void setI_cancel_code(int i_cancel_code) {
+		this.i_cancel_code = i_cancel_code;
 	}
-	public int getiCancelAmount() {
+	public int getI_cancel_amount() {
 		return i_cancel_amount;
 	}
-	public void setiCancelAmount(int iCancelAmount) {
-		this.i_cancel_amount = iCancelAmount;
+	public void setI_cancel_amount(int i_cancel_amount) {
+		this.i_cancel_amount = i_cancel_amount;
 	}
-	public String getiCancelDate() {
+	public String getI_cancel_date() {
 		return i_cancel_date;
 	}
-	public void setiCancelDate(String iCancelDate) {
-		this.i_cancel_date = iCancelDate;
+	public void setI_cancel_date(String i_cancel_date) {
+		this.i_cancel_date = i_cancel_date;
 	}
-	public int getiCancelYn() {
+	public int getI_cancel_yn() {
 		return i_cancel_yn;
 	}
-	public void setiCancelYn(int iCancelYn) {
-		this.i_cancel_yn = iCancelYn;
+	public void setI_cancel_yn(int i_cancel_yn) {
+		this.i_cancel_yn = i_cancel_yn;
 	}
+
+	
+
 	
 	
 	
