@@ -46,7 +46,7 @@
                     <select  class='input' name="itemCat" id="itemCat" onchange="selectBoxChange" required="required">
                         <option value="" selected="selected">선택</option>		
                         <option id="i_cat_code" value="1">탕비</option>
-                        <option id="i_cat_code" value="2">비품</option>
+                        <option id="i_cat_code" value="2">사무</option>
                     </select>			
                 </td>
             </tr>
@@ -141,6 +141,25 @@
 
 <script type="text/javascript">
 
+const selectBoxChange = function(){
+	//itemCat 아이디 값 선택
+	const itemCatSelect = document.getElementById("itemCat");
+	
+	//  select element에서 선택된 option의 value가 저장된다.
+	let selectValue = itemCatSelect.options[itemCatSelect.selectedIndex].value;
+	console.log("selecteBoxChange selectValue : " + selectValue);
+}
+
+/* <td><select class='input' name='i_amount' id='i_amount' onchange='selectBoxChange2'>" */
+
+const selectBoxChange2 = function(){
+	//itemCat 아이디 값 선택
+	const itemCatSelect = document.getElementById("i_amount");
+	
+	//  select element에서 선택된 option의 value가 저장된다.
+	let selectValue = itemCatSelect.options[itemCatSelect.selectedIndex].value;
+	console.log("selecteBoxChange2 selectValue : " + selectValue);
+}
 
 // 물품카테고리를 선택하면 controller로 값 보내기
 	
@@ -167,12 +186,11 @@
                 for(var i = 0; i < response.length; i++){
                 	html += '<tr>'
                     html += '<td>'+ response[i].i_name +'<input type="hidden" name="i_code" value="'+response[i].i_code+'"></td>';
-                    // 이미지 경로 설정
-                    var imagePath = './resources/image/itemImg' + (i + 1) + '.png';
-                    html += '<td><div class="img"><img src="' + imagePath + '" alt="Item Image" id=></div></td>';
+                    // 이미지 경로 설정    (i + 1) --> 이렇게 경로 설정하면 첫번째 카테고리 목록의 이미지들만 보임 -> 그렇기 때문에 (i + 1 + (10 * (selectedValue - 1))) 수정함
+                    var imagePath = './resources/image/itemImg' + (i + 1 + (10 * (selectedValue - 1)))  + '.png';
+                    html += '<td><img id="img" src="' + imagePath + '" alt="Item Image"></td>';
                     html += "<td><select class='input' name='i_amount' id='i_amount' onchange='selectBoxChange2'>";
-                    html += '<br/>'
-                    html += '<option value="" selected="selected">선택</option>'		
+                    html += '<option value="0" selected="selected">선택</option>'		
 					html += '<option value="1">1</option>'
 					html += '<option value="2">2</option>'
 					html += '<option value="3">3</option>'
@@ -189,6 +207,7 @@
                 }
                 html += '</table>'
                 console.log(html);
+                console.log("imagePath : " + imagePath);
                 $('.itemlistTable').append(html);
             },
             error: function(error) {
@@ -203,12 +222,17 @@
         var itemAmount = $(this).closest('tr').find('[name="i_amount"]').val();
 
         var selectedValue = $('#itemCat').val();
+        console.log("selectedValue : " + selectedValue);
         
         console.log("code: ", itemCode);
         console.log("amount: ", itemAmount);
         
-        // selectbox의 값을 초기값으로 변경
-        $('#i_amount').val('0'); // 'initial_value'에는 실제 초기값이 들어가야 합니다.
+        // selectbox의 값을 초기값으로 변경  --> 문제의 원인 : 이렇게 설정하면 고유 값만 받기 때문에 제일 첫번째 것만 인식함 
+        //$('#i_amount').val('0'); // 'initial_value'에는 실제 초기값이 들어가야 합니다.
+        
+        //변경된 소스 
+        // 현재 클릭한 버튼에 가까운 i_amount 요소의 값을 초기화
+        $(this).closest('tr').find('[name="i_amount"]').val('0');
   
      
         // i_code로 i_name 찾아오기
@@ -272,7 +296,7 @@
    	        orderData.push({
    	            i_name: itemName,
    	            i_code: itemCode,
-   	            i_amount: itemAmount
+   	            i_unit_amount: itemAmount
    	        });
    	    });
 
