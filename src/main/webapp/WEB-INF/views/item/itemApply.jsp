@@ -27,116 +27,117 @@
 		<jsp:include page="../section/header.jsp" />
 	</div>
 		
-	<div id="wrap">	
-		
-		<form name="itemapply" id="itemapply" action="itemApplyInsert.do" method="post">
-			<div id="firstSelect">
 
-					<tr id="item_apply_title">
-						<th id="titleText">물품 신청</th>
-					</tr>
-					
-					<tr class="item_cat">
-						<td id='title' class='title'>
-							<span id="itemtitle" value ='"itemtitle"'>물품카테고리</span>
-						<br/>
-						<select  class='input' name="itemCat" id="itemCat" onchange="selectBoxChange" required="required">
-							<option value="" selected="selected">선택</option>		
-							<option id="i_cat_code" value="1">탕비</option>
-							<option id="i_cat_code" value="2">비품</option>
-						</select>			
-						</td>
-					</tr>
-			</div>
-						
-			<div id="itemlist">	
-				<div class="itemlistTable">	
-           			 <thead>
-               			 <tr>
-                    		<th colsan="2">물품명</th>
-                    		<th>수 량(개)</th>
-                    		<th>선 택</th>                                       
-               			</tr>
-            		</thead>
-            		<tbody id="mytable">
-            		</tbody>
-           			<c:choose>
-        			<c:when test="${not empty Itemlist}">
-            		<!--  
-            			<c:forEach var="item" items="${Itemlist}">
-               			<tr>
-                    		<td>${item.i_name}</td>
-                    		<td><select class='input' name="i_amount" id="i_amount" onchange="selectBoxChange2" required>
-									<option value="" selected="selected">선택</option>		
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>									
-									<option value="7">7</option>
-									<option value="8">8</option>									
-									<option value="9">9</option>
-									<option value="10">10</option>																										
-								</select> </td>
-                    		<td><input type="button" class="button" id="memberBtn" name="memberBtn"></td>                                                                                                    
-               			</tr>
-             			</c:forEach>
-             			-->
-           			
-            		</c:when>
-            		</c:choose> 
-				</div>
-			</div>
-			</form>
-			
-	<div id="item_apply" >
-	<form name="itemorder" id="itemorder">
-		<tr id="item_order_title">
-			<th id="titleText">주문내역</th>
-		</tr>
-		<thead>
-		<div class="itemapplyList">
-		<tr id="item_order_content">	
-			<th>물품명<input type="hidden" name="i_code" value="물품코드"></th>
-			<th>수 량</th>
-			<th>삭 제</th>	
-		</tr>
-		</thead>
-		<c:choose>
-	        <c:when test="${not empty itemOrderTable}">
-	        	<tbody>
-           	<!-- 	<c:forEach var="itemOrder" items="${itemOrderList}">
-               			<tr>
-                    		<td>${itemOrder.name}</td>
-                    		<td>${itemOrder.amount}</td>
-                    		<td><input type="button" class="button" id="deleteBtn" name="deleteBtn"></td>                                                                                                    
-               			</tr>
-             		</c:forEach>  --> 
-           		</tbody>
-            </c:when>	
+<div class="wrap">
+		
+		<h2>물품 신청</h2>
+
+
+
+<div class="form-container">
+<form name="itemapply" id="itemapply" action="itemApplyInsert.do" method="post">
+        <table>
+            <tr id="item_apply_title">
+                <th id="titleText">물품 선택</th>
+            </tr>
             
-           <c:otherwise>
-           	<tbody>
-               <tr>
-                 <td><h6 class="emptyitem">담겨있는 물품이 없습니다.</h6></td>
-               </tr>
-            </tbody>
-           </c:otherwise>
-		</c:choose>
-			 <tr><button type='submit' id='insertBtn' name="'insertBtn'">주문하기</button></tr>	
-	</div>
-	</div>
-	</form>
-			
-			
+            <tr class="item_cat">
+                <td id='title' class='title'>
+                    <select  class='input' name="itemCat" id="itemCat" onchange="selectBoxChange" required="required">
+                        <option value="" selected="selected">선택</option>		
+                        <option id="i_cat_code" value="1">탕비</option>
+                        <option id="i_cat_code" value="2">비품</option>
+                    </select>			
+                </td>
+            </tr>
+        </table>
+    
+    <div id="itemlist">	
+        <div class="itemlistTable">	
+            <table>
+                <tbody id="mytable">
+                </tbody>
+                <c:choose>
+                    <c:when test="${empty Itemlist}">
+                        <tr>
+                            <td colspan="3">원하시는 물품 분류를 선택해주세요.</td>
+                        </tr>
+                    </c:when>
+                </c:choose> 
+            </table>
+        </div>
+    </div>
+</form>
+
+<div id="item_apply">
+    <form name="itemorder" id="itemorder">
+        <div class="itemapplyList">
+                <c:choose>
+                    <c:when test="${empty itemOrderTable}">
+            <table>
+                                        <thead>
+                            <tr id="item_order_content">	
+					            <th>물품명<input type="hidden" name="i_code" value="물품코드"></th>
+					            <th>수량</th>
+					            <th>삭제</th>	
+                            </tr>
+                            </thead>
+                            </table>
+                    </c:when>
+                    <c:otherwise>
+                    <div>
+                    <table>
+                    <thead>
+                            <tr id="item_order_content">	
+					            <th>물품명<input type="hidden" name="i_code" value="물품코드"></th>
+					            <th>수량</th>
+					            <th>삭제</th>	
+                            </tr>
+                            </thead>
+                        <tbody>
+                        </tbody>
+            </table>
+            </div>
+                    </c:otherwise>
+                </c:choose>
+        </div>
+        <button type='submit' id='insertBtn' name="'insertBtn'">주문하기</button>	
+    </form>
+</div>
 </div>
 
- <!-- div Wrap 끝-->
+
+
+
+</div>
+
+
+
+
+
+
 
 <div id="footer">
-	<jsp:include page="../section/footer.jsp" />
+    <jsp:include page="../section/footer.jsp" />
 </div>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 <script type="text/javascript">
 
@@ -168,9 +169,10 @@
                     html += '<td>'+ response[i].i_name +'<input type="hidden" name="i_code" value="'+response[i].i_code+'"></td>';
                     // 이미지 경로 설정
                     var imagePath = './resources/image/itemImg' + (i + 1) + '.png';
-                    html += '<td><img src="' + imagePath + '" alt="Item Image"></td>';
+                    html += '<td><div class="img"><img src="' + imagePath + '" alt="Item Image" id=></div></td>';
                     html += "<td><select class='input' name='i_amount' id='i_amount' onchange='selectBoxChange2'>";
-                    html += '<option value="0" selected="selected">선택</option>'		
+                    html += '<br/>'
+                    html += '<option value="" selected="selected">선택</option>'		
 					html += '<option value="1">1</option>'
 					html += '<option value="2">2</option>'
 					html += '<option value="3">3</option>'
@@ -221,13 +223,15 @@
                 // 배열의 첫 번째 요소의 i_name 값을 itemName 변수에 할당
                 var itemName = response[0].i_name;
                 console.log("name: ", itemName);
-                
+                var tableRow = '';
                 // 주문내역 테이블에 추가
-                var tableRow = '<tr>';
+                tableRow += '<table>';
+                tableRow += '<tr>';
                 tableRow += '<td>' + itemName + '<input type="hidden" name="i_code" value="' + itemCode + '"></td>';
                 tableRow += '<td>' + itemAmount + '</td>';
                 tableRow += '<td><input type="button" class="button" id="deleteBtn" name="deleteBtn" value="삭제"></td>';
                 tableRow += '</tr>';
+                tableRow += '</table>';
                 
 				
                 // .itemapplyList가 제대로 선택되는지 확인
