@@ -30,7 +30,7 @@ public class PubOfficeVO {
 	private String email;
 	private String mem_plan;
 	private String signup_date;
-	private int num_of_per;
+	private int book_people;
 	private String pub_time;
 	
 	public String getId() {
@@ -155,14 +155,12 @@ public class PubOfficeVO {
 		this.signup_date = signupDate;
 	}
 	
-	public int getNumOfPer() {
-		return num_of_per;
+	public int getBook_people() {
+		return book_people;
 	}
-	public void setNumOfPer(int numOfPer) {
-		this.num_of_per = numOfPer;
+	public void setBook_people(int book_people) {
+		this.book_people = book_people;
 	}
-	
-	
 	public String getPubTime() {
 		return pub_time;
 	}

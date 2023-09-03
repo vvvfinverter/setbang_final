@@ -34,6 +34,7 @@
 		
 <div id="wrap">
 	<h2>임대차 계약서 등록</h2>
+	<h6>회원가입을 하신 임차인의 성함과 연락처를 확인 후 동일인을 등록해주세요.</h6>
 
 <div id="constract">
 	<form action="constract1.do">

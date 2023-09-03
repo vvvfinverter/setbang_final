@@ -36,7 +36,7 @@ public class MyPageListVO {
 	private int book_code;
 	private int pub_code;
 	private int pub_cat_code;
-	private int num_of_per;
+	private int book_people;
 	private String book_start;
 	private String book_date;
 	private String pub_unit;
@@ -233,11 +233,11 @@ public class MyPageListVO {
 	public void setBook_indexnum(int book_indexnum) {
 		this.book_indexnum = book_indexnum;
 	}
-	public int getNum_of_per() {
-		return num_of_per;
+	public int getBook_people() {
+		return book_people;
 	}
-	public void setNum_of_per(int num_of_per) {
-		this.num_of_per = num_of_per;
+	public void setBook_people(int book_people) {
+		this.book_people = book_people;
 	}
 	public String getBook_date() {
 		return book_date;

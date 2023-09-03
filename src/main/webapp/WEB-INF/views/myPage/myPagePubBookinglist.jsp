@@ -56,7 +56,7 @@
                     <td>${booking.book_indexnum}</td>                    
                     <td>${booking.pub_cat}</td>
                     <td>${booking.pub_unit}</td>
-                    <td>${booking.num_of_per}</td>
+                    <td>${booking.book_people}</td>
                     <td>${booking.book_date}</td>
                     <td>${booking.book_start}</td>                                                                                           
                 </tr>

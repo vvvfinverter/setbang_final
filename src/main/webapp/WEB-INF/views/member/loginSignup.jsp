@@ -114,11 +114,20 @@ $(document).ready(function () {
         <div class="industry_select">
                 <select class="input" name = "ind_code" id="industry" onchange="selectBoxChange(this.value);" required>
                   <option value="">선택</option>
-                  <option value="100">제조업</option>
-                  <option value="200">통신판매업</option>
-                  <option value="300">IT업</option>
-                  <option value="400">서비스업</option>
-                  <option value="500">요식업</option>
+                  <option value="1">제조업</option>
+                  <option value="2">부동산업</option>
+                  <option value="3">IT업</option>
+                  <option value="4">서비스업</option>
+                  <option value="5">요식업</option>
+                  <option value="6">건설업</option>
+                  <option value="7">유통업</option>
+                  <option value="8">교육업</option>
+                  <option value="9">뷰티업</option>
+                  <option value="10">금융업</option>
+                  <option value="11">섬유업</option>
+                  <option value="12">회계업</option>
+                  <option value="13">패션업</option>
+                  <option value="14">마케팅업</option>
                 </select>
               </div>
         </div>

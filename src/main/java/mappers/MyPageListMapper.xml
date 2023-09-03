@@ -28,8 +28,8 @@
 	
 		<!--memcode로  공용공간 신청 내역찾기-->
 	<select id="pubbookinglist" parameterType="int" resultType="myPageList">
-	<![CDATA[ select rownum as book_indexnum, book_code, mem_code, pub_code, book_start, num_of_per, to_char(book_date, 'YYYY-MM-DD') as book_date, pub_unit, pub_cat_code, pub_cat
-			  from (select b.book_code, b.mem_code, b.book_start, b.num_of_per, b.book_date, po.pub_code, po.pub_unit, pc.pub_cat_code, pc.pub_cat
+	<![CDATA[ select rownum as book_indexnum, book_code, mem_code, pub_code, book_start, book_people, to_char(book_date, 'YYYY-MM-DD') as book_date, pub_unit, pub_cat_code, pub_cat
+			  from (select b.book_code, b.mem_code, b.book_start, b.book_people, b.book_date, po.pub_code, po.pub_unit, pc.pub_cat_code, pc.pub_cat
 			  		from booking b, pub_office po, pub_cat pc where b.pub_code=po.pub_code and po.pub_cat_code=pc.pub_cat_code order by b.book_code)
 			  where mem_code=#{mem_code}]]>
 	</select>

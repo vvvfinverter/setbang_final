@@ -230,11 +230,9 @@ public class MemberController {
 		
 	    // 회원아이디로 회원승인여부 가져오기 
 		String memApproval = member.getApproval();
-	    System.out.println("memApproval : " + memApproval);
 		
 	if(member != null && memApproval.equals("Y")) { 
 		// task - 로그인 성공 (알림창으로 환영합니다. OOO 고객님 or 그냥 바로 넘어가기)
-		System.out.println("[" + member.getId() + "] 로그인 접속"); 
 		session.setAttribute("sessionId", member.getId());
 		session.setAttribute("sessionPw", member.getPw());
 		session.setAttribute("sessionName", member.getName());
@@ -255,7 +253,6 @@ public class MemberController {
         
 	} else {									
 		// task - 로그인 실패 (알림창 or 비동기로 로그인에 실패하였습니다. 아이디나 비밀번호를 확인해주세요. 띄우기)
-		System.out.println("로그인 실패");
 		return "/member/loginSignup";
 	}
 		return "redirect:/";

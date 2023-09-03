@@ -130,7 +130,7 @@
 	<label for="bookDate">예약일자</label><br/>
 	<input type="text" class="datePicker" name="bookDate" id="bookDate" size="12" readonly/><br/>
 	<label for="numOfPer">인원</label> <br/>
-	<select id = "numOfPer" name="numOfPer" required>
+	<select id = "bookPeople" name="bookPeople" required>
 		<option value="">선택</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
