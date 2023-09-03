@@ -67,9 +67,9 @@
 		<div class="select">
 		<select class="input" name="brunch" id="brunch" var="brunch" onchange="selectBoxChange(this.value);" required>
 			<option value="">선택</option>
-            <option value="1">강남점</option>
-            <option value="2">판교점</option>
-            <option value="3">구로점</option> 
+            <option value="1">구로점</option>
+            <option value="2">강남점</option>
+            <option value="3">판교점</option> 
         </select>    
         </div>
         <div class="select">
