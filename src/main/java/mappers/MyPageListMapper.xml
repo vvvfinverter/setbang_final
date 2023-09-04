@@ -18,7 +18,7 @@
 
 	<!--memcode로  협력업체지원서비스 내역찾기-->
 	<select id="partnerlist" parameterType="int" resultType="myPageList">
-	<![CDATA[ select rownum as partner_indexnum, ptr_apply_code, ptr_code, mem_code, to_char(ptr_apply_date, 'YYYY-MM-DD') as ptr_apply_date, to_char(ptr_start, 'YYYY-MM-DD') as ptr_start, to_char(ptr_end, 'YYYY-MM-DD') as ptr_end, ptr_apply_name, ptr_name
+	<![CDATA[ select rownum as partner_indexnum, ptr_apply_code, ptr_code, mem_code, to_char(ptr_apply_date, 'YYYY-MM-DD') as ptr_apply_date, to_char(ptr_start, 'YYYY-MM-DD') as ptr_start, to_char(ptr_end, 'YYYY-MM-DD') as ptr_end, ptr_apply_name, ptr_tel
 			  ptr_name, ptr_cat_code, ptr_cat
 			  from (select p.ptr_apply_code, p.ptr_code, p.mem_code, p.ptr_apply_date, p.ptr_start, p.ptr_end, p.ptr_apply_name, p.ptr_tel,
 			  		pt.ptr_name, cat.ptr_cat_code, cat.ptr_cat from partner_apply p, partner pt, partner_cat cat
@@ -56,5 +56,11 @@
 	<!-- MypageSubDAO.deleteItemApply -->
 	<delete id="deleteItemApply" parameterType = "myPageList">
 		DELETE FROM ITEM_APPLY WHERE I_APPLY_CODE = #{i_apply_code}
-	</delete>		
+	</delete>
+	<!-- 물품 취소 목록 insert -->
+	<!-- MypageSubDAO.insertItemCancel -->
+	<insert id="insertItemCancel"  parameterType = "myPageList">
+		INSERT INTO ITEM_CANCEL(i_cancel_code,i_apply_code,i_cancel_amount,i_cancel_date,i_cancel_yn) 
+			VALUES(s_i_cancel_code.nextval,#{i_apply_code}, #{i_cancel_amount},sysdate,'Y')
+	</insert>		
 </mapper>

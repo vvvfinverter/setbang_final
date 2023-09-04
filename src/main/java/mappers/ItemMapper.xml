@@ -22,7 +22,7 @@
 	
 	<insert id="orderinsert" parameterType="item">
 		INSERT INTO ITEM_APPLY (i_apply_code, MEM_CODE, I_CODE, I_UNIT_AMOUNT, I_APPLY_DATE)
-		VALUES(s_i_apply_code.nextval, #{mem_code}, #{i_code}, #{i_unit_amount}, sysdate);
+		VALUES(s_i_apply_code.nextval, #{mem_code}, #{i_code}, #{i_unit_amount}, sysdate)
 	</insert>
 	
 

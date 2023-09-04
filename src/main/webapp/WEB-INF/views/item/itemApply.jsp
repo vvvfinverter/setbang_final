@@ -35,7 +35,7 @@
 
 
 <div class="form-container">
-<form name="itemapply" id="itemapply" action="itemApplyInsert.do" method="post">
+<div id="itemapply" ><!-- div로 변경 -->
         <table>
             <tr id="item_apply_title">
                 <th id="titleText">물품 선택</th>
@@ -67,17 +67,17 @@
             </table>
         </div>
     </div>
-</form>
+</div><!-- div로 변경 -->
 
 <div id="item_apply">
-    <form name="itemorder" id="itemorder">
+    <div name="itemorder" id="itemorder"><!-- div로 변경 -->
         <div class="itemapplyList">
                 <c:choose>
                     <c:when test="${empty itemOrderTable}">
             <table>
                                         <thead>
                             <tr id="item_order_content">	
-					            <th>물품명<input type="hidden" name="i_code" value="물품코드"></th>
+					            <th>물품명<input type="hidden" name="i_code" ></th>
 					            <th>수량</th>
 					            <th>삭제</th>	
                             </tr>
@@ -89,7 +89,7 @@
                     <table>
                     <thead>
                             <tr id="item_order_content">	
-					            <th>물품명<input type="hidden" name="i_code" value="물품코드"></th>
+					            <th>물품명<input type="hidden" name="i_code"></th>
 					            <th>수량</th>
 					            <th>삭제</th>	
                             </tr>
@@ -101,8 +101,8 @@
                     </c:otherwise>
                 </c:choose>
         </div>
-        <button type='submit' id='insertBtn' name="'insertBtn'">주문하기</button>	
-    </form>
+        <button type="button" id='insertBtn' name="'insertBtn'">주문하기</button>	
+    </div><!-- div로 변경 -->
 </div>
 </div>
 
@@ -310,6 +310,7 @@ const selectBoxChange2 = function(){
    	        success: function(response) {
    	            console.log('Order inserted successfully:', response);
    	            // 주문 성공 메시지 또는 리디렉션 등을 수행할 수 있음
+   	            alert(response.message); // 서버에서 반환한 메시지를 알림으로 표시
    	         window.location.href = "itemlist.do";
    	        },
    	        error: function(error) {

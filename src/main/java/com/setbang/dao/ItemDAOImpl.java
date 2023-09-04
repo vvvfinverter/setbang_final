@@ -36,8 +36,9 @@ public class ItemDAOImpl implements ItemDAO{
 	@Override
 	public int getMemCodeBySessionId(String id) {
 		// TODO Auto-generated method stub
+		System.out.println("id : " + id);
 		System.out.println("=> Mybatis getMemCodeBySessionId() 호출");
-		return mybatis.selectOne("ItemDAO.selectItemName", id);
+		return mybatis.selectOne("ItemDAO.findmemcode", id);
 	}
 
 	// 주문 insert
@@ -49,5 +50,7 @@ public class ItemDAOImpl implements ItemDAO{
 		mybatis.insert("ItemDAO.orderinsert", vo);
 		
 	}
-	
+
+
+
 }

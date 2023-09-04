@@ -1,6 +1,8 @@
 package com.setbang.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -8,6 +10,8 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.setbang.domain.ItemVO;
 import com.setbang.service.ItemService;
+import com.setbang.service.SupportService;
 
 @Controller
 public class ItemController {
@@ -27,6 +32,8 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 	
+	@Autowired
+	private SupportService supportService;
 	
 	//물품 신청 등록 화면 조회
 	@RequestMapping(value = "itemApply.do")
@@ -71,9 +78,8 @@ public class ItemController {
 
     // 주문내역 insert
     @RequestMapping(value = "/orderInsert.do", method = RequestMethod.POST)
-    @ResponseBody     
-    public String orderInsert(@RequestBody List<ItemVO> orderData, HttpSession session) {
-       
+    @ResponseBody
+    public ResponseEntity<Map<String, String>> orderInsert(@RequestBody List<ItemVO> orderData, HttpSession session) {
        // 세션에서 회원정보 가져오기
        String sessionId = (String) session.getAttribute("sessionId");
        // 회원아이디로 회원코드 가져오기
@@ -84,6 +90,10 @@ public class ItemController {
            itemService.insetOrder(vo);
        }
        
-       return "redirect:/itemlist.do";
+       // JSON 응답 생성
+       Map<String, String> response = new HashMap<>();
+       response.put("message", "주문이 성공적으로 처리되었습니다."); // 원하는 메시지 추가
+       return ResponseEntity.ok(response);
+       //return "redirect:/itemlist.do";
     }
 }
