@@ -47,20 +47,14 @@ public class ItemController {
     @ResponseBody
     public List seletctItem(@RequestParam("icatCode") String icatCode, HttpServletRequest request, Model model, ItemVO vo) {
 		
-    	System.out.println("icatCode : " + icatCode);
     	
     	int icatcode = Integer.parseInt(icatCode);
-    	System.out.println("icatcode : " + icatcode);
     	
     	//i_cat_code를 가지고 물품리스트 가져오기
     	List<ItemVO> Itemlist = itemService.selectItem(icatcode);
-    	System.out.println("list : " + Itemlist);
     	model.addAttribute("Itemlist", Itemlist);
     	
     	for (ItemVO item : Itemlist) {
-    	    System.out.println("i_code: " + item.getI_code());
-    	    System.out.println("i_name: " + item.getI_name());
-    	    // 다른 속성들도 출력 가능
     	}
     	
     	return Itemlist;
@@ -72,11 +66,9 @@ public class ItemController {
     @ResponseBody 
     public List selectIname(@RequestParam("itemCode") String itemCode, Model model, ItemVO vo) {
     	
-    	System.out.println("itemCode : " + itemCode);
     	int itemcode = Integer.parseInt(itemCode);
     	
     	List<ItemVO> ItemNamelist = itemService.selectItemName(itemcode);
-    	System.out.println("ItemName : " + ItemNamelist);
     	
     	return ItemNamelist; 
     }
@@ -91,24 +83,11 @@ public class ItemController {
        String sessionId = (String) session.getAttribute("sessionId");
        // 회원아이디로 회원코드 가져오기
        int memCode = itemService.getMemCodeBySessionId(sessionId);
-       System.out.println("memCode : " + memCode);
-       // vo에 memCode 저장~
-      // vo.setMem_code(memCode);
        
        for (ItemVO vo : orderData) {
           vo.setMem_code(memCode);
-          System.out.println("memcode : " + vo.getMem_code());
-          System.out.println("iCode : " + vo.getI_code());
-          //vo.setI_unit_amount(1);
-          System.out.println("iAmountUnit : " + vo.getI_unit_amount());
-          // vo.setMem_code(memCode);
            itemService.insetOrder(vo);
        }
-       
-//       System.out.println("i_code : " + vo.getI_code());
-//       System.out.println("i_unit_amount : " + vo.getI_amount());
-//       System.out.println("memCode : " + vo.getMem_code());
-       //itemService.insetOrder(vo);
        
        return "redirect:/itemlist.do";
     }

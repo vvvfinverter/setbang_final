@@ -36,7 +36,6 @@ public class CardController {
                                    @RequestParam("cardCode") int cardCode) {
 
             int cardEasypw = cardService.getEasypwByCardcode(cardCode);
-            System.out.println(currentEasypw + " " + newEasypw + " " + cardEasypw);
 
             if (cardEasypw == currentEasypw) {
                 CardVO vo = new CardVO();
@@ -44,9 +43,6 @@ public class CardController {
                 vo.setCard_easypw(newEasypw);
                 cardService.updateEasypw(vo);
 
-                // task - 수정 성공 메시지 띄우기
-            } else {
-                // task - 실패 메시지 띄우기
             }
 
             return "redirect:/myPageCard.do";
@@ -94,7 +90,6 @@ public class CardController {
 	        // 카드 등록하는 서비스 불러오기
 	        cardService.addCard(vo);
 	        
-	        // task - 등록성공하면 등록성공했습니다, 아닐 경우엔 실패했습니다 띄우기
 	    }
 
 	    return "redirect:/myPageCard.do";

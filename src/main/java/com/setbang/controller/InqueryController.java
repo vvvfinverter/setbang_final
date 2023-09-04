@@ -49,9 +49,6 @@ public class InqueryController {
  
     	
         
-//        inqueryService.SendEmail
-     
-        
     }	
 
 }

@@ -57,7 +57,6 @@ public class AdminController {
 	public String findAdmin(AdminVO vo, Model model, HttpSession session) {
 		
 		AdminVO admin = adminservice.findAdmin(vo);
-		System.out.println("vo : " + vo);
 
 		if(admin != null) {
 			session.setAttribute("sessionAdminId", admin.getAdmin_id());
@@ -69,7 +68,6 @@ public class AdminController {
 		List<AdminVO> memberapprovalList = adminservice.memberapprovalList(vo);
 		model.addAttribute("memberapprovalList", memberapprovalList);
 		
-		System.out.println("sessionAdminId : " + session.getAttribute("sessionAdminId"));		
 		return "/admin/adminMemberApproval";
 		
 	}
@@ -82,7 +80,6 @@ public class AdminController {
 		HttpSession session1 = request.getSession();
 		session1.invalidate();
 		
-		System.out.println("session1 : " + request.getSession());
 		return "/admin/adminLogin";
 	}
 	

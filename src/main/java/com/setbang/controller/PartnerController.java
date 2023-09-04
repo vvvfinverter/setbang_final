@@ -1,6 +1,7 @@
 package com.setbang.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,7 +15,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.setbang.domain.MyPageListVO;
 import com.setbang.domain.PartnerVO;
+import com.setbang.service.MyPageListService;
 import com.setbang.service.PartnerService;
 
 @Controller
@@ -23,6 +26,9 @@ public class PartnerController {
 	
 	@Autowired
 	private PartnerService partnerService;
+	
+	@Autowired
+	private MyPageListService myPageListService;
 		
 	// 협력업체 페이지로 이동
 	@RequestMapping(value = "partnerBooking.do", method = RequestMethod.GET)
@@ -31,7 +37,6 @@ public class PartnerController {
 		
 		String id = (String)session.getAttribute("sessionId");
 		PartnerVO selectInfo = partnerService.selectInfo(id);
-		System.out.println("selectInfo : " + selectInfo);
 		
 		model.addAttribute("PartnerVO", selectInfo);
 		return "/partner/partnerApply";
@@ -44,10 +49,8 @@ public class PartnerController {
 		logger.info("PartnerController selectCompany method");
 		
 		String id = (String)session.getAttribute("sessionId");
-		System.out.println("selectCompany : " + id); 
 		
 		String company = partnerService.selectCompany(id);
-		System.out.println("company : " + company);
 		model.addAttribute("PartnerVO", company);
 		
 		return "/partner/partnerApply";
@@ -60,7 +63,6 @@ public class PartnerController {
 		logger.info("PartnerController insertCompany method");
 
 		String id = (String)session.getAttribute("sessionId");
-		System.out.println("id : " + id);
 		
 		PartnerVO vo = new PartnerVO();
 
@@ -92,9 +94,18 @@ public class PartnerController {
 				model.addAttribute("ptr_tel", followTel);
 			
 				partnerService.insertCompany(vo);
-				return "redirect:/partner2.do?message=success";
+				
+				// Session에서 Mem_code 가져오기
+				String sessionId = (String) session.getAttribute("sessionId");
+				int mem_code = myPageListService.findmemcode(sessionId);
+				
+				// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
+				List<MyPageListVO> partnerlist = myPageListService.partnerlist(mem_code);
+					model.addAttribute("partnerlist", partnerlist);
+				
+				return "myPage/myPagePartnerlist";
 		}else {		
-		return "redirect:/partnerApply.do?message=fail";
+		return "redirect:/partnerApply.do";
 	}	
 }
 	

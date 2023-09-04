@@ -30,11 +30,9 @@ public class SupportController {
 		
 		// 세션 객체 안에 있는 ID정보 저장
 		String id = (String) session.getAttribute("sessionId");
-		System.out.println("id : " + id);
 		
 		// 서비스 안의 회원정보  매서드 호출
 		SupportVO selectuser = supportService.selectUser(id);
-		System.out.println("selectuser : " + selectuser);
 		
 		// 정보저장 후 페이지 이동
 		model.addAttribute("supportVO", selectuser);
@@ -50,13 +48,11 @@ public class SupportController {
 		
 		// 세션 객체 안에 있는 ID정보 저장 
 		String id = (String) session.getAttribute("sessionId");
-		System.out.println("id : " + id);
 		
 		SupportVO vo = new SupportVO();
 		
 		// id로 email 가져오기
 		String email = supportService.findEmail(id);
-		System.out.println("findEmail : " + email);
 		model.addAttribute("SupportVO", email);
 		
 	
@@ -64,7 +60,6 @@ public class SupportController {
 		int memcode = supportService.findMemcode(id);		
 		
 		int sup_code = Integer.parseInt(request.getParameter("sup_code"));
-		System.out.println("c"+sup_code);
 		String sup_counseling_date = request.getParameter("sup_counseling_date");
 		String sup_content = request.getParameter("sup_content");
 
@@ -77,16 +72,8 @@ public class SupportController {
 			vo.setSup_counseling_date(sup_counseling_date);
 			vo.setSup_content(sup_content);
 			vo.setSup_email(email);
-			System.out.println("cc"+vo.getSup_code());
-			System.out.println("memcode :" + memcode );
 			
 			try {
-				System.out.println("sup_code : " + sup_code);
-				System.out.println("mem_code : " + vo.getMem_code());
-				System.out.println("sup_counseling_date : " + sup_counseling_date);
-				System.out.println("sup_content : " + sup_content);
-				System.out.println("sup_email : " + email);
-				
 				model.addAttribute("sup_code", sup_code);
 				model.addAttribute("mem_code", vo.getMem_code());
 				model.addAttribute("sup_counseling_date", sup_counseling_date);
@@ -95,18 +82,16 @@ public class SupportController {
 
 				// 업무지원 신청서에 인서트 되기
 				supportService.insertApply(vo);
-				System.out.println("성공");
 				
 			}catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
-				System.out.println("실패!");
 			} 
 			  
 			
 		}
 		
-		return "redirect:/support.do";
+		return "/myPage/myPageSupportlist";
 	}
 
 

@@ -66,7 +66,6 @@ public class MemberController {
 			// 회원 정보 변경 서비스 불러오기
 			memberService.updateMemberInfo(vo);
 			
-	        // task - 변경성공하면 성공했습니다, 아닐 경우엔 실패했습니다 띄우기
 		}
 		return "redirect:/myPageInfo.do";
 	}
@@ -90,7 +89,6 @@ public class MemberController {
 
 	        // 프로필 변경하는 서비스 불러오기
 			memberService.updateProfile(vo);
-	        // task - 변경성공하면 성공했습니다, 아닐 경우엔 실패했습니다 띄우기
 			
 	        // 세션아이디로 프로필 가져오기
 	        String profile = memberService.getProfileBySessionId(sessionId);
@@ -232,7 +230,6 @@ public class MemberController {
 		String memApproval = member.getApproval();
 		
 	if(member != null && memApproval.equals("Y")) { 
-		// task - 로그인 성공 (알림창으로 환영합니다. OOO 고객님 or 그냥 바로 넘어가기)
 		session.setAttribute("sessionId", member.getId());
 		session.setAttribute("sessionPw", member.getPw());
 		session.setAttribute("sessionName", member.getName());
@@ -252,7 +249,6 @@ public class MemberController {
 //		session.setMaxInactiveInterval(30*60);
         
 	} else {									
-		// task - 로그인 실패 (알림창 or 비동기로 로그인에 실패하였습니다. 아이디나 비밀번호를 확인해주세요. 띄우기)
 		return "/member/loginSignup";
 	}
 		return "redirect:/";

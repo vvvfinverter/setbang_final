@@ -35,7 +35,6 @@ public class MyPageListController {
 		
 		// Mem_code로 자신의 업무지원서비스 신청현황 가져오기
 		List<MyPageListVO> supportlist = myPageListService.supportlist(mem_code);
-			System.out.println("supportlist : " + supportlist);
 			model.addAttribute("supportlist", supportlist);
 		
 		
@@ -53,8 +52,6 @@ public class MyPageListController {
 		
 		// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
 		List<MyPageListVO> partnerlist = myPageListService.partnerlist(mem_code);
-			System.out.println("partnerlist : " + partnerlist);
-			System.out.println("ptr_apply_date : " + vo.getPtr_apply_date());
 			model.addAttribute("partnerlist", partnerlist);
 			
 		return "/myPage/myPagePartnerlist";
@@ -70,7 +67,6 @@ public class MyPageListController {
 		
 		// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
 		List<MyPageListVO> pubbookinglist = myPageListService.pubbookinglist(mem_code);
-			System.out.println("pubbookinglist : " + pubbookinglist);
 			model.addAttribute("pubbookinglist", pubbookinglist);
 			
 		return "/myPage/myPagePubBookinglist";
@@ -86,7 +82,6 @@ public class MyPageListController {
 		
 		// Mem_code로 자신의 협력업체지원서비스 신청현황 가져오기
 		List<MyPageListVO> itemlist = myPageListService.itemlist(mem_code);
-			System.out.println("itemlist : " + itemlist);
 			model.addAttribute("itemlist", itemlist);
 			
 		return "/myPage/myPageItemlist";
@@ -102,7 +97,6 @@ public class MyPageListController {
 		
 		// Mem_code로 자신의 임대차계약현황 가져오기
 		List<MyPageListVO> constractlist = myPageListService.constractlist(mem_code);
-			System.out.println("constractlist : " + constractlist);
 			model.addAttribute("constractlist", constractlist);		
 		
 		return "/myPage/myPageConstractlist";

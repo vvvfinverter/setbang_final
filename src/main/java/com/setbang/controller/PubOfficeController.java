@@ -48,7 +48,6 @@ public class PubOfficeController {
 		
 		if(pubUnits != null) {
 			model.addAttribute("pubUnits",pubUnits);
-//			System.out.println(pubUnits.get(0).getPubCode());
 		}
 		
 		//대상 view(jsp)파일
@@ -63,9 +62,7 @@ public class PubOfficeController {
 	@ResponseBody
 	public ResponseEntity<Map<String, String>> compareTimes(@RequestParam String selectValue, @RequestParam String bookDate, PubOfficeVO vo, Model model){
 		logger.info("pubOffice.compareTimes");
-		//int pubCode = vo.getPubCode();
 		Map<String, String> response = new HashMap<>();
-		System.out.println("selectValue : " + selectValue);
 		int pubCode = Integer.parseInt(selectValue);
 		vo.setPubCode(pubCode);
 
@@ -76,12 +73,7 @@ public class PubOfficeController {
 		}else {
 	        String dbBookDate = compare.getBookDate(); // 데이터베이스에서 가져온 예약일자 값
 	        String dbBookStart = compare.getBookStart(); // 데이터베이스에서 가져온 시작 시간 값
-	        System.out.println("dbBookDate : " + dbBookDate);
-	        System.out.println("dbBookDate : " + dbBookStart);
-
-			System.out.println("dbBookStart : " + dbBookStart);
 			if(dbBookDate.equals(bookDate)) {  // 예약일자와 클라이언트에서 보낸 예약일자 비교
-				System.out.println("날자 일치하는지 확인");
 				response.put("result", "match");// 일치하는 경우 return ResponseEntity.ok("match"); 
 			}else {
 				response.put("result", "not-match"); //return ResponseEntity.ok("not-match"); 불일치하는 경우
@@ -101,15 +93,11 @@ public class PubOfficeController {
 		
 		logger.info("PubOfficeController의 insertPubOfficeBooking method");
 		
-		//System.out.println(combinedDateTime);
 		String selectedValueStr = request.getParameter("selectedValue");
-		System.out.println("selected value hidden 값 : " + selectedValueStr);
 		if(selectedValueStr != null) {
 			try {
 				Integer selectedValue = Integer.valueOf(selectedValueStr);
-				System.out.println("int 변환된 hidden select 값 : " + selectedValue);
 				vo.setPubCode(selectedValue);
-				System.out.println("selectedValue 값을 getPubCode에 넣은 후 가져옴 : " + vo.getPubCode());
 			} catch (NumberFormatException e) {
 				// TODO: handle exception
 				e.printStackTrace();
@@ -117,12 +105,9 @@ public class PubOfficeController {
 		}
 
 	String id = (String) session.getAttribute("sessionId");
-	System.out.println("session id : " + id);
-	System.out.println("session id : " + session.getId());
 	
 	// ID로 Mem_code 가져오기
 	int memcode = supportService.findMemcode(id);
-	System.out.println("memcode : " + memcode);
 	
 	if(memcode != 0) {
 		vo.setMemCode(memcode);
