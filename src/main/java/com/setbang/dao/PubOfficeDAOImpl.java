@@ -28,14 +28,12 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	public List<PubOfficeVO> selectPubOffice(PubOfficeVO vo) {
 		
 		logger.info("PubOfficeDAO.selectPubOffice 호출");
-		System.out.println("--> Mybatis selectPuboffice() 호출");
 		
 		List<PubOfficeVO> pubComboList = mybatis.selectList("PubOfficeDAO.selectPubOffice",vo);
 		
 		return pubComboList;
 	}
 	
-
 	
 	/**
 	 * booking 테이블 insert
@@ -45,9 +43,7 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	@Override
 	public int insertPubOffice(PubOfficeVO vo) {
 		
-		logger.info("PubOfficeDAO.insertPubOffice 호촐");
-		System.out.println("--> Mybatis insertPubOffice() 호출");
-		System.out.println("DAO  : " + vo.getPubCode());
+		logger.info("PubOfficeDAO.insertPubOffice 호출");
 		
 		int insertPro = mybatis.insert("PubOfficeDAO.insertOfficeBooking",vo);
 		
@@ -124,11 +120,6 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	public PubOfficeVO selectComparetimes(PubOfficeVO vo) {
 		
 		logger.info("PubOfficeDAO.compareTimes 라디오 상자 시간비교");
-		System.out.println("pubCode : " + vo.getPubCode());
-		System.out.println("pubtime  : " + vo.getPubTime());
-		System.out.println("bookDate : " + vo.getBookDate());
-		System.out.println("bookstart : " + vo.getBookStart());
-		System.out.println("DAO 콘솔로그 끝나는 부분");
 		PubOfficeVO compareTimes = mybatis.selectOne("PubOfficeDAO.compareTimes",vo);
 		
 		return compareTimes;
@@ -145,7 +136,6 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	public PubOfficeVO selectPubCat(PubOfficeVO vo) {
 		
 		logger.info("PubOfficeDAO.selectPubCat 탔음");
-		
 		PubOfficeVO cat = mybatis.selectOne("PubOfficeDAO.selectPubCat",vo);
 		
 		return cat;
@@ -160,7 +150,6 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	@Override
 	public PubOfficeVO selectMemCode(PubOfficeVO vo) {
 		logger.info("PubOfficeDAO.selectMemCode 탔음");
-		System.out.println("selectMemCode mybatis이동전단계");
 		return mybatis.selectOne("PubOfficeDAO.selectMemCode", vo);
 	}
 	

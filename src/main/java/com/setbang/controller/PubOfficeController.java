@@ -114,7 +114,6 @@ public class PubOfficeController {
 	}
 	
 	/**  MemCode를 직접 가져올 경우 그러나 성민이가 구현해둔 것을 공통으로 사용하고 있어서 이 코드는 사용 안하고 주석 처리 **/
-//		pubOfficeService.selectMemCode(vo);
 	
 	vo.setPubTime(vo.getBookStart());
 	

@@ -28,9 +28,11 @@ document.querySelector('#btnSubmit').addEventListener('click', function(){
    		// 선택한 값
    		var bookDate = document.querySelector('#bookDate').value;
     	var bookStartValue = document.querySelector('input[name="bookStart"]:checked').value;
-   		var numOfPer = document.querySelector('#numOfPer').value;
+   		//var book_people = document.querySelector('#book_people').value;
     	var comboUnits = document.querySelector('#comboUnits').value;
-    	var numOfPer = document.querySelector('#numOfPer').value; // 인원 추가
+    	var book_people = document.querySelector('#book_people').value; // 인원 추가
+		//var book_people = document.querySelector('input[name="book_people"]:checked').value;
+		console.log("book_people : " + book_people);
     	var comboUnits = document.querySelector('#comboUnits').value; // 임대호실 추가
 
 	
@@ -41,7 +43,7 @@ document.querySelector('#btnSubmit').addEventListener('click', function(){
             return;
         }
 
-        if (numOfPer === "") {
+        if (book_people === "") {
             alert("인원을 선택하세요.");
             return;
         }
@@ -57,7 +59,7 @@ document.querySelector('#btnSubmit').addEventListener('click', function(){
 		//컨트롤러로 전송할 데이터 객체 생성
 		frm.action = 'insertpubOfficeBooking.do';
 		frm.method = 'POST';
-		alert("공용 오피스 예약이 성공적으로 완료하였습니다.");
+		//alert("공용 오피스 예약이 성공적으로 완료하였습니다.");
 		frm.submit();
 	});
 	

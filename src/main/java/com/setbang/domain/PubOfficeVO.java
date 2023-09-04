@@ -1,10 +1,6 @@
 package com.setbang.domain;
 
 
-/**
- * @author kohle
- *
- */
 public class PubOfficeVO {
 
 	
@@ -16,8 +12,6 @@ public class PubOfficeVO {
 	private int book_code;
 	private String book_start;
 	private String book_date;
-//	private String formattedStartTime;
-//	private String formattedEndTime;
 	
 	private int mem_code;
 	private int ind_code;
@@ -155,11 +149,11 @@ public class PubOfficeVO {
 		this.signup_date = signupDate;
 	}
 	
-	public int getBook_people() {
+	public int getBookPeople() {
 		return book_people;
 	}
-	public void setBook_people(int book_people) {
-		this.book_people = book_people;
+	public void setBookPeople(int bookPeople) {
+		this.book_people = bookPeople;
 	}
 	public String getPubTime() {
 		return pub_time;
@@ -167,28 +161,11 @@ public class PubOfficeVO {
 	public void setPubTime(String pubTime) {
 		this.pub_time = pubTime;
 	}
-	//	public String getFormattedStartTime() {
-//		return formattedStartTime;
-//	}
-//	public void setFormattedStartTime(String formattedStartTime) {
-//		this.formattedStartTime = formattedStartTime;
-//	}
-//	public String getFormattedEndTime() {
-//		return formattedEndTime;
-//	}
-//	public void setFormattedEndTime(String formattedEndTime) {
-//		this.formattedEndTime = formattedEndTime;
-//	}
 	//생성자
 	public PubOfficeVO() {
 		
 	}
 
-	//toString
-//	@Override
-//	public String toString() {
-//		return "PubOfficeVO [id=" + id + ", pw=" + pw + "]";
-//	}
 	
 
 }
