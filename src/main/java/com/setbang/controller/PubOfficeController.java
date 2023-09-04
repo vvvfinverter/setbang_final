@@ -24,8 +24,6 @@ import com.setbang.service.PubOfficeService;
 import com.setbang.service.SupportService;
 
 
-//@RequestMapping("/pubOffice")
-
 @Controller
 public class PubOfficeController {
 	

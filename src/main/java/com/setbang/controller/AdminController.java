@@ -86,7 +86,6 @@ public class AdminController {
 	// 임대차 계약서 등록
 	@RequestMapping(value="constract1.do")
 	public String insertContract(HttpSession session, Model model, HttpServletRequest request, HttpServletResponse reponse) {
-		logger.info("");	
 		
 		// Mem_code를 찾기 위한 임차인 이름 가져오기
 		String lessee_name = request.getParameter("lessee_name");

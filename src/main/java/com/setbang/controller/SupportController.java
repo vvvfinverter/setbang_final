@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.setbang.dao.SupportDAOImpl;
 import com.setbang.domain.SupportVO;
 import com.setbang.service.SupportService;
 

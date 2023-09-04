@@ -50,38 +50,4 @@ public class ItemDAOImpl implements ItemDAO{
 		
 	}
 	
-
-	
-	
-	
-	
-	
-
-//	@Override
-//	public List<ItemVO> comboItem(int iCatCode) {
-//		logger.info("ItemDAO.comboItem 호출");
-//		System.out.println("iCatCode : " + iCatCode);
-//		return mybatis.selectList("ItemDAO.comboItem", iCatCode);
-//	}
-//
-//	@Override
-//	public void insertItemApply(ItemVO vo) {
-//		logger.info("ItemDAO.insertItemApply 호출");
-//		mybatis.insert("ItemDAO.insertItemApply",vo);
-//	}
-
-	/**
-	 * 
-	 */
-//	@Override
-//	public void insertItemApplyDetail(ItemVO vo) {
-//		
-//		logger.info("ItemDAO.insertItemApplyDetail 호출");
-//		System.out.println("물품신청내역코드 시퀀스: " + vo.getIApplayDetailCode());
-//		System.out.println("물품신청코드(FK) 시퀀스: " + vo.getIApplyCode());
-//		System.out.println("물품신청수량 : " + vo.getIAmount());
-//		mybatis.insert("ItemDAO.insertItemApplyDetail", vo);
-//	}
-
-
 }

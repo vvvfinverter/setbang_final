@@ -63,9 +63,6 @@ public class MyPageListDAOImpl implements MyPageListDAO{
 	//물품 신청 취소
 	@Override
 	public void deleteItemApply(MyPageListVO vo) {
-		
-		logger.info("MyPageListDAO.deleteItemApply 메소드");
-		
 		mybatis.delete("MyPageListDAO.deleteItemApply", vo);
 	}
 

@@ -63,7 +63,6 @@ public class PartnerDAOImpl implements PartnerDAO{
 	public void insertCompany(PartnerVO vo) {
 		// TODO Auto-generated method stub
 		System.out.println("=> Mybatis insertCompany() 호출");
-		System.out.println("dao" + vo.getPtr_name());
 		mybatis.insert("PartnerDAO.insertCompany", vo);
 	}
 

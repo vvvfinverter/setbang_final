@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.setbang.domain.CardVO;
 import com.setbang.domain.MemberVO;
@@ -222,7 +223,8 @@ public class MemberController {
 	
 	// 로그인 실행
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
-	public String getLogin(MemberVO vo, Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response){
+	public String getLogin(MemberVO vo, Model model, HttpSession session, 
+			HttpServletRequest request, HttpServletResponse response, RedirectAttributes redirectAttributes){
 		
 		MemberVO member = memberService.getLogin(vo);
 		
@@ -248,7 +250,7 @@ public class MemberController {
 //		// session 시간 설정 (30분) - 1분으로 실험했고, 잘 동작함 + web에 설정함
 //		session.setMaxInactiveInterval(30*60);
         
-	} else {									
+	} else {				
 		return "/member/loginSignup";
 	}
 		return "redirect:/";

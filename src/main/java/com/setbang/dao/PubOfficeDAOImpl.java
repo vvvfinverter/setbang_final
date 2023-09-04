@@ -60,7 +60,7 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	@Override
 	public List<PubOfficeVO> selectPutOfficeCombo(PubOfficeVO vo) {
 		
-		logger.info("PubOfficeDAO.selectPubOfficeCombo 탔음");
+		logger.info("PubOfficeDAO.selectPubOfficeCombo");
 		
 		List<PubOfficeVO> comboList = mybatis.selectList("PubOfficeDAO.selectPubOfficeCombo");
 		
@@ -75,7 +75,7 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	@Override
 	public int updatePubOfficeY(PubOfficeVO vo) {
 		
-		logger.info("PubOfficeDAO.updatePubOfficeY 탔음");
+		logger.info("PubOfficeDAO.updatePubOfficeY");
 		
 		int updatePubYn = mybatis.update("PubOfficeDAO.updatePubOfficeY", vo);
 		
@@ -90,7 +90,7 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	@Override
 	public int updatePubOfficeN(int pubCode) {
 		
-		logger.info("PubOfficeDAO.updatePubOfficeN 탔음");
+		logger.info("PubOfficeDAO.updatePubOfficeN");
 		
 		int autoUpdateProN = mybatis.update("PubOfficeDAO.updatePubOfficeN");
 		
@@ -104,7 +104,7 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	@Override
 	public void deleteOfficeBooking() {
 		
-		logger.info("PubOfficeDAO.deleteOfficeBooking 탔음");
+		logger.info("PubOfficeDAO.deleteOfficeBooking");
 		
 		mybatis.delete("PubOfficeDAO.deleteOfficeBooking");
 		
@@ -135,7 +135,7 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	@Override
 	public PubOfficeVO selectPubCat(PubOfficeVO vo) {
 		
-		logger.info("PubOfficeDAO.selectPubCat 탔음");
+		logger.info("PubOfficeDAO.selectPubCat");
 		PubOfficeVO cat = mybatis.selectOne("PubOfficeDAO.selectPubCat",vo);
 		
 		return cat;
@@ -149,7 +149,7 @@ public class PubOfficeDAOImpl implements PubOfficeDAO{
 	 */
 	@Override
 	public PubOfficeVO selectMemCode(PubOfficeVO vo) {
-		logger.info("PubOfficeDAO.selectMemCode 탔음");
+		logger.info("PubOfficeDAO.selectMemCode");
 		return mybatis.selectOne("PubOfficeDAO.selectMemCode", vo);
 	}
 	

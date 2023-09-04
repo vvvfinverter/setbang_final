@@ -36,8 +36,6 @@ public class AdminDAOImpl implements AdminDAO{
 	// 임대차계약서 text 박스에 기입된 이름으로 member 테이블에서 임차인 이름 찾아서 가져오기
 	@Override
 	public int findmemcode(String lessee_name, String lessee_tel) {
-		System.out.println("lessee_name :" + lessee_name);
-		System.out.println("lessee_tel :" + lessee_tel);
 		System.out.println("=> Mybatis findmemcode() 호출");
 		
 	    Map<String, String> paramMap = new HashMap<>();

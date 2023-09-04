@@ -18,7 +18,7 @@
 
 	<!--memcode로  협력업체지원서비스 내역찾기-->
 	<select id="partnerlist" parameterType="int" resultType="myPageList">
-	<![CDATA[ select rownum as partner_indexnum, ptr_apply_code, ptr_code, mem_code, to_char(ptr_apply_date, 'YYYY-MM-DD') as ptr_apply_date, to_char(ptr_start, 'YYYY-MM-DD') as ptr_start, to_char(ptr_end, 'YYYY-MM-DD') as ptr_end, ptr_apply_name, ptr_tel
+	<![CDATA[ select rownum as partner_indexnum, ptr_apply_code, ptr_code, mem_code, to_char(ptr_apply_date, 'YYYY-MM-DD') as ptr_apply_date, to_char(ptr_start, 'YYYY-MM-DD') as ptr_start, to_char(ptr_end, 'YYYY-MM-DD') as ptr_end, ptr_apply_name, ptr_name
 			  ptr_name, ptr_cat_code, ptr_cat
 			  from (select p.ptr_apply_code, p.ptr_code, p.mem_code, p.ptr_apply_date, p.ptr_start, p.ptr_end, p.ptr_apply_name, p.ptr_tel,
 			  		pt.ptr_name, cat.ptr_cat_code, cat.ptr_cat from partner_apply p, partner pt, partner_cat cat
