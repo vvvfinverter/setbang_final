@@ -78,7 +78,6 @@ public class MyPageListServiceImpl implements MyPageListService{
 		
         // 삭제 로직 수행
     	for (MyPageListVO vo : voList) {
-//    		System.out.println("applyCode : " + vo.getI_apply_code());
     		myPageListDAO.deleteItemApply(vo);
 	    }
 

@@ -112,7 +112,6 @@ public class MyPageListController {
 		
 	    try {
 	    	
-//	    	System.out.println(" ss : " +voList.get(0).getI_apply_code());
 	    	myPageListService.deleteItemApply(voList); // 서비스 메소드를 호출하여 비즈니스 로직 처리
 	        response.setSuccess(true);
 	        response.setMessage("신청 취소가 완료되었습니다.");

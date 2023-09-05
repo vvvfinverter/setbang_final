@@ -56,7 +56,7 @@
                     <td>${item.item_indexnum}<input type="hidden" name="i_apply_code" value="${item.i_apply_code}"/></td>                    
                     <td>${item.i_cat}</td>
                     <td>${item.i_name}</td>
-                    <td>${item.i_unit_amount}</td>
+                    <td>${item.i_unit_amount}<input type="hidden" name="i_unit_amount" value="${item.i_unit_amount}"/></td>
                     <td>${item.i_apply_date}</td>
                     <td><input type="checkbox" name="itemcheck" data-i-apply-code="${item.i_apply_code}"></td>                                                                                             
                 </tr>
@@ -101,9 +101,12 @@ $(document).ready(function() {
 	    var td = tr.children();
 	    
 	    var i_apply_code = td.find('input[name=i_apply_code]').val();
-	    //var i_apply_code = td.eq(1).text();
 	    params.push({
 	    	i_apply_code: i_apply_code
+	    });
+	    var i_unit_amount = td.find('input[name=i_unit_amount]').val();
+	    params.push({
+	    	i_unit_amount : i_unit_amount
 	    });
 	});
 
@@ -117,7 +120,6 @@ $(document).ready(function() {
 		success : function(data) {
 		    if (data) { // 서버로부터 받은 성공 여부 상태 코드나 메시지를 확인
 		        alert('신청 취소가 완료되었습니다.');
-		        //location.href = 'itemlist.do';
 		        window.location.href = 'itemlist.do'; // 리다이렉트
 		    } else {
 		        alert('신청 취소에 실패하였습니다.'); // 실패시 알림
@@ -133,7 +135,5 @@ $(document).ready(function() {
 
 </script>
 
-<!-- JS / Jquery -->		
-<!-- <script type="text/javascript" src="./resources/js/myPagePlanPayment.js"></script>	 -->	
 </body>
 </html>

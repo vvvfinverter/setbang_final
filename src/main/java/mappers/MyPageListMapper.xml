@@ -61,6 +61,6 @@
 	<!-- MypageSubDAO.insertItemCancel -->
 	<insert id="insertItemCancel"  parameterType = "myPageList">
 		INSERT INTO ITEM_CANCEL(i_cancel_code,i_apply_code,i_cancel_amount,i_cancel_date,i_cancel_yn) 
-			VALUES(s_i_cancel_code.nextval,#{i_apply_code}, #{i_cancel_amount},sysdate,'Y')
+			VALUES(s_i_cancel_code.nextval,#{i_apply_code}, #{i_unit_amount}, sysdate,'Y')
 	</insert>		
 </mapper>

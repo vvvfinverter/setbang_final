@@ -63,7 +63,7 @@
 <div class="sup_code">
     <div class="support-panel-offers">
         <div>
-            <input class="radio-input tax-radio" id="tax" name="sup_code" type="radio" value="10" required/>
+            <input class="radio-input tax-radio" id="tax" name="sup_code" type="radio" value="1" required/>
             <label for="tax" class="tax support-panel-offer">
                 <strong>세무기장 서비스</strong>
                 <img src='./resources/image/tax.png'/>
@@ -71,7 +71,7 @@
             </label>
         </div>
         <div>
-            <input class="radio-input corporate-radio" id="corporate" name="sup_code" type="radio" value="20" required/>
+            <input class="radio-input corporate-radio" id="corporate" name="sup_code" type="radio" value="2" required/>
             <label for="corporate" class="corporate support-panel-offer">
                 <strong>법인신청 서비스</strong>
                 <img src='./resources/image/corporate.png'/>
@@ -79,7 +79,7 @@
             </label>
         </div>
         <div>
-            <input class="radio-input patent-radio" id="patent" name="sup_code" type="radio" value="30" required/>
+            <input class="radio-input patent-radio" id="patent" name="sup_code" type="radio" value="3" required/>
             <label for="patent" class="patent support-panel-offer">
                 <strong>특허신청 서비스</strong>
                 <img src='./resources/image/patent.png'/>
