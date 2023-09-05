@@ -90,7 +90,6 @@ public class SupportController {
 			
 		}
 		
-		//return "/myPage/myPageSupportlist";
 		return "redirect:/supportlist.do";
 	}
 

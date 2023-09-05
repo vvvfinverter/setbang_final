@@ -41,8 +41,8 @@
   		<div class="chart" id="privcount">
 			<div id="columnchart_values" ></div>
 			<input type="hidden" id="guromember" name="guromember" value="${guromember}">
-			<input type="hidden" id="pangyomember" name="pangyomember" value="${pangyomember}">
 			<input type="hidden" id="gangnammember" name="gangnammember" value="${gangnammember}">
+			<input type="hidden" id="pangyomember" name="pangyomember" value="${pangyomember}">
 		</div>
 
     <!--지점별 회원현황 막대차트-->

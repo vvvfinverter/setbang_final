@@ -15,8 +15,8 @@
       var data = google.visualization.arrayToDataTable([
         ["지점", "회원수", { role: "style" } ],
  	  	["구로점", guromember, "#b87333"],
-   		["판교점", pangyomember, "silver"],
     	["강남점", gangnammember, "gold"],
+   		["판교점", pangyomember, "silver"]
       ]);
 
       var view = new google.visualization.DataView(data);

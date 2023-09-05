@@ -73,7 +73,7 @@
             </c:choose>
         </table>		
 	</div>
-             <button id="itemDeleteBtn" type="button" class="button" >삭 제</button>
+             <button id="itemDeleteBtn" type="button" class="button" >신청 취소</button>
 		</div>
 	
 		</div>
