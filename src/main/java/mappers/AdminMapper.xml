@@ -29,15 +29,15 @@
 	</select>
 	
 	<select id="countguro" resultType="int">
-		select count(*) as priv_code from constract <![CDATA[where priv_code>20 and priv_code<=30]]>
+		select count(*) as priv_code from constract <![CDATA[where priv_code<=10]]>
 	</select>
 	
 	<select id="countpangyo" resultType="int">
-		select count(*) as priv_code from constract <![CDATA[where priv_code>10 and priv_code<=20]]>
+		select count(*) as priv_code from constract <![CDATA[where priv_code>20 and priv_code<=30]]>
 	</select>
 	
 	<select id="countgangnam" resultType="int">
-		select count(*) as priv_code from constract <![CDATA[where priv_code<=10]]>
+		select count(*) as priv_code from constract <![CDATA[where priv_code>10 and priv_code<=20]]>
 	</select>
 	
 	<select id="servicegrade_Basic" resultType="int">
