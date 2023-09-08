@@ -93,8 +93,8 @@
 	    DELETE FROM PLAN_APPLY
 	    WHERE PLAN_END = (SELECT MAX(PLAN_END) FROM PLAN_APPLY
 	        WHERE PLAN_APPLY_YN = 'N' AND CARD_CODE = #{card_code})
+	    AND CARD_CODE = #{card_code}
 	</delete>
-
 
 	<!-- 서비스 플랜 업그레이드 -->
 	<insert id="planUpgrade" parameterType="plan">
